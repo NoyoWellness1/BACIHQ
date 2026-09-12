@@ -90,6 +90,8 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 .hot:hover .hnav,.hot:focus-visible .hnav{color:var(--champagne);}
 .hmk{font-family:'Cinzel',Georgia,serif;font-size:2.5cqw;letter-spacing:.18em;color:var(--gold-light);
   display:flex;align-items:center;justify-content:center;width:100%;height:100%;}
+/* the masthead is the wordmark itself, scaled to its hotspot */
+.hmk-img{width:100%;height:100%;object-fit:contain;display:block;}
 .hsub{font-family:'Cinzel',Georgia,serif;font-size:.78cqw;letter-spacing:.1em;
   color:var(--gold);text-transform:uppercase;line-height:1.35;}
 
@@ -800,7 +802,7 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
     <img class="hero__img" src="hero-shell.webp" alt="" aria-hidden="true">
 
     <a class="hot" href="#top" aria-label="BACI home" style="left:1.43%;top:2.79%;width:12.17%;height:8.02%">
-      <span class="hmk">BACI</span>
+      <img class="hmk-img" src="baci-wordmark.webp" alt="BACI">
     </a>
     <div class="hx hsub" style="left:14.2%;top:3.4%;width:16%;height:7.2%" aria-hidden="true">Business Acquisition<br>&amp; Conversion Intelligence</div>
 
