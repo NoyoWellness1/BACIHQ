@@ -429,15 +429,13 @@ footer{margin-top:clamp(56px,7vw,110px);padding-top:6px}
   justify-content:center;
   gap:16px;
 }
+/* The monogram artwork carries its own ring, so the element supplies
+   no border of its own — two concentric circles is not the mark. */
 .mono{
   width:64px;height:64px;
-  border:1px solid var(--gold);
-  border-radius:50%;
   display:grid;place-items:center;
-  font-family:'Cinzel',serif;
-  font-size:1.75rem;
-  color:var(--gold);
 }
+.mono img{width:100%;height:100%;display:block;object-fit:contain}
 .copy{font-size:1rem;color:var(--gold);padding:0 20px;border-left:1px solid rgba(195,149,68,.34)}
 .socials{display:flex;gap:10px;padding:0 4px}
 .soc{display:block;width:46px;height:46px;transition:opacity .25s,transform .25s}
@@ -822,7 +820,7 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
     <p class="hx hbullet" style="left:5.9%;top:62.1%">Infinite intelligence</p>
     <p class="hx hbullet" style="left:5.9%;top:71.4%">A system that evolves, analyses,<br>optimises and grows your business.</p>
 
-    <p class="hx hsignal" style="left:53.5%;top:19.2%">Analysing <span id="heroCount">37,942,118</span><br>signals in real time</p>
+    <p class="hx hsignal" style="left:53.5%;top:19.2%">Analysing <span id="heroCount"></span><br>signals in real time</p>
 
     <div class="hx hcard" style="left:34.77%;top:18.71%;width:13.54%;height:18.71%"><p class="t">Business Pattern</p><p class="v">+1,338,884<br>Confidence 92.7%</p><svg class="spk" viewBox="0 0 80 12" preserveAspectRatio="xMinYMax meet" aria-hidden="true"><rect x="2" y="5" width="1.6" height="7" rx=".6"/><rect x="9" y="4" width="1.6" height="8" rx=".6"/><rect x="16" y="3" width="1.6" height="9" rx=".6"/><rect x="23" y="4" width="1.6" height="8" rx=".6"/><rect x="30" y="8" width="1.6" height="4" rx=".6"/><rect x="37" y="6" width="1.6" height="6" rx=".6"/><rect x="44" y="1" width="1.6" height="11" rx=".6"/><rect x="51" y="6" width="1.6" height="6" rx=".6"/><rect x="58" y="5" width="1.6" height="7" rx=".6"/><rect x="65" y="7" width="1.6" height="5" rx=".6"/><rect x="72" y="8" width="1.6" height="4" rx=".6"/></svg></div>
     <div class="hx hcard" style="left:80.66%;top:18.71%;width:14.19%;height:15.80%"><p class="t">Conversion Probability</p><p class="v">87.6%</p><svg class="spk" viewBox="0 0 82 12" preserveAspectRatio="xMinYMax meet" aria-hidden="true"><polyline points="2.0,8.7 9.0,9.1 16.0,9.8 23.0,9.7 30.0,10.0 37.0,9.6 44.0,10.3 51.0,9.9 58.0,8.5 65.0,7.9 72.0,7.4 79.0,8.2" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg></div>
@@ -893,15 +891,15 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
     <p class="t2">Infinite Intelligence</p>
   </div>
   <div class="body-copy center" style="margin-top:var(--s-block);">
-    <p>BACI reads signals across 150+ countries, hundreds of sectors and languages at once, surfacing the markets worth entering before your competitors even know they exist.</p>
+    <p>BACI reads signals across 181 countries, hundreds of sectors and languages at once, surfacing the markets worth entering before your competitors even know they exist.</p>
     <p style="margin-top:var(--s-para);">It doesn't stop at markets. It finds the investors, funders and resources within them, the capital most businesses never know exists because no one ever told them where to look.</p>
     <p style="margin-top:var(--s-para);">No time zone slows it down. No language limits what it sees. No border defines where your next opportunity, or your next investor, comes from.</p>
     <p style="margin-top:var(--s-para);">One system. Every market. Every resource. Always searching.</p>
     <p style="margin-top:var(--s-para);">Growth was never meant to stop at a border. Neither does BACI.</p>
   </div>
   <div class="stats" id="statsBar">
-    <div class="stat"><div class="stat__num" data-count="150" data-suffix="+">0</div><div class="stat__label">Countries</div></div>
-    <div class="stat"><div class="stat__num" data-count="70" data-suffix="+">0</div><div class="stat__label">Languages</div></div>
+    <div class="stat"><div class="stat__num" data-count="181">0</div><div class="stat__label">Countries</div></div>
+    <div class="stat"><div class="stat__num" data-count="118">0</div><div class="stat__label">Languages</div></div>
     <div class="stat"><div class="stat__num" data-count="9">0</div><div class="stat__label">Regions</div></div>
     <div class="stat"><div class="stat__num" data-count="70" data-suffix="+">0</div><div class="stat__label">Intelligence Engines</div></div>
     <div class="stat"><div class="stat__num" data-count="3">0</div><div class="stat__label">Operating Modes</div></div>
@@ -1133,7 +1131,7 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
         <h3>COMPANY</h3>
         <div class="rule"></div>
         <ul>
-          <li><a href="#">About</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="support.html">Support</a></li>
           <li><a href="careers.html">Careers</a></li>
@@ -1161,7 +1159,7 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
     </div>
 
     <div class="base">
-      <div class="mono" aria-label="BACI">B</div>
+      <div class="mono" aria-label="BACI"><img src="favicon-baci-monogram.webp" alt="" width="64" height="64"></div>
       <div class="copy">&copy; 2026 BACI</div>
       <div class="socials">
         <a class="soc" href="#" aria-label="TikTok"><img src="assets/social-tiktok.webp" alt=""></a>
@@ -1372,18 +1370,35 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
     "Logistics":["Freight & Shipping","Warehousing & Distribution","Last-Mile Delivery","Supply Chain Management","Customs & Trade Compliance","Cold Chain Logistics","Ports & Maritime","Air Cargo","Rail Freight","Logistics Technology","Third-Party Logistics","Fleet Management"]
   };
   function indSubsFor(ind){ return SUBSECTORS[ind] || ["Market Overview","Opportunities","Partners","Regulation","Investment"]; }
-  var IND_BASE={"Healthcare":4827391,"Energy":6120044,"Construction":3550218,"Financial Services":8903117,"Technology":9412006,"Real Estate":2988540,"Education":1740922,"Hospitality":2103788,"Retail":5216480,"Legal":1322905,"Agriculture":2450173,"Logistics":3891264};
-  function indBaseFor(ind){ return IND_BASE[ind]||3000000; }
+  /* The per-industry figures were invented and then multiplied by
+     invented factors for scope and intent. They now come from what BACI
+     has actually collected, and where that is not yet meaningful the
+     statement stands on its own without a number. */
+  var SIGNAL_API='https://api.bacihq.com/api/signals', indSignalCache={};
+  function indFetchSignals(ind, scope, place, done){
+    var key=(ind||'')+'|'+(scope||'worldwide')+'|'+(place||'');
+    if(Object.prototype.hasOwnProperty.call(indSignalCache,key)){ done(indSignalCache[key]); return; }
+    var qs='industry='+encodeURIComponent(String(ind||'').toLowerCase());
+    if(scope==='country'&&place) qs+='&scope=country&code='+encodeURIComponent(place);
+    else if(scope==='region'&&place) qs+='&scope=region&code='+encodeURIComponent(place);
+    fetch(SIGNAL_API+'?'+qs,{credentials:'omit'})
+      .then(function(r){ return r.ok?r.json():null; })
+      .then(function(j){
+        var v=(j&&j.sufficient&&typeof j.signals==='number')?j.signals:null;
+        indSignalCache[key]=v; done(v);
+      })
+      .catch(function(){ indSignalCache[key]=null; done(null); });
+  }
 
   function buildIndustryEngine(){
     var indState={industry:"Healthcare",intent:null,scope:null,place:null,sub:null};
-    var indTargetVal=indBaseFor(indState.industry), indShownVal=indTargetVal;
+    var indHasNumber=false, indTargetVal=0, indShownVal=0;
     function indFmt(n){ return Math.round(n).toLocaleString('en-GB'); }
     function indBuildStatement(){
       var ind=indState.industry.toUpperCase();
       var hasGeo = indState.scope && (indState.scope==='global' || indState.place);
       var scopeTok = !hasGeo ? null : (indState.scope==='global' ? 'GLOBAL' : indState.place.toUpperCase());
-      if(!hasGeo && !indState.intent){ return 'ANALYSING <span class="lit">'+indFmt(indTargetVal)+'</span> '+ind+' SIGNALS'; }
+      if(!hasGeo && !indState.intent){ return 'ANALYSING '+ind+' SIGNALS IN REAL TIME'; }
       if(hasGeo && !indState.intent){
         if(indState.scope==='global') return 'ANALYSING '+ind+' INTELLIGENCE ACROSS <span class="lit">'+IND_GLOBAL_MARKETS+'</span> MARKETS';
         return 'ANALYSING '+ind+' INTELLIGENCE · <span class="lit">'+scopeTok+'</span>';
@@ -1392,18 +1407,28 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
       return 'ANALYSING '+ind+' '+iw+' SIGNALS · <span class="lit">'+sc+'</span>';
     }
     function indRefreshCounter(){
-      var base=indBaseFor(indState.industry), factor=1;
-      if(indState.scope==='country' && indState.place)factor=0.11;
-      else if(indState.scope==='region' && indState.place)factor=0.42;
-      else if(indState.scope==='global')factor=1;
-      if(indState.intent)factor*=0.63;
-      indTargetVal=Math.max(1200, Math.round(base*factor));
       $('indCounterStmt').innerHTML=indBuildStatement();
+      var scope = indState.scope==='global' ? 'worldwide' : indState.scope;
+      indFetchSignals(indState.industry, scope, indState.place||null, function(v){
+        /* Intent no longer scales the number: multiplying a real count
+           by an invented factor would make it invented again. The
+           statement already carries the intent in words. */
+        if(typeof v==='number'){
+          indHasNumber=true; indTargetVal=v;
+          $('indCounterNum').style.display='';
+        } else {
+          indHasNumber=false; indTargetVal=0; indShownVal=0;
+          $('indCounterNum').textContent='';
+          $('indCounterNum').style.display='none';
+        }
+      });
     }
     function indTick(){
-      indShownVal += (indTargetVal-indShownVal)*0.08;
-      var drift = indTargetVal*0.0003*Math.sin(Date.now()/900);
-      $('indCounterNum').textContent=indFmt(indShownVal+drift);
+      if(indHasNumber){
+        indShownVal += (indTargetVal-indShownVal)*0.08;
+        var drift = indTargetVal*0.0003*Math.sin(Date.now()/900);
+        $('indCounterNum').textContent=indFmt(indShownVal+drift);
+      }
       requestAnimationFrame(indTick);
     }
     function indRenderTabs(){
@@ -1480,7 +1505,7 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
       indRenderTabs(); indRenderIntents(); indRenderWhere(); indRenderPlace(); indRenderSub();
       $('indQWhere').classList.remove('ind-q--show'); $('indPlaceWrap').classList.remove('ind-q--show'); $('indQSub').classList.remove('ind-q--show');
       $('indResults').classList.remove('ind-show');
-      indTargetVal=indBaseFor(ind); indRefreshCounter();
+      indRefreshCounter();
     }
     $('indRefineBtn').addEventListener('click',function(){
       $('indResults').classList.remove('ind-show');
@@ -1488,7 +1513,8 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
     });
     indRenderTabs(); indRenderIntents(); indRenderWhere(); indRenderPlace(); indRenderSub();
     indRefreshCounter();
-    if(!RM) requestAnimationFrame(indTick); else $('indCounterNum').textContent=indFmt(indTargetVal);
+    if(!RM) requestAnimationFrame(indTick);
+    else if(indHasNumber) $('indCounterNum').textContent=indFmt(indTargetVal);
   }
 
   /* ── conversion intelligence: revolving ring, top-pop, finished ── */
@@ -1630,17 +1656,40 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
   }
 
 
-  /* hero signal counter - drifts continuously, never lands */
+  /* HERO SIGNAL COUNTER — REAL, OR ABSENT.
+     This began at a made-up 37,942,118 and climbed a few hundred every
+     frame for as long as the page stayed open, so the figure a visitor
+     read depended on how long they had been looking at it. It now shows
+     what BACI is actually watching, and where that is not yet a
+     meaningful number the line reads "Analysing signals in real time"
+     without one. */
   (function(){
-    var el = $('heroCount'); if(!el || RM) return;
-    var v = 37942118, t0 = null;
-    requestAnimationFrame(function tick(ts){
-      if(!t0) t0 = ts;
-      v += 140 + Math.random()*260;
-      var drift = Math.sin((ts-t0)/1400) * 900;
-      el.textContent = Math.round(v + drift).toLocaleString('en-GB');
-      requestAnimationFrame(tick);
-    });
+    var el = $('heroCount'); if(!el) return;
+    el.textContent = '';
+
+    fetch('https://api.bacihq.com/api/signals/total', { credentials:'omit' })
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(j){
+        if(!j || !j.sufficient || typeof j.signals !== 'number'){
+          var gap = el.previousSibling;
+          if(gap && gap.nodeType === 3) gap.textContent = gap.textContent.replace(/\s+$/,' ');
+          if(el.parentNode) el.parentNode.removeChild(el);
+          return;
+        }
+        var target = j.signals;
+        el.textContent = target.toLocaleString('en-GB');
+        if(RM) return;
+        var t0 = null;
+        requestAnimationFrame(function tick(ts){
+          if(!t0) t0 = ts;
+          /* a small drift so it reads as live; it never departs from the
+             real figure by more than a rounding error, and never climbs */
+          var drift = Math.sin((ts-t0)/1400) * Math.max(1, target*0.00002);
+          el.textContent = Math.round(target + drift).toLocaleString('en-GB');
+          requestAnimationFrame(tick);
+        });
+      })
+      .catch(function(){ if(el.parentNode) el.parentNode.removeChild(el); });
   })();
 
   /* ── init ── */
