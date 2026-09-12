@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consultant Terms Of Engagement &middot; BACI</title>
+<link rel="icon" href="favicon-baci-monogram.webp">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#C39544;
+  --gold-light:#CFA24E;
+  --dim:#8A6E3C;
+  --champagne:#E8C87A;
+  --head:#C99F5E;
+  --bg:#000;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--gold);
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--champagne);outline-offset:3px}
+
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 28px}
+.wrap.full{max-width:none;padding:0}
+
+/* ---------- masthead ---------- */
+.masthead{padding:38px 0 0;text-align:left}
+.masthead img{width:124px;height:auto;opacity:.92}
+
+/* ---------- page head ---------- */
+.page-head{text-align:center;padding:76px 0 0}
+.page-head h1{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--head);
+  font-size:clamp(2.4rem,7vw,4.5rem);
+  letter-spacing:.22em;
+  text-indent:.22em;
+  line-height:1.08;
+}
+
+/* ---------- light-point rule ---------- */
+.rule{
+  position:relative;
+  height:1px;
+  margin:26px auto 0;
+  max-width:420px;
+  background:linear-gradient(90deg,transparent,var(--dim) 18%,var(--dim) 82%,transparent);
+}
+.rule::after{
+  content:"";
+  position:absolute;
+  top:50%;left:50%;
+  width:7px;height:7px;
+  margin:-3.5px 0 0 -3.5px;
+  border-radius:50%;
+  background:var(--champagne);
+  box-shadow:0 0 10px 3px rgba(232,200,122,.55);
+}
+.rule.short{max-width:210px}
+
+/* ---------- intro ---------- */
+.intro{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto;
+  padding:38px 0 0;
+}
+.intro p{
+  font-size:clamp(1.06rem,2.1vw,1.32rem);
+  line-height:1.72;
+  color:var(--gold);
+  margin-bottom:1.15em;
+}
+.intro p:last-child{margin-bottom:0}
+
+/* ---------- routes ---------- */
+.routes{padding:86px 0 0;max-width:880px;margin:0 auto}
+.route{
+  padding:34px 0;
+  border-top:1px solid rgba(138,110,60,.34);
+  text-align:center;
+}
+.route:last-child{border-bottom:1px solid rgba(138,110,60,.34)}
+.route h2{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--gold-light);
+  font-size:clamp(1.02rem,2.3vw,1.34rem);
+  letter-spacing:.19em;
+  text-indent:.19em;
+  margin-bottom:14px;
+}
+.route p{
+  font-size:clamp(1rem,2vw,1.2rem);
+  line-height:1.66;
+  color:var(--gold);
+  max-width:560px;
+  margin:0 auto;
+}
+
+/* ---------- distinction ---------- */
+.distinction{
+  text-align:center;
+  padding:88px 0 0;
+}
+.distinction p{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:400;
+  color:var(--champagne);
+  font-size:clamp(1.24rem,3vw,1.92rem);
+  line-height:1.55;
+  max-width:820px;
+  margin:0 auto;
+}
+
+/* ---------- form ---------- */
+.enquiry{padding:92px 0 0;max-width:660px;margin:0 auto}
+.enquiry h2{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--head);
+  font-size:clamp(1.1rem,2.6vw,1.5rem);
+  letter-spacing:.2em;
+  text-indent:.2em;
+  text-align:center;
+}
+.fields{padding:44px 0 0}
+.field{margin-bottom:26px}
+.field label{
+  display:block;
+  font-family:'Cinzel',serif;
+  font-size:.68rem;
+  letter-spacing:.17em;
+  text-indent:.17em;
+  color:var(--dim);
+  margin-bottom:9px;
+  text-transform:uppercase;
+}
+.field input,.field textarea,.field select{
+  width:100%;
+  background:transparent;
+  border:none;
+  border-bottom:1px solid rgba(138,110,60,.46);
+  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.08rem;
+  font-weight:300;
+  padding:9px 2px;
+  transition:border-color .3s;
+}
+.field textarea{resize:vertical;min-height:96px;line-height:1.6}
+.field input:focus,.field textarea:focus,.field select:focus{
+  outline:none;
+  border-bottom-color:var(--champagne);
+}
+.field select option{background:#0a0a0a;color:var(--gold)}
+
+.routes-pick{display:flex;flex-wrap:wrap;gap:10px;padding-top:4px}
+.pick{
+  font-family:'Cinzel',serif;
+  font-size:.66rem;
+  letter-spacing:.14em;
+  text-indent:.14em;
+  text-transform:uppercase;
+  color:var(--dim);
+  border:1px solid rgba(138,110,60,.44);
+  border-radius:2px;
+  padding:9px 14px;
+  cursor:pointer;
+  transition:color .3s,border-color .3s;
+  user-select:none;
+}
+.pick[aria-pressed="true"]{
+  color:var(--champagne);
+  border-color:rgba(232,200,122,.7);
+}
+
+/* ---------- signature CTA ---------- */
+.cta-wrap{text-align:center;padding:56px 0 0}
+.cta{
+  position:relative;
+  display:inline-block;
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  font-size:clamp(.86rem,2vw,1.06rem);
+  letter-spacing:.24em;
+  text-indent:.24em;
+  color:var(--head);
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:0 0 16px;
+}
+.cta::after{
+  content:"";
+  position:absolute;
+  left:var(--start,0);
+  bottom:0;
+  width:6px;height:6px;
+  margin-left:-3px;
+  border-radius:50%;
+  background:var(--champagne);
+  box-shadow:0 0 9px 3px rgba(232,200,122,.5);
+  animation:travel 6s cubic-bezier(.42,0,.58,1) infinite;
+}
+@keyframes travel{
+  0%   {transform:translateX(0)}
+  50%  {transform:translateX(var(--travel,120px))}
+  100% {transform:translateX(0)}
+}
+.cta-line{
+  height:1px;
+  margin:0 auto;
+  max-width:300px;
+  background:linear-gradient(90deg,transparent,var(--dim) 20%,var(--dim) 80%,transparent);
+}
+
+/* ---------- footer ---------- */
+footer{margin-top:120px;padding-top:6px}
+.footer-wrap{max-width:1440px;margin:0 auto;padding:0 28px}
+.cols{
+  display:grid;
+  grid-template-columns:1.7fr 1.12fr 1.18fr 1fr .88fr;
+  gap:0;
+  padding:52px 0 0;
+  align-items:start;
+}
+.col{padding:0 22px;border-left:1px solid rgba(195,149,68,.42)}
+.col:first-child{border-left:none;padding-left:0}
+.col h3{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--head);
+  font-size:clamp(.82rem,1.5vw,1.06rem);
+  letter-spacing:.13em;
+  text-indent:.13em;
+  text-align:center;
+  margin-bottom:0;
+}
+.col .rule{margin:12px auto 30px;max-width:100%}
+.col ul{list-style:none}
+.col li{margin-bottom:17px;line-height:1.3}
+.col a{
+  font-size:.98rem;
+  color:var(--gold);
+  transition:color .25s;
+  display:inline-block;
+}
+.col a:hover{color:var(--champagne)}
+
+.os-split{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.os-split ul:first-child{padding-right:16px}
+.os-split ul:last-child{padding-left:20px;border-left:1px solid rgba(195,149,68,.26)}
+
+.policies{
+  margin-top:44px;
+  padding:20px 0;
+  border-top:1px solid rgba(195,149,68,.42);
+  border-bottom:1px solid rgba(195,149,68,.42);
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:0 8px;
+}
+.policies a{font-size:.98rem;color:var(--gold);padding:0 4px;white-space:nowrap}
+.policies span{color:var(--dim);font-size:.62rem;padding:0 4px}
+
+.pay{padding:6px 0 8px}
+.pay img{display:block;width:100%;height:auto}
+
+.base{
+  padding:32px 0 48px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+}
+.mono{
+  width:64px;height:64px;
+  border:1px solid var(--gold);
+  border-radius:50%;
+  display:grid;place-items:center;
+  font-family:'Cinzel',serif;
+  font-size:1.75rem;
+  color:var(--gold);
+}
+.copy{font-size:1rem;color:var(--gold);padding:0 20px;border-left:1px solid rgba(195,149,68,.34)}
+.socials{display:flex;gap:10px;padding:0 4px}
+.soc{display:block;width:46px;height:46px;transition:opacity .25s,transform .25s}
+.soc img{display:block;width:100%;height:100%}
+.soc:hover{opacity:.78;transform:translateY(-1px)}
+.a11y{
+  display:flex;align-items:center;gap:12px;
+  padding-left:20px;border-left:1px solid rgba(195,149,68,.34);
+  background:none;border-top:none;border-right:none;border-bottom:none;
+  cursor:pointer;
+}
+.a11y .glyph{width:58px;height:58px;display:block}
+.a11y .glyph img{display:block;width:100%;height:100%}
+.a11y .lab{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;
+  color:var(--gold);
+  text-align:left;
+  line-height:1.25;
+  max-width:104px;
+}
+
+/* ---------- responsive ---------- */
+/* The footer keeps its five-column shape at every width.
+   Below the width it needs, the whole footer scrolls sideways
+   as one piece rather than stacking. */
+.footer-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.footer-wrap{min-width:1180px}
+
+@media(max-width:1240px){
+  .col{padding:0 16px}
+  .col a{font-size:.94rem}
+  .col li{margin-bottom:15px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .cta::after{animation:none}
+  *{transition:none !important}
+}
+
+/* ---------- share your thoughts (universal, below the footer) ---------- */
+.thoughts{
+  border-top:1px solid rgba(195,149,68,.28);
+  text-align:center;
+  padding:78px 28px 92px;
+}
+.thoughts .listening{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  color:var(--champagne);
+  font-size:clamp(2rem,5.4vw,3.1rem);
+  line-height:1.1;
+  margin-bottom:38px;
+}
+.thoughts .ask{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  color:var(--gold);
+  font-size:clamp(1.1rem,2.5vw,1.42rem);
+  line-height:1.5;
+  max-width:560px;
+  margin:0 auto 34px;
+}
+.thoughts textarea{
+  display:block;
+  width:100%;
+  max-width:820px;
+  margin:0 auto;
+  min-height:200px;
+  background:rgba(195,149,68,.022);
+  border:1px solid rgba(195,149,68,.58);
+  border-radius:22px;
+  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:1.14rem;
+  line-height:1.6;
+  padding:26px 28px;
+  resize:vertical;
+  transition:border-color .3s;
+}
+.thoughts textarea::placeholder{color:var(--dim)}
+.thoughts textarea:focus{outline:none;border-color:var(--champagne)}
+
+.thoughts input[type="email"]{
+  display:block;
+  width:100%;
+  max-width:820px;
+  margin:18px auto 0;
+  background:rgba(195,149,68,.022);
+  border:1px solid rgba(195,149,68,.42);
+  border-radius:999px;
+  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:1.08rem;
+  padding:17px 28px;
+  transition:border-color .3s;
+}
+.thoughts input[type="email"]::placeholder{color:var(--dim)}
+.thoughts input[type="email"]:focus{outline:none;border-color:var(--champagne)}
+
+.thoughts .open-btn{
+  font-family:'Cinzel',serif;font-weight:500;
+  font-size:clamp(.76rem,1.7vw,.92rem);
+  letter-spacing:.19em;text-indent:.19em;
+  color:var(--gold-light);
+  background:rgba(195,149,68,.030);
+  border:1px solid rgba(195,149,68,.6);
+  border-radius:999px;
+  padding:18px 44px;
+  cursor:pointer;
+  transition:border-color .3s,color .3s;
+}
+.thoughts .open-btn:hover{border-color:var(--champagne);color:var(--champagne)}
+.thoughts .panel{display:none;padding-top:34px}
+.thoughts .panel.open{display:block}
+.thoughts .open-btn.hidden{display:none}
+.thoughts .send{padding-top:34px}
+.thoughts .send button{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  font-size:clamp(.76rem,1.7vw,.92rem);
+  letter-spacing:.19em;
+  text-indent:.19em;
+  color:var(--gold-light);
+  background:rgba(195,149,68,.030);
+  border:1px solid rgba(195,149,68,.6);
+  border-radius:999px;
+  padding:18px 44px;
+  cursor:pointer;
+  transition:border-color .3s,color .3s;
+}
+.thoughts .send button:hover{border-color:var(--champagne);color:var(--champagne)}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* BACKGROUND TREATMENT ONLY */
+.baci-ambient{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 75% 85% at -18% 48%,rgba(195,149,68,.055),rgba(195,149,68,.024) 35%,transparent 74%),radial-gradient(ellipse 62% 72% at 116% 35%,rgba(195,149,68,.045),rgba(195,149,68,.019) 38%,transparent 74%)}
+body::before,body::after{content:"";position:fixed;pointer-events:none;z-index:0}
+body::before{width:72vw;height:72vw;left:-34vw;top:14vh;border-radius:50%;border:1px solid rgba(195,149,68,.10);box-shadow:0 0 145px rgba(195,149,68,.040),inset 0 0 165px rgba(195,149,68,.028);transform:rotate(-9deg)}
+body::after{width:56vw;height:1px;right:-8vw;top:46vh;background:linear-gradient(90deg,transparent,rgba(232,200,122,.052),transparent);box-shadow:0 0 58px 2px rgba(195,149,68,.026);transform:rotate(-17deg)}
+.baci-orbit{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}.baci-orbit::before{content:"";position:absolute;width:980px;height:420px;right:-530px;top:19vh;border:1px solid rgba(195,149,68,.082);border-radius:50%;transform:rotate(24deg);box-shadow:0 0 115px rgba(195,149,68,.026)}.baci-orbit::after{content:none}
+input,textarea,button{
+  -webkit-appearance:none;
+  appearance:none;
+}
+input,textarea{
+  background-color:transparent;
+  -webkit-text-fill-color:var(--gold);
+  caret-color:var(--champagne);
+  color-scheme:dark;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus{
+  -webkit-text-fill-color:var(--gold) !important;
+  -webkit-box-shadow:0 0 0 1000px #000000 inset !important;
+  box-shadow:0 0 0 1000px #000000 inset !important;
+  transition:background-color 9999s ease-out 0s;
+}
+
+/* content sits above the ambient layers */
+main,header,footer,section,.wrap,.section,.hero,.thoughts{position:relative;z-index:1}
+.baci-ambient,.baci-orbit{z-index:0}
+
+.doc{max-width:760px;margin:0 auto;padding:44px 0 0}
+.doc__meta{text-align:center;font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.22em;
+  color:var(--dim);text-transform:uppercase;margin-bottom:8px}
+.doc__note{text-align:center;max-width:620px;margin:0 auto 12px;font-size:1rem;
+  line-height:1.62;color:var(--dim);font-style:italic}
+.doc h2{font-family:'Cinzel',serif;font-weight:500;color:var(--gold-light);
+  font-size:clamp(.86rem,1.9vw,1.04rem);letter-spacing:.16em;text-indent:.16em;
+  text-transform:uppercase;margin:52px 0 16px}
+.doc h2:first-of-type{margin-top:44px}
+.doc p{font-size:1.05rem;line-height:1.72;color:var(--gold);margin:0 0 1em}
+.doc ul{list-style:none;margin:0 0 1em;padding:0}
+.doc li{font-size:1.05rem;line-height:1.7;color:var(--gold);padding-left:22px;
+  position:relative;margin-bottom:.6em}
+.doc li::before{content:"";position:absolute;left:2px;top:.72em;width:4px;height:4px;
+  border-radius:50%;background:var(--dim)}
+.doc__contact{margin-top:56px;padding-top:34px;border-top:1px solid rgba(138,110,60,.34);text-align:center}
+.doc__contact a{color:var(--gold-light)}
+.doc-back{text-align:center;padding:56px 0 0}
+.doc-back a{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.2em;text-indent:.2em;
+  color:var(--dim);text-transform:uppercase;transition:color .3s}
+.doc-back a:hover{color:var(--champagne)}
+
+/* ═══ ACCESSIBILITY ═══
+   Two things only: a light mode, and text size. Both work by
+   swapping variables on the root, so nothing is restyled twice. */
+
+html{font-size:calc(100% * var(--text-scale,1))}
+
+html[data-view="light"]{
+  --bg:#F7F4EE;
+  --gold:#4A3616;
+  --gold-light:#3A2A10;
+  --dim:#6B573A;
+  --champagne:#7A5A18;
+  --closing:#4A3616;
+  --head:#3A2A10;
+  --metal:#3A2A10;
+}
+html[data-view="light"] body{background:var(--bg);color:var(--gold)}
+html[data-view="light"] .baci-ambient,
+html[data-view="light"] .baci-orbit,
+html[data-view="light"] body::before,
+html[data-view="light"] body::after{display:none}
+html[data-view="light"] img[src$="baci-wordmark.webp"],
+html[data-view="light"] img[src$="hero-shell.webp"],
+html[data-view="light"] img[src$="doctrine.webp"],
+html[data-view="light"] img[src$="dashboard.webp"],
+html[data-view="light"] .pay img,
+html[data-view="light"] .soc img,
+html[data-view="light"] .a11y .glyph img{
+  filter:invert(1) hue-rotate(180deg) saturate(.55) brightness(.85);
+}
+html[data-view="light"] .mono,
+html[data-view="light"] .cnode__circle,
+html[data-view="light"] .cring__centre{background:var(--bg)}
+
+/* the panel */
+.a11y-panel{
+  position:fixed;right:20px;bottom:20px;z-index:60;
+  width:min(300px,calc(100vw - 40px));
+  background:#000;
+  border:1px solid rgba(195,149,68,.5);
+  border-radius:16px;
+  padding:22px 22px 20px;
+  display:none;
+}
+html[data-view="light"] .a11y-panel{background:#FFFDF8;border-color:rgba(74,54,22,.35)}
+.a11y-panel.open{display:block}
+.a11y-panel h4{
+  font-family:'Cinzel',Georgia,serif;font-weight:500;font-size:.66rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin:0 0 18px;
+}
+.a11y-row{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}
+.a11y-row:last-of-type{margin-bottom:0}
+.a11y-row span{font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;color:var(--gold)}
+.a11y-opt{
+  font-family:'Cinzel',Georgia,serif;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--dim);background:none;border:1px solid rgba(195,149,68,.4);border-radius:999px;
+  padding:9px 15px;cursor:pointer;transition:color .3s,border-color .3s;
+}
+.a11y-opt[aria-pressed="true"]{color:var(--gold-light);border-color:rgba(207,162,78,.75)}
+.a11y-steps{display:flex;gap:8px}
+.a11y-step{
+  width:38px;height:38px;border-radius:50%;cursor:pointer;
+  background:none;border:1px solid rgba(195,149,68,.4);color:var(--gold-light);
+  font-family:'Cinzel',Georgia,serif;font-size:.9rem;line-height:1;
+  transition:border-color .3s,color .3s;
+}
+.a11y-step:hover{border-color:rgba(232,200,122,.7)}
+.a11y-close{
+  margin-top:20px;width:100%;background:none;border:0;cursor:pointer;
+  font-family:'Cinzel',Georgia,serif;font-size:.6rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--dim);padding:8px 0 0;
+}
+
+/* ═══ GLOW PASS ═══
+   Gold on black goes flat without a little light behind it. This adds
+   depth without brightening the palette: nothing changes colour, the
+   type just stops sitting dead on the background. Light mode gets none
+   of it, where glow would only look like a printing fault. */
+
+html:not([data-view="light"]) .page-head h1,
+html:not([data-view="light"]) .hero h1,
+html:not([data-view="light"]) .heading,
+html:not([data-view="light"]) .access__title,
+html:not([data-view="light"]) .drown__head,
+html:not([data-view="light"]) .reality__title,
+html:not([data-view="light"]) .doctrine__title,
+html:not([data-view="light"]) .bos__title,
+html:not([data-view="light"]) .title-stack .t1{
+  text-shadow:0 0 18px rgba(201,159,94,.17), 0 0 40px rgba(195,149,68,.07);
+}
+
+html:not([data-view="light"]) .band h2,
+html:not([data-view="light"]) .section-head h2,
+html:not([data-view="light"]) .enquiry h2,
+html:not([data-view="light"]) .doc h2,
+html:not([data-view="light"]) .mode__name,
+html:not([data-view="light"]) .control h2,
+{
+  text-shadow:0 0 14px rgba(201,159,94,.16);
+}
+
+/* the closing lines carry a touch more, since they are the last thing read */
+html:not([data-view="light"]) .bos__closer,
+html:not([data-view="light"]) .thoughts .listening,
+html:not([data-view="light"]) .distinction p,
+html:not([data-view="light"]) .control .closing,
+html:not([data-view="light"]) .engine-close,
+html:not([data-view="light"]) .access__ready{
+  text-shadow:0 0 20px rgba(207,162,78,.22);
+}
+
+/* the light points get a cleaner falloff rather than a bigger blur */
+html:not([data-view="light"]) .rule::after,
+html:not([data-view="light"]) .acard__rule::after,
+html:not([data-view="light"]) .bcard__rule::after,
+html:not([data-view="light"]) .col .rule::after{
+  box-shadow:0 0 6px 1px rgba(232,200,122,.55),
+             0 0 16px 4px rgba(232,200,122,.20);
+}
+
+/* the hairlines lift off the black a fraction */
+html:not([data-view="light"]) .rule,
+html:not([data-view="light"]) .cta__conduit,
+html:not([data-view="light"]) .cta-line{
+  box-shadow:0 0 12px rgba(195,149,68,.07);
+}
+
+/* cards: resting glow, stronger on touch */
+html:not([data-view="light"]) .acard,
+html:not([data-view="light"]) .bcard,
+html:not([data-view="light"]) .hcard,
+html:not([data-view="light"]) .tier,
+html:not([data-view="light"]) .dev-mode{
+  box-shadow:inset 0 0 40px rgba(195,149,68,.022);
+  transition:border-color .4s ease,transform .4s ease,box-shadow .4s ease;
+}
+html:not([data-view="light"]) .acard:hover,
+html:not([data-view="light"]) .bcard:hover,
+html:not([data-view="light"]) .dev-mode:hover,
+html:not([data-view="light"]) .dev-mode.is-on{
+  box-shadow:inset 0 0 44px rgba(195,149,68,.05),
+             0 0 26px rgba(195,149,68,.07);
+}
+
+/* the wordmark and the monogram sit in a faint pool of light */
+html:not([data-view="light"]) .masthead img,
+html:not([data-view="light"]) .mono{
+  filter:drop-shadow(0 0 18px rgba(195,149,68,.14));
+}
+
+/* buttons answer to touch */
+html:not([data-view="light"]) .cta:hover .cta__text,
+html:not([data-view="light"]) .thoughts .open-btn:hover,
+html:not([data-view="light"]) .thoughts .send button:hover,
+html:not([data-view="light"]) .role .apply:hover,
+html:not([data-view="light"]) .obra6-btn:hover{
+  text-shadow:0 0 14px rgba(232,200,122,.16);
+}
+
+/* the ring's active node reads as lit rather than merely larger */
+html:not([data-view="light"]) .cnode.is-active .cnode__circle,
+html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
+  box-shadow:0 0 22px 3px rgba(195,149,68,.20),
+             inset 0 0 18px rgba(195,149,68,.05);
+}
+
+@media(prefers-reduced-motion:reduce){
+  html:not([data-view="light"]) .acard,
+  html:not([data-view="light"]) .bcard,
+  html:not([data-view="light"]) .dev-mode{transition:none}
+}
+</style>
+</head>
+
+<body>
+<div class="baci-ambient" aria-hidden="true"></div><div class="baci-orbit" aria-hidden="true"></div>
+
+<div class="wrap">
+
+  <div class="masthead"><a href="index.html" aria-label="BACI home"><img src="baci-wordmark.webp" alt="BACI"></a></div>
+
+  <header class="page-head">
+    <h1>CONSULTANT TERMS OF ENGAGEMENT</h1>
+    <div class="rule"></div>
+  </header>
+
+  <section class="doc">
+    <p class="doc__meta">Version 1.0</p>
+    <p>Legal Document 29 | Version 1.0</p>
+    <p>Effective Date: 11 September 2026</p>
+    <p>Last Updated: 11 September 2026</p>
+    <p>These Consultant Terms of Engagement (&quot;Terms&quot;) govern an independent professional engaged by BACI LLC (&quot;BACI&quot;) under an accepted Engagement Schedule. They establish the legal, commercial, confidentiality, intellectual-property, data-security, client, commission and conduct rules applicable to the engagement. No consultancy engagement begins until BACI has accepted the applicable Engagement Schedule or otherwise confirmed the engagement in writing.</p>
+    <h2>1. PARTIES AND ENGAGEMENT</h2>
+    <p>These Terms apply between BACI and the individual or entity identified as Consultant in an Engagement Schedule. Each Engagement Schedule forms part of these Terms and identifies the Consultant Role, approved services, territory or market where relevant, compensation model, effective date and any role-specific requirements.</p>
+    <h2>2. CONTRACT STRUCTURE</h2>
+    <p>The engagement consists of these Terms, the Engagement Schedule, applicable BACI policies expressly incorporated for Consultant activity, and any mutually executed amendment. The Engagement Schedule controls role, compensation and engagement-specific commercial variables; these Terms control the general relationship unless an authorised amendment expressly provides otherwise.</p>
+    <h2>3. CONSULTANT ROLES</h2>
+    <p>BACI may engage consultants in the nine roles approved through BACI&#x27;s consultant programme. The exact role must be stated in the Engagement Schedule. A role title does not itself authorise the Consultant to perform regulated activity, bind BACI, promise pricing, negotiate legal terms, handle restricted data or act outside the approved scope.</p>
+    <h2>4. ROLE SCHEDULE</h2>
+    <p>The Engagement Schedule must identify the applicable role from BACI&#x27;s current approved role catalogue. The current role names, rates and accelerators are not reproduced as fixed values in these Terms because the operative commercial terms are those expressly stated in the Consultant&#x27;s accepted Engagement Schedule or current BACI Compensation Schedule.</p>
+    <h2>5. SCOPE OF SERVICES</h2>
+    <p>Consultant will perform only the services authorised for the assigned role. Services may include approved business development, commercial introductions, market development, customer acquisition, marketing, advisory, implementation support, research, relationship management or other professional activity specified by BACI.</p>
+    <h2>6. STANDARD OF PERFORMANCE</h2>
+    <p>Consultant will perform services professionally, diligently, ethically and with reasonable skill and care; follow lawful BACI instructions; maintain accurate records; protect BACI and Customer information; and avoid conduct reasonably likely to damage BACI, its customers or its commercial relationships.</p>
+    <h2>7. INDEPENDENT CONTRACTOR</h2>
+    <p>Consultant is an independent contractor and not an employee, worker, partner, joint venturer, franchisee or general agent of BACI. Nothing in these Terms creates an employment relationship or entitlement to employee compensation, paid leave, pension, insurance, equity, redundancy rights or other employee benefits, except rights that cannot lawfully be excluded.</p>
+    <h2>8. CONTROL OF WORK</h2>
+    <p>Subject to agreed deliverables, deadlines, compliance requirements, security controls and Customer commitments, Consultant controls the manner and means of performing independent services. BACI may define results, standards, authorised systems, brand requirements, security controls and contractual boundaries without converting the relationship into employment where applicable law recognises independent contracting.</p>
+    <h2>9. NO AUTHORITY TO BIND BACI</h2>
+    <p>Consultant has no authority to sign agreements, accept orders, vary BACI pricing, grant discounts, make warranties, incur liabilities, settle claims, hire personnel for BACI, make regulatory representations or otherwise bind BACI unless BACI gives specific written authority.</p>
+    <h2>10. NO MINIMUM WORK</h2>
+    <p>Unless an Engagement Schedule expressly states otherwise, BACI does not guarantee any minimum volume of work, leads, opportunities, customers, Fees, commission or duration of engagement, and Consultant is not required to accept work not already committed.</p>
+    <h2>11. NON-EXCLUSIVITY</h2>
+    <p>Unless expressly agreed, the engagement is non-exclusive. Consultant may provide services to others provided that doing so does not create a conflict of interest, misuse BACI Confidential Information, interfere with accepted BACI obligations or breach these Terms.</p>
+    <h2>12. ELIGIBILITY AND ONBOARDING</h2>
+    <p>Consultant must complete BACI&#x27;s applicable onboarding, identity, payment, tax, conflict, security and role-verification requirements before receiving access or performing activities requiring BACI systems or Customer information.</p>
+    <h2>13. ACCURATE INFORMATION</h2>
+    <p>Consultant represents that information supplied concerning identity, qualifications, experience, credentials, tax status, banking, conflicts and right to work or provide services is materially accurate and will be kept current.</p>
+    <h2>14. LICENCES AND PROFESSIONAL REQUIREMENTS</h2>
+    <p>Consultant is responsible for maintaining any licence, registration, immigration permission, professional qualification or regulatory authorisation legally required for the Consultant&#x27;s activities. Consultant must not provide legal, financial, investment, medical, accounting or other regulated advice on BACI&#x27;s behalf unless expressly authorised and appropriately qualified.</p>
+    <h2>15. TERRITORY AND MARKET</h2>
+    <p>Where BACI assigns a territory, market, industry, account segment or channel, the assignment defines commercial scope but does not create exclusivity unless expressly stated. BACI may reserve, reassign or directly manage accounts and opportunities.</p>
+    <h2>16. BACI SYSTEM ACCESS</h2>
+    <p>System access is personal, limited, revocable and provided solely for authorised engagement activity. Consultant must not share credentials, circumvent access controls, scrape systems, export information beyond approved purposes or permit unauthorised third-party access.</p>
+    <h2>17. SECURITY REQUIREMENTS</h2>
+    <p>Consultant must follow BACI security instructions; use appropriate device, credential and authentication safeguards; promptly install required security updates; prevent unauthorised access; and immediately report suspected compromise or unauthorised disclosure to security@bacihq.com.</p>
+    <h2>18. CUSTOMER DATA</h2>
+    <p>Consultant may access Customer Data only where necessary for authorised services and only through approved systems or methods. Customer Data may not be copied, retained, repurposed, sold, disclosed or used for personal, competitive, training or unrelated commercial purposes.</p>
+    <h2>19. PERSONAL DATA</h2>
+    <p>Consultant will Process Personal Data only on documented BACI instructions, only for authorised purposes, and in accordance with applicable data-protection law and BACI privacy/security requirements. Consultant will not appoint a subprocessor or transfer Personal Data to another person or system without BACI&#x27;s written authorisation.</p>
+    <h2>20. AI SYSTEMS AND CUSTOMER INFORMATION</h2>
+    <p>Consultant must not upload BACI Confidential Information, Customer Data, private Inputs, private Outputs, credentials or restricted information into an external AI service unless BACI has expressly approved that service and use. Consultant must comply with BACI&#x27;s AI governance requirements when using AI in connection with the engagement.</p>
+    <h2>21. SECURITY INCIDENT COOPERATION</h2>
+    <p>Consultant must immediately preserve relevant evidence and cooperate with BACI&#x27;s investigation, containment, remediation and legally required notification process following a suspected Security Incident. Consultant must not independently notify a Customer, regulator or media outlet on BACI&#x27;s behalf unless authorised or legally required.</p>
+    <h2>22. CONFIDENTIAL INFORMATION</h2>
+    <p>Confidential Information includes non-public BACI business, pricing, commissions, strategy, product, technical, financial, security, Customer, prospect, employee, consultant, partner, model, algorithm, prompt, methodology, roadmap and contractual information, and information received from third parties under confidentiality obligations.</p>
+    <h2>23. CONFIDENTIALITY DUTY</h2>
+    <p>Consultant will use Confidential Information solely to perform authorised services, protect it using at least reasonable care, disclose it only to persons expressly authorised by BACI, and not exploit it for personal or third-party benefit.</p>
+    <h2>24. CONFIDENTIALITY EXCLUSIONS</h2>
+    <p>Confidential Information excludes information Consultant can demonstrate was lawfully known without restriction before disclosure, becomes public without Consultant&#x27;s breach, is lawfully obtained from an unrestricted third party, or is independently developed without use of Confidential Information.</p>
+    <h2>25. COMPELLED DISCLOSURE</h2>
+    <p>If legally compelled to disclose Confidential Information, Consultant will, where legally permitted, promptly notify BACI and reasonably cooperate with efforts to limit or protect disclosure. Consultant will disclose only what is legally required.</p>
+    <h2>26. RETURN AND DELETION</h2>
+    <p>Upon request or termination, Consultant must promptly return or securely delete BACI and Customer information, credentials, files and materials, except records Consultant is legally required to retain. Retained records remain protected and may not be used for another purpose.</p>
+    <h2>27. BACI INTELLECTUAL PROPERTY</h2>
+    <p>BACI retains all rights in BACI Technology, branding, content, templates, methods, intelligence systems, models, algorithms, prompts, workflows, taxonomies, scoring systems, training materials, Documentation and pre-existing materials.</p>
+    <h2>28. CONSULTANT PRE-EXISTING MATERIALS</h2>
+    <p>Consultant retains ownership of demonstrably pre-existing materials identified before incorporation into a Deliverable. Consultant grants BACI a worldwide, perpetual, irrevocable, transferable, sublicensable, royalty-free licence to use, reproduce, modify, distribute and exploit any such material necessarily embedded in an accepted Deliverable, unless the Engagement Schedule expressly provides otherwise.</p>
+    <h2>29. WORK PRODUCT</h2>
+    <p>To the fullest extent permitted by law, all deliverables, reports, designs, copy, research, campaign materials, documentation, configurations, analyses, processes and other work product specifically created for BACI within the paid engagement are commissioned for BACI and assigned to BACI upon creation, subject to payment of undisputed amounts due for that work.</p>
+    <h2>30. FURTHER ASSURANCES</h2>
+    <p>Consultant will execute reasonable documents necessary to confirm BACI&#x27;s ownership of assigned Work Product. Where moral rights cannot be assigned, Consultant waives or agrees not to assert them to the maximum extent permitted by law.</p>
+    <h2>31. OPEN-SOURCE AND THIRD-PARTY MATERIALS</h2>
+    <p>Consultant must not incorporate third-party materials, open-source code, stock assets, datasets or licensed content into Work Product where doing so would impose undisclosed obligations, restrict BACI&#x27;s intended use or infringe third-party rights. Required licences and attribution must be disclosed before delivery.</p>
+    <h2>32. BACI MARKS</h2>
+    <p>Consultant may use BACI names, logos and approved materials only as authorised and in accordance with BACI brand instructions. Consultant acquires no ownership in BACI marks and must stop use upon request or termination.</p>
+    <h2>33. PUBLIC STATEMENTS</h2>
+    <p>Consultant may not issue press releases, claim to be a BACI employee or officer, speak for BACI, announce confidential relationships, publish Customer names or use BACI/Customer logos without appropriate authorisation.</p>
+    <h2>34. CLIENT AND PROSPECT RECORDS</h2>
+    <p>BACI&#x27;s CRM and other designated records are the authoritative internal record for lead registration, opportunity ownership, attribution, stage, Customer status, revenue status and commission administration, subject to correction of demonstrated error.</p>
+    <h2>35. LEAD REGISTRATION</h2>
+    <p>A Consultant seeking attribution must register an eligible lead or opportunity through BACI&#x27;s approved process before or promptly after the first qualifying introduction, providing sufficient information for BACI to verify identity, novelty and Consultant contribution.</p>
+    <h2>36. PRE-EXISTING RELATIONSHIPS</h2>
+    <p>No commission is earned merely because Consultant knows, contacts or communicates with a person or organisation. BACI may reject attribution where the account or opportunity was already active, registered, under negotiation, sourced by another channel, a current Customer, or otherwise excluded under the Compensation Schedule.</p>
+    <h2>37. ATTRIBUTION DECISION</h2>
+    <p>BACI will determine attribution reasonably and in good faith using CRM history, timestamps, communications, opportunity records and material contribution. BACI may split attribution where multiple authorised contributors materially created the qualifying opportunity and the applicable Compensation Schedule permits it.</p>
+    <h2>38. PROTECTED OPPORTUNITY PERIOD</h2>
+    <p>Any protection period for a registered opportunity must be stated in the Compensation Schedule or Engagement Schedule. Registration does not create indefinite ownership of a prospect.</p>
+    <h2>39. CUSTOMER OWNERSHIP</h2>
+    <p>All BACI customer and prospect relationships, contracts, accounts, subscription relationships and commercial goodwill belong to BACI or the applicable BACI contracting entity. Consultant has no ownership interest in a Customer account by reason of sourcing or servicing it.</p>
+    <h2>40. COMMISSION FRAMEWORK</h2>
+    <p>Where Consultant is compensated by commission, commission is calculated only under the rate, base, eligibility period, accelerator and exclusions stated in the applicable Engagement Schedule or BACI Compensation Schedule. No oral commission promise is binding.</p>
+    <h2>41. COMMISSION BASE</h2>
+    <p>Unless the Compensation Schedule expressly states otherwise, commission is calculated on Eligible Net Revenue actually received by BACI from the attributed transaction, excluding taxes, refunds, credits, chargebacks, disputed or unpaid amounts, pass-through charges and other excluded revenue identified in the applicable schedule.</p>
+    <h2>42. WHEN COMMISSION IS EARNED</h2>
+    <p>Commission becomes earned only when all applicable eligibility conditions have been satisfied, including valid attribution, a qualifying BACI transaction, BACI&#x27;s receipt of eligible Customer payment and absence of disqualifying conduct. A signed contract or invoice alone does not make commission earned if the applicable Customer revenue has not been received.</p>
+    <h2>43. COMMISSION PAYMENT</h2>
+    <p>Earned commission will be processed according to the payment cycle stated in the Engagement Schedule or Compensation Schedule, subject to required tax documentation, payment information and lawful withholding.</p>
+    <h2>44. ACCELERATORS</h2>
+    <p>An accelerator applies only when its documented threshold and conditions are met. The applicable schedule must state whether an accelerator applies prospectively after the threshold, to all eligible transactions in a measurement period, or by another stated method. Accelerators do not apply by implication.</p>
+    <h2>45. RATE CHANGES</h2>
+    <p>BACI may change prospective consultant rates or accelerator structures by issuing an updated Compensation Schedule or new Engagement Schedule. A prospective change does not reduce commission already earned under the prior applicable terms.</p>
+    <h2>46. REFUNDS, CREDITS AND CHARGEBACKS</h2>
+    <p>If BACI refunds, credits, reverses or does not ultimately retain revenue on which commission was previously paid, BACI may offset the corresponding overpayment against future amounts payable, or seek repayment where lawful and reasonable. No clawback applies to revenue BACI retained merely because the Customer later chose not to renew.</p>
+    <h2>47. CURRENCY</h2>
+    <p>Commission may be calculated and paid in the currency stated in the Engagement Schedule. Where conversion is necessary, BACI may use the rate applied by its payment processor, bank or accounting system for the underlying transaction or payment cycle.</p>
+    <h2>48. TAXES</h2>
+    <p>Consultant is responsible for taxes, filings, registrations and social contributions arising from independent-contractor compensation, except amounts BACI is legally required to withhold or remit. Consultant will provide reasonably required tax documentation.</p>
+    <h2>49. EXPENSES</h2>
+    <p>Consultant bears ordinary business expenses unless BACI expressly pre-approves a reimbursable expense in writing. Reimbursement requires reasonable supporting documentation and compliance with the approval terms.</p>
+    <h2>50. NO DOUBLE COMPENSATION</h2>
+    <p>The same underlying revenue cannot generate duplicative compensation to the same person under the Consultant programme and BACI Affiliate Programme unless BACI expressly approves the combination in writing.</p>
+    <h2>51. AFFILIATE PROGRAMME SEPARATION</h2>
+    <p>Consultant Terms and the Affiliate Programme Agreement are distinct programmes. If a person participates in both, each opportunity must be attributed to one compensation route before payment unless BACI expressly designates another treatment. Consultant activity performed as part of assigned BACI services is not automatically an Affiliate referral.</p>
+    <h2>52. INTERNAL REFERRALS</h2>
+    <p>A referral between BACI consultants, employees, Affiliates, agencies, advisers, technology partners or other channels does not automatically create commission. Any sharing or referral payment must be authorised by the applicable compensation rules.</p>
+    <h2>53. ENTERPRISE AND SPECIAL TRANSACTIONS</h2>
+    <p>Enterprise, Technology Partner, licensing, public-sector, bespoke, channel, reseller or strategic transactions may be excluded from standard commission or governed by a transaction-specific compensation arrangement. The applicable Engagement or Compensation Schedule controls.</p>
+    <h2>54. COMMISSION DISPUTES</h2>
+    <p>Consultant must raise a commission calculation or attribution dispute with reasonable supporting detail within 60 days after the relevant statement or payment. BACI will review the underlying records in good faith. This period does not waive rights that cannot lawfully be limited.</p>
+    <h2>55. NO SELF-DEALING</h2>
+    <p>Consultant may not create artificial transactions, self-referrals, sham Customers, circular purchases, undisclosed related-party transactions or other arrangements designed principally to manufacture commission or accelerator eligibility.</p>
+    <h2>56. ANTI-CIRCUMVENTION BY CONSULTANT</h2>
+    <p>Consultant must not divert a BACI opportunity, Customer or prospect to a competing service, personal business or third party using BACI Confidential Information, BACI-funded work, BACI systems or a relationship developed materially through the engagement.</p>
+    <h2>57. NO IMPROPER INTERFERENCE</h2>
+    <p>Consultant must not intentionally interfere with BACI&#x27;s existing contracts, personnel, consultant relationships, partner relationships or Customer relationships through deception, misuse of Confidential Information or other unlawful means.</p>
+    <h2>58. CONFLICTS OF INTEREST</h2>
+    <p>Consultant must promptly disclose an actual or reasonably apparent conflict involving a Customer, competitor, supplier, public official, investment, outside engagement or personal interest that could materially affect impartial performance.</p>
+    <h2>59. COMPETING ENGAGEMENTS</h2>
+    <p>Non-exclusive status does not authorise Consultant to use BACI Confidential Information for a competitor or to work simultaneously on directly conflicting transactions where duties cannot reasonably be separated. BACI may require recusal from a specific account or project.</p>
+    <h2>60. GIFTS AND HOSPITALITY</h2>
+    <p>Consultant must not offer or accept gifts, payments, hospitality or benefits intended to improperly influence a business decision. Any Customer or public-sector interaction must comply with applicable anti-bribery rules and BACI instructions.</p>
+    <h2>61. ANTI-BRIBERY AND CORRUPTION</h2>
+    <p>Consultant will comply with applicable anti-bribery and anti-corruption laws and will not directly or indirectly offer, promise, authorise, request or accept an improper payment or advantage in connection with BACI.</p>
+    <h2>62. GOVERNMENT OFFICIALS</h2>
+    <p>Consultant must exercise heightened care in dealings involving government officials, state-owned entities, public procurement, grants or public-sector Customers and must not make facilitation payments or political contributions on BACI&#x27;s behalf.</p>
+    <h2>63. SANCTIONS AND EXPORT CONTROLS</h2>
+    <p>Consultant must not conduct BACI activity in violation of applicable sanctions, trade restrictions or export-control laws and must promptly escalate a suspected restricted-party or prohibited-jurisdiction issue.</p>
+    <h2>64. FAIR DEALING</h2>
+    <p>Consultant must communicate truthfully and must not make false, deceptive or unsubstantiated claims about BACI, competitors, pricing, Customers, product capability, AI performance, regulatory status or commercial outcomes.</p>
+    <h2>65. NO GUARANTEED OUTCOMES</h2>
+    <p>Consultant may not promise that BACI will guarantee revenue, funding, procurement awards, grants, investments, conversion, forecasts, regulatory approval, business growth or another outcome unless BACI has expressly authorised the statement.</p>
+    <h2>66. PRICING AND DISCOUNTS</h2>
+    <p>Consultant may communicate only current BACI-approved pricing and commercial information. Discounts, credits, bespoke terms and non-standard commitments require BACI authorisation.</p>
+    <h2>67. CONTRACT NEGOTIATION</h2>
+    <p>Consultant may facilitate commercial discussions but may not agree to legal terms, DPAs, security commitments, SLAs, indemnities, liability caps, IP terms, data residency, certifications or regulatory representations unless expressly authorised.</p>
+    <h2>68. CUSTOMER DUE DILIGENCE</h2>
+    <p>Consultant must not answer Customer security, privacy, AI, compliance or legal questionnaires by guessing or using outdated information. Such requests must be handled through BACI&#x27;s authorised process.</p>
+    <h2>69. RECORDKEEPING</h2>
+    <p>Consultant will maintain accurate, contemporaneous records reasonably necessary to substantiate work performed, approved expenses, lead attribution and commission eligibility, subject to privacy and data-minimisation requirements.</p>
+    <h2>70. AUDIT OF COMPENSATION</h2>
+    <p>BACI may review records reasonably necessary to verify a compensation claim, suspected fraud, conflict or compliance issue. Any review will be proportionate and will not create unrestricted access to unrelated Consultant personal or business information.</p>
+    <h2>71. SUBCONTRACTING</h2>
+    <p>Consultant may not subcontract or delegate material engagement duties without BACI&#x27;s prior written approval. An approved subcontractor must be bound by obligations at least as protective concerning confidentiality, data, security, IP and conduct, and Consultant remains responsible for performance.</p>
+    <h2>72. PERSONNEL OF CONSULTANT ENTITY</h2>
+    <p>If Consultant is an entity, only approved personnel may perform the services. Consultant remains solely responsible for its personnel, compensation, supervision, taxes, insurance and legal compliance.</p>
+    <h2>73. INSURANCE</h2>
+    <p>Consultant will maintain insurance required by applicable law and any additional coverage expressly stated in the Engagement Schedule. BACI does not imply a fixed insurance limit where none has been specified.</p>
+    <h2>74. EQUIPMENT</h2>
+    <p>Unless expressly agreed, Consultant supplies and maintains the equipment and connectivity necessary to perform services. BACI may require minimum security standards for any device accessing BACI or Customer information.</p>
+    <h2>75. BACI-PROVIDED PROPERTY</h2>
+    <p>BACI-provided equipment, credentials, records and materials remain BACI property and must be protected, used only for authorised purposes and returned promptly upon request or termination.</p>
+    <h2>76. TRAINING</h2>
+    <p>BACI may require completion of role, security, privacy, AI, product, brand or compliance training before particular activities are authorised. Required training does not create employee status.</p>
+    <h2>77. MONITORING OF BACI SYSTEMS</h2>
+    <p>BACI may log and monitor use of BACI-controlled systems for security, compliance, support, fraud prevention and operational purposes in accordance with applicable law and BACI policies.</p>
+    <h2>78. BACKGROUND OR CUSTOMER REQUIREMENTS</h2>
+    <p>Where lawful and reasonably necessary for a Customer engagement, BACI may require verification, screening, confidentiality undertakings or Customer-specific onboarding. Any sensitive screening will be handled according to applicable law.</p>
+    <h2>79. PROFESSIONAL CONDUCT</h2>
+    <p>Consultant must treat Customers, prospects, BACI personnel and other consultants professionally and must not engage in harassment, discrimination, threats, retaliation, exploitation or unlawful conduct in connection with the engagement.</p>
+    <h2>80. COMPLAINTS AND INVESTIGATIONS</h2>
+    <p>BACI may investigate credible complaints concerning Consultant conduct, security, fraud, conflicts, Customer treatment or compensation manipulation. Consultant will reasonably cooperate. BACI may restrict access during an investigation where proportionate.</p>
+    <h2>81. SUSPENSION</h2>
+    <p>BACI may immediately suspend system access, Customer contact authority, opportunity activity or other engagement privileges where reasonably necessary to protect security, Customer interests, legal compliance, evidence or BACI systems.</p>
+    <h2>82. TERM</h2>
+    <p>The engagement begins on the effective date stated in the Engagement Schedule and continues until the stated expiry or termination under these Terms.</p>
+    <h2>83. TERMINATION WITHOUT CAUSE</h2>
+    <p>Unless an Engagement Schedule states a different notice period, either party may terminate an ongoing engagement on 14 days&#x27; written notice. BACI may stop assigning new work immediately while paying amounts properly earned under these Terms.</p>
+    <h2>84. TERMINATION FOR CAUSE</h2>
+    <p>Either party may terminate immediately for material breach that cannot reasonably be cured. BACI may terminate immediately for fraud, bribery, deliberate misuse of Customer Data, serious confidentiality or security breach, intentional misrepresentation, unlawful conduct, material conflict concealment or unauthorised binding commitments.</p>
+    <h2>85. CURABLE BREACH</h2>
+    <p>For a material breach reasonably capable of cure, BACI may provide a reasonable cure opportunity depending on severity, Customer impact, legal requirements and security risk. Nothing requires continued system access during a cure period.</p>
+    <h2>86. EFFECT OF TERMINATION</h2>
+    <p>Upon termination, Consultant&#x27;s authority to act for BACI ends; system access may be revoked; BACI and Customer property must be returned or deleted; and Consultant must cease use of BACI marks and representations of current affiliation.</p>
+    <h2>87. EARNED COMMISSION AFTER TERMINATION</h2>
+    <p>Termination does not forfeit commission that was already earned before termination, except to the extent the payment arose from fraud, manipulation or another lawful basis for recovery.</p>
+    <h2>88. PENDING OPPORTUNITIES AFTER TERMINATION</h2>
+    <p>Post-termination commission on an opportunity not yet earned exists only where the applicable Engagement or Compensation Schedule expressly provides a tail period and the opportunity satisfied its registration and contribution requirements before termination.</p>
+    <h2>89. TERMINATION FOR MISCONDUCT AND TAIL</h2>
+    <p>Unless prohibited by law, BACI may disqualify an otherwise unearned post-termination tail where the engagement ended for fraud, bribery, intentional diversion, deliberate commission manipulation, material data misuse or other serious misconduct directly connected to the opportunity.</p>
+    <h2>90. CUSTOMER TRANSITION</h2>
+    <p>Consultant will reasonably cooperate in an orderly handover of active BACI work, Customer context and records. Consultant may not withhold BACI or Customer information as leverage in a compensation dispute.</p>
+    <h2>91. SURVIVAL</h2>
+    <p>Accrued payment rights, confidentiality, intellectual property, data protection, security, records, commission reconciliation, restrictions on misuse, dispute provisions and provisions intended by their nature to survive will survive termination.</p>
+    <h2>92. WARRANTIES BY CONSULTANT</h2>
+    <p>Consultant warrants that services and Work Product will be original or properly licensed, will materially conform to agreed requirements, will be performed professionally, and to Consultant&#x27;s knowledge will not infringe third-party rights or contain malicious code.</p>
+    <h2>93. BACI WARRANTY</h2>
+    <p>BACI warrants that it has authority to enter into the engagement. Except for express obligations, BACI does not guarantee any minimum work, Customer conversion, commission level or commercial outcome.</p>
+    <h2>94. INDEMNITY BY CONSULTANT</h2>
+    <p>To the extent permitted by applicable law, Consultant will defend and indemnify BACI against third-party claims arising from Consultant&#x27;s infringement of third-party rights, unlawful conduct, unauthorised representations, breach of confidentiality/data obligations, or acts outside Consultant&#x27;s authorised scope, subject to the agreed indemnity procedure.</p>
+    <h2>95. INDEMNITY PROCEDURE</h2>
+    <p>BACI will provide reasonable notice of a covered claim, allow Consultant appropriate control of the defence where suitable, and provide reasonable cooperation. Consultant may not settle a claim in a manner admitting BACI fault or imposing non-monetary obligations on BACI without BACI&#x27;s consent.</p>
+    <h2>96. LIMITATION OF LIABILITY</h2>
+    <p>Except for liabilities that cannot lawfully be limited and any expressly excluded category, each party&#x27;s aggregate liability arising from an Engagement Schedule will not exceed the total Fees and commission paid or payable to Consultant under that Engagement Schedule during the twelve months preceding the event giving rise to liability.</p>
+    <h2>97. LIABILITY CARVE-OUTS</h2>
+    <p>The limitation in Section 96 does not apply to Consultant&#x27;s fraud, wilful misconduct, deliberate misuse of BACI or Customer Confidential Information, infringement or misappropriation of BACI intellectual property, bribery, or liability that cannot lawfully be limited. Any additional negotiated carve-out must be express.</p>
+    <h2>98. CONSEQUENTIAL DAMAGES</h2>
+    <p>To the maximum extent permitted by law, neither party is liable for indirect, incidental, special, exemplary, punitive or consequential damages or lost profits arising from the engagement, except where such exclusion is prohibited or an excluded liability category expressly requires different treatment.</p>
+    <h2>99. CLASSIFICATION AND MANDATORY LAW</h2>
+    <p>The parties intend an independent-contractor relationship, but legal status is determined by applicable law and actual circumstances. Nothing in these Terms waives statutory employment, worker, tax or other rights that cannot lawfully be waived.</p>
+    <h2>100. LOCAL LAW</h2>
+    <p>Consultant is responsible for identifying laws applicable to Consultant&#x27;s independent business and performance in the relevant jurisdiction. BACI may issue a jurisdiction-specific schedule where local mandatory requirements require different treatment.</p>
+    <h2>101. ASSIGNMENT</h2>
+    <p>Consultant may not assign the engagement or payment rights without BACI&#x27;s written consent, except where mandatory law provides otherwise. BACI may assign the engagement in connection with a corporate reorganisation, merger, financing or transfer of the relevant business, subject to applicable law.</p>
+    <h2>102. FORCE MAJEURE</h2>
+    <p>Neither party is liable for delay caused by events beyond reasonable control, except obligations already accrued and duties concerning confidentiality, security and protection of information that should reasonably continue.</p>
+    <h2>103. NOTICES</h2>
+    <p>Formal engagement notices must be sent through the method stated in the Engagement Schedule or an established BACI channel. Operational notices may be provided electronically.</p>
+    <h2>104. AMENDMENTS</h2>
+    <p>These Terms may be modified for a specific Consultant only by an authorised written amendment or updated Engagement Schedule expressly identifying the change. Informal messages do not alter commission, IP, liability or legal terms.</p>
+    <h2>105. COMPENSATION SCHEDULE UPDATES</h2>
+    <p>BACI may update the standard Compensation Schedule prospectively. The schedule applicable when a commission becomes earned determines the rate unless a protected opportunity or Engagement Schedule expressly locks another rate.</p>
+    <h2>106. WAIVER</h2>
+    <p>Failure to enforce a provision is not a waiver. A waiver applies only to the specific circumstance for which it is given.</p>
+    <h2>107. SEVERABILITY</h2>
+    <p>If a provision is unenforceable, it will be enforced to the maximum lawful extent or severed while the remainder continues, unless that would materially defeat the engagement&#x27;s agreed allocation of rights.</p>
+    <h2>108. ENTIRE AGREEMENT</h2>
+    <p>These Terms, the Engagement Schedule, incorporated schedules and authorised amendments constitute the entire agreement concerning the consultancy engagement and supersede prior discussions on that subject.</p>
+    <h2>109. GOVERNING LAW</h2>
+    <p>Unless an Engagement Schedule or mandatory local law requires otherwise, Delaware law governs these Terms without regard to conflict-of-laws principles.</p>
+    <h2>110. DISPUTE RESOLUTION</h2>
+    <p>Unless an Engagement Schedule states a different valid mechanism, disputes will be resolved through confidential binding arbitration administered by the American Arbitration Association under its applicable commercial rules, with the seat in Wilmington, Delaware, subject to emergency court relief and mandatory rights that cannot be waived.</p>
+    <h2>111. CLASS AND JURY WAIVER</h2>
+    <p>To the extent permitted by applicable law, disputes will be resolved individually and not as a class, collective or representative action, and each party waives jury trial for claims properly resolved in court. These waivers do not apply where prohibited.</p>
+    <h2>112. CONTACTS</h2>
+    <p>Consultant engagement and commercial matters: access@bacihq.com</p>
+    <p>Payment matters: billing@bacihq.com</p>
+    <p>Privacy matters: privacy@bacihq.com</p>
+    <p>Security matters: security@bacihq.com</p>
+    <h2>ANNEX I — CONSULTANT ENGAGEMENT SCHEDULE</h2>
+    <h2>ANNEX II — COMPENSATION AND ATTRIBUTION CONTROL</h2>
+    <p class="doc__item">Use only the current approved role-specific rate or fee.</p>
+    <p class="doc__item">Record the eligible revenue base precisely.</p>
+    <p class="doc__item">Define accelerator threshold and whether it is prospective or retrospective.</p>
+    <p class="doc__item">Confirm excluded transaction categories.</p>
+    <p class="doc__item">Register the opportunity in the approved BACI system.</p>
+    <p class="doc__item">Check whether the account is pre-existing, active or previously attributed.</p>
+    <p class="doc__item">Record material Consultant contribution.</p>
+    <p class="doc__item">Confirm BACI has received eligible Customer revenue.</p>
+    <p class="doc__item">Deduct applicable refunds, credits and chargebacks.</p>
+    <p class="doc__item">Prevent duplicate Consultant / Affiliate compensation.</p>
+    <p class="doc__item">Apply any approved split attribution.</p>
+    <p class="doc__item">Record the commission calculation and payment period.</p>
+    <h2>ANNEX III — CONSULTANT SECURITY &amp; DATA CHECKLIST</h2>
+    <p class="doc__item">Identity and role verified.</p>
+    <p class="doc__item">Approved device and authentication controls in place.</p>
+    <p class="doc__item">Least-privilege BACI access assigned.</p>
+    <p class="doc__item">Customer Data access limited to engagement need.</p>
+    <p class="doc__item">No shared credentials.</p>
+    <p class="doc__item">No unauthorised local exports.</p>
+    <p class="doc__item">No Customer/BACI confidential data entered into unapproved AI systems.</p>
+    <p class="doc__item">Security incident reporting understood.</p>
+    <p class="doc__item">Privacy instructions understood.</p>
+    <p class="doc__item">Restricted-data requirements identified before access.</p>
+    <p class="doc__item">Offboarding and access revocation planned.</p>
+    <h2>ANNEX IV — CLIENT ENGAGEMENT RULES</h2>
+    <h2>ANNEX V — CONFLICT &amp; INTEGRITY DECLARATION</h2>
+    <p>Consultant must update this declaration if a material conflict arises during the engagement.</p>
+    <h2>ANNEX VI — OFFBOARDING CHECKLIST</h2>
+    <p class="doc__item">Customer and prospect handover completed.</p>
+    <p class="doc__item">BACI records updated.</p>
+    <p class="doc__item">Open opportunities identified.</p>
+    <p class="doc__item">Tail-eligible opportunities recorded where applicable.</p>
+    <p class="doc__item">Credentials revoked.</p>
+    <p class="doc__item">BACI/Customer files returned or securely deleted.</p>
+    <p class="doc__item">BACI property returned.</p>
+    <p class="doc__item">Confidentiality and surviving obligations acknowledged.</p>
+    <p class="doc__item">Outstanding approved expenses submitted.</p>
+    <p class="doc__item">Final earned commission reconciliation initiated.</p>
+    <p class="doc__item">Public profiles and representations of current BACI affiliation updated where necessary.</p>
+    <h2>ANNEX VII — SIGNATURES</h2>
+    <p>By signing an Engagement Schedule incorporating these Terms, Consultant confirms acceptance of the BACI Consultant Terms of Engagement and the engagement-specific commercial terms stated in that Schedule.</p>
+    <p>BACI CONSULTANT TERMS OF ENGAGEMENT — LEGAL DOCUMENT 29 — VERSION 1.0
+Effective 11 September 2026</p>
+    <p>Consultant Legal Name | [INSERT]</p>
+    <p>Consultant Role | [SELECT FROM BACI&#x27;S NINE APPROVED CONSULTANT ROLES]</p>
+    <p>Effective Date | [INSERT]</p>
+    <p>Territory / Market | [INSERT / NON-EXCLUSIVE GLOBAL AS AUTHORISED]</p>
+    <p>Approved Services | [INSERT]</p>
+    <p>Compensation Model | [COMMISSION / FIXED FEE / DAY RATE / HOURLY / HYBRID]</p>
+    <p>Base Rate / Commission | [INSERT CURRENT APPROVED RATE]</p>
+    <p>Accelerator(s) | [INSERT CURRENT APPROVED THRESHOLD AND RATE / NONE]</p>
+    <p>Eligible Revenue Base | [INSERT]</p>
+    <p>Payment Cycle | [INSERT]</p>
+    <p>Opportunity Protection / Tail | [INSERT / NONE]</p>
+    <p>Expenses | [PRE-APPROVED ONLY / OTHER]</p>
+    <p>Insurance Requirement | [LEGAL MINIMUM / SPECIFIED COVER / NONE ADDITIONAL]</p>
+    <p>Special Requirements | [INSERT / NONE]</p>
+    <p>BACI Authorised Signatory | [INSERT]</p>
+    <p>Consultant Signature | [INSERT]</p>
+    <p>May describe BACI using approved materials | YES</p>
+    <p>May communicate approved pricing | YES</p>
+    <p>May create unapproved discounts | NO</p>
+    <p>May sign Customer contracts for BACI | NO, unless specifically authorised in writing</p>
+    <p>May promise legal/security/SLA terms | NO</p>
+    <p>May answer regulated compliance questions by assumption | NO</p>
+    <p>May collect Customer Data outside approved systems | NO</p>
+    <p>May make guaranteed outcome claims | NO</p>
+    <p>May register eligible opportunities | YES, through approved process</p>
+    <p>May use BACI marks | ONLY as authorised</p>
+    <p>Competing engagements disclosed | [YES / NONE]</p>
+    <p>Financial interests creating potential conflict | [YES / NONE]</p>
+    <p>Family/personal relationship with prospect or decision-maker | [YES / NONE]</p>
+    <p>Government/public-sector relationship relevant to work | [YES / NONE]</p>
+    <p>Existing Customer relationship | [YES / NONE]</p>
+    <p>Other material conflict | [YES / NONE]</p>
+    <p>Mitigation / Recusal | [INSERT / N/A]</p>
+    <h2>BACI LLC | CONSULTANT</h2>
+    <p>Authorised Signatory: __________________________ | Consultant / Authorised Signatory: __________________________</p>
+    <p>Name: _______________________________________ | Name: _________________________________________________</p>
+    <p>Title: ________________________________________ | Entity, if applicable: _____________________________________</p>
+    <p>Date: ________________________________________ | Date: __________________________________________________</p>
+  </section>
+
+<footer>
+   <div class="footer-scroll">
+   <div class="footer-wrap">
+    <div class="cols">
+
+      <div class="col">
+        <h3>BUSINESS OS</h3>
+        <div class="rule"></div>
+        <div class="os-split">
+          <ul>
+            <li><a href="business-planning.html">Business Planning</a></li>
+            <li><a href="financial-planning.html">Financial Planning</a></li>
+            <li><a href="marketing-planning.html">Marketing Planning</a></li>
+            <li><a href="procurement.html">Procurement</a></li>
+            <li><a href="grants.html">Grants</a></li>
+            <li><a href="funding-capital-strategy.html">Funding &amp; Capital Strategy</a></li>
+          </ul>
+          <ul>
+            <li><a href="investors.html">Investors</a></li>
+            <li><a href="market-entry.html">Market Entry</a></li>
+            <li><a href="growth-strategy.html">Growth Strategy</a></li>
+            <li><a href="forecasting.html">Forecasting</a></li>
+            <li><a href="executive-intelligence.html">Executive Intelligence</a></li>
+            <li><a href="go-to-market.html">Go-to-Market</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col">
+        <h3>INTELLIGENCE</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="index.html#industry">Industry Intelligence</a></li>
+          <li><a href="index.html#conversion-intelligence">Conversion Intelligence</a></li>
+          <li><a href="index.html#global-reach">Global Reach</a></li>
+          <li><a href="index.html#doctrine">The Doctrine</a></li>
+          <li><a href="modes.html">Operating Modes</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>ACCESS</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="access-business.html">Business</a></li>
+          <li><a href="access-independent-professional.html">Independent Professionals</a></li>
+          <li><a href="access-advisory.html">Advisory</a></li>
+          <li><a href="access-agencies.html">Agencies</a></li>
+          <li><a href="access-developers.html">Developers</a></li>
+          <li><a href="access-enterprise.html">Enterprise</a></li>
+          <li><a href="access-technology-partners.html">Technology Partners</a></li>
+          <li><a href="access-affiliates.html">Affiliates</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>LICENSING</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="licensing.html#platform">Platform Licence</a></li>
+          <li><a href="licensing.html#territorial">Territorial Rights</a></li>
+          <li><a href="licensing.html#vertical">Vertical Rights</a></li>
+          <li><a href="licensing.html#engine">Engine Licensing</a></li>
+          <li><a href="licensing.html#feeds">Intelligence Feeds</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>COMPANY</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html#media">Press</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <nav class="policies" aria-label="Policies">
+      <a href="terms.html">Terms</a><span>&bull;</span>
+      <a href="privacy.html">Privacy</a><span>&bull;</span>
+      <a href="refund-policy.html">Refund Policy</a><span>&bull;</span>
+      <a href="billing.html">Billing</a><span>&bull;</span>
+      <a href="cancellation.html">Cancellation</a><span>&bull;</span>
+      <a href="acceptable-use.html">Acceptable Use</a><span>&bull;</span>
+      <a href="data-processing.html">Data Processing</a><span>&bull;</span>
+      <a href="security.html">Security</a><span>&bull;</span>
+      <a href="responsible-ai.html">Responsible AI</a><span>&bull;</span>
+      <a href="cookies.html">Cookies</a>
+    </nav>
+
+    <div class="pay">
+      <img src="assets/payment-methods.webp" alt="Payment methods accepted: Stripe, PayPal, Flutterwave, Visa, Mastercard, American Express, Apple Pay, G Pay, Alipay and cryptocurrency.">
+    </div>
+
+    <div class="base">
+      <div class="mono" aria-label="BACI">B</div>
+      <div class="copy">&copy; 2026 BACI</div>
+      <div class="socials">
+        <a class="soc" href="#" aria-label="TikTok"><img src="assets/social-tiktok.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Reddit"><img src="assets/social-reddit.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Facebook"><img src="assets/social-facebook.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Instagram"><img src="assets/social-instagram.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="LinkedIn"><img src="assets/social-linkedin.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="X"><img src="assets/social-x.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="WhatsApp"><img src="assets/social-whatsapp.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Snapchat"><img src="assets/social-snapchat.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="YouTube"><img src="assets/social-youtube.webp" alt=""></a>
+      </div>
+      <button class="a11y" id="a11y" aria-pressed="false">
+        <span class="glyph" aria-hidden="true"><img src="assets/icon-accessibility.webp" alt=""></span>
+        <span class="lab">Enhance your experience</span>
+      </button>
+    </div>
+   </div>
+   </div>
+  </footer>
+
+<section class="thoughts">
+  <p class="listening">We're listening.</p>
+
+  <button type="button" class="open-btn" id="thoughts-open" aria-expanded="false" aria-controls="thoughts-panel">SHARE YOUR THOUGHTS</button>
+
+  <div class="panel" id="thoughts-panel">
+    <label class="sr-only" for="thoughts-text">Share your thoughts</label>
+    <textarea id="thoughts-text" placeholder="Share your thoughts&hellip;"></textarea>
+    <label class="sr-only" for="thoughts-email">Email, if you would like a reply</label>
+    <input type="email" id="thoughts-email" autocomplete="email" placeholder="Email, if you would like a reply">
+    <div class="send">
+      <button type="button" id="thoughts-send">SHARE YOUR THOUGHTS</button>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  /* signature CTA travel span: first letter to last letter */
+  var cta = document.getElementById('cta');
+  if(cta){
+    var span = cta.offsetWidth * 0.86;
+    cta.style.setProperty('--travel', span + 'px');
+    cta.style.setProperty('--start', (cta.offsetWidth * 0.07) + 'px');
+    window.addEventListener('resize', function(){
+      cta.style.setProperty('--travel', (cta.offsetWidth * 0.86) + 'px');
+      cta.style.setProperty('--start', (cta.offsetWidth * 0.07) + 'px');
+    });
+  }
+
+  /* route multi-select */
+  document.querySelectorAll('.pick').forEach(function(p){
+    function toggle(){
+      p.setAttribute('aria-pressed', p.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+    }
+    p.addEventListener('click', toggle);
+    p.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  });
+
+  /* thoughts box collapses until asked for */
+  var tOpen  = document.getElementById('thoughts-open');
+  var tPanel = document.getElementById('thoughts-panel');
+  if(tOpen && tPanel){
+    tOpen.addEventListener('click', function(){
+      tOpen.setAttribute('aria-expanded','true');
+      tOpen.classList.add('hidden');
+      tPanel.classList.add('open');
+      document.getElementById('thoughts-text').focus();
+    });
+  }
+})();
+</script>
+
+
+<div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="Display settings" aria-modal="false">
+  <h4>Display</h4>
+  <div class="a11y-row">
+    <span>Background</span>
+    <button type="button" class="a11y-opt" id="a11yView" aria-pressed="false">Dark</button>
+  </div>
+  <div class="a11y-row">
+    <span>Text size</span>
+    <div class="a11y-steps">
+      <button type="button" class="a11y-step" id="a11ySmaller" aria-label="Smaller text">&minus;</button>
+      <button type="button" class="a11y-step" id="a11yLarger" aria-label="Larger text">+</button>
+    </div>
+  </div>
+  <button type="button" class="a11y-close" id="a11yClose">Close</button>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+
+  /* restore whatever was chosen last time, before anything paints */
+  try{
+    var v = localStorage.getItem('baci-view');
+    var t = localStorage.getItem('baci-text');
+    if(v === 'light') root.setAttribute('data-view','light');
+    if(t) root.style.setProperty('--text-scale', t);
+  }catch(e){}
+
+  var toggle = document.getElementById('a11y');
+  var panel  = document.getElementById('a11yPanel');
+  if(!toggle || !panel) return;
+
+  var viewBtn = document.getElementById('a11yView');
+  var smaller = document.getElementById('a11ySmaller');
+  var larger  = document.getElementById('a11yLarger');
+  var closeB  = document.getElementById('a11yClose');
+
+  var STEPS = [1, 1.12, 1.25, 1.4];
+
+  function currentStep(){
+    var s = parseFloat(getComputedStyle(root).getPropertyValue('--text-scale')) || 1;
+    var i = 0, best = 9;
+    STEPS.forEach(function(v, n){
+      var d = Math.abs(v - s);
+      if(d < best){ best = d; i = n; }
+    });
+    return i;
+  }
+
+  function setScale(i){
+    i = Math.max(0, Math.min(STEPS.length - 1, i));
+    root.style.setProperty('--text-scale', STEPS[i]);
+    try{ localStorage.setItem('baci-text', STEPS[i]); }catch(e){}
+  }
+
+  function syncView(){
+    var light = root.getAttribute('data-view') === 'light';
+    viewBtn.textContent = light ? 'Light' : 'Dark';
+    viewBtn.setAttribute('aria-pressed', String(light));
+  }
+
+  function open(){
+    panel.classList.add('open');
+    toggle.setAttribute('aria-expanded','true');
+    syncView();
+    viewBtn.focus();
+  }
+  function close(){
+    panel.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+  }
+
+  toggle.setAttribute('aria-expanded','false');
+  toggle.addEventListener('click', function(e){
+    e.preventDefault();
+    panel.classList.contains('open') ? close() : open();
+  });
+
+  viewBtn.addEventListener('click', function(){
+    var light = root.getAttribute('data-view') === 'light';
+    if(light){ root.removeAttribute('data-view'); }
+    else { root.setAttribute('data-view','light'); }
+    try{ localStorage.setItem('baci-view', light ? 'dark' : 'light'); }catch(e){}
+    syncView();
+  });
+
+  smaller.addEventListener('click', function(){ setScale(currentStep() - 1); });
+  larger .addEventListener('click', function(){ setScale(currentStep() + 1); });
+  closeB .addEventListener('click', close);
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && panel.classList.contains('open')) { close(); toggle.focus(); }
+  });
+  document.addEventListener('click', function(e){
+    if(!panel.contains(e.target) && !toggle.contains(e.target)) close();
+  });
+
+  syncView();
+})();
+</script>
+
+</body>
+</html>

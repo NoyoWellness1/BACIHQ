@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subprocessors &middot; BACI</title>
+<link rel="icon" href="favicon-baci-monogram.webp">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#C39544;
+  --gold-light:#CFA24E;
+  --dim:#8A6E3C;
+  --champagne:#E8C87A;
+  --head:#C99F5E;
+  --bg:#000;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--gold);
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--champagne);outline-offset:3px}
+
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 28px}
+.wrap.full{max-width:none;padding:0}
+
+/* ---------- masthead ---------- */
+.masthead{padding:38px 0 0;text-align:left}
+.masthead img{width:124px;height:auto;opacity:.92}
+
+/* ---------- page head ---------- */
+.page-head{text-align:center;padding:76px 0 0}
+.page-head h1{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--head);
+  font-size:clamp(2.4rem,7vw,4.5rem);
+  letter-spacing:.22em;
+  text-indent:.22em;
+  line-height:1.08;
+}
+
+/* ---------- light-point rule ---------- */
+.rule{
+  position:relative;
+  height:1px;
+  margin:26px auto 0;
+  max-width:420px;
+  background:linear-gradient(90deg,transparent,var(--dim) 18%,var(--dim) 82%,transparent);
+}
+.rule::after{
+  content:"";
+  position:absolute;
+  top:50%;left:50%;
+  width:7px;height:7px;
+  margin:-3.5px 0 0 -3.5px;
+  border-radius:50%;
+  background:var(--champagne);
+  box-shadow:0 0 10px 3px rgba(232,200,122,.55);
+}
+.rule.short{max-width:210px}
+
+/* ---------- intro ---------- */
+.intro{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto;
+  padding:38px 0 0;
+}
+.intro p{
+  font-size:clamp(1.06rem,2.1vw,1.32rem);
+  line-height:1.72;
+  color:var(--gold);
+  margin-bottom:1.15em;
+}
+.intro p:last-child{margin-bottom:0}
+
+/* ---------- routes ---------- */
+.routes{padding:86px 0 0;max-width:880px;margin:0 auto}
+.route{
+  padding:34px 0;
+  border-top:1px solid rgba(138,110,60,.34);
+  text-align:center;
+}
+.route:last-child{border-bottom:1px solid rgba(138,110,60,.34)}
+.route h2{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--gold-light);
+  font-size:clamp(1.02rem,2.3vw,1.34rem);
+  letter-spacing:.19em;
+  text-indent:.19em;
+  margin-bottom:14px;
+}
+.route p{
+  font-size:clamp(1rem,2vw,1.2rem);
+  line-height:1.66;
+  color:var(--gold);
+  max-width:560px;
+  margin:0 auto;
+}
+
+/* ---------- distinction ---------- */
+.distinction{
+  text-align:center;
+  padding:88px 0 0;
+}
+.distinction p{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:400;
+  color:var(--champagne);
+  font-size:clamp(1.24rem,3vw,1.92rem);
+  line-height:1.55;
+  max-width:820px;
+  margin:0 auto;
+}
+
+/* ---------- form ---------- */
+.enquiry{padding:92px 0 0;max-width:660px;margin:0 auto}
+.enquiry h2{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--head);
+  font-size:clamp(1.1rem,2.6vw,1.5rem);
+  letter-spacing:.2em;
+  text-indent:.2em;
+  text-align:center;
+}
+.fields{padding:44px 0 0}
+.field{margin-bottom:26px}
+.field label{
+  display:block;
+  font-family:'Cinzel',serif;
+  font-size:.68rem;
+  letter-spacing:.17em;
+  text-indent:.17em;
+  color:var(--dim);
+  margin-bottom:9px;
+  text-transform:uppercase;
+}
+.field input,.field textarea,.field select{
+  width:100%;
+  background:transparent;
+  border:none;
+  border-bottom:1px solid rgba(138,110,60,.46);
+  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.08rem;
+  font-weight:300;
+  padding:9px 2px;
+  transition:border-color .3s;
+}
+.field textarea{resize:vertical;min-height:96px;line-height:1.6}
+.field input:focus,.field textarea:focus,.field select:focus{
+  outline:none;
+  border-bottom-color:var(--champagne);
+}
+.field select option{background:#0a0a0a;color:var(--gold)}
+
+.routes-pick{display:flex;flex-wrap:wrap;gap:10px;padding-top:4px}
+.pick{
+  font-family:'Cinzel',serif;
+  font-size:.66rem;
+  letter-spacing:.14em;
+  text-indent:.14em;
+  text-transform:uppercase;
+  color:var(--dim);
+  border:1px solid rgba(138,110,60,.44);
+  border-radius:2px;
+  padding:9px 14px;
+  cursor:pointer;
+  transition:color .3s,border-color .3s;
+  user-select:none;
+}
+.pick[aria-pressed="true"]{
+  color:var(--champagne);
+  border-color:rgba(232,200,122,.7);
+}
+
+/* ---------- signature CTA ---------- */
+.cta-wrap{text-align:center;padding:56px 0 0}
+.cta{
+  position:relative;
+  display:inline-block;
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  font-size:clamp(.86rem,2vw,1.06rem);
+  letter-spacing:.24em;
+  text-indent:.24em;
+  color:var(--head);
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:0 0 16px;
+}
+.cta::after{
+  content:"";
+  position:absolute;
+  left:var(--start,0);
+  bottom:0;
+  width:6px;height:6px;
+  margin-left:-3px;
+  border-radius:50%;
+  background:var(--champagne);
+  box-shadow:0 0 9px 3px rgba(232,200,122,.5);
+  animation:travel 6s cubic-bezier(.42,0,.58,1) infinite;
+}
+@keyframes travel{
+  0%   {transform:translateX(0)}
+  50%  {transform:translateX(var(--travel,120px))}
+  100% {transform:translateX(0)}
+}
+.cta-line{
+  height:1px;
+  margin:0 auto;
+  max-width:300px;
+  background:linear-gradient(90deg,transparent,var(--dim) 20%,var(--dim) 80%,transparent);
+}
+
+/* ---------- footer ---------- */
+footer{margin-top:120px;padding-top:6px}
+.footer-wrap{max-width:1440px;margin:0 auto;padding:0 28px}
+.cols{
+  display:grid;
+  grid-template-columns:1.7fr 1.12fr 1.18fr 1fr .88fr;
+  gap:0;
+  padding:52px 0 0;
+  align-items:start;
+}
+.col{padding:0 22px;border-left:1px solid rgba(195,149,68,.42)}
+.col:first-child{border-left:none;padding-left:0}
+.col h3{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--head);
+  font-size:clamp(.82rem,1.5vw,1.06rem);
+  letter-spacing:.13em;
+  text-indent:.13em;
+  text-align:center;
+  margin-bottom:0;
+}
+.col .rule{margin:12px auto 30px;max-width:100%}
+.col ul{list-style:none}
+.col li{margin-bottom:17px;line-height:1.3}
+.col a{
+  font-size:.98rem;
+  color:var(--gold);
+  transition:color .25s;
+  display:inline-block;
+}
+.col a:hover{color:var(--champagne)}
+
+.os-split{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.os-split ul:first-child{padding-right:16px}
+.os-split ul:last-child{padding-left:20px;border-left:1px solid rgba(195,149,68,.26)}
+
+.policies{
+  margin-top:44px;
+  padding:20px 0;
+  border-top:1px solid rgba(195,149,68,.42);
+  border-bottom:1px solid rgba(195,149,68,.42);
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:0 8px;
+}
+.policies a{font-size:.98rem;color:var(--gold);padding:0 4px;white-space:nowrap}
+.policies span{color:var(--dim);font-size:.62rem;padding:0 4px}
+
+.pay{padding:6px 0 8px}
+.pay img{display:block;width:100%;height:auto}
+
+.base{
+  padding:32px 0 48px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+}
+.mono{
+  width:64px;height:64px;
+  border:1px solid var(--gold);
+  border-radius:50%;
+  display:grid;place-items:center;
+  font-family:'Cinzel',serif;
+  font-size:1.75rem;
+  color:var(--gold);
+}
+.copy{font-size:1rem;color:var(--gold);padding:0 20px;border-left:1px solid rgba(195,149,68,.34)}
+.socials{display:flex;gap:10px;padding:0 4px}
+.soc{display:block;width:46px;height:46px;transition:opacity .25s,transform .25s}
+.soc img{display:block;width:100%;height:100%}
+.soc:hover{opacity:.78;transform:translateY(-1px)}
+.a11y{
+  display:flex;align-items:center;gap:12px;
+  padding-left:20px;border-left:1px solid rgba(195,149,68,.34);
+  background:none;border-top:none;border-right:none;border-bottom:none;
+  cursor:pointer;
+}
+.a11y .glyph{width:58px;height:58px;display:block}
+.a11y .glyph img{display:block;width:100%;height:100%}
+.a11y .lab{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;
+  color:var(--gold);
+  text-align:left;
+  line-height:1.25;
+  max-width:104px;
+}
+
+/* ---------- responsive ---------- */
+/* The footer keeps its five-column shape at every width.
+   Below the width it needs, the whole footer scrolls sideways
+   as one piece rather than stacking. */
+.footer-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.footer-wrap{min-width:1180px}
+
+@media(max-width:1240px){
+  .col{padding:0 16px}
+  .col a{font-size:.94rem}
+  .col li{margin-bottom:15px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .cta::after{animation:none}
+  *{transition:none !important}
+}
+
+/* ---------- share your thoughts (universal, below the footer) ---------- */
+.thoughts{
+  border-top:1px solid rgba(195,149,68,.28);
+  text-align:center;
+  padding:78px 28px 92px;
+}
+.thoughts .listening{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  color:var(--champagne);
+  font-size:clamp(2rem,5.4vw,3.1rem);
+  line-height:1.1;
+  margin-bottom:38px;
+}
+.thoughts .ask{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  color:var(--gold);
+  font-size:clamp(1.1rem,2.5vw,1.42rem);
+  line-height:1.5;
+  max-width:560px;
+  margin:0 auto 34px;
+}
+.thoughts textarea{
+  display:block;
+  width:100%;
+  max-width:820px;
+  margin:0 auto;
+  min-height:200px;
+  background:rgba(195,149,68,.022);
+  border:1px solid rgba(195,149,68,.58);
+  border-radius:22px;
+  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:1.14rem;
+  line-height:1.6;
+  padding:26px 28px;
+  resize:vertical;
+  transition:border-color .3s;
+}
+.thoughts textarea::placeholder{color:var(--dim)}
+.thoughts textarea:focus{outline:none;border-color:var(--champagne)}
+
+.thoughts input[type="email"]{
+  display:block;
+  width:100%;
+  max-width:820px;
+  margin:18px auto 0;
+  background:rgba(195,149,68,.022);
+  border:1px solid rgba(195,149,68,.42);
+  border-radius:999px;
+  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:1.08rem;
+  padding:17px 28px;
+  transition:border-color .3s;
+}
+.thoughts input[type="email"]::placeholder{color:var(--dim)}
+.thoughts input[type="email"]:focus{outline:none;border-color:var(--champagne)}
+
+.thoughts .open-btn{
+  font-family:'Cinzel',serif;font-weight:500;
+  font-size:clamp(.76rem,1.7vw,.92rem);
+  letter-spacing:.19em;text-indent:.19em;
+  color:var(--gold-light);
+  background:rgba(195,149,68,.030);
+  border:1px solid rgba(195,149,68,.6);
+  border-radius:999px;
+  padding:18px 44px;
+  cursor:pointer;
+  transition:border-color .3s,color .3s;
+}
+.thoughts .open-btn:hover{border-color:var(--champagne);color:var(--champagne)}
+.thoughts .panel{display:none;padding-top:34px}
+.thoughts .panel.open{display:block}
+.thoughts .open-btn.hidden{display:none}
+.thoughts .send{padding-top:34px}
+.thoughts .send button{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  font-size:clamp(.76rem,1.7vw,.92rem);
+  letter-spacing:.19em;
+  text-indent:.19em;
+  color:var(--gold-light);
+  background:rgba(195,149,68,.030);
+  border:1px solid rgba(195,149,68,.6);
+  border-radius:999px;
+  padding:18px 44px;
+  cursor:pointer;
+  transition:border-color .3s,color .3s;
+}
+.thoughts .send button:hover{border-color:var(--champagne);color:var(--champagne)}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* BACKGROUND TREATMENT ONLY */
+.baci-ambient{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 75% 85% at -18% 48%,rgba(195,149,68,.055),rgba(195,149,68,.024) 35%,transparent 74%),radial-gradient(ellipse 62% 72% at 116% 35%,rgba(195,149,68,.045),rgba(195,149,68,.019) 38%,transparent 74%)}
+body::before,body::after{content:"";position:fixed;pointer-events:none;z-index:0}
+body::before{width:72vw;height:72vw;left:-34vw;top:14vh;border-radius:50%;border:1px solid rgba(195,149,68,.10);box-shadow:0 0 145px rgba(195,149,68,.040),inset 0 0 165px rgba(195,149,68,.028);transform:rotate(-9deg)}
+body::after{width:56vw;height:1px;right:-8vw;top:46vh;background:linear-gradient(90deg,transparent,rgba(232,200,122,.052),transparent);box-shadow:0 0 58px 2px rgba(195,149,68,.026);transform:rotate(-17deg)}
+.baci-orbit{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}.baci-orbit::before{content:"";position:absolute;width:980px;height:420px;right:-530px;top:19vh;border:1px solid rgba(195,149,68,.082);border-radius:50%;transform:rotate(24deg);box-shadow:0 0 115px rgba(195,149,68,.026)}.baci-orbit::after{content:none}
+input,textarea,button{
+  -webkit-appearance:none;
+  appearance:none;
+}
+input,textarea{
+  background-color:transparent;
+  -webkit-text-fill-color:var(--gold);
+  caret-color:var(--champagne);
+  color-scheme:dark;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus{
+  -webkit-text-fill-color:var(--gold) !important;
+  -webkit-box-shadow:0 0 0 1000px #000000 inset !important;
+  box-shadow:0 0 0 1000px #000000 inset !important;
+  transition:background-color 9999s ease-out 0s;
+}
+
+/* content sits above the ambient layers */
+main,header,footer,section,.wrap,.section,.hero,.thoughts{position:relative;z-index:1}
+.baci-ambient,.baci-orbit{z-index:0}
+
+.doc{max-width:760px;margin:0 auto;padding:44px 0 0}
+.doc__meta{text-align:center;font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.22em;
+  color:var(--dim);text-transform:uppercase;margin-bottom:8px}
+.doc__note{text-align:center;max-width:620px;margin:0 auto 12px;font-size:1rem;
+  line-height:1.62;color:var(--dim);font-style:italic}
+.doc h2{font-family:'Cinzel',serif;font-weight:500;color:var(--gold-light);
+  font-size:clamp(.86rem,1.9vw,1.04rem);letter-spacing:.16em;text-indent:.16em;
+  text-transform:uppercase;margin:52px 0 16px}
+.doc h2:first-of-type{margin-top:44px}
+.doc p{font-size:1.05rem;line-height:1.72;color:var(--gold);margin:0 0 1em}
+.doc ul{list-style:none;margin:0 0 1em;padding:0}
+.doc li{font-size:1.05rem;line-height:1.7;color:var(--gold);padding-left:22px;
+  position:relative;margin-bottom:.6em}
+.doc li::before{content:"";position:absolute;left:2px;top:.72em;width:4px;height:4px;
+  border-radius:50%;background:var(--dim)}
+.doc__contact{margin-top:56px;padding-top:34px;border-top:1px solid rgba(138,110,60,.34);text-align:center}
+.doc__contact a{color:var(--gold-light)}
+.doc-back{text-align:center;padding:56px 0 0}
+.doc-back a{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.2em;text-indent:.2em;
+  color:var(--dim);text-transform:uppercase;transition:color .3s}
+.doc-back a:hover{color:var(--champagne)}
+
+/* ═══ ACCESSIBILITY ═══
+   Two things only: a light mode, and text size. Both work by
+   swapping variables on the root, so nothing is restyled twice. */
+
+html{font-size:calc(100% * var(--text-scale,1))}
+
+html[data-view="light"]{
+  --bg:#F7F4EE;
+  --gold:#4A3616;
+  --gold-light:#3A2A10;
+  --dim:#6B573A;
+  --champagne:#7A5A18;
+  --closing:#4A3616;
+  --head:#3A2A10;
+  --metal:#3A2A10;
+}
+html[data-view="light"] body{background:var(--bg);color:var(--gold)}
+html[data-view="light"] .baci-ambient,
+html[data-view="light"] .baci-orbit,
+html[data-view="light"] body::before,
+html[data-view="light"] body::after{display:none}
+html[data-view="light"] img[src$="baci-wordmark.webp"],
+html[data-view="light"] img[src$="hero-shell.webp"],
+html[data-view="light"] img[src$="doctrine.webp"],
+html[data-view="light"] img[src$="dashboard.webp"],
+html[data-view="light"] .pay img,
+html[data-view="light"] .soc img,
+html[data-view="light"] .a11y .glyph img{
+  filter:invert(1) hue-rotate(180deg) saturate(.55) brightness(.85);
+}
+html[data-view="light"] .mono,
+html[data-view="light"] .cnode__circle,
+html[data-view="light"] .cring__centre{background:var(--bg)}
+
+/* the panel */
+.a11y-panel{
+  position:fixed;right:20px;bottom:20px;z-index:60;
+  width:min(300px,calc(100vw - 40px));
+  background:#000;
+  border:1px solid rgba(195,149,68,.5);
+  border-radius:16px;
+  padding:22px 22px 20px;
+  display:none;
+}
+html[data-view="light"] .a11y-panel{background:#FFFDF8;border-color:rgba(74,54,22,.35)}
+.a11y-panel.open{display:block}
+.a11y-panel h4{
+  font-family:'Cinzel',Georgia,serif;font-weight:500;font-size:.66rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin:0 0 18px;
+}
+.a11y-row{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}
+.a11y-row:last-of-type{margin-bottom:0}
+.a11y-row span{font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;color:var(--gold)}
+.a11y-opt{
+  font-family:'Cinzel',Georgia,serif;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--dim);background:none;border:1px solid rgba(195,149,68,.4);border-radius:999px;
+  padding:9px 15px;cursor:pointer;transition:color .3s,border-color .3s;
+}
+.a11y-opt[aria-pressed="true"]{color:var(--gold-light);border-color:rgba(207,162,78,.75)}
+.a11y-steps{display:flex;gap:8px}
+.a11y-step{
+  width:38px;height:38px;border-radius:50%;cursor:pointer;
+  background:none;border:1px solid rgba(195,149,68,.4);color:var(--gold-light);
+  font-family:'Cinzel',Georgia,serif;font-size:.9rem;line-height:1;
+  transition:border-color .3s,color .3s;
+}
+.a11y-step:hover{border-color:rgba(232,200,122,.7)}
+.a11y-close{
+  margin-top:20px;width:100%;background:none;border:0;cursor:pointer;
+  font-family:'Cinzel',Georgia,serif;font-size:.6rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--dim);padding:8px 0 0;
+}
+
+/* ═══ GLOW PASS ═══
+   Gold on black goes flat without a little light behind it. This adds
+   depth without brightening the palette: nothing changes colour, the
+   type just stops sitting dead on the background. Light mode gets none
+   of it, where glow would only look like a printing fault. */
+
+html:not([data-view="light"]) .page-head h1,
+html:not([data-view="light"]) .hero h1,
+html:not([data-view="light"]) .heading,
+html:not([data-view="light"]) .access__title,
+html:not([data-view="light"]) .drown__head,
+html:not([data-view="light"]) .reality__title,
+html:not([data-view="light"]) .doctrine__title,
+html:not([data-view="light"]) .bos__title,
+html:not([data-view="light"]) .title-stack .t1{
+  text-shadow:0 0 18px rgba(201,159,94,.17), 0 0 40px rgba(195,149,68,.07);
+}
+
+html:not([data-view="light"]) .band h2,
+html:not([data-view="light"]) .section-head h2,
+html:not([data-view="light"]) .enquiry h2,
+html:not([data-view="light"]) .doc h2,
+html:not([data-view="light"]) .mode__name,
+html:not([data-view="light"]) .control h2,
+{
+  text-shadow:0 0 14px rgba(201,159,94,.16);
+}
+
+/* the closing lines carry a touch more, since they are the last thing read */
+html:not([data-view="light"]) .bos__closer,
+html:not([data-view="light"]) .thoughts .listening,
+html:not([data-view="light"]) .distinction p,
+html:not([data-view="light"]) .control .closing,
+html:not([data-view="light"]) .engine-close,
+html:not([data-view="light"]) .access__ready{
+  text-shadow:0 0 20px rgba(207,162,78,.22);
+}
+
+/* the light points get a cleaner falloff rather than a bigger blur */
+html:not([data-view="light"]) .rule::after,
+html:not([data-view="light"]) .acard__rule::after,
+html:not([data-view="light"]) .bcard__rule::after,
+html:not([data-view="light"]) .col .rule::after{
+  box-shadow:0 0 6px 1px rgba(232,200,122,.55),
+             0 0 16px 4px rgba(232,200,122,.20);
+}
+
+/* the hairlines lift off the black a fraction */
+html:not([data-view="light"]) .rule,
+html:not([data-view="light"]) .cta__conduit,
+html:not([data-view="light"]) .cta-line{
+  box-shadow:0 0 12px rgba(195,149,68,.07);
+}
+
+/* cards: resting glow, stronger on touch */
+html:not([data-view="light"]) .acard,
+html:not([data-view="light"]) .bcard,
+html:not([data-view="light"]) .hcard,
+html:not([data-view="light"]) .tier,
+html:not([data-view="light"]) .dev-mode{
+  box-shadow:inset 0 0 40px rgba(195,149,68,.022);
+  transition:border-color .4s ease,transform .4s ease,box-shadow .4s ease;
+}
+html:not([data-view="light"]) .acard:hover,
+html:not([data-view="light"]) .bcard:hover,
+html:not([data-view="light"]) .dev-mode:hover,
+html:not([data-view="light"]) .dev-mode.is-on{
+  box-shadow:inset 0 0 44px rgba(195,149,68,.05),
+             0 0 26px rgba(195,149,68,.07);
+}
+
+/* the wordmark and the monogram sit in a faint pool of light */
+html:not([data-view="light"]) .masthead img,
+html:not([data-view="light"]) .mono{
+  filter:drop-shadow(0 0 18px rgba(195,149,68,.14));
+}
+
+/* buttons answer to touch */
+html:not([data-view="light"]) .cta:hover .cta__text,
+html:not([data-view="light"]) .thoughts .open-btn:hover,
+html:not([data-view="light"]) .thoughts .send button:hover,
+html:not([data-view="light"]) .role .apply:hover,
+html:not([data-view="light"]) .obra6-btn:hover{
+  text-shadow:0 0 14px rgba(232,200,122,.16);
+}
+
+/* the ring's active node reads as lit rather than merely larger */
+html:not([data-view="light"]) .cnode.is-active .cnode__circle,
+html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
+  box-shadow:0 0 22px 3px rgba(195,149,68,.20),
+             inset 0 0 18px rgba(195,149,68,.05);
+}
+
+@media(prefers-reduced-motion:reduce){
+  html:not([data-view="light"]) .acard,
+  html:not([data-view="light"]) .bcard,
+  html:not([data-view="light"]) .dev-mode{transition:none}
+}
+</style>
+</head>
+
+<body>
+<div class="baci-ambient" aria-hidden="true"></div><div class="baci-orbit" aria-hidden="true"></div>
+
+<div class="wrap">
+
+  <div class="masthead"><a href="index.html" aria-label="BACI home"><img src="baci-wordmark.webp" alt="BACI"></a></div>
+
+  <header class="page-head">
+    <h1>SUBPROCESSORS</h1>
+    <div class="rule"></div>
+  </header>
+
+  <section class="doc">
+    <p class="doc__meta">Version 1.0</p>
+    <h2>BACI SUBPROCESSOR POLICY &amp; LIST</h2>
+    <p>Version 1.0</p>
+    <p>Effective Date: 10 September 2026</p>
+    <p>Last Updated: 10 September 2026</p>
+    <p>This Subprocessor Policy &amp; List (&quot;Policy&quot;) describes how BACI LLC (&quot;BACI&quot;) selects, authorises, governs, monitors and changes third parties that Process Customer Personal Data on BACI&#x27;s behalf in connection with the Services.</p>
+    <p>BACI uses a contractual and risk-based Subprocessor framework. BACI does not designate a company as a Subprocessor merely because BACI purchases a product or service from that company. A third party is treated as a Subprocessor for purposes of this Policy when it Processes Customer Personal Data on BACI&#x27;s behalf in providing the applicable Services and the relationship falls within the relevant definition under Applicable Data Protection Law.</p>
+    <p>The current Subprocessor Register is maintained in Annex I. BACI will not populate that Register with assumed, proposed or merely possible providers. A provider will be listed when BACI has verified the relevant legal entity, Processing function and applicable Processing location information.</p>
+    <h2>1. SCOPE</h2>
+    <p>This Policy applies to Subprocessors engaged by BACI to Process Customer Personal Data on behalf of Customers in connection with the Services.</p>
+    <p>It does not automatically apply to independent third parties chosen or controlled by Customer, third-party services to which Customer independently directs data, payment providers acting as independent controllers for their own purposes, professional advisers acting under independent legal duties, or vendors that do not Process Customer Personal Data on BACI&#x27;s behalf.</p>
+    <p>The legal role of a third party is determined by the actual Processing relationship and Applicable Data Protection Law, not by its commercial label.</p>
+    <h2>2. RELATIONSHIP TO THE BACI LEGAL FRAMEWORK</h2>
+    <p>This Policy forms part of the BACI Legal Framework and should be read with the Terms of Service, Privacy Policy, Data Processing Addendum (&quot;DPA&quot;), Security Policy / Security Addendum, Data Retention &amp; Deletion Policy, International Data Transfer Addendum and applicable Orders and Supplemental Terms.</p>
+    <p>For Customer Personal Data Processed by BACI on Customer&#x27;s behalf, the DPA is authoritative regarding BACI&#x27;s Subprocessor obligations. This Policy implements and explains that framework and maintains the applicable Subprocessor Register.</p>
+    <p>If an executed Agreement imposes a different or additional Subprocessor requirement, the applicable order of precedence controls.</p>
+    <h2>3. DEFINITION OF SUBPROCESSOR</h2>
+    <p>A &quot;Subprocessor&quot; is a third party engaged by BACI that Processes Customer Personal Data on BACI&#x27;s behalf in connection with the Services.</p>
+    <p>A Subprocessor may provide infrastructure, hosting, storage, database, networking, communications, authentication, support, security, artificial-intelligence, analytics or other functionality where the provider receives or can access Customer Personal Data as BACI&#x27;s processor or subprocessor.</p>
+    <p>A provider is not necessarily a Subprocessor merely because its technology is present in BACI&#x27;s supply chain.</p>
+    <h2>4. GENERAL AUTHORISATION</h2>
+    <p>Where the DPA applies, Customer generally authorises BACI to engage Subprocessors in accordance with the DPA and this Policy.</p>
+    <p>BACI remains responsible for satisfying its applicable contractual and statutory obligations concerning Subprocessor engagement.</p>
+    <p>General authorisation does not permit BACI to disregard notice, contractual-flow-down, transfer or security requirements imposed by Applicable Data Protection Law.</p>
+    <h2>5. SUBPROCESSOR DUE DILIGENCE</h2>
+    <p>Before authorising a material Subprocessor to Process Customer Personal Data, BACI will conduct due diligence proportionate to the nature and risk of the Processing.</p>
+    <p>Assessment may include the provider&#x27;s security programme, privacy practices, data locations, access model, incident history, certifications or independent assurance where available, contractual protections, deletion practices, business continuity, technical architecture, government-access exposure, international-transfer mechanisms and other relevant risk factors.</p>
+    <p>The depth of assessment may vary according to the sensitivity, volume, duration and consequence of the Processing.</p>
+    <h2>6. CONTRACTUAL REQUIREMENTS</h2>
+    <p>BACI will enter into written terms with each Subprocessor requiring protection of Customer Personal Data appropriate to the Processing.</p>
+    <p>Where required by Applicable Data Protection Law, those terms will impose data-protection obligations no less protective in substance than the obligations applicable to BACI for the relevant Processing, including appropriate confidentiality, security, Processing-purpose, assistance, deletion or return, incident, Subprocessor and international-transfer requirements.</p>
+    <p>BACI will not rely solely on a provider&#x27;s public privacy policy where a processor contract is legally required.</p>
+    <h2>7. CONFIDENTIALITY</h2>
+    <p>BACI will require Subprocessors to ensure that persons authorised to Process Customer Personal Data are subject to appropriate confidentiality obligations.</p>
+    <p>Access should be limited to personnel and systems requiring it for the authorised service.</p>
+    <p>A Subprocessor&#x27;s technical ability to access Customer Personal Data does not authorise access for unrelated purposes.</p>
+    <h2>8. SECURITY REQUIREMENTS</h2>
+    <p>BACI will require Subprocessors to implement technical and organisational measures appropriate to the risk of their Processing.</p>
+    <p>BACI may evaluate identity and access controls, encryption, infrastructure security, vulnerability management, secure development, logging, monitoring, incident response, backup and recovery, personnel controls, business continuity and other safeguards relevant to the service.</p>
+    <p>A Subprocessor may implement controls differently from BACI provided the resulting protections satisfy the applicable contractual and legal requirements.</p>
+    <h2>9. SECURITY INCIDENTS</h2>
+    <p>BACI will require Subprocessors to notify BACI of relevant security incidents within a timeframe that permits BACI to meet its own contractual and legal notification obligations.</p>
+    <p>BACI remains responsible for notifying Customer of a Security Incident as required by the DPA and Agreement.</p>
+    <p>A Subprocessor incident will be evaluated according to the affected data, systems, Customers and applicable legal requirements rather than solely according to the provider&#x27;s classification.</p>
+    <h2>10. INTERNATIONAL PROCESSING</h2>
+    <p>A Subprocessor may Process Customer Personal Data outside Customer&#x27;s country where permitted by the Agreement and Applicable Data Protection Law.</p>
+    <p>Where a restricted transfer requires a lawful transfer mechanism, BACI will implement or require an applicable mechanism, which may include adequacy, Standard Contractual Clauses, the UK International Data Transfer Addendum or another legally valid mechanism.</p>
+    <p>BACI will not claim that a provider, certification, framework or adequacy status applies unless BACI has verified that it applies to the relevant Processing.</p>
+    <h2>11. PROCESSING LOCATIONS</h2>
+    <p>BACI will seek to identify countries or regions from which material Subprocessors store or Process Customer Personal Data where that information is relevant to Customer transparency or transfer compliance.</p>
+    <p>Processing-location disclosures may describe primary hosting regions and material remote-access locations where appropriate.</p>
+    <p>A provider&#x27;s global corporate presence does not mean Customer Personal Data is Processed in every country in which that provider operates.</p>
+    <h2>12. DATA RESIDENCY</h2>
+    <p>Where Customer has contracted for a specific BACI data-residency configuration, BACI will select and configure relevant Subprocessors consistently with that contractual commitment, subject to expressly disclosed exceptions.</p>
+    <p>A provider&#x27;s inclusion on the general Subprocessor Register does not mean every BACI Customer&#x27;s data is processed by that provider or in every listed location.</p>
+    <p>Service-specific applicability may depend on Customer configuration, region, product, integration or optional functionality.</p>
+    <h2>13. AI AND MODEL PROVIDERS</h2>
+    <p>A third-party AI or model provider is treated as a Subprocessor where it Processes Customer Personal Data on BACI&#x27;s behalf in delivering Customer-requested functionality.</p>
+    <p>Such providers are subject to the DPA and applicable Subprocessor requirements.</p>
+    <p>BACI will not represent that a third-party AI provider offers particular retention, training, localisation, security or confidentiality commitments unless those commitments are factually and contractually applicable to BACI&#x27;s use.</p>
+    <p>Use of an AI Subprocessor does not alter BACI&#x27;s no-general-model-training-by-default commitment under the Terms and DPA.</p>
+    <h2>14. NO GENERAL MODEL TRAINING BY DEFAULT</h2>
+    <p>BACI will not authorise a Subprocessor to use Customer Confidential Information, Customer Personal Data, private Inputs or private Outputs to train or fine-tune general-purpose or shared AI models for the benefit of other customers where BACI itself is prohibited from doing so under the Agreement.</p>
+    <p>Unless Customer expressly agrees in writing or affirmatively opts into a clearly identified programme, BACI&#x27;s Subprocessor arrangements for relevant AI Processing must be consistent with BACI&#x27;s contractual no-general-model-training-by-default commitment.</p>
+    <h2>15. SUBPROCESSOR ACCESS MINIMISATION</h2>
+    <p>BACI will seek to limit Subprocessor access to Customer Personal Data to the information and duration reasonably necessary for the authorised service.</p>
+    <p>Where technically and commercially appropriate, BACI may use configuration, tokenisation, encryption, access controls, regional deployment, data minimisation or other mechanisms to reduce Subprocessor exposure.</p>
+    <h2>16. SUBPROCESSOR CHANGES</h2>
+    <p>BACI may add, replace or remove Subprocessors as the Services, technology, infrastructure and provider relationships evolve.</p>
+    <p>BACI will update the applicable Subprocessor Register and provide notice of new Subprocessors where required by the DPA or Applicable Data Protection Law.</p>
+    <p>Removal of a provider from the Register does not necessarily mean every historical copy of data disappears immediately; applicable deletion, backup and legal-retention processes continue to govern.</p>
+    <h2>17. NOTICE OF NEW SUBPROCESSORS</h2>
+    <p>Where Customer is entitled to advance notice, BACI will provide notice through a reasonable mechanism before a new Subprocessor begins relevant Processing.</p>
+    <p>The notice may be delivered by email, Customer administrative interface, subscription mechanism, trust or legal page, or another contractually recognised method.</p>
+    <p>The notice should identify sufficient information for Customer to evaluate the new Subprocessor, which may include provider identity, function and Processing location.</p>
+    <h2>18. CUSTOMER OBJECTIONS</h2>
+    <p>Customer may object to a new Subprocessor on reasonable, documented data-protection grounds within the period specified in the DPA or applicable notice.</p>
+    <p>Customer should explain the specific data-protection concern so BACI can evaluate it.</p>
+    <p>BACI and Customer will work in good faith to identify a commercially reasonable resolution, which may include additional information, safeguards, an alternative configuration or another reasonable measure.</p>
+    <p>An objection may not be used solely to obtain unrelated commercial concessions.</p>
+    <h2>19. UNRESOLVED OBJECTIONS</h2>
+    <p>If BACI cannot reasonably resolve a valid Subprocessor objection and no commercially reasonable alternative is available, the parties will follow the remedy provided by the DPA or applicable Agreement.</p>
+    <p>Where the DPA permits discontinuation of a materially affected Service, any refund for prepaid unused service will be limited to the portion expressly provided by the applicable contractual terms.</p>
+    <p>An objection to one Subprocessor does not automatically terminate unrelated Services.</p>
+    <h2>20. EMERGENCY SUBPROCESSOR CHANGES</h2>
+    <p>BACI may need to engage or replace a Subprocessor urgently to address a security incident, provider failure, legal requirement, sanctions issue, material service disruption or other emergency.</p>
+    <p>Where advance notice is not reasonably practicable, BACI may make the necessary change and provide notice as soon as reasonably practicable where required.</p>
+    <p>Emergency engagement does not eliminate BACI&#x27;s obligation to perform appropriate due diligence and contractual protection proportionate to the circumstances.</p>
+    <h2>21. SUBPROCESSOR PERFORMANCE</h2>
+    <p>BACI will monitor material Subprocessor relationships using processes appropriate to the risk and service.</p>
+    <p>Monitoring may include review of updated assurance materials, security notices, incident information, contractual changes, service performance, privacy changes, certifications, transfer developments and other relevant information.</p>
+    <p>BACI may require remediation or replace a provider where material risk can no longer be managed appropriately.</p>
+    <h2>22. CHAIN SUBPROCESSING</h2>
+    <p>Where a Subprocessor engages another processor to Process Customer Personal Data, BACI will require the Subprocessor to apply appropriate downstream data-protection obligations where required by Applicable Data Protection Law.</p>
+    <p>BACI may rely on a Subprocessor&#x27;s compliant subprocessor programme where legally permissible.</p>
+    <p>The level of public detail concerning downstream providers may depend on whether they materially Process BACI Customer Personal Data and whether disclosure is contractually or legally available.</p>
+    <h2>23. RESPONSIBILITY FOR SUBPROCESSORS</h2>
+    <p>BACI remains responsible for the performance of its Subprocessors&#x27; applicable data-protection obligations to the extent required by the DPA, Agreement and Applicable Data Protection Law.</p>
+    <p>This responsibility does not convert every independent act of a third party into an act within BACI&#x27;s contractual control.</p>
+    <p>Liability remains subject to the applicable Agreement, including its liability limitations and enhanced caps.</p>
+    <h2>24. CUSTOMER-SELECTED THIRD PARTIES</h2>
+    <p>A service, integration, connector, model, application or provider selected independently by Customer is not automatically a BACI Subprocessor.</p>
+    <p>Where Customer instructs BACI to transmit Customer Data to a Customer-selected third party that acts independently of BACI, Customer is responsible for authorising and evaluating that third party unless the Agreement states otherwise.</p>
+    <p>BACI&#x27;s Subprocessor obligations apply only where the third party is engaged by BACI to Process Customer Personal Data on BACI&#x27;s behalf.</p>
+    <h2>25. PAYMENT PROVIDERS</h2>
+    <p>Payment processors and financial institutions may act as independent controllers, processors or service providers depending on the transaction and legal context.</p>
+    <p>BACI will classify such providers according to the actual Processing relationship.</p>
+    <p>A payment provider will be listed as a Subprocessor only where it Processes Customer Personal Data on BACI&#x27;s behalf in a manner that falls within the DPA&#x27;s Subprocessor definition.</p>
+    <h2>26. PROFESSIONAL ADVISERS</h2>
+    <p>Lawyers, accountants, auditors, insurers and other professional advisers may process information under independent professional, legal or regulatory duties.</p>
+    <p>Such advisers are not automatically Subprocessors.</p>
+    <p>Where an adviser acts as BACI&#x27;s processor for Customer Personal Data rather than under an independent role, BACI will apply the appropriate processor requirements.</p>
+    <h2>27. TELECOMMUNICATIONS AND NETWORK PROVIDERS</h2>
+    <p>Internet carriers, telecommunications networks and other entities that merely transmit data without acting as BACI&#x27;s processor may not constitute Subprocessors under Applicable Data Protection Law.</p>
+    <p>BACI will not inflate the Subprocessor Register by listing every entity through whose infrastructure network traffic may technically pass.</p>
+    <h2>28. SUPPORT PROVIDERS</h2>
+    <p>A support or customer-service provider will be treated as a Subprocessor where it can access or Process Customer Personal Data on BACI&#x27;s behalf.</p>
+    <p>BACI will seek to restrict support access according to role, purpose and need.</p>
+    <p>Where a provider supplies only tooling and does not receive Customer Personal Data, it need not be listed solely because BACI uses the tool.</p>
+    <h2>29. SECURITY PROVIDERS</h2>
+    <p>Security providers may qualify as Subprocessors where they receive or Process Customer Personal Data, such as logs, identifiers or security-event information, on BACI&#x27;s behalf.</p>
+    <p>BACI will assess the data involved and classify the relationship accordingly.</p>
+    <p>Security telemetry will not be treated as outside data-protection requirements merely because its primary purpose is cybersecurity.</p>
+    <h2>30. INFRASTRUCTURE AND HOSTING PROVIDERS</h2>
+    <p>Cloud, database, storage, hosting and managed-infrastructure providers that store or Process Customer Personal Data for BACI generally qualify as Subprocessors.</p>
+    <p>BACI will assess their security, contractual protections, Processing locations, resilience and applicable transfer mechanisms.</p>
+    <p>BACI may use more than one infrastructure provider, and applicability may vary by Service, Customer region or architecture.</p>
+    <h2>31. COMMUNICATION PROVIDERS</h2>
+    <p>Email, messaging, notification and communications providers may qualify as Subprocessors where they Process Customer Personal Data on BACI&#x27;s behalf.</p>
+    <p>BACI will distinguish operational communications from providers acting independently for their own purposes.</p>
+    <p>Only providers actually used for relevant Customer Personal Data Processing will be included in the Register.</p>
+    <h2>32. ANALYTICS PROVIDERS</h2>
+    <p>Analytics providers qualify as Subprocessors where they Process Customer Personal Data on BACI&#x27;s behalf.</p>
+    <p>BACI will not classify optional advertising or independent third-party tracking as ordinary processor analytics merely to avoid applicable privacy obligations.</p>
+    <p>Website-cookie and advertising relationships are also governed by the Privacy Policy and Cookie Policy.</p>
+    <h2>33. AUTHENTICATION AND IDENTITY PROVIDERS</h2>
+    <p>Identity, authentication and access-management providers may qualify as Subprocessors where they Process Customer Personal Data for BACI-controlled authentication or account functionality.</p>
+    <p>Where Customer supplies and controls its own identity provider, that provider may instead be Customer-selected and outside BACI&#x27;s Subprocessor relationship.</p>
+    <h2>34. DATA DELETION AT END OF SERVICE</h2>
+    <p>BACI will require relevant Subprocessors to return or delete Customer Personal Data when their Processing is no longer required, subject to lawful retention and applicable technical backup cycles.</p>
+    <p>Subprocessor deletion is governed by the DPA, Data Retention &amp; Deletion Policy and applicable provider contract.</p>
+    <p>A provider may retain data where law independently requires it, provided such retained data remains protected and is not used for unrelated purposes.</p>
+    <h2>35. BACKUPS AT SUBPROCESSORS</h2>
+    <p>Customer Personal Data may remain in protected Subprocessor backups after deletion from active systems where immediate deletion is not technically practicable.</p>
+    <p>BACI will require applicable protections during the backup-retention period.</p>
+    <p>Backup copies must not be restored to ordinary active use in a manner that defeats a completed deletion obligation.</p>
+    <h2>36. GOVERNMENT ACCESS RISK</h2>
+    <p>BACI may consider governmental-access laws and practices relevant to international Processing and transfer-risk assessment.</p>
+    <p>Where required, BACI may implement contractual, technical or organisational supplementary measures.</p>
+    <p>BACI will not represent that use of a particular Subprocessor eliminates all government-access risk.</p>
+    <h2>37. REGULATED DATA</h2>
+    <p>BACI will not use a Subprocessor for specialised regulated or classified Customer Data unless the relevant BACI Service is authorised for that data and the Subprocessor arrangement is consistent with applicable contractual and regulatory requirements.</p>
+    <p>A provider&#x27;s general compliance claim does not establish that BACI&#x27;s specific deployment is authorised for a regulated use.</p>
+    <h2>38. PUBLIC-SECTOR PROCESSING</h2>
+    <p>Government and public-sector Services may use a restricted or specialised Subprocessor set under an applicable Government &amp; Public Sector Schedule or Order.</p>
+    <p>A provider available in BACI&#x27;s commercial environment is not automatically approved for a government or regulated environment.</p>
+    <p>BACI will not claim government-cloud or sovereign-cloud availability unless the relevant environment actually supports it.</p>
+    <h2>39. SERVICE-SPECIFIC SUBPROCESSORS</h2>
+    <p>Some Subprocessors may apply only to particular BACI Services, optional features, regions or integrations.</p>
+    <p>The Register may therefore identify an applicability field rather than implying universal use.</p>
+    <p>Customer&#x27;s actual Subprocessor set may depend on the Services purchased, configured functionality and Processing region.</p>
+    <h2>40. SUBPROCESSOR REGISTER CONTENT</h2>
+    <p>For each listed Subprocessor, BACI will seek to publish, where applicable and reasonably available:</p>
+    <p>(a) legal entity name;</p>
+    <p>(b) service or Processing function;</p>
+    <p>(c) categories of Customer Personal Data or Processing description at an appropriate level;</p>
+    <p>(d) country or region of Processing or hosting;</p>
+    <p>(e) Service or feature applicability; and</p>
+    <p>(f) effective or addition date where useful.</p>
+    <p>BACI may provide additional information where required by Applicable Law or enterprise agreement.</p>
+    <h2>41. ACCURACY OF THE REGISTER</h2>
+    <p>The Subprocessor Register must reflect BACI&#x27;s actual production Processing relationships.</p>
+    <p>BACI will not list a vendor merely because BACI is evaluating it, has an account with it, or may use it in the future.</p>
+    <p>BACI will not omit a material Subprocessor merely because the provider is commercially well known.</p>
+    <p>Where BACI discovers a material error in the Register, BACI will correct it within a reasonable period.</p>
+    <h2>42. PROVIDER LEGAL ENTITY VERIFICATION</h2>
+    <p>Before publishing a provider in the Register, BACI should verify the contracting or Processing legal entity where reasonably possible.</p>
+    <p>Brand names may be included for readability, but the legal entity should control where known.</p>
+    <p>BACI will not guess a corporate entity from a provider&#x27;s brand name.</p>
+    <h2>43. CHANGE HISTORY</h2>
+    <p>BACI may maintain a change history recording additions, removals or material changes to the Subprocessor Register.</p>
+    <p>The change history may identify the provider, type of change, effective date and material change in Processing function or location.</p>
+    <p>Historical entries may be retained for accountability and Customer audit purposes.</p>
+    <h2>44. SUBPROCESSOR NOTICE SUBSCRIPTIONS</h2>
+    <p>BACI may provide a mechanism allowing Customers to subscribe to Subprocessor-change notifications.</p>
+    <p>Where such a mechanism is available, Customer is responsible for maintaining an appropriate subscription address or administrative contact.</p>
+    <p>Failure to subscribe does not eliminate a notice obligation where the Agreement requires BACI to provide notice through another specified method.</p>
+    <h2>45. ENTERPRISE DUE-DILIGENCE REQUESTS</h2>
+    <p>Eligible enterprise Customers may request reasonable additional information concerning material Subprocessors where necessary for privacy, security, transfer or regulatory assessment.</p>
+    <p>BACI may satisfy the request through existing documentation, assurance reports, contractual summaries or other appropriate materials.</p>
+    <p>BACI may protect provider-confidential, security-sensitive, privileged and unrelated customer information.</p>
+    <h2>46. AUDIT AND ASSURANCE</h2>
+    <p>BACI may use independent certifications, audit reports and provider assurance materials as part of Subprocessor oversight where relevant.</p>
+    <p>A provider&#x27;s audit report may be subject to confidentiality or distribution restrictions.</p>
+    <p>BACI will not represent that a provider&#x27;s audit or certification constitutes an audit or certification of BACI unless BACI is expressly within its scope.</p>
+    <h2>47. SUSPENSION OR REMOVAL OF A SUBPROCESSOR</h2>
+    <p>BACI may suspend new data flows to, restrict, replace or remove a Subprocessor where BACI identifies a material unresolved privacy, security, legal, sanctions, availability or contractual risk.</p>
+    <p>BACI may take emergency action without waiting for an ordinary review cycle where reasonably necessary to protect Customer Data or comply with law.</p>
+    <h2>48. ACQUISITIONS AND CORPORATE CHANGES</h2>
+    <p>If a Subprocessor undergoes an acquisition, merger, restructuring or other material ownership change, BACI may reassess the relationship where the change materially affects data-protection risk.</p>
+    <p>A corporate name change alone does not necessarily constitute engagement of a new Subprocessor if the relevant legal Processing relationship remains substantially unchanged.</p>
+    <p>BACI will update the Register where necessary for accuracy.</p>
+    <h2>49. NO CUSTOMER OWNERSHIP TRANSFER</h2>
+    <p>Use of a Subprocessor does not transfer ownership of Customer Data to the Subprocessor.</p>
+    <p>Subprocessor rights to Process Customer Personal Data are limited by the applicable contract, BACI&#x27;s instructions and Applicable Data Protection Law.</p>
+    <p>BACI will not grant a Subprocessor broader rights in Customer Personal Data than BACI is entitled to grant under the Agreement.</p>
+    <h2>50. CUSTOMER CONFIDENTIAL INFORMATION</h2>
+    <p>Where a Subprocessor receives Customer Confidential Information in addition to Customer Personal Data, BACI will apply contractual confidentiality protections appropriate to the service.</p>
+    <p>The existence of a Subprocessor relationship does not make Customer Confidential Information public or available for the provider&#x27;s unrelated commercial use.</p>
+    <h2>51. SECURITY REPORTING</h2>
+    <p>Security concerns relating to a BACI Subprocessor may be reported to security@bacihq.com.</p>
+    <p>BACI may investigate the concern directly or with the relevant provider.</p>
+    <p>Customers should provide sufficient information to permit BACI to identify the provider, Service and alleged risk where reasonably possible.</p>
+    <h2>52. PRIVACY ENQUIRIES</h2>
+    <p>Privacy and Subprocessor enquiries may be directed to privacy@bacihq.com.</p>
+    <p>BACI may require verification of Customer status before disclosing non-public enterprise information concerning a provider relationship.</p>
+    <h2>53. CHANGES TO THIS POLICY</h2>
+    <p>BACI may update this Policy as providers, Services, architecture, Processing locations, Applicable Data Protection Law and the BACI Legal Framework evolve.</p>
+    <p>Updates to the Subprocessor Register may occur independently of changes to the general policy text.</p>
+    <p>BACI will not use a policy update to eliminate a higher-precedence contractual notice or objection right.</p>
+    <h2>54. INTERPRETATION</h2>
+    <p>This Policy is intended to provide transparent and accurate information concerning BACI&#x27;s Subprocessor framework.</p>
+    <p>References to a provider do not imply that every Customer uses that provider.</p>
+    <p>References to Processing locations identify relevant Processing locations to the extent reasonably known and applicable; they do not imply unrestricted transfer to every location in which a provider has personnel or infrastructure.</p>
+    <p>Nothing in this Policy authorises Processing prohibited by the DPA, Agreement or Applicable Law.</p>
+    <h2>55. CONTACT</h2>
+    <p>Subprocessor and privacy enquiries:</p>
+    <p>BACI Privacy
+BACI LLC
+privacy@bacihq.com</p>
+    <p>Security concerns:</p>
+    <p>security@bacihq.com</p>
+    <h2>ANNEX I — CURRENT BACI SUBPROCESSOR REGISTER</h2>
+    <p>BACI publishes only verified production Subprocessors in this Register.</p>
+    <p>As of the Last Updated date of this Policy, BACI has not populated this public Register with provider names that have not been verified against BACI&#x27;s production architecture, applicable contracts and Processing roles.</p>
+    <p>Before a provider is entered here, BACI will verify the provider&#x27;s relevant legal entity, Processing function, applicability and Processing-location information.</p>
+    <h2>REGISTER FIELDS</h2>
+    <p>Legal Entity / Provider:
+Service or Processing Function:
+BACI Service / Feature Applicability:
+Customer Personal Data Processing:
+Primary Processing / Hosting Location(s):
+International Transfer Mechanism, where applicable:
+Effective / Addition Date:</p>
+    <p>This verification rule prevents proposed, assumed or merely technically possible providers from being presented to Customers as current BACI Subprocessors.</p>
+    <p>Where BACI begins production Processing of Customer Personal Data through a qualifying Subprocessor, the Register will be updated in accordance with this Policy and the DPA.</p>
+    <h2>ANNEX II — SUBPROCESSOR ASSESSMENT FRAMEWORK</h2>
+    <p>BACI&#x27;s assessment of a material Subprocessor may consider:</p>
+    <p>1. the nature and purpose of Processing;
+2. categories and sensitivity of Customer Personal Data;
+3. Processing volume and duration;
+4. hosting and remote-access locations;
+5. identity and access controls;
+6. encryption and cryptographic protections;
+7. vulnerability and patch management;
+8. incident-response capabilities;
+9. secure development and infrastructure practices;
+10. backup, recovery and deletion;
+11. confidentiality and personnel controls;
+12. business continuity and resilience;
+13. independent assurance and certifications where available;
+14. downstream subprocessors;
+15. international-transfer mechanisms;
+16. government-access considerations;
+17. provider contractual terms;
+18. AI training, retention and data-use terms where relevant;
+19. regulatory or sector-specific requirements; and
+20. material historical or known risk information.</p>
+    <p>The assessment depth is proportionate to the risk and does not require every provider to satisfy identical technical architecture.</p>
+    <h2>ANNEX III — SUBPROCESSOR CHANGE RECORD</h2>
+    <p>BACI may use the following structure to record material Subprocessor changes:</p>
+    <p>Provider:
+Change Type: Added / Removed / Replaced / Legal Entity Change / Processing Location Change / Material Function Change
+Notice Date:
+Effective Date:
+Affected BACI Service or Feature:
+Processing Function:
+Processing Location:
+Customer Action, if any:
+Objection Deadline, if applicable:</p>
+    <p>A change record is historical evidence and does not override the current Subprocessor Register or applicable Agreement.</p>
+    <p>BACI SUBPROCESSOR POLICY &amp; LIST — VERSION 1.0
+Effective 10 September 2026</p>
+  </section>
+
+<footer>
+   <div class="footer-scroll">
+   <div class="footer-wrap">
+    <div class="cols">
+
+      <div class="col">
+        <h3>BUSINESS OS</h3>
+        <div class="rule"></div>
+        <div class="os-split">
+          <ul>
+            <li><a href="business-planning.html">Business Planning</a></li>
+            <li><a href="financial-planning.html">Financial Planning</a></li>
+            <li><a href="marketing-planning.html">Marketing Planning</a></li>
+            <li><a href="procurement.html">Procurement</a></li>
+            <li><a href="grants.html">Grants</a></li>
+            <li><a href="funding-capital-strategy.html">Funding &amp; Capital Strategy</a></li>
+          </ul>
+          <ul>
+            <li><a href="investors.html">Investors</a></li>
+            <li><a href="market-entry.html">Market Entry</a></li>
+            <li><a href="growth-strategy.html">Growth Strategy</a></li>
+            <li><a href="forecasting.html">Forecasting</a></li>
+            <li><a href="executive-intelligence.html">Executive Intelligence</a></li>
+            <li><a href="go-to-market.html">Go-to-Market</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col">
+        <h3>INTELLIGENCE</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="index.html#industry">Industry Intelligence</a></li>
+          <li><a href="index.html#conversion-intelligence">Conversion Intelligence</a></li>
+          <li><a href="index.html#global-reach">Global Reach</a></li>
+          <li><a href="index.html#doctrine">The Doctrine</a></li>
+          <li><a href="modes.html">Operating Modes</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>ACCESS</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="access-business.html">Business</a></li>
+          <li><a href="access-independent-professional.html">Independent Professionals</a></li>
+          <li><a href="access-advisory.html">Advisory</a></li>
+          <li><a href="access-agencies.html">Agencies</a></li>
+          <li><a href="access-developers.html">Developers</a></li>
+          <li><a href="access-enterprise.html">Enterprise</a></li>
+          <li><a href="access-technology-partners.html">Technology Partners</a></li>
+          <li><a href="access-affiliates.html">Affiliates</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>LICENSING</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="licensing.html#platform">Platform Licence</a></li>
+          <li><a href="licensing.html#territorial">Territorial Rights</a></li>
+          <li><a href="licensing.html#vertical">Vertical Rights</a></li>
+          <li><a href="licensing.html#engine">Engine Licensing</a></li>
+          <li><a href="licensing.html#feeds">Intelligence Feeds</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>COMPANY</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html#media">Press</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <nav class="policies" aria-label="Policies">
+      <a href="terms.html">Terms</a><span>&bull;</span>
+      <a href="privacy.html">Privacy</a><span>&bull;</span>
+      <a href="refund-policy.html">Refund Policy</a><span>&bull;</span>
+      <a href="billing.html">Billing</a><span>&bull;</span>
+      <a href="cancellation.html">Cancellation</a><span>&bull;</span>
+      <a href="acceptable-use.html">Acceptable Use</a><span>&bull;</span>
+      <a href="data-processing.html">Data Processing</a><span>&bull;</span>
+      <a href="security.html">Security</a><span>&bull;</span>
+      <a href="responsible-ai.html">Responsible AI</a><span>&bull;</span>
+      <a href="cookies.html">Cookies</a>
+    </nav>
+
+    <div class="pay">
+      <img src="assets/payment-methods.webp" alt="Payment methods accepted: Stripe, PayPal, Flutterwave, Visa, Mastercard, American Express, Apple Pay, G Pay, Alipay and cryptocurrency.">
+    </div>
+
+    <div class="base">
+      <div class="mono" aria-label="BACI">B</div>
+      <div class="copy">&copy; 2026 BACI</div>
+      <div class="socials">
+        <a class="soc" href="#" aria-label="TikTok"><img src="assets/social-tiktok.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Reddit"><img src="assets/social-reddit.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Facebook"><img src="assets/social-facebook.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Instagram"><img src="assets/social-instagram.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="LinkedIn"><img src="assets/social-linkedin.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="X"><img src="assets/social-x.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="WhatsApp"><img src="assets/social-whatsapp.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Snapchat"><img src="assets/social-snapchat.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="YouTube"><img src="assets/social-youtube.webp" alt=""></a>
+      </div>
+      <button class="a11y" id="a11y" aria-pressed="false">
+        <span class="glyph" aria-hidden="true"><img src="assets/icon-accessibility.webp" alt=""></span>
+        <span class="lab">Enhance your experience</span>
+      </button>
+    </div>
+   </div>
+   </div>
+  </footer>
+
+<section class="thoughts">
+  <p class="listening">We're listening.</p>
+
+  <button type="button" class="open-btn" id="thoughts-open" aria-expanded="false" aria-controls="thoughts-panel">SHARE YOUR THOUGHTS</button>
+
+  <div class="panel" id="thoughts-panel">
+    <label class="sr-only" for="thoughts-text">Share your thoughts</label>
+    <textarea id="thoughts-text" placeholder="Share your thoughts&hellip;"></textarea>
+    <label class="sr-only" for="thoughts-email">Email, if you would like a reply</label>
+    <input type="email" id="thoughts-email" autocomplete="email" placeholder="Email, if you would like a reply">
+    <div class="send">
+      <button type="button" id="thoughts-send">SHARE YOUR THOUGHTS</button>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  /* signature CTA travel span: first letter to last letter */
+  var cta = document.getElementById('cta');
+  if(cta){
+    var span = cta.offsetWidth * 0.86;
+    cta.style.setProperty('--travel', span + 'px');
+    cta.style.setProperty('--start', (cta.offsetWidth * 0.07) + 'px');
+    window.addEventListener('resize', function(){
+      cta.style.setProperty('--travel', (cta.offsetWidth * 0.86) + 'px');
+      cta.style.setProperty('--start', (cta.offsetWidth * 0.07) + 'px');
+    });
+  }
+
+  /* route multi-select */
+  document.querySelectorAll('.pick').forEach(function(p){
+    function toggle(){
+      p.setAttribute('aria-pressed', p.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+    }
+    p.addEventListener('click', toggle);
+    p.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  });
+
+  /* thoughts box collapses until asked for */
+  var tOpen  = document.getElementById('thoughts-open');
+  var tPanel = document.getElementById('thoughts-panel');
+  if(tOpen && tPanel){
+    tOpen.addEventListener('click', function(){
+      tOpen.setAttribute('aria-expanded','true');
+      tOpen.classList.add('hidden');
+      tPanel.classList.add('open');
+      document.getElementById('thoughts-text').focus();
+    });
+  }
+})();
+</script>
+
+
+<div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="Display settings" aria-modal="false">
+  <h4>Display</h4>
+  <div class="a11y-row">
+    <span>Background</span>
+    <button type="button" class="a11y-opt" id="a11yView" aria-pressed="false">Dark</button>
+  </div>
+  <div class="a11y-row">
+    <span>Text size</span>
+    <div class="a11y-steps">
+      <button type="button" class="a11y-step" id="a11ySmaller" aria-label="Smaller text">&minus;</button>
+      <button type="button" class="a11y-step" id="a11yLarger" aria-label="Larger text">+</button>
+    </div>
+  </div>
+  <button type="button" class="a11y-close" id="a11yClose">Close</button>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+
+  /* restore whatever was chosen last time, before anything paints */
+  try{
+    var v = localStorage.getItem('baci-view');
+    var t = localStorage.getItem('baci-text');
+    if(v === 'light') root.setAttribute('data-view','light');
+    if(t) root.style.setProperty('--text-scale', t);
+  }catch(e){}
+
+  var toggle = document.getElementById('a11y');
+  var panel  = document.getElementById('a11yPanel');
+  if(!toggle || !panel) return;
+
+  var viewBtn = document.getElementById('a11yView');
+  var smaller = document.getElementById('a11ySmaller');
+  var larger  = document.getElementById('a11yLarger');
+  var closeB  = document.getElementById('a11yClose');
+
+  var STEPS = [1, 1.12, 1.25, 1.4];
+
+  function currentStep(){
+    var s = parseFloat(getComputedStyle(root).getPropertyValue('--text-scale')) || 1;
+    var i = 0, best = 9;
+    STEPS.forEach(function(v, n){
+      var d = Math.abs(v - s);
+      if(d < best){ best = d; i = n; }
+    });
+    return i;
+  }
+
+  function setScale(i){
+    i = Math.max(0, Math.min(STEPS.length - 1, i));
+    root.style.setProperty('--text-scale', STEPS[i]);
+    try{ localStorage.setItem('baci-text', STEPS[i]); }catch(e){}
+  }
+
+  function syncView(){
+    var light = root.getAttribute('data-view') === 'light';
+    viewBtn.textContent = light ? 'Light' : 'Dark';
+    viewBtn.setAttribute('aria-pressed', String(light));
+  }
+
+  function open(){
+    panel.classList.add('open');
+    toggle.setAttribute('aria-expanded','true');
+    syncView();
+    viewBtn.focus();
+  }
+  function close(){
+    panel.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+  }
+
+  toggle.setAttribute('aria-expanded','false');
+  toggle.addEventListener('click', function(e){
+    e.preventDefault();
+    panel.classList.contains('open') ? close() : open();
+  });
+
+  viewBtn.addEventListener('click', function(){
+    var light = root.getAttribute('data-view') === 'light';
+    if(light){ root.removeAttribute('data-view'); }
+    else { root.setAttribute('data-view','light'); }
+    try{ localStorage.setItem('baci-view', light ? 'dark' : 'light'); }catch(e){}
+    syncView();
+  });
+
+  smaller.addEventListener('click', function(){ setScale(currentStep() - 1); });
+  larger .addEventListener('click', function(){ setScale(currentStep() + 1); });
+  closeB .addEventListener('click', close);
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && panel.classList.contains('open')) { close(); toggle.focus(); }
+  });
+  document.addEventListener('click', function(e){
+    if(!panel.contains(e.target) && !toggle.contains(e.target)) close();
+  });
+
+  syncView();
+})();
+</script>
+
+</body>
+</html>

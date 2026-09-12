@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intellectual Property And Content Rights &middot; BACI</title>
+<link rel="icon" href="favicon-baci-monogram.webp">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#C39544;
+  --gold-light:#CFA24E;
+  --dim:#8A6E3C;
+  --champagne:#E8C87A;
+  --head:#C99F5E;
+  --bg:#000;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--gold);
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--champagne);outline-offset:3px}
+
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 28px}
+.wrap.full{max-width:none;padding:0}
+
+/* ---------- masthead ---------- */
+.masthead{padding:38px 0 0;text-align:left}
+.masthead img{width:124px;height:auto;opacity:.92}
+
+/* ---------- page head ---------- */
+.page-head{text-align:center;padding:76px 0 0}
+.page-head h1{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--head);
+  font-size:clamp(2.4rem,7vw,4.5rem);
+  letter-spacing:.22em;
+  text-indent:.22em;
+  line-height:1.08;
+}
+
+/* ---------- light-point rule ---------- */
+.rule{
+  position:relative;
+  height:1px;
+  margin:26px auto 0;
+  max-width:420px;
+  background:linear-gradient(90deg,transparent,var(--dim) 18%,var(--dim) 82%,transparent);
+}
+.rule::after{
+  content:"";
+  position:absolute;
+  top:50%;left:50%;
+  width:7px;height:7px;
+  margin:-3.5px 0 0 -3.5px;
+  border-radius:50%;
+  background:var(--champagne);
+  box-shadow:0 0 10px 3px rgba(232,200,122,.55);
+}
+.rule.short{max-width:210px}
+
+/* ---------- intro ---------- */
+.intro{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto;
+  padding:38px 0 0;
+}
+.intro p{
+  font-size:clamp(1.06rem,2.1vw,1.32rem);
+  line-height:1.72;
+  color:var(--gold);
+  margin-bottom:1.15em;
+}
+.intro p:last-child{margin-bottom:0}
+
+/* ---------- routes ---------- */
+.routes{padding:86px 0 0;max-width:880px;margin:0 auto}
+.route{
+  padding:34px 0;
+  border-top:1px solid rgba(138,110,60,.34);
+  text-align:center;
+}
+.route:last-child{border-bottom:1px solid rgba(138,110,60,.34)}
+.route h2{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--gold-light);
+  font-size:clamp(1.02rem,2.3vw,1.34rem);
+  letter-spacing:.19em;
+  text-indent:.19em;
+  margin-bottom:14px;
+}
+.route p{
+  font-size:clamp(1rem,2vw,1.2rem);
+  line-height:1.66;
+  color:var(--gold);
+  max-width:560px;
+  margin:0 auto;
+}
+
+/* ---------- distinction ---------- */
+.distinction{
+  text-align:center;
+  padding:88px 0 0;
+}
+.distinction p{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:400;
+  color:var(--champagne);
+  font-size:clamp(1.24rem,3vw,1.92rem);
+  line-height:1.55;
+  max-width:820px;
+  margin:0 auto;
+}
+
+/* ---------- form ---------- */
+.enquiry{padding:92px 0 0;max-width:660px;margin:0 auto}
+.enquiry h2{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--head);
+  font-size:clamp(1.1rem,2.6vw,1.5rem);
+  letter-spacing:.2em;
+  text-indent:.2em;
+  text-align:center;
+}
+.fields{padding:44px 0 0}
+.field{margin-bottom:26px}
+.field label{
+  display:block;
+  font-family:'Cinzel',serif;
+  font-size:.68rem;
+  letter-spacing:.17em;
+  text-indent:.17em;
+  color:var(--dim);
+  margin-bottom:9px;
+  text-transform:uppercase;
+}
+.field input,.field textarea,.field select{
+  width:100%;
+  background:transparent;
+  border:none;
+  border-bottom:1px solid rgba(138,110,60,.46);
+  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.08rem;
+  font-weight:300;
+  padding:9px 2px;
+  transition:border-color .3s;
+}
+.field textarea{resize:vertical;min-height:96px;line-height:1.6}
+.field input:focus,.field textarea:focus,.field select:focus{
+  outline:none;
+  border-bottom-color:var(--champagne);
+}
+.field select option{background:#0a0a0a;color:var(--gold)}
+
+.routes-pick{display:flex;flex-wrap:wrap;gap:10px;padding-top:4px}
+.pick{
+  font-family:'Cinzel',serif;
+  font-size:.66rem;
+  letter-spacing:.14em;
+  text-indent:.14em;
+  text-transform:uppercase;
+  color:var(--dim);
+  border:1px solid rgba(138,110,60,.44);
+  border-radius:2px;
+  padding:9px 14px;
+  cursor:pointer;
+  transition:color .3s,border-color .3s;
+  user-select:none;
+}
+.pick[aria-pressed="true"]{
+  color:var(--champagne);
+  border-color:rgba(232,200,122,.7);
+}
+
+/* ---------- signature CTA ---------- */
+.cta-wrap{text-align:center;padding:56px 0 0}
+.cta{
+  position:relative;
+  display:inline-block;
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  font-size:clamp(.86rem,2vw,1.06rem);
+  letter-spacing:.24em;
+  text-indent:.24em;
+  color:var(--head);
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:0 0 16px;
+}
+.cta::after{
+  content:"";
+  position:absolute;
+  left:var(--start,0);
+  bottom:0;
+  width:6px;height:6px;
+  margin-left:-3px;
+  border-radius:50%;
+  background:var(--champagne);
+  box-shadow:0 0 9px 3px rgba(232,200,122,.5);
+  animation:travel 6s cubic-bezier(.42,0,.58,1) infinite;
+}
+@keyframes travel{
+  0%   {transform:translateX(0)}
+  50%  {transform:translateX(var(--travel,120px))}
+  100% {transform:translateX(0)}
+}
+.cta-line{
+  height:1px;
+  margin:0 auto;
+  max-width:300px;
+  background:linear-gradient(90deg,transparent,var(--dim) 20%,var(--dim) 80%,transparent);
+}
+
+/* ---------- footer ---------- */
+footer{margin-top:120px;padding-top:6px}
+.footer-wrap{max-width:1440px;margin:0 auto;padding:0 28px}
+.cols{
+  display:grid;
+  grid-template-columns:1.7fr 1.12fr 1.18fr 1fr .88fr;
+  gap:0;
+  padding:52px 0 0;
+  align-items:start;
+}
+.col{padding:0 22px;border-left:1px solid rgba(195,149,68,.42)}
+.col:first-child{border-left:none;padding-left:0}
+.col h3{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--head);
+  font-size:clamp(.82rem,1.5vw,1.06rem);
+  letter-spacing:.13em;
+  text-indent:.13em;
+  text-align:center;
+  margin-bottom:0;
+}
+.col .rule{margin:12px auto 30px;max-width:100%}
+.col ul{list-style:none}
+.col li{margin-bottom:17px;line-height:1.3}
+.col a{
+  font-size:.98rem;
+  color:var(--gold);
+  transition:color .25s;
+  display:inline-block;
+}
+.col a:hover{color:var(--champagne)}
+
+.os-split{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.os-split ul:first-child{padding-right:16px}
+.os-split ul:last-child{padding-left:20px;border-left:1px solid rgba(195,149,68,.26)}
+
+.policies{
+  margin-top:44px;
+  padding:20px 0;
+  border-top:1px solid rgba(195,149,68,.42);
+  border-bottom:1px solid rgba(195,149,68,.42);
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:0 8px;
+}
+.policies a{font-size:.98rem;color:var(--gold);padding:0 4px;white-space:nowrap}
+.policies span{color:var(--dim);font-size:.62rem;padding:0 4px}
+
+.pay{padding:6px 0 8px}
+.pay img{display:block;width:100%;height:auto}
+
+.base{
+  padding:32px 0 48px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+}
+.mono{
+  width:64px;height:64px;
+  border:1px solid var(--gold);
+  border-radius:50%;
+  display:grid;place-items:center;
+  font-family:'Cinzel',serif;
+  font-size:1.75rem;
+  color:var(--gold);
+}
+.copy{font-size:1rem;color:var(--gold);padding:0 20px;border-left:1px solid rgba(195,149,68,.34)}
+.socials{display:flex;gap:10px;padding:0 4px}
+.soc{display:block;width:46px;height:46px;transition:opacity .25s,transform .25s}
+.soc img{display:block;width:100%;height:100%}
+.soc:hover{opacity:.78;transform:translateY(-1px)}
+.a11y{
+  display:flex;align-items:center;gap:12px;
+  padding-left:20px;border-left:1px solid rgba(195,149,68,.34);
+  background:none;border-top:none;border-right:none;border-bottom:none;
+  cursor:pointer;
+}
+.a11y .glyph{width:58px;height:58px;display:block}
+.a11y .glyph img{display:block;width:100%;height:100%}
+.a11y .lab{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;
+  color:var(--gold);
+  text-align:left;
+  line-height:1.25;
+  max-width:104px;
+}
+
+/* ---------- responsive ---------- */
+/* The footer keeps its five-column shape at every width.
+   Below the width it needs, the whole footer scrolls sideways
+   as one piece rather than stacking. */
+.footer-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.footer-wrap{min-width:1180px}
+
+@media(max-width:1240px){
+  .col{padding:0 16px}
+  .col a{font-size:.94rem}
+  .col li{margin-bottom:15px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .cta::after{animation:none}
+  *{transition:none !important}
+}
+
+/* ---------- share your thoughts (universal, below the footer) ---------- */
+.thoughts{
+  border-top:1px solid rgba(195,149,68,.28);
+  text-align:center;
+  padding:78px 28px 92px;
+}
+.thoughts .listening{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  color:var(--champagne);
+  font-size:clamp(2rem,5.4vw,3.1rem);
+  line-height:1.1;
+  margin-bottom:38px;
+}
+.thoughts .ask{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  color:var(--gold);
+  font-size:clamp(1.1rem,2.5vw,1.42rem);
+  line-height:1.5;
+  max-width:560px;
+  margin:0 auto 34px;
+}
+.thoughts textarea{
+  display:block;
+  width:100%;
+  max-width:820px;
+  margin:0 auto;
+  min-height:200px;
+  background:rgba(195,149,68,.022);
+  border:1px solid rgba(195,149,68,.58);
+  border-radius:22px;
+  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:1.14rem;
+  line-height:1.6;
+  padding:26px 28px;
+  resize:vertical;
+  transition:border-color .3s;
+}
+.thoughts textarea::placeholder{color:var(--dim)}
+.thoughts textarea:focus{outline:none;border-color:var(--champagne)}
+
+.thoughts input[type="email"]{
+  display:block;
+  width:100%;
+  max-width:820px;
+  margin:18px auto 0;
+  background:rgba(195,149,68,.022);
+  border:1px solid rgba(195,149,68,.42);
+  border-radius:999px;
+  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:1.08rem;
+  padding:17px 28px;
+  transition:border-color .3s;
+}
+.thoughts input[type="email"]::placeholder{color:var(--dim)}
+.thoughts input[type="email"]:focus{outline:none;border-color:var(--champagne)}
+
+.thoughts .open-btn{
+  font-family:'Cinzel',serif;font-weight:500;
+  font-size:clamp(.76rem,1.7vw,.92rem);
+  letter-spacing:.19em;text-indent:.19em;
+  color:var(--gold-light);
+  background:rgba(195,149,68,.030);
+  border:1px solid rgba(195,149,68,.6);
+  border-radius:999px;
+  padding:18px 44px;
+  cursor:pointer;
+  transition:border-color .3s,color .3s;
+}
+.thoughts .open-btn:hover{border-color:var(--champagne);color:var(--champagne)}
+.thoughts .panel{display:none;padding-top:34px}
+.thoughts .panel.open{display:block}
+.thoughts .open-btn.hidden{display:none}
+.thoughts .send{padding-top:34px}
+.thoughts .send button{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  font-size:clamp(.76rem,1.7vw,.92rem);
+  letter-spacing:.19em;
+  text-indent:.19em;
+  color:var(--gold-light);
+  background:rgba(195,149,68,.030);
+  border:1px solid rgba(195,149,68,.6);
+  border-radius:999px;
+  padding:18px 44px;
+  cursor:pointer;
+  transition:border-color .3s,color .3s;
+}
+.thoughts .send button:hover{border-color:var(--champagne);color:var(--champagne)}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* BACKGROUND TREATMENT ONLY */
+.baci-ambient{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 75% 85% at -18% 48%,rgba(195,149,68,.055),rgba(195,149,68,.024) 35%,transparent 74%),radial-gradient(ellipse 62% 72% at 116% 35%,rgba(195,149,68,.045),rgba(195,149,68,.019) 38%,transparent 74%)}
+body::before,body::after{content:"";position:fixed;pointer-events:none;z-index:0}
+body::before{width:72vw;height:72vw;left:-34vw;top:14vh;border-radius:50%;border:1px solid rgba(195,149,68,.10);box-shadow:0 0 145px rgba(195,149,68,.040),inset 0 0 165px rgba(195,149,68,.028);transform:rotate(-9deg)}
+body::after{width:56vw;height:1px;right:-8vw;top:46vh;background:linear-gradient(90deg,transparent,rgba(232,200,122,.052),transparent);box-shadow:0 0 58px 2px rgba(195,149,68,.026);transform:rotate(-17deg)}
+.baci-orbit{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}.baci-orbit::before{content:"";position:absolute;width:980px;height:420px;right:-530px;top:19vh;border:1px solid rgba(195,149,68,.082);border-radius:50%;transform:rotate(24deg);box-shadow:0 0 115px rgba(195,149,68,.026)}.baci-orbit::after{content:none}
+input,textarea,button{
+  -webkit-appearance:none;
+  appearance:none;
+}
+input,textarea{
+  background-color:transparent;
+  -webkit-text-fill-color:var(--gold);
+  caret-color:var(--champagne);
+  color-scheme:dark;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus{
+  -webkit-text-fill-color:var(--gold) !important;
+  -webkit-box-shadow:0 0 0 1000px #000000 inset !important;
+  box-shadow:0 0 0 1000px #000000 inset !important;
+  transition:background-color 9999s ease-out 0s;
+}
+
+/* content sits above the ambient layers */
+main,header,footer,section,.wrap,.section,.hero,.thoughts{position:relative;z-index:1}
+.baci-ambient,.baci-orbit{z-index:0}
+
+.doc{max-width:760px;margin:0 auto;padding:44px 0 0}
+.doc__meta{text-align:center;font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.22em;
+  color:var(--dim);text-transform:uppercase;margin-bottom:8px}
+.doc__note{text-align:center;max-width:620px;margin:0 auto 12px;font-size:1rem;
+  line-height:1.62;color:var(--dim);font-style:italic}
+.doc h2{font-family:'Cinzel',serif;font-weight:500;color:var(--gold-light);
+  font-size:clamp(.86rem,1.9vw,1.04rem);letter-spacing:.16em;text-indent:.16em;
+  text-transform:uppercase;margin:52px 0 16px}
+.doc h2:first-of-type{margin-top:44px}
+.doc p{font-size:1.05rem;line-height:1.72;color:var(--gold);margin:0 0 1em}
+.doc ul{list-style:none;margin:0 0 1em;padding:0}
+.doc li{font-size:1.05rem;line-height:1.7;color:var(--gold);padding-left:22px;
+  position:relative;margin-bottom:.6em}
+.doc li::before{content:"";position:absolute;left:2px;top:.72em;width:4px;height:4px;
+  border-radius:50%;background:var(--dim)}
+.doc__contact{margin-top:56px;padding-top:34px;border-top:1px solid rgba(138,110,60,.34);text-align:center}
+.doc__contact a{color:var(--gold-light)}
+.doc-back{text-align:center;padding:56px 0 0}
+.doc-back a{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.2em;text-indent:.2em;
+  color:var(--dim);text-transform:uppercase;transition:color .3s}
+.doc-back a:hover{color:var(--champagne)}
+
+/* ═══ ACCESSIBILITY ═══
+   Two things only: a light mode, and text size. Both work by
+   swapping variables on the root, so nothing is restyled twice. */
+
+html{font-size:calc(100% * var(--text-scale,1))}
+
+html[data-view="light"]{
+  --bg:#F7F4EE;
+  --gold:#4A3616;
+  --gold-light:#3A2A10;
+  --dim:#6B573A;
+  --champagne:#7A5A18;
+  --closing:#4A3616;
+  --head:#3A2A10;
+  --metal:#3A2A10;
+}
+html[data-view="light"] body{background:var(--bg);color:var(--gold)}
+html[data-view="light"] .baci-ambient,
+html[data-view="light"] .baci-orbit,
+html[data-view="light"] body::before,
+html[data-view="light"] body::after{display:none}
+html[data-view="light"] img[src$="baci-wordmark.webp"],
+html[data-view="light"] img[src$="hero-shell.webp"],
+html[data-view="light"] img[src$="doctrine.webp"],
+html[data-view="light"] img[src$="dashboard.webp"],
+html[data-view="light"] .pay img,
+html[data-view="light"] .soc img,
+html[data-view="light"] .a11y .glyph img{
+  filter:invert(1) hue-rotate(180deg) saturate(.55) brightness(.85);
+}
+html[data-view="light"] .mono,
+html[data-view="light"] .cnode__circle,
+html[data-view="light"] .cring__centre{background:var(--bg)}
+
+/* the panel */
+.a11y-panel{
+  position:fixed;right:20px;bottom:20px;z-index:60;
+  width:min(300px,calc(100vw - 40px));
+  background:#000;
+  border:1px solid rgba(195,149,68,.5);
+  border-radius:16px;
+  padding:22px 22px 20px;
+  display:none;
+}
+html[data-view="light"] .a11y-panel{background:#FFFDF8;border-color:rgba(74,54,22,.35)}
+.a11y-panel.open{display:block}
+.a11y-panel h4{
+  font-family:'Cinzel',Georgia,serif;font-weight:500;font-size:.66rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin:0 0 18px;
+}
+.a11y-row{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}
+.a11y-row:last-of-type{margin-bottom:0}
+.a11y-row span{font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;color:var(--gold)}
+.a11y-opt{
+  font-family:'Cinzel',Georgia,serif;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--dim);background:none;border:1px solid rgba(195,149,68,.4);border-radius:999px;
+  padding:9px 15px;cursor:pointer;transition:color .3s,border-color .3s;
+}
+.a11y-opt[aria-pressed="true"]{color:var(--gold-light);border-color:rgba(207,162,78,.75)}
+.a11y-steps{display:flex;gap:8px}
+.a11y-step{
+  width:38px;height:38px;border-radius:50%;cursor:pointer;
+  background:none;border:1px solid rgba(195,149,68,.4);color:var(--gold-light);
+  font-family:'Cinzel',Georgia,serif;font-size:.9rem;line-height:1;
+  transition:border-color .3s,color .3s;
+}
+.a11y-step:hover{border-color:rgba(232,200,122,.7)}
+.a11y-close{
+  margin-top:20px;width:100%;background:none;border:0;cursor:pointer;
+  font-family:'Cinzel',Georgia,serif;font-size:.6rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--dim);padding:8px 0 0;
+}
+
+/* ═══ GLOW PASS ═══
+   Gold on black goes flat without a little light behind it. This adds
+   depth without brightening the palette: nothing changes colour, the
+   type just stops sitting dead on the background. Light mode gets none
+   of it, where glow would only look like a printing fault. */
+
+html:not([data-view="light"]) .page-head h1,
+html:not([data-view="light"]) .hero h1,
+html:not([data-view="light"]) .heading,
+html:not([data-view="light"]) .access__title,
+html:not([data-view="light"]) .drown__head,
+html:not([data-view="light"]) .reality__title,
+html:not([data-view="light"]) .doctrine__title,
+html:not([data-view="light"]) .bos__title,
+html:not([data-view="light"]) .title-stack .t1{
+  text-shadow:0 0 18px rgba(201,159,94,.17), 0 0 40px rgba(195,149,68,.07);
+}
+
+html:not([data-view="light"]) .band h2,
+html:not([data-view="light"]) .section-head h2,
+html:not([data-view="light"]) .enquiry h2,
+html:not([data-view="light"]) .doc h2,
+html:not([data-view="light"]) .mode__name,
+html:not([data-view="light"]) .control h2,
+{
+  text-shadow:0 0 14px rgba(201,159,94,.16);
+}
+
+/* the closing lines carry a touch more, since they are the last thing read */
+html:not([data-view="light"]) .bos__closer,
+html:not([data-view="light"]) .thoughts .listening,
+html:not([data-view="light"]) .distinction p,
+html:not([data-view="light"]) .control .closing,
+html:not([data-view="light"]) .engine-close,
+html:not([data-view="light"]) .access__ready{
+  text-shadow:0 0 20px rgba(207,162,78,.22);
+}
+
+/* the light points get a cleaner falloff rather than a bigger blur */
+html:not([data-view="light"]) .rule::after,
+html:not([data-view="light"]) .acard__rule::after,
+html:not([data-view="light"]) .bcard__rule::after,
+html:not([data-view="light"]) .col .rule::after{
+  box-shadow:0 0 6px 1px rgba(232,200,122,.55),
+             0 0 16px 4px rgba(232,200,122,.20);
+}
+
+/* the hairlines lift off the black a fraction */
+html:not([data-view="light"]) .rule,
+html:not([data-view="light"]) .cta__conduit,
+html:not([data-view="light"]) .cta-line{
+  box-shadow:0 0 12px rgba(195,149,68,.07);
+}
+
+/* cards: resting glow, stronger on touch */
+html:not([data-view="light"]) .acard,
+html:not([data-view="light"]) .bcard,
+html:not([data-view="light"]) .hcard,
+html:not([data-view="light"]) .tier,
+html:not([data-view="light"]) .dev-mode{
+  box-shadow:inset 0 0 40px rgba(195,149,68,.022);
+  transition:border-color .4s ease,transform .4s ease,box-shadow .4s ease;
+}
+html:not([data-view="light"]) .acard:hover,
+html:not([data-view="light"]) .bcard:hover,
+html:not([data-view="light"]) .dev-mode:hover,
+html:not([data-view="light"]) .dev-mode.is-on{
+  box-shadow:inset 0 0 44px rgba(195,149,68,.05),
+             0 0 26px rgba(195,149,68,.07);
+}
+
+/* the wordmark and the monogram sit in a faint pool of light */
+html:not([data-view="light"]) .masthead img,
+html:not([data-view="light"]) .mono{
+  filter:drop-shadow(0 0 18px rgba(195,149,68,.14));
+}
+
+/* buttons answer to touch */
+html:not([data-view="light"]) .cta:hover .cta__text,
+html:not([data-view="light"]) .thoughts .open-btn:hover,
+html:not([data-view="light"]) .thoughts .send button:hover,
+html:not([data-view="light"]) .role .apply:hover,
+html:not([data-view="light"]) .obra6-btn:hover{
+  text-shadow:0 0 14px rgba(232,200,122,.16);
+}
+
+/* the ring's active node reads as lit rather than merely larger */
+html:not([data-view="light"]) .cnode.is-active .cnode__circle,
+html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
+  box-shadow:0 0 22px 3px rgba(195,149,68,.20),
+             inset 0 0 18px rgba(195,149,68,.05);
+}
+
+@media(prefers-reduced-motion:reduce){
+  html:not([data-view="light"]) .acard,
+  html:not([data-view="light"]) .bcard,
+  html:not([data-view="light"]) .dev-mode{transition:none}
+}
+</style>
+</head>
+
+<body>
+<div class="baci-ambient" aria-hidden="true"></div><div class="baci-orbit" aria-hidden="true"></div>
+
+<div class="wrap">
+
+  <div class="masthead"><a href="index.html" aria-label="BACI home"><img src="baci-wordmark.webp" alt="BACI"></a></div>
+
+  <header class="page-head">
+    <h1>INTELLECTUAL PROPERTY AND CONTENT RIGHTS</h1>
+    <div class="rule"></div>
+  </header>
+
+  <section class="doc">
+    <p class="doc__meta">Version 1.0 &middot; Effective Date: 10 September 2026 &middot; Last Updated: 10 September 2026</p>
+    <p>This Intellectual Property &amp; Content Rights Policy (&quot;Policy&quot;) explains ownership, licensing, permitted use and protection of intellectual property, content, data, Inputs, Outputs, BACI Intelligence, brand assets and related materials within the BACI ecosystem.</p>
+    <p>BACI is an intelligence platform. Customers may contribute proprietary information and receive analyses, recommendations, forecasts, reports, opportunities, scores, classifications and other Outputs. BACI simultaneously owns and protects the underlying technology, models, methodologies, orchestration, taxonomies, scoring systems and other systems that generate and deliver those capabilities.</p>
+    <p>This Policy is designed to preserve both sides of that relationship: Customer ownership of Customer Data and appropriate rights in Customer-specific Outputs, and BACI ownership of the underlying BACI Technology and reusable intellectual property that makes the Services possible.</p>
+    <h2>1. SCOPE</h2>
+    <p>This Policy applies to BACI websites, applications, Services, APIs, documentation, content, BACI Intelligence, Customer Data, Inputs, Outputs, developer materials, brand assets and other intellectual-property or content rights arising through use of BACI.</p>
+    <p>Additional rights or restrictions may apply under an Order, SOW, Enterprise Customer Agreement / MSA, Developer &amp; API Terms, Technology Partner Agreement, Platform &amp; Intelligence Licensing Agreement or other Supplemental Terms.</p>
+    <h2>2. RELATIONSHIP TO THE BACI LEGAL FRAMEWORK</h2>
+    <p>This Policy forms part of the BACI Legal Framework and must be read with the Terms of Service.</p>
+    <p>The Terms establish the foundational allocation of Customer Data, BACI Technology and Customer-specific Output rights. This Policy explains and implements that allocation.</p>
+    <p>Where a higher-precedence executed agreement expressly addresses an intellectual-property matter, that agreement controls according to the BACI order of precedence.</p>
+    <h2>3. DEFINITIONS</h2>
+    <p>“BACI Content” means content made available by BACI through the Services, excluding Customer Data and content owned by third parties.</p>
+    <p>“BACI Intelligence” has the meaning in the Terms and includes analyses, recommendations, forecasts, signals, classifications, scores, reports, opportunities, insights and related intelligence generated or delivered through BACI.</p>
+    <p>“BACI Technology” has the meaning in the Terms and includes the Services, software, source and object code, APIs, architecture, systems, AI systems, models, algorithms, methodologies, intelligence engines, orchestration, prompts, workflows, schemas, ontologies, taxonomies, scoring, designs, interfaces, databases, inventions, processes, Documentation and know-how.</p>
+    <p>“Customer Data”, “Input”, “Output” and “Third-Party Data” have the meanings in the Terms.</p>
+    <h2>4. CORE OWNERSHIP PRINCIPLE</h2>
+    <p>BACI does not acquire ownership of Customer Data merely because Customer uses BACI.</p>
+    <p>Customer does not acquire ownership of BACI Technology merely because BACI Technology processes Customer Data or generates Customer-specific Outputs.</p>
+    <p>Rights in an Output must be distinguished from rights in the underlying system that generated it.</p>
+    <h2>5. CUSTOMER DATA OWNERSHIP</h2>
+    <p>As between BACI and Customer, Customer retains its rights in Customer Data, subject to rights held by Customer&#x27;s licensors or other third parties.</p>
+    <p>Customer is responsible for ensuring it has sufficient rights and lawful authority to provide Customer Data to BACI and instruct BACI to Process it.</p>
+    <p>Nothing in this Policy transfers Customer&#x27;s ownership of Customer Data to BACI.</p>
+    <h2>6. CUSTOMER LICENCE TO BACI</h2>
+    <p>Customer grants BACI the limited rights reasonably necessary to host, copy, transmit, Process, analyse, transform and otherwise use Customer Data to provide, secure, support, maintain and improve the Customer&#x27;s use of the Services as permitted by the Agreement.</p>
+    <p>This operational licence does not grant BACI unrestricted ownership or independent commercial exploitation rights in Customer Confidential Information.</p>
+    <p>Processing of Customer Personal Data on Customer&#x27;s behalf is governed by the DPA.</p>
+    <h2>7. CUSTOMER RESPONSIBILITY FOR RIGHTS</h2>
+    <p>Customer represents that it has the rights, permissions, licences, notices and other legal authority required for Customer Data and Inputs it provides.</p>
+    <p>Customer must not submit material in a manner that infringes copyright, trademark, patent, trade secret, privacy, publicity, database, contractual or other rights.</p>
+    <p>BACI&#x27;s technical ability to Process material does not establish Customer&#x27;s legal right to provide it.</p>
+    <h2>8. BACI TECHNOLOGY OWNERSHIP</h2>
+    <p>BACI and its licensors retain all right, title and interest in BACI Technology.</p>
+    <p>Except for express rights granted under the Agreement, no right, title or interest in BACI Technology transfers to Customer.</p>
+    <p>All rights not expressly granted are reserved.</p>
+    <h2>9. COMPONENTS OF BACI TECHNOLOGY</h2>
+    <p>BACI Technology includes, without limitation, underlying software, models, algorithms, model configurations, system prompts, orchestration, intelligence engines, agent architectures, decision logic, methodologies, workflows, schemas, ontologies, taxonomies, scoring systems, interfaces, visual systems, documentation, designs, inventions, processes and know-how.</p>
+    <p>The fact that a component contributes to a Customer-specific Output does not make that component Customer-owned.</p>
+    <h2>10. BACI CONTENT</h2>
+    <p>BACI Content may include website copy, product descriptions, documentation, reports, interface text, graphics, designs, videos, illustrations, research materials, educational content and other materials created or licensed by BACI.</p>
+    <p>Unless expressly stated otherwise, BACI Content may be used only as permitted by the Agreement and applicable law.</p>
+    <p>No general right to reproduce, republish, sell or redistribute BACI Content is granted.</p>
+    <h2>11. CUSTOMER-SPECIFIC OUTPUTS</h2>
+    <p>Customer-specific Outputs are Outputs generated for Customer through Customer&#x27;s authorised use of BACI.</p>
+    <p>To the extent BACI owns intellectual-property rights specifically arising in a Customer-specific Output, and subject to payment of applicable Fees and the Agreement, BACI grants Customer a worldwide, perpetual, non-exclusive right to use, reproduce, adapt and exploit that Customer-specific Output for Customer&#x27;s permitted purposes.</p>
+    <p>This Output right does not transfer ownership of underlying BACI Technology.</p>
+    <h2>12. OUTPUT RIGHTS ARE SUBJECT TO LAW</h2>
+    <p>The existence and scope of intellectual-property rights in AI-generated or machine-generated material may vary by jurisdiction and by the degree of human authorship or other legally relevant circumstances.</p>
+    <p>BACI does not represent that every Output is independently copyrightable, patentable or otherwise capable of exclusive intellectual-property ownership.</p>
+    <p>Customer remains responsible for determining the protection and registrability of material it chooses to commercialise.</p>
+    <h2>13. NO EXCLUSIVITY OF SIMILAR OUTPUTS</h2>
+    <p>BACI may generate the same or similar ideas, analyses, structures, recommendations, language, classifications or Outputs for different customers.</p>
+    <p>Customer&#x27;s rights in a Customer-specific Output do not create exclusivity over underlying ideas, facts, methods, generic expressions, BACI Technology or independently generated similar Outputs.</p>
+    <p>BACI does not promise that an Output will be unique.</p>
+    <h2>14. UNDERLYING BACI TECHNOLOGY RESERVED</h2>
+    <p>Customer-specific Output rights do not include rights in the models, algorithms, prompts, orchestration, methodologies, scoring, taxonomies, intelligence engines, templates, systems or other BACI Technology used to produce the Output.</p>
+    <p>Customer may use the Output without acquiring the factory that produced it.</p>
+    <h2>15. PRE-EXISTING BACI MATERIALS</h2>
+    <p>If a Customer-specific Output incorporates BACI materials that existed independently of the Customer engagement, those pre-existing materials remain BACI Technology or BACI Content.</p>
+    <p>Customer receives only the rights necessary to use them as incorporated in the authorised Output unless the Agreement expressly grants broader rights.</p>
+    <h2>16. CUSTOMER MATERIALS WITHIN OUTPUTS</h2>
+    <p>Customer retains its rights in Customer materials incorporated into an Output.</p>
+    <p>BACI&#x27;s rights in the Output do not diminish Customer&#x27;s underlying ownership of Customer Data or other Customer intellectual property.</p>
+    <p>Third-party rights remain unaffected.</p>
+    <h2>17. THIRD-PARTY DATA AND CONTENT</h2>
+    <p>Third-Party Data, third-party content, market data, public records, licensed datasets, open-source materials and other third-party intellectual property remain subject to the rights and restrictions of their respective owners or licensors.</p>
+    <p>BACI cannot grant Customer rights that BACI does not possess.</p>
+    <p>Customer must comply with source-specific restrictions communicated through the Service, Documentation, Order or applicable licence.</p>
+    <h2>18. PUBLIC INFORMATION</h2>
+    <p>Facts and publicly available information may not be owned by BACI or Customer merely because BACI collects, organises, analyses or presents them.</p>
+    <p>BACI may nevertheless own protectable selection, arrangement, compilation, software, database, analysis, scoring, presentation or other original elements surrounding public information.</p>
+    <p>Applicable database and related rights may vary by jurisdiction.</p>
+    <h2>19. DATABASE RIGHTS</h2>
+    <p>Where applicable law recognises database, compilation or similar rights, BACI retains rights in BACI-created databases, compilations, selection, arrangement and substantial investment except to the extent an Agreement expressly grants otherwise.</p>
+    <p>Customer must not extract or reutilise a protected substantial part of a BACI database outside permitted use.</p>
+    <h2>20. INPUTS</h2>
+    <p>Customer retains its rights in Inputs it provides, subject to third-party rights.</p>
+    <p>Providing an Input grants BACI the operational rights necessary to Process it under the Agreement.</p>
+    <p>Customer must not use Inputs to instruct BACI to infringe or misappropriate another person&#x27;s rights.</p>
+    <h2>21. PROMPTS</h2>
+    <p>A prompt or instruction supplied by Customer is treated as an Input.</p>
+    <p>Customer retains any rights it has in original Customer-created prompt content, but does not acquire rights in BACI system prompts, hidden instructions, orchestration, prompt templates or protected methods merely because Customer interacts with them.</p>
+    <p>Customer must not attempt to extract protected system prompts contrary to the Agreement.</p>
+    <h2>22. NO GENERAL MODEL TRAINING BY DEFAULT</h2>
+    <p>Unless Customer expressly agrees in writing or affirmatively opts into a clearly identified programme, BACI will not use Customer Confidential Information, Customer Personal Data, private Inputs or private Outputs to train or fine-tune general-purpose or shared AI models for the benefit of other customers.</p>
+    <p>This does not prevent Processing needed to provide, secure, support, maintain or troubleshoot the Services, follow Customer instructions or comply with law.</p>
+    <p>The DPA is authoritative for Processing of Customer Personal Data on Customer&#x27;s behalf.</p>
+    <h2>23. CUSTOMER-SPECIFIC TRAINING</h2>
+    <p>Customer-specific private model configuration, fine-tuning, retrieval, knowledge-base or similar functionality may be provided under an Order or Supplemental Terms.</p>
+    <p>Rights in Customer-provided training material remain subject to Customer and third-party ownership.</p>
+    <p>Unless expressly agreed otherwise, Customer-specific training does not transfer ownership of BACI&#x27;s underlying model architecture or platform.</p>
+    <h2>24. AGGREGATED AND DEIDENTIFIED INFORMATION</h2>
+    <p>Subject to the Agreement and applicable law, BACI may use aggregated or deidentified information for security, reliability, performance, analytics, functionality and service improvement where the information does not identify Customer or individuals as prohibited by law.</p>
+    <p>Aggregation or deidentification does not permit BACI to disregard contractual confidentiality obligations.</p>
+    <h2>25. USAGE DATA</h2>
+    <p>BACI may generate Usage Data concerning operation, performance, security and use of the Services as permitted by the Agreement.</p>
+    <p>BACI may use Usage Data to operate, secure, support and improve BACI, subject to confidentiality, privacy and deidentification requirements.</p>
+    <p>Usage Data does not give BACI ownership of Customer Data.</p>
+    <h2>26. FEEDBACK</h2>
+    <p>If Customer voluntarily provides suggestions, ideas, comments or feedback about BACI, BACI may use that feedback without restriction or payment unless the parties expressly agree otherwise.</p>
+    <p>This feedback right does not transfer Customer Confidential Information, Customer Data or independently developed Customer Technology merely because it accompanies feedback.</p>
+    <h2>27. DELIVERABLES UNDER PROFESSIONAL SERVICES</h2>
+    <p>Ownership and licence rights in deliverables created under professional services are governed by the applicable SOW, Order or Enterprise agreement.</p>
+    <p>Unless expressly stated otherwise, BACI retains underlying BACI Technology and reusable know-how, methods, templates and tools.</p>
+    <p>Customer receives the deliverable rights expressly granted for the engagement.</p>
+    <h2>28. CUSTOM DEVELOPMENT</h2>
+    <p>Custom configuration or development does not automatically transfer ownership of BACI Technology.</p>
+    <p>If the parties intend Customer to own a specifically commissioned work product, the applicable SOW must expressly identify that work product and the ownership transfer.</p>
+    <p>Pre-existing and reusable BACI Technology remains excluded unless expressly transferred.</p>
+    <h2>29. JOINT DEVELOPMENT</h2>
+    <p>Where BACI and another party jointly develop technology or content, ownership must be expressly allocated in an executed agreement.</p>
+    <p>Collaboration alone does not create joint ownership.</p>
+    <p>Each party retains its pre-existing intellectual property unless expressly transferred.</p>
+    <h2>30. DEVELOPER APPLICATIONS</h2>
+    <p>Developers retain rights in their independently developed applications and code.</p>
+    <p>Use of BACI APIs does not transfer ownership of the Developer Application to BACI, and it does not transfer BACI API or platform ownership to the Developer.</p>
+    <p>The Developer &amp; API Terms govern technical and licensing boundaries.</p>
+    <h2>31. TECHNOLOGY PARTNER INTELLECTUAL PROPERTY</h2>
+    <p>A Technology Partner retains rights in its independently developed technology, products and materials.</p>
+    <p>BACI retains rights in BACI Technology.</p>
+    <p>Integration, interoperability or technical collaboration does not merge ownership unless an executed agreement expressly provides otherwise.</p>
+    <h2>32. PLATFORM AND INTELLIGENCE LICENSING</h2>
+    <p>Redistribution, syndication, embedding, white-labelling, private-labelling, sublicensing or commercial exposure of BACI Platform functionality or BACI Intelligence requires express rights under the Platform &amp; Intelligence Licensing Agreement or another authorised instrument.</p>
+    <p>Ordinary access rights do not create licensing rights.</p>
+    <h2>33. WHITE-LABELLING</h2>
+    <p>White-label rights affect presentation and branding only to the extent expressly granted.</p>
+    <p>They do not transfer ownership of BACI Technology or make Licensee the author or inventor of BACI&#x27;s underlying technology.</p>
+    <p>Required legal, provenance or ownership notices must be preserved.</p>
+    <h2>34. RESALE</h2>
+    <p>No right to resell BACI subscriptions, raw API access, BACI Intelligence or standalone BACI functionality exists unless expressly granted.</p>
+    <p>A party may charge for its own authorised service incorporating BACI only within the commercial rights granted by the applicable agreement.</p>
+    <h2>35. SYNDICATION AND REDISTRIBUTION</h2>
+    <p>BACI Intelligence may not be syndicated or redistributed beyond ordinary permitted use unless an applicable licence expressly allows it.</p>
+    <p>Where redistribution is authorised, source, provenance, attribution, Territory, End-User and onward-use restrictions may apply.</p>
+    <h2>36. SCREENSHOTS AND INTERFACE CONTENT</h2>
+    <p>Screenshots or recordings of BACI interfaces may contain BACI Content, Customer Data, Third-Party Data and confidential information.</p>
+    <p>Public use must respect all applicable rights, confidentiality and brand restrictions.</p>
+    <p>A screenshot does not convert protected content into freely reusable material.</p>
+    <h2>37. DOCUMENTATION</h2>
+    <p>BACI Documentation is protected BACI Content.</p>
+    <p>Customers and authorised users may use Documentation for permitted operation of BACI.</p>
+    <p>Reproduction or redistribution outside the authorised relationship requires permission unless applicable law permits otherwise.</p>
+    <h2>38. SOFTWARE</h2>
+    <p>BACI software is licensed, not sold, except where an executed agreement expressly states otherwise.</p>
+    <p>No source-code right exists merely because software functionality is accessible through a hosted service, API, client component or integration.</p>
+    <p>Any downloadable component is subject to its applicable licence terms.</p>
+    <h2>39. SOURCE CODE</h2>
+    <p>BACI source code is proprietary unless BACI expressly releases identified code under another licence.</p>
+    <p>Access to object code, APIs, documentation or interfaces does not grant source-code access.</p>
+    <p>Source-code escrow, if ever provided, requires an express written agreement.</p>
+    <h2>40. MODELS AND MODEL WEIGHTS</h2>
+    <p>BACI retains rights in BACI-owned models, model configurations, weights, parameters and related technology.</p>
+    <p>No right to extract, reproduce, transfer or reconstruct model weights is granted.</p>
+    <p>Third-party models remain subject to their providers&#x27; rights.</p>
+    <h2>41. ALGORITHMS AND METHODS</h2>
+    <p>BACI retains rights in proprietary algorithms, scoring, ranking, decision logic, forecasting methods, methodologies and related implementations to the extent protected by law.</p>
+    <p>Customer may use authorised Outputs without acquiring those underlying methods.</p>
+    <h2>42. TAXONOMIES, ONTOLOGIES AND SCHEMAS</h2>
+    <p>BACI-created taxonomies, ontologies, schemas, classifications and structured intelligence systems are BACI Technology to the extent protected by law.</p>
+    <p>An Output containing a classification does not grant a general licence to reproduce BACI&#x27;s entire classification system.</p>
+    <h2>43. PROMPT AND ORCHESTRATION SYSTEMS</h2>
+    <p>BACI system prompts, orchestration, routing, tool selection, agent logic and hidden instructions are BACI Technology.</p>
+    <p>Users must not use prompt injection, extraction or other techniques to obtain protected non-public system information contrary to the Agreement.</p>
+    <h2>44. REVERSE ENGINEERING</h2>
+    <p>Except to the extent mandatory law expressly permits notwithstanding contractual restriction, users must not reverse engineer, decompile, disassemble, derive source code, extract weights or reconstruct protected BACI systems.</p>
+    <p>Lawful interoperability rights remain preserved to the extent they cannot be waived.</p>
+    <h2>45. DATA EXTRACTION</h2>
+    <p>Users must not scrape, harvest, systematically extract or replicate BACI Content, BACI Intelligence or protected databases outside authorised interfaces and rights.</p>
+    <p>Permitted API access remains subject to Capacity, licensing and Developer terms.</p>
+    <p>This restriction does not prohibit export rights expressly provided to Customer for Customer Data.</p>
+    <h2>46. COMPETITIVE RECONSTRUCTION</h2>
+    <p>Users must not use non-public BACI Technology, Confidential Information or systematic extraction to reconstruct or materially replicate BACI&#x27;s proprietary platform, models, intelligence engines, datasets, scoring systems or other protected systems.</p>
+    <p>This does not prohibit lawful independent development using information the user independently has a right to use.</p>
+    <h2>47. AI TRAINING BY CUSTOMERS</h2>
+    <p>Customer must not use protected BACI Technology or systematically extracted BACI Content or Intelligence to train a substantially competing system where the Agreement prohibits that use.</p>
+    <p>Permitted use of Customer-owned Outputs for Customer&#x27;s own lawful purposes remains subject to the Output rights granted and any Third-Party Data restrictions.</p>
+    <p>Specific Developer, licensing or model terms may impose additional conditions.</p>
+    <h2>48. COPYRIGHT</h2>
+    <p>BACI respects copyright and expects users to do the same.</p>
+    <p>Users must not upload, reproduce, distribute, adapt, display or commercialise copyrighted material without sufficient rights or another lawful basis.</p>
+    <p>Copyright exceptions and limitations remain available where applicable law provides them.</p>
+    <h2>49. TRADEMARKS</h2>
+    <p>BACI names, logos, marks, product names and brand identifiers are owned by BACI or its licensors.</p>
+    <p>No trademark licence is granted except through express permission, approved brand guidelines or an applicable partner or licensing agreement.</p>
+    <p>Users must not create confusion regarding sponsorship, endorsement or source.</p>
+    <h2>50. PATENTS</h2>
+    <p>BACI may own or obtain patent rights in inventions and technology.</p>
+    <p>Access to BACI does not grant an implied patent licence beyond rights necessarily included in the express Service licence.</p>
+    <p>Any broader patent licence must be expressly granted.</p>
+    <h2>51. TRADE SECRETS</h2>
+    <p>Non-public BACI Technology, methods, architecture, models, prompts, roadmaps and other confidential proprietary information may constitute trade secrets.</p>
+    <p>Users must protect such information and may not misappropriate it.</p>
+    <p>Confidentiality obligations supplement applicable trade-secret law.</p>
+    <h2>52. MORAL RIGHTS</h2>
+    <p>To the extent moral rights or similar author rights apply to content supplied or created under an agreement, treatment of those rights is governed by the applicable Order, SOW and mandatory law.</p>
+    <p>BACI does not require a broader waiver than necessary for the rights expressly granted unless an agreement states otherwise.</p>
+    <h2>53. PUBLICITY RIGHTS</h2>
+    <p>Users must have appropriate rights to use a person&#x27;s name, image, likeness, voice or other protected indicia where required by law.</p>
+    <p>AI generation or transformation does not eliminate publicity, personality or privacy rights.</p>
+    <p>The Acceptable Use Policy and AI &amp; Autonomous Systems Terms may impose additional restrictions.</p>
+    <h2>54. CONFIDENTIAL INFORMATION</h2>
+    <p>Confidential Information may also be protected by intellectual-property, trade-secret, database, privacy or contractual rights.</p>
+    <p>A licence to use information for one purpose does not remove confidentiality restrictions for another purpose.</p>
+    <p>The Terms and applicable negotiated confidentiality provisions govern.</p>
+    <h2>55. OPEN-SOURCE SOFTWARE</h2>
+    <p>BACI may use or distribute open-source software.</p>
+    <p>Open-source components remain governed by their applicable licences, and nothing in the BACI Legal Framework restricts rights granted directly under those licences.</p>
+    <p>BACI proprietary components remain subject to BACI terms.</p>
+    <h2>56. CUSTOMER OPEN-SOURCE MATERIALS</h2>
+    <p>Customer is responsible for licences applicable to open-source materials it submits, combines with BACI or distributes through its products.</p>
+    <p>Customer must not knowingly impose incompatible reciprocal licensing obligations on BACI proprietary Technology without BACI&#x27;s express agreement.</p>
+    <h2>57. THIRD-PARTY SOFTWARE</h2>
+    <p>Third-party software, models, libraries or services may be subject to separate terms.</p>
+    <p>BACI cannot grant ownership of third-party intellectual property.</p>
+    <p>Where separate terms apply, users must comply with them.</p>
+    <h2>58. THIRD-PARTY AI MODELS</h2>
+    <p>BACI may use third-party AI infrastructure or models as permitted by the Agreement.</p>
+    <p>Rights in third-party models remain with their providers.</p>
+    <p>BACI will not represent that Customer receives rights in third-party model technology beyond those lawfully available through BACI&#x27;s service arrangement.</p>
+    <h2>59. PROVENANCE AND CONTENT CREDENTIALS</h2>
+    <p>BACI may use provenance indicators, metadata, watermarks, content credentials or similar mechanisms for certain content or Outputs.</p>
+    <p>Users must not remove or falsify such indicators for the purpose of deceiving others about origin, authenticity or AI generation.</p>
+    <p>Lawful editing that does not create deception remains subject to applicable terms.</p>
+    <h2>60. ATTRIBUTION</h2>
+    <p>Attribution is required only where the applicable licence, source restriction, brand rule, Order or law requires it.</p>
+    <p>BACI does not impose a universal BACI attribution requirement on every Customer-specific Output unless expressly stated.</p>
+    <p>Third-party attribution obligations remain applicable.</p>
+    <h2>61. CUSTOMER BRAND ASSETS</h2>
+    <p>Customer retains rights in its trademarks, logos and brand assets.</p>
+    <p>BACI may use Customer marks only as permitted by the Agreement or Customer&#x27;s authorisation.</p>
+    <p>A Customer relationship does not automatically grant BACI unrestricted publicity rights.</p>
+    <h2>62. BACI CUSTOMER REFERENCES</h2>
+    <p>Any right for BACI to identify Customer publicly as a customer is governed by the Terms, Order or negotiated agreement.</p>
+    <p>Where Customer has negotiated restrictions on publicity, those restrictions control.</p>
+    <p>Use of a Customer mark must not imply endorsement beyond the actual relationship.</p>
+    <h2>63. USER-GENERATED CONTENT</h2>
+    <p>Where BACI permits users to post or share content with other users, the contributor retains rights it owns while granting the rights reasonably necessary to make the content available as intended.</p>
+    <p>Users are responsible for the content they share and the permissions they grant through sharing functionality.</p>
+    <p>Private Customer Data is not converted into public content merely by being stored in BACI.</p>
+    <h2>64. SHARED CONTENT</h2>
+    <p>When a user intentionally shares content with another authorised person or organisation, the recipient may receive the practical ability to view, save, use or reproduce that content within the scope of the sharing arrangement.</p>
+    <p>The sharing user is responsible for choosing recipients and permissions.</p>
+    <p>BACI does not transfer ownership between users.</p>
+    <h2>65. PUBLICATION OF OUTPUTS</h2>
+    <p>Customer may publish Customer-specific Outputs within the rights granted by the Agreement, subject to Third-Party Data restrictions, confidentiality, privacy, law and any applicable source or licensing terms.</p>
+    <p>Customer should not present probabilistic or time-sensitive Output in a materially misleading manner.</p>
+    <h2>66. COMMERCIAL USE OF OUTPUTS</h2>
+    <p>Customer may commercially use Customer-specific Outputs to the extent permitted by the Terms and applicable Order.</p>
+    <p>Commercial use does not permit resale of BACI Platform access, systematic redistribution of protected BACI Intelligence or transfer of underlying BACI Technology unless separately licensed.</p>
+    <h2>67. REPORTS AND PRESENTATIONS</h2>
+    <p>Customer may incorporate authorised Customer-specific Outputs into its internal and external reports, presentations, planning materials and business communications, subject to applicable rights and restrictions.</p>
+    <p>Third-party source notices and confidentiality must be preserved where required.</p>
+    <h2>68. PROCUREMENT, GRANT AND OPPORTUNITY CONTENT</h2>
+    <p>Procurement notices, grant information, investment opportunities and other opportunity-related material may originate from third parties or public sources.</p>
+    <p>BACI&#x27;s analysis, classification, scoring and presentation may be protected BACI Technology or Content, while underlying notices remain subject to their source rights.</p>
+    <p>Customer must observe source-specific tender, portal, database and redistribution restrictions.</p>
+    <h2>69. MARKET AND COMPETITOR INTELLIGENCE</h2>
+    <p>Market and competitor Intelligence may combine facts, public information, licensed sources, Customer Data and BACI analysis.</p>
+    <p>Customer receives rights in Customer-specific Outputs as stated in the Agreement, but not ownership of underlying third-party materials or BACI methodologies.</p>
+    <h2>70. REPORTING ERRORS AND CORRECTIONS</h2>
+    <p>BACI may correct, update or withdraw BACI Content or Intelligence that is inaccurate, outdated, legally restricted or subject to a rights dispute.</p>
+    <p>A correction does not imply that every prior use was unlawful.</p>
+    <p>Customer should update downstream material where continued use would be materially misleading or infringing.</p>
+    <h2>71. INTELLECTUAL-PROPERTY COMPLAINTS</h2>
+    <p>BACI may receive notices alleging infringement or other rights violations concerning content available through the Services.</p>
+    <p>BACI may investigate, request information, restrict access, remove material, preserve evidence or take other proportionate action.</p>
+    <p>BACI will not adjudicate ownership disputes beyond what is reasonably necessary to operate the Services and comply with law.</p>
+    <h2>72. COPYRIGHT NOTICES</h2>
+    <p>A copyright owner or authorised representative may send a notice identifying the protected work, allegedly infringing material, contact information, a good-faith statement and other information required by applicable law.</p>
+    <p>Notices should be sufficiently specific for BACI to locate and assess the material.</p>
+    <p>BACI may request missing information.</p>
+    <h2>73. COUNTER-NOTICES</h2>
+    <p>Where applicable law provides a counter-notice process, BACI may accept a legally sufficient counter-notice from the affected user.</p>
+    <p>BACI may restore material where legally permitted after the applicable process.</p>
+    <p>Submitting false notices or counter-notices may carry legal consequences.</p>
+    <h2>74. REPEAT INFRINGEMENT</h2>
+    <p>BACI may restrict or terminate users who repeatedly or materially infringe third-party intellectual-property rights where appropriate and consistent with applicable law.</p>
+    <p>BACI may consider the nature, frequency and credibility of complaints and counter-notices.</p>
+    <h2>75. TRADEMARK COMPLAINTS</h2>
+    <p>Trademark owners may report use that allegedly creates confusion, counterfeiting or other unlawful infringement.</p>
+    <p>BACI may request registration details, jurisdictions, evidence of rights and identification of the challenged use.</p>
+    <p>BACI may distinguish nominative or otherwise lawful reference from infringing use.</p>
+    <h2>76. PATENT AND OTHER IP CLAIMS</h2>
+    <p>Patent, database, trade-secret and other complex intellectual-property claims may require judicial, arbitral or other formal determination.</p>
+    <p>BACI may take proportionate interim measures where necessary but is not required to resolve disputed ownership without adequate legal basis.</p>
+    <h2>77. CONTENT REMOVAL</h2>
+    <p>BACI may remove or restrict content where required by law, valid legal process, the Agreement or a credible rights claim.</p>
+    <p>Where legally and operationally appropriate, BACI may notify the affected Customer.</p>
+    <p>Removal does not transfer ownership of the disputed content to BACI.</p>
+    <h2>78. PRESERVATION OF EVIDENCE</h2>
+    <p>BACI may preserve relevant records where reasonably necessary for a rights dispute, security matter, legal hold or valid legal process.</p>
+    <p>Preservation is governed by the Data Retention &amp; Deletion Policy, DPA and applicable law.</p>
+    <h2>79. NO DUTY TO MONITOR ALL CONTENT</h2>
+    <p>Unless law requires otherwise, BACI does not undertake a general obligation to proactively inspect every Input, Output, Customer file or third-party item for intellectual-property infringement.</p>
+    <p>Users remain responsible for material they provide and uses they direct.</p>
+    <h2>80. RIGHTS ENFORCEMENT</h2>
+    <p>BACI may enforce its intellectual-property rights against unauthorised copying, extraction, scraping, redistribution, impersonation, counterfeiting, reverse engineering, licence abuse or other infringement.</p>
+    <p>Failure to enforce a right in one instance does not waive that right.</p>
+    <h2>81. TECHNICAL PROTECTION MEASURES</h2>
+    <p>BACI may use access controls, rate limits, watermarking, provenance, encryption, authentication, anti-scraping systems and other technical measures to protect rights and platform integrity.</p>
+    <p>Users must not circumvent those measures except where mandatory law expressly permits.</p>
+    <h2>82. LICENCE COMPLIANCE</h2>
+    <p>BACI may reasonably investigate suspected licence-scope violations.</p>
+    <p>Partners and Licensees must maintain records required by their applicable agreements.</p>
+    <p>Any audit rights are governed by the relevant Technology Partner, licensing, enterprise or other negotiated agreement.</p>
+    <h2>83. SECURITY RESEARCH</h2>
+    <p>Good-faith security research must follow any applicable BACI vulnerability-disclosure or security-testing requirements.</p>
+    <p>A security-testing purpose does not create unrestricted rights to copy, disclose or commercialise BACI intellectual property.</p>
+    <p>Security issues should be reported to security@bacihq.com.</p>
+    <h2>84. CONFIDENTIAL EVALUATIONS</h2>
+    <p>Pre-release, beta, preview, demonstration and evaluation materials may be confidential and subject to additional restrictions.</p>
+    <p>Access does not grant publication, benchmarking, redistribution or commercialisation rights unless expressly permitted.</p>
+    <h2>85. BETA AND PREVIEW OUTPUTS</h2>
+    <p>Outputs from beta or preview functionality may be subject to additional limitations and may change before general availability.</p>
+    <p>No broader intellectual-property right arises merely because a user participates in a preview.</p>
+    <h2>86. EXPORT AND SANCTIONS RESTRICTIONS</h2>
+    <p>Intellectual-property and content licences remain subject to applicable export controls and sanctions.</p>
+    <p>No licence authorises transfer to a prohibited person, destination or end use.</p>
+    <p>BACI may restrict access where legally required.</p>
+    <h2>87. GOVERNMENT USE</h2>
+    <p>Government and public-sector use may be subject to the Government &amp; Public Sector Schedule, procurement rules, restricted-rights clauses or other mandatory terms.</p>
+    <p>No government user receives greater rights in BACI Technology than expressly granted or required by applicable law.</p>
+    <h2>88. EDUCATIONAL AND RESEARCH USE</h2>
+    <p>Educational, academic or research use remains subject to the Agreement unless BACI expressly provides a separate research licence.</p>
+    <p>Citation or academic purpose does not automatically permit extraction or redistribution of protected BACI Technology or datasets.</p>
+    <p>Applicable copyright exceptions remain preserved.</p>
+    <h2>89. PRESS AND MEDIA USE</h2>
+    <p>Press or media may refer to BACI and use lawfully available factual information subject to applicable law.</p>
+    <p>Use of BACI logos, proprietary screenshots, substantial protected content or non-public information may require permission.</p>
+    <p>Nothing in this Policy restricts lawful reporting, criticism or commentary.</p>
+    <h2>90. FAIR USE AND OTHER LEGAL EXCEPTIONS</h2>
+    <p>Nothing in this Policy is intended to prohibit uses that applicable law permits notwithstanding contractual or copyright restrictions where those rights cannot lawfully be waived.</p>
+    <p>Whether an exception applies depends on the relevant jurisdiction and circumstances.</p>
+    <p>BACI does not provide legal advice regarding a user&#x27;s proposed use.</p>
+    <h2>91. CUSTOMER INDEMNITY</h2>
+    <p>Customer responsibility for third-party intellectual-property claims arising from Customer Data, Inputs, instructions or unlawful use is governed by the Terms and applicable negotiated agreement.</p>
+    <p>This Policy does not create duplicative indemnity obligations.</p>
+    <h2>92. BACI IP INDEMNITY</h2>
+    <p>Any BACI obligation to defend or indemnify Customer against third-party intellectual-property claims is governed exclusively by the Terms, Order, MSA or other applicable negotiated agreement.</p>
+    <p>This Policy does not expand or reduce an expressly negotiated indemnity.</p>
+    <h2>93. LIMITATION OF LIABILITY</h2>
+    <p>Liability relating to intellectual property, content, Outputs and third-party claims is governed by the Terms and applicable negotiated agreement, including applicable caps, enhanced caps, exclusions and non-excludable liabilities.</p>
+    <p>This Policy does not create unlimited liability.</p>
+    <h2>94. TERMINATION</h2>
+    <p>When access ends, licences tied to active Service access terminate except rights expressly stated to survive.</p>
+    <p>Customer&#x27;s perpetual rights in qualifying Customer-specific Outputs survive to the extent granted by the Terms, subject to Third-Party Data and other continuing restrictions.</p>
+    <p>BACI Technology rights remain with BACI.</p>
+    <h2>95. POST-TERMINATION CONTENT</h2>
+    <p>Customer may retain Customer Data and Outputs exported or otherwise lawfully retained under the Agreement.</p>
+    <p>Post-termination retention does not create continuing access to BACI Services or a right to refresh, regenerate or redistribute BACI Intelligence beyond granted rights.</p>
+    <h2>96. SURVIVAL</h2>
+    <p>Ownership provisions, perpetual Output rights, confidentiality, accrued licences, intellectual-property restrictions, enforcement rights and other provisions intended by their nature to survive will survive termination as applicable.</p>
+    <h2>97. TRANSFERS AND ASSIGNMENT</h2>
+    <p>Intellectual-property licences may be transferred only as permitted by the Terms, applicable Order or law.</p>
+    <p>A corporate transaction does not automatically expand licence scope.</p>
+    <p>Sublicensing requires express authority where applicable.</p>
+    <h2>98. NO IMPLIED WAIVER</h2>
+    <p>BACI&#x27;s failure to object to a particular use does not create a licence or waive intellectual-property rights.</p>
+    <p>Customer&#x27;s failure to enforce its own rights against another party does not transfer those rights to BACI.</p>
+    <h2>99. CHANGES TO THIS POLICY</h2>
+    <p>BACI may update this Policy prospectively in accordance with the Terms.</p>
+    <p>A policy update will not retroactively transfer ownership of Customer Data or override higher-precedence negotiated intellectual-property rights.</p>
+    <p>Required notice will be provided where applicable.</p>
+    <h2>100. INTERPRETATION</h2>
+    <p>Ownership of data, ownership of an Output, ownership of underlying technology and permission to redistribute are separate legal questions.</p>
+    <p>Customer Data remains Customer&#x27;s; BACI Technology remains BACI&#x27;s; Customer-specific Output rights are those granted by the Agreement; Third-Party Data remains subject to third-party rights; and redistribution, white-labelling, resale or sublicensing requires the applicable express permission.</p>
+    <p>Technical possession does not equal ownership.</p>
+    <h2>101. CONTACT</h2>
+    <p>Intellectual-property and content-rights enquiries:
+legal@bacihq.com</p>
+    <p>Licensing enquiries:
+licensing@bacihq.com</p>
+    <p>Privacy:
+privacy@bacihq.com</p>
+    <p>Security:
+security@bacihq.com</p>
+    <p>Where BACI publishes a dedicated intellectual-property notice channel or statutory agent, the current published channel should be used for the applicable notice.</p>
+    <h2>ANNEX I — RIGHTS ALLOCATION MATRIX</h2>
+    <p>CUSTOMER DATA — Customer retains its rights. BACI receives limited operational rights necessary to provide the Services.</p>
+    <p>CUSTOMER INPUTS — Customer retains its rights, subject to third-party rights. BACI may Process them under the Agreement.</p>
+    <p>CUSTOMER-SPECIFIC OUTPUTS — Customer receives the rights stated in the Terms, including a worldwide, perpetual, non-exclusive licence to BACI-owned IP specifically arising in qualifying Customer-specific Outputs for permitted purposes.</p>
+    <p>BACI TECHNOLOGY — BACI retains ownership. No transfer occurs merely because BACI Technology generated an Output.</p>
+    <p>BACI CONTENT — BACI or its licensors retain ownership; use is limited to granted rights.</p>
+    <p>THIRD-PARTY DATA — remains subject to third-party ownership and licence restrictions.</p>
+    <p>USAGE DATA — BACI may use it as permitted by the Agreement, without acquiring Customer Data ownership.</p>
+    <p>FEEDBACK — BACI may use voluntary non-confidential feedback as provided by the Agreement.</p>
+    <p>CUSTOM DEVELOPMENT — ownership must be determined by the applicable SOW; underlying BACI Technology remains reserved unless expressly transferred.</p>
+    <h2>ANNEX II — OUTPUT RIGHTS DECISION FRAMEWORK</h2>
+    <p>When evaluating rights in an Output, consider:</p>
+    <h2>1. Was the Output generated specifically for Customer?
+2. Does it contain Customer-owned material?
+3. Does it contain Third-Party Data or licensed content?
+4. Does it incorporate pre-existing BACI Content?
+5. Is the intended use internal, external, commercial, redistribution or licensing?
+6. Does the applicable Order impose special restrictions?
+7. Does the Output contain regulated, confidential or Personal Data?
+8. Is attribution or provenance required?
+9. Does applicable law recognise protectable authorship or other IP in the Output?
+10. Would the proposed use expose underlying BACI Technology rather than merely use the Output?</h2>
+    <p>The most restrictive applicable third-party, confidentiality, privacy or express contractual condition must be observed.</p>
+    <h2>ANNEX III — PERMITTED / RESTRICTED USE EXAMPLES</h2>
+    <p>GENERALLY PERMITTED SUBJECT TO THE AGREEMENT:
+• using Customer-specific Outputs internally;
+• adapting Customer-specific Outputs for Customer&#x27;s business;
+• incorporating authorised Outputs into Customer reports and presentations;
+• exporting Customer Data through supported mechanisms;
+• using BACI Documentation to operate BACI;
+• publishing an authorised Customer-specific Output where no conflicting rights restriction applies.</p>
+    <p>REQUIRES EXPRESS LICENSING OR OTHER AUTHORITY:
+• reselling BACI subscriptions;
+• white-labelling BACI;
+• redistributing raw BACI Intelligence feeds;
+• sublicensing BACI Platform access;
+• syndicating protected BACI Intelligence;
+• embedding BACI functionality for third-party commercial access beyond ordinary Developer rights.</p>
+    <p>PROHIBITED EXCEPT WHERE MANDATORY LAW PROVIDES OTHERWISE:
+• extracting BACI model weights;
+• reconstructing protected system prompts;
+• copying BACI source code without authority;
+• systematic scraping to replicate protected databases;
+• removing provenance for deceptive purposes;
+• using stolen or infringing content as Input;
+• claiming ownership of underlying BACI Technology.</p>
+    <h2>ANNEX IV — INTELLECTUAL-PROPERTY COMPLAINT INFORMATION</h2>
+    <p>A rights complaint should, where applicable, include:</p>
+    <p>1. complainant&#x27;s name and contact information;
+2. identification of the right allegedly infringed;
+3. identification and location of the challenged material;
+4. explanation of the alleged infringement;
+5. evidence reasonably supporting ownership or authority;
+6. relevant registration information where applicable;
+7. a good-faith statement;
+8. any statement required under penalty of perjury by applicable law; and
+9. physical or electronic signature where required.</p>
+    <p>BACI may request additional information, forward an appropriate notice to the affected user, restrict material, preserve records or follow a statutory notice-and-counter-notice process where applicable.</p>
+    <p>Knowingly false claims may create legal liability.</p>
+    <h2>ANNEX V — BACI PROTECTED TECHNOLOGY CATEGORIES</h2>
+    <p>BACI protected technology may include:</p>
+    <p class="doc__item">source and object code;
+• APIs and non-public interface specifications;
+• system architecture;
+• AI models and model configurations;
+• weights and parameters;
+• system prompts and hidden instructions;
+• orchestration and routing;
+• agent logic and tool-use systems;
+• intelligence engines;
+• scoring and ranking systems;
+• forecasting methods;
+• procurement, grant, patent, trademark, objective, threat, acquisition, investor, funding and market-entry engines;
+• schemas, ontologies and taxonomies;
+• workflows;
+• proprietary datasets and compilations;
+• database structure;
+• user-interface designs;
+• documentation;
+• security architecture;
+• inventions;
+• processes;
+• methodologies;
+• trade secrets; and
+• know-how.</p>
+    <p>This Annex is illustrative and does not limit the definition of BACI Technology.</p>
+    <p>BACI INTELLECTUAL PROPERTY &amp; CONTENT RIGHTS POLICY — VERSION 1.0
+Effective 10 September 2026</p>
+  </section>
+
+<footer>
+   <div class="footer-scroll">
+   <div class="footer-wrap">
+    <div class="cols">
+
+      <div class="col">
+        <h3>BUSINESS OS</h3>
+        <div class="rule"></div>
+        <div class="os-split">
+          <ul>
+            <li><a href="business-planning.html">Business Planning</a></li>
+            <li><a href="financial-planning.html">Financial Planning</a></li>
+            <li><a href="marketing-planning.html">Marketing Planning</a></li>
+            <li><a href="procurement.html">Procurement</a></li>
+            <li><a href="grants.html">Grants</a></li>
+            <li><a href="funding-capital-strategy.html">Funding &amp; Capital Strategy</a></li>
+          </ul>
+          <ul>
+            <li><a href="investors.html">Investors</a></li>
+            <li><a href="market-entry.html">Market Entry</a></li>
+            <li><a href="growth-strategy.html">Growth Strategy</a></li>
+            <li><a href="forecasting.html">Forecasting</a></li>
+            <li><a href="executive-intelligence.html">Executive Intelligence</a></li>
+            <li><a href="go-to-market.html">Go-to-Market</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col">
+        <h3>INTELLIGENCE</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="index.html#industry">Industry Intelligence</a></li>
+          <li><a href="index.html#conversion-intelligence">Conversion Intelligence</a></li>
+          <li><a href="index.html#global-reach">Global Reach</a></li>
+          <li><a href="index.html#doctrine">The Doctrine</a></li>
+          <li><a href="modes.html">Operating Modes</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>ACCESS</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="access-business.html">Business</a></li>
+          <li><a href="access-independent-professional.html">Independent Professionals</a></li>
+          <li><a href="access-advisory.html">Advisory</a></li>
+          <li><a href="access-agencies.html">Agencies</a></li>
+          <li><a href="access-developers.html">Developers</a></li>
+          <li><a href="access-enterprise.html">Enterprise</a></li>
+          <li><a href="access-technology-partners.html">Technology Partners</a></li>
+          <li><a href="access-affiliates.html">Affiliates</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>LICENSING</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="licensing.html#platform">Platform Licence</a></li>
+          <li><a href="licensing.html#territorial">Territorial Rights</a></li>
+          <li><a href="licensing.html#vertical">Vertical Rights</a></li>
+          <li><a href="licensing.html#engine">Engine Licensing</a></li>
+          <li><a href="licensing.html#feeds">Intelligence Feeds</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>COMPANY</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html#media">Press</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <nav class="policies" aria-label="Policies">
+      <a href="terms.html">Terms</a><span>&bull;</span>
+      <a href="privacy.html">Privacy</a><span>&bull;</span>
+      <a href="refund-policy.html">Refund Policy</a><span>&bull;</span>
+      <a href="billing.html">Billing</a><span>&bull;</span>
+      <a href="cancellation.html">Cancellation</a><span>&bull;</span>
+      <a href="acceptable-use.html">Acceptable Use</a><span>&bull;</span>
+      <a href="data-processing.html">Data Processing</a><span>&bull;</span>
+      <a href="security.html">Security</a><span>&bull;</span>
+      <a href="responsible-ai.html">Responsible AI</a><span>&bull;</span>
+      <a href="cookies.html">Cookies</a>
+    </nav>
+
+    <div class="pay">
+      <img src="assets/payment-methods.webp" alt="Payment methods accepted: Stripe, PayPal, Flutterwave, Visa, Mastercard, American Express, Apple Pay, G Pay, Alipay and cryptocurrency.">
+    </div>
+
+    <div class="base">
+      <div class="mono" aria-label="BACI">B</div>
+      <div class="copy">&copy; 2026 BACI</div>
+      <div class="socials">
+        <a class="soc" href="#" aria-label="TikTok"><img src="assets/social-tiktok.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Reddit"><img src="assets/social-reddit.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Facebook"><img src="assets/social-facebook.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Instagram"><img src="assets/social-instagram.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="LinkedIn"><img src="assets/social-linkedin.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="X"><img src="assets/social-x.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="WhatsApp"><img src="assets/social-whatsapp.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Snapchat"><img src="assets/social-snapchat.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="YouTube"><img src="assets/social-youtube.webp" alt=""></a>
+      </div>
+      <button class="a11y" id="a11y" aria-pressed="false">
+        <span class="glyph" aria-hidden="true"><img src="assets/icon-accessibility.webp" alt=""></span>
+        <span class="lab">Enhance your experience</span>
+      </button>
+    </div>
+   </div>
+   </div>
+  </footer>
+
+<section class="thoughts">
+  <p class="listening">We're listening.</p>
+
+  <button type="button" class="open-btn" id="thoughts-open" aria-expanded="false" aria-controls="thoughts-panel">SHARE YOUR THOUGHTS</button>
+
+  <div class="panel" id="thoughts-panel">
+    <label class="sr-only" for="thoughts-text">Share your thoughts</label>
+    <textarea id="thoughts-text" placeholder="Share your thoughts&hellip;"></textarea>
+    <label class="sr-only" for="thoughts-email">Email, if you would like a reply</label>
+    <input type="email" id="thoughts-email" autocomplete="email" placeholder="Email, if you would like a reply">
+    <div class="send">
+      <button type="button" id="thoughts-send">SHARE YOUR THOUGHTS</button>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  /* signature CTA travel span: first letter to last letter */
+  var cta = document.getElementById('cta');
+  if(cta){
+    var span = cta.offsetWidth * 0.86;
+    cta.style.setProperty('--travel', span + 'px');
+    cta.style.setProperty('--start', (cta.offsetWidth * 0.07) + 'px');
+    window.addEventListener('resize', function(){
+      cta.style.setProperty('--travel', (cta.offsetWidth * 0.86) + 'px');
+      cta.style.setProperty('--start', (cta.offsetWidth * 0.07) + 'px');
+    });
+  }
+
+  /* route multi-select */
+  document.querySelectorAll('.pick').forEach(function(p){
+    function toggle(){
+      p.setAttribute('aria-pressed', p.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+    }
+    p.addEventListener('click', toggle);
+    p.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  });
+
+  /* thoughts box collapses until asked for */
+  var tOpen  = document.getElementById('thoughts-open');
+  var tPanel = document.getElementById('thoughts-panel');
+  if(tOpen && tPanel){
+    tOpen.addEventListener('click', function(){
+      tOpen.setAttribute('aria-expanded','true');
+      tOpen.classList.add('hidden');
+      tPanel.classList.add('open');
+      document.getElementById('thoughts-text').focus();
+    });
+  }
+})();
+</script>
+
+
+<div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="Display settings" aria-modal="false">
+  <h4>Display</h4>
+  <div class="a11y-row">
+    <span>Background</span>
+    <button type="button" class="a11y-opt" id="a11yView" aria-pressed="false">Dark</button>
+  </div>
+  <div class="a11y-row">
+    <span>Text size</span>
+    <div class="a11y-steps">
+      <button type="button" class="a11y-step" id="a11ySmaller" aria-label="Smaller text">&minus;</button>
+      <button type="button" class="a11y-step" id="a11yLarger" aria-label="Larger text">+</button>
+    </div>
+  </div>
+  <button type="button" class="a11y-close" id="a11yClose">Close</button>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+
+  /* restore whatever was chosen last time, before anything paints */
+  try{
+    var v = localStorage.getItem('baci-view');
+    var t = localStorage.getItem('baci-text');
+    if(v === 'light') root.setAttribute('data-view','light');
+    if(t) root.style.setProperty('--text-scale', t);
+  }catch(e){}
+
+  var toggle = document.getElementById('a11y');
+  var panel  = document.getElementById('a11yPanel');
+  if(!toggle || !panel) return;
+
+  var viewBtn = document.getElementById('a11yView');
+  var smaller = document.getElementById('a11ySmaller');
+  var larger  = document.getElementById('a11yLarger');
+  var closeB  = document.getElementById('a11yClose');
+
+  var STEPS = [1, 1.12, 1.25, 1.4];
+
+  function currentStep(){
+    var s = parseFloat(getComputedStyle(root).getPropertyValue('--text-scale')) || 1;
+    var i = 0, best = 9;
+    STEPS.forEach(function(v, n){
+      var d = Math.abs(v - s);
+      if(d < best){ best = d; i = n; }
+    });
+    return i;
+  }
+
+  function setScale(i){
+    i = Math.max(0, Math.min(STEPS.length - 1, i));
+    root.style.setProperty('--text-scale', STEPS[i]);
+    try{ localStorage.setItem('baci-text', STEPS[i]); }catch(e){}
+  }
+
+  function syncView(){
+    var light = root.getAttribute('data-view') === 'light';
+    viewBtn.textContent = light ? 'Light' : 'Dark';
+    viewBtn.setAttribute('aria-pressed', String(light));
+  }
+
+  function open(){
+    panel.classList.add('open');
+    toggle.setAttribute('aria-expanded','true');
+    syncView();
+    viewBtn.focus();
+  }
+  function close(){
+    panel.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+  }
+
+  toggle.setAttribute('aria-expanded','false');
+  toggle.addEventListener('click', function(e){
+    e.preventDefault();
+    panel.classList.contains('open') ? close() : open();
+  });
+
+  viewBtn.addEventListener('click', function(){
+    var light = root.getAttribute('data-view') === 'light';
+    if(light){ root.removeAttribute('data-view'); }
+    else { root.setAttribute('data-view','light'); }
+    try{ localStorage.setItem('baci-view', light ? 'dark' : 'light'); }catch(e){}
+    syncView();
+  });
+
+  smaller.addEventListener('click', function(){ setScale(currentStep() - 1); });
+  larger .addEventListener('click', function(){ setScale(currentStep() + 1); });
+  closeB .addEventListener('click', close);
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && panel.classList.contains('open')) { close(); toggle.focus(); }
+  });
+  document.addEventListener('click', function(e){
+    if(!panel.contains(e.target) && !toggle.contains(e.target)) close();
+  });
+
+  syncView();
+})();
+</script>
+
+</body>
+</html>
