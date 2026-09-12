@@ -121,8 +121,14 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 
 
 /* ══ §3 REGIONS (spotlight ribbon, finished behaviour) ══ */
-.regions{position:relative;padding:var(--s-section) 0;height:clamp(110px,16vh,160px);overflow:hidden;}
-.regions__mask{position:absolute;inset:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);}
+/* THE SECTION NO LONGER CLIPS ITS OWN PANEL.
+   It carried a fixed height with overflow:hidden, which the ribbon
+   needs and the panel underneath does not: the heading and rule fitted
+   inside that height and the three lines of region data were cut off
+   below it. The clipping now belongs to the ribbon alone, and the
+   section grows to whatever the panel needs. */
+.regions{position:relative;padding:var(--s-section) 0;}
+.regions__mask{position:relative;height:clamp(110px,16vh,160px);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);}
 .regions__track{position:absolute;top:50%;left:0;white-space:nowrap;will-change:transform;}
 .region{display:inline-block;font-family:'Cinzel',Georgia,serif;letter-spacing:.16em;
   color:var(--dim);cursor:pointer;background:none;border:0;
@@ -133,7 +139,7 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
   background:radial-gradient(ellipse 50% 50% at 50% 50%,rgba(196,149,68,.16),rgba(196,149,68,.05) 44%,transparent 72%);
   opacity:var(--glow,0);pointer-events:none;z-index:-1;filter:blur(2px);}
 .region__panel{max-width:var(--read-max);margin:clamp(28px,5vh,56px) auto 0;padding:0 clamp(18px,5vw,40px);
-  text-align:center;min-height:120px;opacity:0;transition:opacity .5s ease;pointer-events:none;}
+  text-align:center;min-height:150px;opacity:0;transition:opacity .5s ease;pointer-events:none;}
 .region__panel.is-shown{opacity:1;pointer-events:auto;}
 .region__panel h3{font-family:'Cinzel',Georgia,serif;font-weight:500;font-size:clamp(15px,2vw,22px);
   letter-spacing:.12em;color:var(--gold-light);margin:0;}
