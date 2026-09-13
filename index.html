@@ -22,7 +22,8 @@
   --travel-dur:6s; --travel-ease:cubic-bezier(.42,0,.58,1);
 }
 *{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+/* the glide is animated in JS so Safari behaves like everything else */
+html{scroll-behavior:auto;}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--gold);-webkit-font-smoothing:antialiased;}
 body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x:hidden;}
 
@@ -259,7 +260,8 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 
 /* ══ §9 CONVERSION INTELLIGENCE — revolving ring (finished) ══ */
 .doctrine-overlay{max-width:var(--panel-max,760px);margin:0 auto;}
-.doctrine-img{width:100%;height:auto;display:block;}
+/* the ratio is declared so the space exists before the file lands */
+.doctrine-img{width:100%;height:auto;display:block;aspect-ratio:1024/1536;}
 .cring{position:relative;width:min(100%,680px);aspect-ratio:1;height:auto;margin:0 auto;}
 .cring__centre{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;
   width:40%;aspect-ratio:1;border-radius:50%;border:1px solid rgba(181,145,84,.4);
@@ -323,7 +325,7 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 .drown__body .em{color:var(--gold-light);font-weight:500;}
 .drown__body .pull{color:var(--gold-light);font-size:clamp(18px,2.4vw,28px);margin:var(--s-content) auto;}
 .drown__tile{margin-top:var(--s-block);width:100%;}
-.drown__tile img{width:100%;height:auto;display:block;opacity:.94;}
+.drown__tile img{width:100%;height:auto;display:block;opacity:.94;aspect-ratio:1536/1024;}
 
 /* ══ §12 FILM ══ */
 .film{text-align:center;}
@@ -805,7 +807,7 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
 <!-- ══ §2 HERO ══ -->
 <header class="hero" id="top">
   <div class="hero__stage">
-    <img class="hero__img" src="hero-shell.webp" alt="" aria-hidden="true">
+    <img class="hero__img" src="hero-shell.webp" alt="" aria-hidden="true" width="1536" height="823">
 
     <a class="hot" href="#top" aria-label="BACI home" style="left:1.43%;top:2.79%;width:12.17%;height:8.02%">
       <img class="hmk-img" src="baci-wordmark.webp" alt="BACI">
@@ -960,7 +962,7 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
 <!-- ══ §8 THE BACI DOCTRINE (image overlay) ══ -->
 <section class="section section--wide reveal" id="doctrine">
   <div class="doctrine-overlay">
-    <img src="doctrine.webp" alt="The BACI Doctrine — Acquire, Convert, Grow" class="doctrine-img">
+    <img src="doctrine.webp" alt="The BACI Doctrine — Acquire, Convert, Grow" class="doctrine-img" width="1024" height="1536">
   </div>
   <div class="cta-wrap"><a class="cta" href="#access"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div>
 </section>
@@ -1028,7 +1030,7 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
     <p>The intelligence is already there. <span class="em">BACI makes it useful.</span></p>
   </div>
   <div class="drown__tile">
-    <img src="dashboard.webp" alt="" aria-hidden="true"
+    <img src="dashboard.webp" alt="" aria-hidden="true" width="1536" height="1024"
       onerror="this.style.display='none';">
   </div>
   <div class="cta-wrap"><a class="cta" href="#access"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div>
@@ -1305,13 +1307,27 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
     function openDemo(i){ paused=true; render(i); }
     function closeDemo(){ if(userTapped)return; paused=false; regionPanel.classList.remove('is-shown'); last=null; }
     function open(i){ userTapped=true; if(demoTimer)clearTimeout(demoTimer); paused=true; render(i); }
-    function close(){ paused=false; regionPanel.classList.remove('is-shown'); last=null; }
+    function close(){ userTapped=true; paused=false; regionPanel.classList.remove('is-shown'); last=null; }
+    /* TAPPING AGAIN LETS IT GO.
+       The ribbon paused on a tap and only resumed when the reader
+       happened to tap outside the whole section — so tapping the same
+       region again, or the panel, or anywhere within the band, left it
+       frozen. Now the open region closes on a second tap, another
+       region swaps to it, and a tap anywhere else releases it. */
+    var openIdx = -1;
     nodes.forEach(function(nd){
       var i=+nd.getAttribute('data-i');
-      nd.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();open(i);});
+      nd.addEventListener('click',function(e){
+        e.preventDefault(); e.stopPropagation();
+        if(openIdx === i){ openIdx = -1; close(); }
+        else { openIdx = i; open(i); }
+      });
     });
     document.addEventListener('click',function(e){
-      if(!regionsSec.contains(e.target)) close();
+      /* any tap that is not a region button releases the ribbon,
+         including one inside the section or on the panel itself */
+      if(e.target.closest && e.target.closest('.region')) return;
+      if(openIdx !== -1){ openIdx = -1; close(); }
     });
     if(!RM) requestAnimationFrame(frame);
     else { nodes[0].style.transform='translateY(-50%) scale(1.5)'; nodes[0].style.setProperty('--glow','1'); }
@@ -1700,10 +1716,81 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
       .catch(function(){ if(el.parentNode) el.parentNode.removeChild(el); });
   })();
 
+
+  /* SMOOTH IN-PAGE MOVEMENT, EVERYWHERE.
+     scroll-behavior:smooth is CSS-only and Safari ignored it until
+     15.4, so on an iPhone the page jumped instantly from the hero to
+     the section — the "boom" rather than the glide. This animates the
+     scroll itself, which every browser honours.
+
+     The easing is deliberately long and soft at both ends: the point is
+     that a section appears to open rather than that the page travels to
+     it. Reduced-motion users still get the instant move they asked for. */
+  function glide(){
+    if(RM) return;
+    var DURATION = 1150;
+
+    function ease(t){
+      /* slow to leave, slow to arrive, quick in the middle — the shape
+         that reads as a reveal rather than a scroll */
+      return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3)/2;
+    }
+
+    function scrollTo(target){
+      var start = window.pageYOffset || document.documentElement.scrollTop;
+      var rect  = target.getBoundingClientRect();
+      var end   = start + rect.top;
+      var max   = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+      if(end > max) end = max;
+      var dist = end - start;
+      if(Math.abs(dist) < 2) return;
+
+
+      var t0 = null;
+      function step(ts){
+        if(t0 === null) t0 = ts;
+        var p = Math.min((ts - t0) / DURATION, 1);
+
+        /* Re-read the target each frame. If an image finishes loading
+           mid-glide and moves the section, the glide follows it instead
+           of arriving where it used to be — which is what made one tap
+           feel like two or three. */
+        var now = window.pageYOffset || document.documentElement.scrollTop;
+        var live = now + target.getBoundingClientRect().top;
+        var cap  = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+        if(live > cap) live = cap;
+        if(Math.abs(live - end) > 4){ end = live; dist = end - start; }
+
+        window.scrollTo(0, start + dist * ease(p));
+        if(p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    document.addEventListener('click', function(e){
+      var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+      if(!a) return;
+      var id = a.getAttribute('href');
+      if(!id || id === '#') return;
+      var target = document.querySelector(id);
+      if(!target) return;
+      e.preventDefault();
+      scrollTo(target);
+      /* the address bar still reflects where the reader is, without the
+         browser performing a second jump of its own */
+      /* a convenience, never allowed to interrupt the scroll */
+      try{
+        if(window.history && window.history.replaceState){
+          window.history.replaceState(null, '', id);
+        }
+      }catch(err){}
+    }, false);
+  }
+
   /* ── init ── */
   buildRegions(); buildLangs(); buildCountries(); buildSpine();
   buildIndustryEngine(); buildWheel(); buildAccess();
-  observe(); film(); runSplash();
+  observe(); film(); runSplash(); glide();
   /* thoughts box collapses until asked for */
   var tOpen  = document.getElementById('thoughts-open');
   var tPanel = document.getElementById('thoughts-panel');
