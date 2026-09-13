@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operating Modes &middot; BACI</title>
+<link rel="icon" href="favicon-baci-monogram.webp">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#C39544;
+  --gold-light:#CFA24E;
+  --dim:#8A6E3C;
+  --champagne:#E8C87A;
+  --head:#C99F5E;
+  --bg:#000;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--gold);
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--champagne);outline-offset:3px}
+
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 28px}
+.wrap.full{max-width:none;padding:0}
+
+/* ---------- masthead ---------- */
+.masthead{padding:38px 0 0;text-align:left}
+.masthead img{width:124px;height:auto;opacity:.92}
+
+/* ---------- page head ---------- */
+.page-head{text-align:center;padding:76px 0 0}
+.page-head h1{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--head);
+  font-size:clamp(2.4rem,7vw,4.5rem);
+  letter-spacing:.22em;
+  text-indent:.22em;
+  line-height:1.08;
+}
+
+/* ---------- light-point rule ---------- */
+.rule{
+  position:relative;
+  height:1px;
+  margin:26px auto 0;
+  max-width:420px;
+  background:linear-gradient(90deg,transparent,var(--dim) 18%,var(--dim) 82%,transparent);
+}
+.rule::after{
+  content:"";
+  position:absolute;
+  top:50%;left:50%;
+  width:7px;height:7px;
+  margin:-3.5px 0 0 -3.5px;
+  border-radius:50%;
+  background:var(--champagne);
+  box-shadow:0 0 10px 3px rgba(232,200,122,.55);
+}
+.rule.short{max-width:210px}
+
+/* ---------- intro ---------- */
+.intro{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto;
+  padding:38px 0 0;
+}
+.intro p{
+  font-size:clamp(1.06rem,2.1vw,1.32rem);
+  line-height:1.72;
+  color:var(--gold);
+  margin-bottom:1.15em;
+}
+.intro p:last-child{margin-bottom:0}
+
+/* ---------- routes ---------- */
+.routes{padding:86px 0 0;max-width:880px;margin:0 auto}
+.route{
+  padding:34px 0;
+  border-top:1px solid rgba(138,110,60,.34);
+  text-align:center;
+}
+.route:last-child{border-bottom:1px solid rgba(138,110,60,.34)}
+.route h2{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--gold-light);
+  font-size:clamp(1.02rem,2.3vw,1.34rem);
+  letter-spacing:.19em;
+  text-indent:.19em;
+  margin-bottom:14px;
+}
+.route p{
+  font-size:clamp(1rem,2vw,1.2rem);
+  line-height:1.66;
+  color:var(--gold);
+  max-width:560px;
+  margin:0 auto;
+}
+
+/* ---------- distinction ---------- */
+.distinction{
+  text-align:center;
+  padding:88px 0 0;
+}
+.distinction p{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:400;
+  color:var(--champagne);
+  font-size:clamp(1.24rem,3vw,1.92rem);
+  line-height:1.55;
+  max-width:820px;
+  margin:0 auto;
+}
+
+/* ---------- form ---------- */
+.enquiry{padding:92px 0 0;max-width:660px;margin:0 auto}
+.enquiry h2{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--head);
+  font-size:clamp(1.1rem,2.6vw,1.5rem);
+  letter-spacing:.2em;
+  text-indent:.2em;
+  text-align:center;
+}
+.fields{padding:44px 0 0}
+.field{margin-bottom:26px}
+.field label{
+  display:block;
+  font-family:'Cinzel',serif;
+  font-size:.68rem;
+  letter-spacing:.17em;
+  text-indent:.17em;
+  color:var(--dim);
+  margin-bottom:9px;
+  text-transform:uppercase;
+}
+.field input,.field textarea,.field select{
+  width:100%;
+  background:transparent;
+  border:none;
+  border-bottom:1px solid rgba(138,110,60,.46);
+  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.08rem;
+  font-weight:300;
+  padding:9px 2px;
+  transition:border-color .3s;
+}
+.field textarea{resize:vertical;min-height:96px;line-height:1.6}
+.field input:focus,.field textarea:focus,.field select:focus{
+  outline:none;
+  border-bottom-color:var(--champagne);
+}
+.field select option{background:#0a0a0a;color:var(--gold)}
+
+.routes-pick{display:flex;flex-wrap:wrap;gap:10px;padding-top:4px}
+.pick{
+  font-family:'Cinzel',serif;
+  font-size:.66rem;
+  letter-spacing:.14em;
+  text-indent:.14em;
+  text-transform:uppercase;
+  color:var(--dim);
+  border:1px solid rgba(138,110,60,.44);
+  border-radius:2px;
+  padding:9px 14px;
+  cursor:pointer;
+  transition:color .3s,border-color .3s;
+  user-select:none;
+}
+.pick[aria-pressed="true"]{
+  color:var(--champagne);
+  border-color:rgba(232,200,122,.7);
+}
+
+/* ---------- signature CTA ---------- */
+.cta-wrap{text-align:center;padding:56px 0 0}
+.cta{
+  position:relative;
+  display:inline-block;
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  font-size:clamp(.86rem,2vw,1.06rem);
+  letter-spacing:.24em;
+  text-indent:.24em;
+  color:var(--head);
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:0 0 16px;
+}
+.cta::after{
+  content:"";
+  position:absolute;
+  left:var(--start,0);
+  bottom:0;
+  width:6px;height:6px;
+  margin-left:-3px;
+  border-radius:50%;
+  background:var(--champagne);
+  box-shadow:0 0 9px 3px rgba(232,200,122,.5);
+  animation:travel 6s cubic-bezier(.42,0,.58,1) infinite;
+}
+@keyframes travel{
+  0%   {transform:translateX(0)}
+  50%  {transform:translateX(var(--travel,120px))}
+  100% {transform:translateX(0)}
+}
+.cta-line{
+  height:1px;
+  margin:0 auto;
+  max-width:300px;
+  background:linear-gradient(90deg,transparent,var(--dim) 20%,var(--dim) 80%,transparent);
+}
+
+/* ---------- footer ---------- */
+footer{margin-top:120px;padding-top:6px}
+.footer-wrap{max-width:1440px;margin:0 auto;padding:0 28px}
+.cols{
+  display:grid;
+  grid-template-columns:1.7fr 1.12fr 1.18fr 1fr .88fr;
+  gap:0;
+  padding:52px 0 0;
+  align-items:start;
+}
+.col{padding:0 22px;border-left:1px solid rgba(195,149,68,.42)}
+.col:first-child{border-left:none;padding-left:0}
+.col h3{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--head);
+  font-size:clamp(.82rem,1.5vw,1.06rem);
+  letter-spacing:.13em;
+  text-indent:.13em;
+  text-align:center;
+  margin-bottom:0;
+}
+.col .rule{margin:12px auto 30px;max-width:100%}
+.col ul{list-style:none}
+.col li{margin-bottom:17px;line-height:1.3}
+.col a{
+  font-size:.98rem;
+  color:var(--gold);
+  transition:color .25s;
+  display:inline-block;
+}
+.col a:hover{color:var(--champagne)}
+
+.os-split{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.os-split ul:first-child{padding-right:16px}
+.os-split ul:last-child{padding-left:20px;border-left:1px solid rgba(195,149,68,.26)}
+
+.policies{
+  margin-top:44px;
+  padding:20px 0;
+  border-top:1px solid rgba(195,149,68,.42);
+  border-bottom:1px solid rgba(195,149,68,.42);
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:0 8px;
+}
+.policies a{font-size:.98rem;color:var(--gold);padding:0 4px;white-space:nowrap}
+.policies span{color:var(--dim);font-size:.62rem;padding:0 4px}
+
+.pay{padding:6px 0 8px}
+.pay img{display:block;width:100%;height:auto}
+
+.base{
+  padding:32px 0 48px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+}
+.mono{
+  width:64px;height:64px;
+  border:1px solid var(--gold);
+  border-radius:50%;
+  display:grid;place-items:center;
+  font-family:'Cinzel',serif;
+  font-size:1.75rem;
+  color:var(--gold);
+}
+.copy{font-size:1rem;color:var(--gold);padding:0 20px;border-left:1px solid rgba(195,149,68,.34)}
+.socials{display:flex;gap:10px;padding:0 4px}
+.soc{display:block;width:46px;height:46px;transition:opacity .25s,transform .25s}
+.soc img{display:block;width:100%;height:100%}
+.soc:hover{opacity:.78;transform:translateY(-1px)}
+.a11y{
+  display:flex;align-items:center;gap:12px;
+  padding-left:20px;border-left:1px solid rgba(195,149,68,.34);
+  background:none;border-top:none;border-right:none;border-bottom:none;
+  cursor:pointer;
+}
+.a11y .glyph{width:58px;height:58px;display:block}
+.a11y .glyph img{display:block;width:100%;height:100%}
+.a11y .lab{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;
+  color:var(--gold);
+  text-align:left;
+  line-height:1.25;
+  max-width:104px;
+}
+
+/* ---------- responsive ---------- */
+/* The footer keeps its five-column shape at every width.
+   Below the width it needs, the whole footer scrolls sideways
+   as one piece rather than stacking. */
+.footer-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.footer-wrap{min-width:1180px}
+
+@media(max-width:1240px){
+  .col{padding:0 16px}
+  .col a{font-size:.94rem}
+  .col li{margin-bottom:15px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .cta::after{animation:none}
+  *{transition:none !important}
+}
+
+/* ---------- share your thoughts (universal, below the footer) ---------- */
+.thoughts{
+  border-top:1px solid rgba(195,149,68,.28);
+  text-align:center;
+  padding:78px 28px 92px;
+}
+.thoughts .listening{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  color:var(--champagne);
+  font-size:clamp(2rem,5.4vw,3.1rem);
+  line-height:1.1;
+  margin-bottom:38px;
+}
+.thoughts .ask{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  color:var(--gold);
+  font-size:clamp(1.1rem,2.5vw,1.42rem);
+  line-height:1.5;
+  max-width:560px;
+  margin:0 auto 34px;
+}
+.thoughts textarea{
+  display:block;
+  width:100%;
+  max-width:820px;
+  margin:0 auto;
+  min-height:200px;
+  background:rgba(195,149,68,.022);
+  border:1px solid rgba(195,149,68,.58);
+  border-radius:22px;
+  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:1.14rem;
+  line-height:1.6;
+  padding:26px 28px;
+  resize:vertical;
+  transition:border-color .3s;
+}
+.thoughts textarea::placeholder{color:var(--dim)}
+.thoughts textarea:focus{outline:none;border-color:var(--champagne)}
+
+.thoughts input[type="email"]{
+  display:block;
+  width:100%;
+  max-width:820px;
+  margin:18px auto 0;
+  background:rgba(195,149,68,.022);
+  border:1px solid rgba(195,149,68,.42);
+  border-radius:999px;
+  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:1.08rem;
+  padding:17px 28px;
+  transition:border-color .3s;
+}
+.thoughts input[type="email"]::placeholder{color:var(--dim)}
+.thoughts input[type="email"]:focus{outline:none;border-color:var(--champagne)}
+
+.thoughts .open-btn{
+  font-family:'Cinzel',serif;font-weight:500;
+  font-size:clamp(.76rem,1.7vw,.92rem);
+  letter-spacing:.19em;text-indent:.19em;
+  color:var(--gold-light);
+  background:rgba(195,149,68,.030);
+  border:1px solid rgba(195,149,68,.6);
+  border-radius:999px;
+  padding:18px 44px;
+  cursor:pointer;
+  transition:border-color .3s,color .3s;
+}
+.thoughts .open-btn:hover{border-color:var(--champagne);color:var(--champagne)}
+.thoughts .panel{display:none;padding-top:34px}
+.thoughts .panel.open{display:block}
+.thoughts .open-btn.hidden{display:none}
+.thoughts .send{padding-top:34px}
+.thoughts .send button{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  font-size:clamp(.76rem,1.7vw,.92rem);
+  letter-spacing:.19em;
+  text-indent:.19em;
+  color:var(--gold-light);
+  background:rgba(195,149,68,.030);
+  border:1px solid rgba(195,149,68,.6);
+  border-radius:999px;
+  padding:18px 44px;
+  cursor:pointer;
+  transition:border-color .3s,color .3s;
+}
+.thoughts .send button:hover{border-color:var(--champagne);color:var(--champagne)}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* BACKGROUND TREATMENT ONLY */
+.baci-ambient{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 75% 85% at -18% 48%,rgba(195,149,68,.055),rgba(195,149,68,.024) 35%,transparent 74%),radial-gradient(ellipse 62% 72% at 116% 35%,rgba(195,149,68,.045),rgba(195,149,68,.019) 38%,transparent 74%)}
+body::before,body::after{content:"";position:fixed;pointer-events:none;z-index:0}
+body::before{width:72vw;height:72vw;left:-34vw;top:14vh;border-radius:50%;border:1px solid rgba(195,149,68,.10);box-shadow:0 0 145px rgba(195,149,68,.040),inset 0 0 165px rgba(195,149,68,.028);transform:rotate(-9deg)}
+body::after{width:56vw;height:1px;right:-8vw;top:46vh;background:linear-gradient(90deg,transparent,rgba(232,200,122,.052),transparent);box-shadow:0 0 58px 2px rgba(195,149,68,.026);transform:rotate(-17deg)}
+.baci-orbit{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}.baci-orbit::before{content:"";position:absolute;width:980px;height:420px;right:-530px;top:19vh;border:1px solid rgba(195,149,68,.082);border-radius:50%;transform:rotate(24deg);box-shadow:0 0 115px rgba(195,149,68,.026)}.baci-orbit::after{content:none}
+input,textarea,button{
+  -webkit-appearance:none;
+  appearance:none;
+}
+input,textarea{
+  background-color:transparent;
+  -webkit-text-fill-color:var(--gold);
+  caret-color:var(--champagne);
+  color-scheme:dark;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus{
+  -webkit-text-fill-color:var(--gold) !important;
+  -webkit-box-shadow:0 0 0 1000px #000000 inset !important;
+  box-shadow:0 0 0 1000px #000000 inset !important;
+  transition:background-color 9999s ease-out 0s;
+}
+
+/* content sits above the ambient layers */
+main,header,footer,section,.wrap,.section,.hero,.thoughts{position:relative;z-index:1}
+.baci-ambient,.baci-orbit{z-index:0}
+
+.modes-lead{text-align:center;max-width:720px;margin:0 auto;padding:38px 0 0}
+.modes-lead p{font-size:clamp(1.06rem,2.1vw,1.32rem);line-height:1.72;color:var(--gold);margin-bottom:1.15em}
+.modes-lead p:last-child{margin-bottom:0}
+.modes-lead .em{color:var(--gold-light)}
+
+.ladder{max-width:900px;margin:0 auto;padding:66px 0 0}
+.mode{position:relative;padding:44px 0;border-top:1px solid rgba(138,110,60,.34)}
+.mode:last-of-type{border-bottom:1px solid rgba(138,110,60,.34)}
+.mode__head{display:flex;align-items:baseline;justify-content:center;gap:18px;flex-wrap:wrap}
+.mode__name{font-family:'Cinzel',serif;font-weight:500;color:var(--head);
+  font-size:clamp(1.15rem,2.8vw,1.75rem);letter-spacing:.2em;text-indent:.2em;text-transform:uppercase}
+.mode__who{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.2em;
+  color:var(--dim);text-transform:uppercase}
+.mode .rule{margin:20px auto 26px;max-width:180px}
+.mode__body{max-width:640px;margin:0 auto;text-align:center}
+.mode__body p{font-size:1.08rem;line-height:1.7;color:var(--gold);margin:0 0 .8em}
+.mode__body p:last-child{margin-bottom:0}
+.mode__best{color:var(--dim);font-style:italic;margin-top:14px}
+
+.control{max-width:760px;margin:0 auto;padding:78px 0 0;text-align:center}
+.control h2{font-family:'Cinzel',serif;font-weight:500;color:var(--head);
+  font-size:clamp(1rem,2.4vw,1.32rem);letter-spacing:.2em;text-indent:.2em}
+.control p{font-size:clamp(1.02rem,2vw,1.22rem);line-height:1.7;color:var(--gold);
+  max-width:620px;margin:32px auto 0}
+.control .closing{color:var(--gold-light);font-size:clamp(1.1rem,2.4vw,1.5rem);margin-top:40px}
+
+.modes-back{text-align:center;padding:60px 0 0}
+.modes-back a{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.2em;text-indent:.2em;
+  color:var(--dim);text-transform:uppercase;transition:color .3s}
+.modes-back a:hover{color:var(--champagne)}
+
+/* ═══ ACCESSIBILITY ═══
+   Two things only: a light mode, and text size. Both work by
+   swapping variables on the root, so nothing is restyled twice. */
+
+html{font-size:calc(100% * var(--text-scale,1))}
+
+html[data-view="light"]{
+  --bg:#F7F4EE;
+  --gold:#4A3616;
+  --gold-light:#3A2A10;
+  --dim:#6B573A;
+  --champagne:#7A5A18;
+  --closing:#4A3616;
+  --head:#3A2A10;
+  --metal:#3A2A10;
+}
+html[data-view="light"] body{background:var(--bg);color:var(--gold)}
+html[data-view="light"] .baci-ambient,
+html[data-view="light"] .baci-orbit,
+html[data-view="light"] body::before,
+html[data-view="light"] body::after{display:none}
+html[data-view="light"] img[src$="baci-wordmark.webp"],
+html[data-view="light"] img[src$="hero-shell.webp"],
+html[data-view="light"] img[src$="doctrine.webp"],
+html[data-view="light"] img[src$="dashboard.webp"],
+html[data-view="light"] .pay img,
+html[data-view="light"] .soc img,
+html[data-view="light"] .a11y .glyph img{
+  filter:invert(1) hue-rotate(180deg) saturate(.55) brightness(.85);
+}
+html[data-view="light"] .mono,
+html[data-view="light"] .cnode__circle,
+html[data-view="light"] .cring__centre{background:var(--bg)}
+
+/* the panel */
+.a11y-panel{
+  position:fixed;right:20px;bottom:20px;z-index:60;
+  width:min(300px,calc(100vw - 40px));
+  background:#000;
+  border:1px solid rgba(195,149,68,.5);
+  border-radius:16px;
+  padding:22px 22px 20px;
+  display:none;
+}
+html[data-view="light"] .a11y-panel{background:#FFFDF8;border-color:rgba(74,54,22,.35)}
+.a11y-panel.open{display:block}
+.a11y-panel h4{
+  font-family:'Cinzel',Georgia,serif;font-weight:500;font-size:.66rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin:0 0 18px;
+}
+.a11y-row{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}
+.a11y-row:last-of-type{margin-bottom:0}
+.a11y-row span{font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;color:var(--gold)}
+.a11y-opt{
+  font-family:'Cinzel',Georgia,serif;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--dim);background:none;border:1px solid rgba(195,149,68,.4);border-radius:999px;
+  padding:9px 15px;cursor:pointer;transition:color .3s,border-color .3s;
+}
+.a11y-opt[aria-pressed="true"]{color:var(--gold-light);border-color:rgba(207,162,78,.75)}
+.a11y-steps{display:flex;gap:8px}
+.a11y-step{
+  width:38px;height:38px;border-radius:50%;cursor:pointer;
+  background:none;border:1px solid rgba(195,149,68,.4);color:var(--gold-light);
+  font-family:'Cinzel',Georgia,serif;font-size:.9rem;line-height:1;
+  transition:border-color .3s,color .3s;
+}
+.a11y-step:hover{border-color:rgba(232,200,122,.7)}
+.a11y-close{
+  margin-top:20px;width:100%;background:none;border:0;cursor:pointer;
+  font-family:'Cinzel',Georgia,serif;font-size:.6rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--dim);padding:8px 0 0;
+}
+
+/* ═══ GLOW PASS ═══
+   Gold on black goes flat without a little light behind it. This adds
+   depth without brightening the palette: nothing changes colour, the
+   type just stops sitting dead on the background. Light mode gets none
+   of it, where glow would only look like a printing fault. */
+
+html:not([data-view="light"]) .page-head h1,
+html:not([data-view="light"]) .hero h1,
+html:not([data-view="light"]) .heading,
+html:not([data-view="light"]) .access__title,
+html:not([data-view="light"]) .drown__head,
+html:not([data-view="light"]) .reality__title,
+html:not([data-view="light"]) .doctrine__title,
+html:not([data-view="light"]) .bos__title,
+html:not([data-view="light"]) .title-stack .t1{
+  text-shadow:0 0 18px rgba(201,159,94,.17), 0 0 40px rgba(195,149,68,.07);
+}
+
+html:not([data-view="light"]) .band h2,
+html:not([data-view="light"]) .section-head h2,
+html:not([data-view="light"]) .enquiry h2,
+html:not([data-view="light"]) .doc h2,
+html:not([data-view="light"]) .mode__name,
+html:not([data-view="light"]) .control h2,
+{
+  text-shadow:0 0 14px rgba(201,159,94,.16);
+}
+
+/* the closing lines carry a touch more, since they are the last thing read */
+html:not([data-view="light"]) .bos__closer,
+html:not([data-view="light"]) .thoughts .listening,
+html:not([data-view="light"]) .distinction p,
+html:not([data-view="light"]) .control .closing,
+html:not([data-view="light"]) .engine-close,
+html:not([data-view="light"]) .access__ready{
+  text-shadow:0 0 20px rgba(207,162,78,.22);
+}
+
+/* the light points get a cleaner falloff rather than a bigger blur */
+html:not([data-view="light"]) .rule::after,
+html:not([data-view="light"]) .acard__rule::after,
+html:not([data-view="light"]) .bcard__rule::after,
+html:not([data-view="light"]) .col .rule::after{
+  box-shadow:0 0 6px 1px rgba(232,200,122,.55),
+             0 0 16px 4px rgba(232,200,122,.20);
+}
+
+/* the hairlines lift off the black a fraction */
+html:not([data-view="light"]) .rule,
+html:not([data-view="light"]) .cta__conduit,
+html:not([data-view="light"]) .cta-line{
+  box-shadow:0 0 12px rgba(195,149,68,.07);
+}
+
+/* cards: resting glow, stronger on touch */
+html:not([data-view="light"]) .acard,
+html:not([data-view="light"]) .bcard,
+html:not([data-view="light"]) .hcard,
+html:not([data-view="light"]) .tier,
+html:not([data-view="light"]) .dev-mode{
+  box-shadow:inset 0 0 40px rgba(195,149,68,.022);
+  transition:border-color .4s ease,transform .4s ease,box-shadow .4s ease;
+}
+html:not([data-view="light"]) .acard:hover,
+html:not([data-view="light"]) .bcard:hover,
+html:not([data-view="light"]) .dev-mode:hover,
+html:not([data-view="light"]) .dev-mode.is-on{
+  box-shadow:inset 0 0 44px rgba(195,149,68,.05),
+             0 0 26px rgba(195,149,68,.07);
+}
+
+/* the wordmark and the monogram sit in a faint pool of light */
+html:not([data-view="light"]) .masthead img,
+html:not([data-view="light"]) .mono{
+  filter:drop-shadow(0 0 18px rgba(195,149,68,.14));
+}
+
+/* buttons answer to touch */
+html:not([data-view="light"]) .cta:hover .cta__text,
+html:not([data-view="light"]) .thoughts .open-btn:hover,
+html:not([data-view="light"]) .thoughts .send button:hover,
+html:not([data-view="light"]) .role .apply:hover,
+html:not([data-view="light"]) .obra6-btn:hover{
+  text-shadow:0 0 14px rgba(232,200,122,.16);
+}
+
+/* the ring's active node reads as lit rather than merely larger */
+html:not([data-view="light"]) .cnode.is-active .cnode__circle,
+html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
+  box-shadow:0 0 22px 3px rgba(195,149,68,.20),
+             inset 0 0 18px rgba(195,149,68,.05);
+}
+
+@media(prefers-reduced-motion:reduce){
+  html:not([data-view="light"]) .acard,
+  html:not([data-view="light"]) .bcard,
+  html:not([data-view="light"]) .dev-mode{transition:none}
+}
+</style>
+</head>
+
+<body>
+<div class="baci-ambient" aria-hidden="true"></div><div class="baci-orbit" aria-hidden="true"></div>
+
+<div class="wrap">
+
+  <div class="masthead"><a href="index.html" aria-label="BACI home"><img src="baci-wordmark.webp" alt="BACI"></a></div>
+
+  <header class="page-head">
+    <h1>OPERATING MODES</h1>
+    <div class="rule"></div>
+  </header>
+
+  <section class="modes-lead">
+    <p>Every BACI customer gets the same intelligence.</p>
+    <p>What changes is <span class="em">who does the work</span>.</p>
+    <p>Three modes, and you choose where on them you sit. Manual is not a smaller version of BACI, and Autonomous is not a better one. They differ in how much of the execution you hand over.</p>
+  </section>
+
+  <section class="ladder">
+    <article class="mode">
+      <div class="mode__head">
+        <span class="mode__name">MANUAL</span>
+        <span class="mode__who">You execute</span>
+      </div>
+      <div class="rule"></div>
+      <div class="mode__body">
+        <p>BACI produces the intelligence. Every decision and every action stays with you.</p>
+        <p>Nothing runs without you asking for it. The engines work continuously in the background, but what happens next is entirely your call.</p>
+        <p class="mode__best">Best for teams who want the insight without handing over execution.</p>
+      </div>
+    </article>
+
+    <article class="mode">
+      <div class="mode__head">
+        <span class="mode__name">HYBRID</span>
+        <span class="mode__who">BACI proposes, you approve</span>
+      </div>
+      <div class="rule"></div>
+      <div class="mode__body">
+        <p>BACI prepares the action and holds it for your approval.</p>
+        <p>It moves where speed matters and waits where judgement matters. You set which is which, and the boundary can move as your confidence does.</p>
+        <p class="mode__best">Best for businesses that want intelligence and instinct working together.</p>
+      </div>
+    </article>
+
+    <article class="mode">
+      <div class="mode__head">
+        <span class="mode__name">AUTONOMOUS</span>
+        <span class="mode__who">BACI executes within your limits</span>
+      </div>
+      <div class="rule"></div>
+      <div class="mode__body">
+        <p>BACI watches, investigates, decides and acts inside the boundaries you define.</p>
+        <p>Spend ceilings, approval thresholds, markets, channels and categories are all set by you before anything runs. Autonomous means BACI does not ask each time, not that it acts without limits.</p>
+        <p class="mode__best">Best for businesses ready to let intelligence lead.</p>
+      </div>
+    </article>
+
+  </section>
+
+  <section class="control">
+    <h2>YOU DECIDE HOW MUCH CONTROL YOU KEEP</h2>
+    <p>Modes are a property of your account, not a product you bought. Move up or down at any time, and run different parts of the business at different modes if that is what the work needs.</p>
+    <p>Most organisations begin in Manual, move to Hybrid once they trust what BACI is telling them, and adopt Autonomous selectively rather than all at once.</p>
+    <p class="closing">The intelligence never changes. Only the hand on it does.</p>
+  </section>
+
+  <div class="modes-back"><a href="index.html#access">Choose how you connect</a></div>
+
+</div>
+
+<footer>
+   <div class="footer-scroll">
+   <div class="footer-wrap">
+    <div class="cols">
+
+      <div class="col">
+        <h3>BUSINESS OS</h3>
+        <div class="rule"></div>
+        <div class="os-split">
+          <ul>
+            <li><a href="business-planning.html">Business Planning</a></li>
+            <li><a href="financial-planning.html">Financial Planning</a></li>
+            <li><a href="marketing-planning.html">Marketing Planning</a></li>
+            <li><a href="procurement.html">Procurement</a></li>
+            <li><a href="grants.html">Grants</a></li>
+            <li><a href="funding-capital-strategy.html">Funding &amp; Capital Strategy</a></li>
+          </ul>
+          <ul>
+            <li><a href="investors.html">Investors</a></li>
+            <li><a href="market-entry.html">Market Entry</a></li>
+            <li><a href="growth-strategy.html">Growth Strategy</a></li>
+            <li><a href="forecasting.html">Forecasting</a></li>
+            <li><a href="executive-intelligence.html">Executive Intelligence</a></li>
+            <li><a href="go-to-market.html">Go-to-Market</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col">
+        <h3>INTELLIGENCE</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="index.html#industry">Industry Intelligence</a></li>
+          <li><a href="index.html#conversion-intelligence">Conversion Intelligence</a></li>
+          <li><a href="index.html#global-reach">Global Reach</a></li>
+          <li><a href="index.html#doctrine">The Doctrine</a></li>
+          <li><a href="modes.html">Operating Modes</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>ACCESS</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="access-business.html">Business</a></li>
+          <li><a href="access-independent-professional.html">Independent Professionals</a></li>
+          <li><a href="access-advisory.html">Advisory</a></li>
+          <li><a href="access-agencies.html">Agencies</a></li>
+          <li><a href="access-developers.html">Developers</a></li>
+          <li><a href="access-enterprise.html">Enterprise</a></li>
+          <li><a href="access-technology-partners.html">Technology Partners</a></li>
+          <li><a href="access-affiliates.html">Affiliates</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>LICENSING</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="licensing.html#platform">Platform Licence</a></li>
+          <li><a href="licensing.html#territorial">Territorial Rights</a></li>
+          <li><a href="licensing.html#vertical">Vertical Rights</a></li>
+          <li><a href="licensing.html#engine">Engine Licensing</a></li>
+          <li><a href="licensing.html#feeds">Intelligence Feeds</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>COMPANY</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html#media">Press</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <nav class="policies" aria-label="Policies">
+      <a href="terms.html">Terms</a><span>&bull;</span>
+      <a href="privacy.html">Privacy</a><span>&bull;</span>
+      <a href="refund-policy.html">Refund Policy</a><span>&bull;</span>
+      <a href="billing.html">Billing</a><span>&bull;</span>
+      <a href="cancellation.html">Cancellation</a><span>&bull;</span>
+      <a href="acceptable-use.html">Acceptable Use</a><span>&bull;</span>
+      <a href="data-processing.html">Data Processing</a><span>&bull;</span>
+      <a href="security.html">Security</a><span>&bull;</span>
+      <a href="responsible-ai.html">Responsible AI</a><span>&bull;</span>
+      <a href="cookies.html">Cookies</a>
+    </nav>
+
+    <div class="pay">
+      <img src="assets/payment-methods.webp" alt="Payment methods accepted: Stripe, PayPal, Flutterwave, Visa, Mastercard, American Express, Apple Pay, G Pay, Alipay and cryptocurrency.">
+    </div>
+
+    <div class="base">
+      <div class="mono" aria-label="BACI">B</div>
+      <div class="copy">&copy; 2026 BACI</div>
+      <div class="socials">
+        <a class="soc" href="#" aria-label="TikTok"><img src="assets/social-tiktok.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Reddit"><img src="assets/social-reddit.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Facebook"><img src="assets/social-facebook.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Instagram"><img src="assets/social-instagram.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="LinkedIn"><img src="assets/social-linkedin.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="X"><img src="assets/social-x.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="WhatsApp"><img src="assets/social-whatsapp.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Snapchat"><img src="assets/social-snapchat.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="YouTube"><img src="assets/social-youtube.webp" alt=""></a>
+      </div>
+      <button class="a11y" id="a11y" aria-pressed="false">
+        <span class="glyph" aria-hidden="true"><img src="assets/icon-accessibility.webp" alt=""></span>
+        <span class="lab">Enhance your experience</span>
+      </button>
+    </div>
+   </div>
+   </div>
+  </footer>
+
+<section class="thoughts">
+  <p class="listening">We're listening.</p>
+
+  <button type="button" class="open-btn" id="thoughts-open" aria-expanded="false" aria-controls="thoughts-panel">SHARE YOUR THOUGHTS</button>
+
+  <div class="panel" id="thoughts-panel">
+    <label class="sr-only" for="thoughts-text">Share your thoughts</label>
+    <textarea id="thoughts-text" placeholder="Share your thoughts&hellip;"></textarea>
+    <label class="sr-only" for="thoughts-email">Email, if you would like a reply</label>
+    <input type="email" id="thoughts-email" autocomplete="email" placeholder="Email, if you would like a reply">
+    <div class="send">
+      <button type="button" id="thoughts-send">SHARE YOUR THOUGHTS</button>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  /* signature CTA travel span: first letter to last letter */
+  var cta = document.getElementById('cta');
+  if(cta){
+    var span = cta.offsetWidth * 0.86;
+    cta.style.setProperty('--travel', span + 'px');
+    cta.style.setProperty('--start', (cta.offsetWidth * 0.07) + 'px');
+    window.addEventListener('resize', function(){
+      cta.style.setProperty('--travel', (cta.offsetWidth * 0.86) + 'px');
+      cta.style.setProperty('--start', (cta.offsetWidth * 0.07) + 'px');
+    });
+  }
+
+  /* route multi-select */
+  document.querySelectorAll('.pick').forEach(function(p){
+    function toggle(){
+      p.setAttribute('aria-pressed', p.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+    }
+    p.addEventListener('click', toggle);
+    p.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  });
+
+  /* thoughts box collapses until asked for */
+  var tOpen  = document.getElementById('thoughts-open');
+  var tPanel = document.getElementById('thoughts-panel');
+  if(tOpen && tPanel){
+    tOpen.addEventListener('click', function(){
+      tOpen.setAttribute('aria-expanded','true');
+      tOpen.classList.add('hidden');
+      tPanel.classList.add('open');
+      document.getElementById('thoughts-text').focus();
+    });
+  }
+})();
+</script>
+
+
+<div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="Display settings" aria-modal="false">
+  <h4>Display</h4>
+  <div class="a11y-row">
+    <span>Background</span>
+    <button type="button" class="a11y-opt" id="a11yView" aria-pressed="false">Dark</button>
+  </div>
+  <div class="a11y-row">
+    <span>Text size</span>
+    <div class="a11y-steps">
+      <button type="button" class="a11y-step" id="a11ySmaller" aria-label="Smaller text">&minus;</button>
+      <button type="button" class="a11y-step" id="a11yLarger" aria-label="Larger text">+</button>
+    </div>
+  </div>
+  <button type="button" class="a11y-close" id="a11yClose">Close</button>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+
+  /* restore whatever was chosen last time, before anything paints */
+  try{
+    var v = localStorage.getItem('baci-view');
+    var t = localStorage.getItem('baci-text');
+    if(v === 'light') root.setAttribute('data-view','light');
+    if(t) root.style.setProperty('--text-scale', t);
+  }catch(e){}
+
+  var toggle = document.getElementById('a11y');
+  var panel  = document.getElementById('a11yPanel');
+  if(!toggle || !panel) return;
+
+  var viewBtn = document.getElementById('a11yView');
+  var smaller = document.getElementById('a11ySmaller');
+  var larger  = document.getElementById('a11yLarger');
+  var closeB  = document.getElementById('a11yClose');
+
+  var STEPS = [1, 1.12, 1.25, 1.4];
+
+  function currentStep(){
+    var s = parseFloat(getComputedStyle(root).getPropertyValue('--text-scale')) || 1;
+    var i = 0, best = 9;
+    STEPS.forEach(function(v, n){
+      var d = Math.abs(v - s);
+      if(d < best){ best = d; i = n; }
+    });
+    return i;
+  }
+
+  function setScale(i){
+    i = Math.max(0, Math.min(STEPS.length - 1, i));
+    root.style.setProperty('--text-scale', STEPS[i]);
+    try{ localStorage.setItem('baci-text', STEPS[i]); }catch(e){}
+  }
+
+  function syncView(){
+    var light = root.getAttribute('data-view') === 'light';
+    viewBtn.textContent = light ? 'Light' : 'Dark';
+    viewBtn.setAttribute('aria-pressed', String(light));
+  }
+
+  function open(){
+    panel.classList.add('open');
+    toggle.setAttribute('aria-expanded','true');
+    syncView();
+    viewBtn.focus();
+  }
+  function close(){
+    panel.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+  }
+
+  toggle.setAttribute('aria-expanded','false');
+  toggle.addEventListener('click', function(e){
+    e.preventDefault();
+    panel.classList.contains('open') ? close() : open();
+  });
+
+  viewBtn.addEventListener('click', function(){
+    var light = root.getAttribute('data-view') === 'light';
+    if(light){ root.removeAttribute('data-view'); }
+    else { root.setAttribute('data-view','light'); }
+    try{ localStorage.setItem('baci-view', light ? 'dark' : 'light'); }catch(e){}
+    syncView();
+  });
+
+  smaller.addEventListener('click', function(){ setScale(currentStep() - 1); });
+  larger .addEventListener('click', function(){ setScale(currentStep() + 1); });
+  closeB .addEventListener('click', close);
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && panel.classList.contains('open')) { close(); toggle.focus(); }
+  });
+  document.addEventListener('click', function(e){
+    if(!panel.contains(e.target) && !toggle.contains(e.target)) close();
+  });
+
+  syncView();
+})();
+</script>
+
+</body>
+</html>
