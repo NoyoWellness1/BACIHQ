@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security Policy &middot; BACI</title>
+<link rel="icon" href="favicon-baci-monogram.webp">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#C39544;
+  --gold-light:#CFA24E;
+  --dim:#8A6E3C;
+  --champagne:#E8C87A;
+  --head:#C99F5E;
+  --bg:#000;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--gold);
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--champagne);outline-offset:3px}
+
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 28px}
+.wrap.full{max-width:none;padding:0}
+
+/* ---------- masthead ---------- */
+.masthead{padding:38px 0 0;text-align:left}
+.masthead img{width:124px;height:auto;opacity:.92}
+
+/* ---------- page head ---------- */
+.page-head{text-align:center;padding:76px 0 0}
+.page-head h1{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--head);
+  font-size:clamp(2.4rem,7vw,4.5rem);
+  letter-spacing:.22em;
+  text-indent:.22em;
+  line-height:1.08;
+}
+
+/* ---------- light-point rule ---------- */
+.rule{
+  position:relative;
+  height:1px;
+  margin:26px auto 0;
+  max-width:420px;
+  background:linear-gradient(90deg,transparent,var(--dim) 18%,var(--dim) 82%,transparent);
+}
+.rule::after{
+  content:"";
+  position:absolute;
+  top:50%;left:50%;
+  width:7px;height:7px;
+  margin:-3.5px 0 0 -3.5px;
+  border-radius:50%;
+  background:var(--champagne);
+  box-shadow:0 0 10px 3px rgba(232,200,122,.55);
+}
+.rule.short{max-width:210px}
+
+/* ---------- intro ---------- */
+.intro{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto;
+  padding:38px 0 0;
+}
+.intro p{
+  font-size:clamp(1.06rem,2.1vw,1.32rem);
+  line-height:1.72;
+  color:var(--gold);
+  margin-bottom:1.15em;
+}
+.intro p:last-child{margin-bottom:0}
+
+/* ---------- routes ---------- */
+.routes{padding:86px 0 0;max-width:880px;margin:0 auto}
+.route{
+  padding:34px 0;
+  border-top:1px solid rgba(138,110,60,.34);
+  text-align:center;
+}
+.route:last-child{border-bottom:1px solid rgba(138,110,60,.34)}
+.route h2{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--gold-light);
+  font-size:clamp(1.02rem,2.3vw,1.34rem);
+  letter-spacing:.19em;
+  text-indent:.19em;
+  margin-bottom:14px;
+}
+.route p{
+  font-size:clamp(1rem,2vw,1.2rem);
+  line-height:1.66;
+  color:var(--gold);
+  max-width:560px;
+  margin:0 auto;
+}
+
+/* ---------- distinction ---------- */
+.distinction{
+  text-align:center;
+  padding:88px 0 0;
+}
+.distinction p{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:400;
+  color:var(--champagne);
+  font-size:clamp(1.24rem,3vw,1.92rem);
+  line-height:1.55;
+  max-width:820px;
+  margin:0 auto;
+}
+
+/* ---------- form ---------- */
+.enquiry{padding:92px 0 0;max-width:660px;margin:0 auto}
+.enquiry h2{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--head);
+  font-size:clamp(1.1rem,2.6vw,1.5rem);
+  letter-spacing:.2em;
+  text-indent:.2em;
+  text-align:center;
+}
+.fields{padding:44px 0 0}
+.field{margin-bottom:26px}
+.field label{
+  display:block;
+  font-family:'Cinzel',serif;
+  font-size:.68rem;
+  letter-spacing:.17em;
+  text-indent:.17em;
+  color:var(--dim);
+  margin-bottom:9px;
+  text-transform:uppercase;
+}
+.field input,.field textarea,.field select{
+  width:100%;
+  background:transparent;
+  border:none;
+  border-bottom:1px solid rgba(138,110,60,.46);
+  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.08rem;
+  font-weight:300;
+  padding:9px 2px;
+  transition:border-color .3s;
+}
+.field textarea{resize:vertical;min-height:96px;line-height:1.6}
+.field input:focus,.field textarea:focus,.field select:focus{
+  outline:none;
+  border-bottom-color:var(--champagne);
+}
+.field select option{background:#0a0a0a;color:var(--gold)}
+
+.routes-pick{display:flex;flex-wrap:wrap;gap:10px;padding-top:4px}
+.pick{
+  font-family:'Cinzel',serif;
+  font-size:.66rem;
+  letter-spacing:.14em;
+  text-indent:.14em;
+  text-transform:uppercase;
+  color:var(--dim);
+  border:1px solid rgba(138,110,60,.44);
+  border-radius:2px;
+  padding:9px 14px;
+  cursor:pointer;
+  transition:color .3s,border-color .3s;
+  user-select:none;
+}
+.pick[aria-pressed="true"]{
+  color:var(--champagne);
+  border-color:rgba(232,200,122,.7);
+}
+
+/* ---------- signature CTA ---------- */
+.cta-wrap{text-align:center;padding:56px 0 0}
+.cta{
+  position:relative;
+  display:inline-block;
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  font-size:clamp(.86rem,2vw,1.06rem);
+  letter-spacing:.24em;
+  text-indent:.24em;
+  color:var(--head);
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:0 0 16px;
+}
+.cta::after{
+  content:"";
+  position:absolute;
+  left:var(--start,0);
+  bottom:0;
+  width:6px;height:6px;
+  margin-left:-3px;
+  border-radius:50%;
+  background:var(--champagne);
+  box-shadow:0 0 9px 3px rgba(232,200,122,.5);
+  animation:travel 6s cubic-bezier(.42,0,.58,1) infinite;
+}
+@keyframes travel{
+  0%   {transform:translateX(0)}
+  50%  {transform:translateX(var(--travel,120px))}
+  100% {transform:translateX(0)}
+}
+.cta-line{
+  height:1px;
+  margin:0 auto;
+  max-width:300px;
+  background:linear-gradient(90deg,transparent,var(--dim) 20%,var(--dim) 80%,transparent);
+}
+
+/* ---------- footer ---------- */
+footer{margin-top:120px;padding-top:6px}
+.footer-wrap{max-width:1440px;margin:0 auto;padding:0 28px}
+.cols{
+  display:grid;
+  grid-template-columns:1.7fr 1.12fr 1.18fr 1fr .88fr;
+  gap:0;
+  padding:52px 0 0;
+  align-items:start;
+}
+.col{padding:0 22px;border-left:1px solid rgba(195,149,68,.42)}
+.col:first-child{border-left:none;padding-left:0}
+.col h3{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--head);
+  font-size:clamp(.82rem,1.5vw,1.06rem);
+  letter-spacing:.13em;
+  text-indent:.13em;
+  text-align:center;
+  margin-bottom:0;
+}
+.col .rule{margin:12px auto 30px;max-width:100%}
+.col ul{list-style:none}
+.col li{margin-bottom:17px;line-height:1.3}
+.col a{
+  font-size:.98rem;
+  color:var(--gold);
+  transition:color .25s;
+  display:inline-block;
+}
+.col a:hover{color:var(--champagne)}
+
+.os-split{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.os-split ul:first-child{padding-right:16px}
+.os-split ul:last-child{padding-left:20px;border-left:1px solid rgba(195,149,68,.26)}
+
+.policies{
+  margin-top:44px;
+  padding:20px 0;
+  border-top:1px solid rgba(195,149,68,.42);
+  border-bottom:1px solid rgba(195,149,68,.42);
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:0 8px;
+}
+.policies a{font-size:.98rem;color:var(--gold);padding:0 4px;white-space:nowrap}
+.policies span{color:var(--dim);font-size:.62rem;padding:0 4px}
+
+.pay{padding:6px 0 8px}
+.pay img{display:block;width:100%;height:auto}
+
+.base{
+  padding:32px 0 48px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+}
+/* The monogram artwork carries its own ring, so the element supplies
+   no border of its own — two concentric circles is not the mark. */
+.mono{
+  width:64px;height:64px;
+  display:grid;place-items:center;
+}
+.mono img{width:100%;height:100%;display:block;object-fit:contain}
+.copy{font-size:1rem;color:var(--gold);padding:0 20px;border-left:1px solid rgba(195,149,68,.34)}
+.socials{display:flex;gap:10px;padding:0 4px}
+.soc{display:block;width:46px;height:46px;transition:opacity .25s,transform .25s}
+.soc img{display:block;width:100%;height:100%}
+.soc:hover{opacity:.78;transform:translateY(-1px)}
+.a11y{
+  display:flex;align-items:center;gap:12px;
+  padding-left:20px;border-left:1px solid rgba(195,149,68,.34);
+  background:none;border-top:none;border-right:none;border-bottom:none;
+  cursor:pointer;
+}
+.a11y .glyph{width:58px;height:58px;display:block}
+.a11y .glyph img{display:block;width:100%;height:100%}
+.a11y .lab{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;
+  color:var(--gold);
+  text-align:left;
+  line-height:1.25;
+  max-width:104px;
+}
+
+/* ---------- responsive ---------- */
+/* The footer keeps its five-column shape at every width.
+   Below the width it needs, the whole footer scrolls sideways
+   as one piece rather than stacking. */
+.footer-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.footer-wrap{min-width:1180px}
+
+@media(max-width:1240px){
+  .col{padding:0 16px}
+  .col a{font-size:.94rem}
+  .col li{margin-bottom:15px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .cta::after{animation:none}
+  *{transition:none !important}
+}
+
+/* ---------- share your thoughts (universal, below the footer) ---------- */
+.thoughts{
+  border-top:1px solid rgba(195,149,68,.28);
+  text-align:center;
+  padding:78px 28px 92px;
+}
+.thoughts .listening{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  color:var(--champagne);
+  font-size:clamp(2rem,5.4vw,3.1rem);
+  line-height:1.1;
+  margin-bottom:38px;
+}
+.thoughts .ask{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  color:var(--gold);
+  font-size:clamp(1.1rem,2.5vw,1.42rem);
+  line-height:1.5;
+  max-width:560px;
+  margin:0 auto 34px;
+}
+.thoughts textarea{
+  display:block;
+  width:100%;
+  max-width:820px;
+  margin:0 auto;
+  min-height:200px;
+  background:rgba(195,149,68,.022);
+  border:1px solid rgba(195,149,68,.58);
+  border-radius:22px;
+  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:1.14rem;
+  line-height:1.6;
+  padding:26px 28px;
+  resize:vertical;
+  transition:border-color .3s;
+}
+.thoughts textarea::placeholder{color:var(--dim)}
+.thoughts textarea:focus{outline:none;border-color:var(--champagne)}
+
+.thoughts input[type="email"]{
+  display:block;
+  width:100%;
+  max-width:820px;
+  margin:18px auto 0;
+  background:rgba(195,149,68,.022);
+  border:1px solid rgba(195,149,68,.42);
+  border-radius:999px;
+  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:1.08rem;
+  padding:17px 28px;
+  transition:border-color .3s;
+}
+.thoughts input[type="email"]::placeholder{color:var(--dim)}
+.thoughts input[type="email"]:focus{outline:none;border-color:var(--champagne)}
+
+.thoughts .open-btn{
+  font-family:'Cinzel',serif;font-weight:500;
+  font-size:clamp(.76rem,1.7vw,.92rem);
+  letter-spacing:.19em;text-indent:.19em;
+  color:var(--gold-light);
+  background:rgba(195,149,68,.030);
+  border:1px solid rgba(195,149,68,.6);
+  border-radius:999px;
+  padding:18px 44px;
+  cursor:pointer;
+  transition:border-color .3s,color .3s;
+}
+.thoughts .open-btn:hover{border-color:var(--champagne);color:var(--champagne)}
+.thoughts .panel{display:none;padding-top:34px}
+.thoughts .panel.open{display:block}
+.thoughts .open-btn.hidden{display:none}
+.thoughts .send{padding-top:34px}
+.thoughts .send button{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  font-size:clamp(.76rem,1.7vw,.92rem);
+  letter-spacing:.19em;
+  text-indent:.19em;
+  color:var(--gold-light);
+  background:rgba(195,149,68,.030);
+  border:1px solid rgba(195,149,68,.6);
+  border-radius:999px;
+  padding:18px 44px;
+  cursor:pointer;
+  transition:border-color .3s,color .3s;
+}
+.thoughts .send button:hover{border-color:var(--champagne);color:var(--champagne)}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* BACKGROUND TREATMENT ONLY */
+.baci-ambient{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 75% 85% at -18% 48%,rgba(195,149,68,.055),rgba(195,149,68,.024) 35%,transparent 74%),radial-gradient(ellipse 62% 72% at 116% 35%,rgba(195,149,68,.045),rgba(195,149,68,.019) 38%,transparent 74%)}
+body::before,body::after{content:"";position:fixed;pointer-events:none;z-index:0}
+body::before{width:72vw;height:72vw;left:-34vw;top:14vh;border-radius:50%;border:1px solid rgba(195,149,68,.10);box-shadow:0 0 145px rgba(195,149,68,.040),inset 0 0 165px rgba(195,149,68,.028);transform:rotate(-9deg)}
+body::after{width:56vw;height:1px;right:-8vw;top:46vh;background:linear-gradient(90deg,transparent,rgba(232,200,122,.052),transparent);box-shadow:0 0 58px 2px rgba(195,149,68,.026);transform:rotate(-17deg)}
+.baci-orbit{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}.baci-orbit::before{content:"";position:absolute;width:980px;height:420px;right:-530px;top:19vh;border:1px solid rgba(195,149,68,.082);border-radius:50%;transform:rotate(24deg);box-shadow:0 0 115px rgba(195,149,68,.026)}.baci-orbit::after{content:none}
+input,textarea,button{
+  -webkit-appearance:none;
+  appearance:none;
+}
+input,textarea{
+  background-color:transparent;
+  -webkit-text-fill-color:var(--gold);
+  caret-color:var(--champagne);
+  color-scheme:dark;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus{
+  -webkit-text-fill-color:var(--gold) !important;
+  -webkit-box-shadow:0 0 0 1000px #000000 inset !important;
+  box-shadow:0 0 0 1000px #000000 inset !important;
+  transition:background-color 9999s ease-out 0s;
+}
+
+/* content sits above the ambient layers */
+main,header,footer,section,.wrap,.section,.hero,.thoughts{position:relative;z-index:1}
+.baci-ambient,.baci-orbit{z-index:0}
+
+.doc{max-width:760px;margin:0 auto;padding:44px 0 0}
+.doc__meta{text-align:center;font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.22em;
+  color:var(--dim);text-transform:uppercase;margin-bottom:8px}
+.doc__note{text-align:center;max-width:620px;margin:0 auto 12px;font-size:1rem;
+  line-height:1.62;color:var(--dim);font-style:italic}
+.doc h2{font-family:'Cinzel',serif;font-weight:500;color:var(--gold-light);
+  font-size:clamp(.86rem,1.9vw,1.04rem);letter-spacing:.16em;text-indent:.16em;
+  text-transform:uppercase;margin:52px 0 16px}
+.doc h2:first-of-type{margin-top:44px}
+.doc p{font-size:1.05rem;line-height:1.72;color:var(--gold);margin:0 0 1em}
+.doc ul{list-style:none;margin:0 0 1em;padding:0}
+.doc li{font-size:1.05rem;line-height:1.7;color:var(--gold);padding-left:22px;
+  position:relative;margin-bottom:.6em}
+.doc li::before{content:"";position:absolute;left:2px;top:.72em;width:4px;height:4px;
+  border-radius:50%;background:var(--dim)}
+.doc__contact{margin-top:56px;padding-top:34px;border-top:1px solid rgba(138,110,60,.34);text-align:center}
+.doc__contact a{color:var(--gold-light)}
+.doc-back{text-align:center;padding:56px 0 0}
+.doc-back a{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.2em;text-indent:.2em;
+  color:var(--dim);text-transform:uppercase;transition:color .3s}
+.doc-back a:hover{color:var(--champagne)}
+
+/* ═══ ACCESSIBILITY ═══
+   Two things only: a light mode, and text size. Both work by
+   swapping variables on the root, so nothing is restyled twice. */
+
+html{font-size:calc(100% * var(--text-scale,1))}
+
+html[data-view="light"]{
+  --bg:#F7F4EE;
+  --gold:#4A3616;
+  --gold-light:#3A2A10;
+  --dim:#6B573A;
+  --champagne:#7A5A18;
+  --closing:#4A3616;
+  --head:#3A2A10;
+  --metal:#3A2A10;
+}
+html[data-view="light"] body{background:var(--bg);color:var(--gold)}
+html[data-view="light"] .baci-ambient,
+html[data-view="light"] .baci-orbit,
+html[data-view="light"] body::before,
+html[data-view="light"] body::after{display:none}
+html[data-view="light"] img[src$="baci-wordmark.webp"],
+html[data-view="light"] img[src$="hero-shell.webp"],
+html[data-view="light"] img[src$="doctrine.webp"],
+html[data-view="light"] img[src$="dashboard.webp"],
+html[data-view="light"] .pay img,
+html[data-view="light"] .soc img,
+html[data-view="light"] .a11y .glyph img{
+  filter:invert(1) hue-rotate(180deg) saturate(.55) brightness(.85);
+}
+html[data-view="light"] .mono,
+html[data-view="light"] .cnode__circle,
+html[data-view="light"] .cring__centre{background:var(--bg)}
+
+/* the panel */
+.a11y-panel{
+  position:fixed;right:20px;bottom:20px;z-index:60;
+  width:min(300px,calc(100vw - 40px));
+  background:#000;
+  border:1px solid rgba(195,149,68,.5);
+  border-radius:16px;
+  padding:22px 22px 20px;
+  display:none;
+}
+html[data-view="light"] .a11y-panel{background:#FFFDF8;border-color:rgba(74,54,22,.35)}
+.a11y-panel.open{display:block}
+.a11y-panel h4{
+  font-family:'Cinzel',Georgia,serif;font-weight:500;font-size:.66rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin:0 0 18px;
+}
+.a11y-row{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}
+.a11y-row:last-of-type{margin-bottom:0}
+.a11y-row span{font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;color:var(--gold)}
+.a11y-opt{
+  font-family:'Cinzel',Georgia,serif;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--dim);background:none;border:1px solid rgba(195,149,68,.4);border-radius:999px;
+  padding:9px 15px;cursor:pointer;transition:color .3s,border-color .3s;
+}
+.a11y-opt[aria-pressed="true"]{color:var(--gold-light);border-color:rgba(207,162,78,.75)}
+.a11y-steps{display:flex;gap:8px}
+.a11y-step{
+  width:38px;height:38px;border-radius:50%;cursor:pointer;
+  background:none;border:1px solid rgba(195,149,68,.4);color:var(--gold-light);
+  font-family:'Cinzel',Georgia,serif;font-size:.9rem;line-height:1;
+  transition:border-color .3s,color .3s;
+}
+.a11y-step:hover{border-color:rgba(232,200,122,.7)}
+.a11y-close{
+  margin-top:20px;width:100%;background:none;border:0;cursor:pointer;
+  font-family:'Cinzel',Georgia,serif;font-size:.6rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--dim);padding:8px 0 0;
+}
+
+/* ═══ GLOW PASS ═══
+   Gold on black goes flat without a little light behind it. This adds
+   depth without brightening the palette: nothing changes colour, the
+   type just stops sitting dead on the background. Light mode gets none
+   of it, where glow would only look like a printing fault. */
+
+html:not([data-view="light"]) .page-head h1,
+html:not([data-view="light"]) .hero h1,
+html:not([data-view="light"]) .heading,
+html:not([data-view="light"]) .access__title,
+html:not([data-view="light"]) .drown__head,
+html:not([data-view="light"]) .reality__title,
+html:not([data-view="light"]) .doctrine__title,
+html:not([data-view="light"]) .bos__title,
+html:not([data-view="light"]) .title-stack .t1{
+  text-shadow:0 0 18px rgba(201,159,94,.17), 0 0 40px rgba(195,149,68,.07);
+}
+
+html:not([data-view="light"]) .band h2,
+html:not([data-view="light"]) .section-head h2,
+html:not([data-view="light"]) .enquiry h2,
+html:not([data-view="light"]) .doc h2,
+html:not([data-view="light"]) .mode__name,
+html:not([data-view="light"]) .control h2,
+{
+  text-shadow:0 0 14px rgba(201,159,94,.16);
+}
+
+/* the closing lines carry a touch more, since they are the last thing read */
+html:not([data-view="light"]) .bos__closer,
+html:not([data-view="light"]) .thoughts .listening,
+html:not([data-view="light"]) .distinction p,
+html:not([data-view="light"]) .control .closing,
+html:not([data-view="light"]) .engine-close,
+html:not([data-view="light"]) .access__ready{
+  text-shadow:0 0 20px rgba(207,162,78,.22);
+}
+
+/* the light points get a cleaner falloff rather than a bigger blur */
+html:not([data-view="light"]) .rule::after,
+html:not([data-view="light"]) .acard__rule::after,
+html:not([data-view="light"]) .bcard__rule::after,
+html:not([data-view="light"]) .col .rule::after{
+  box-shadow:0 0 6px 1px rgba(232,200,122,.55),
+             0 0 16px 4px rgba(232,200,122,.20);
+}
+
+/* the hairlines lift off the black a fraction */
+html:not([data-view="light"]) .rule,
+html:not([data-view="light"]) .cta__conduit,
+html:not([data-view="light"]) .cta-line{
+  box-shadow:0 0 12px rgba(195,149,68,.07);
+}
+
+/* cards: resting glow, stronger on touch */
+html:not([data-view="light"]) .acard,
+html:not([data-view="light"]) .bcard,
+html:not([data-view="light"]) .hcard,
+html:not([data-view="light"]) .tier,
+html:not([data-view="light"]) .dev-mode{
+  box-shadow:inset 0 0 40px rgba(195,149,68,.022);
+  transition:border-color .4s ease,transform .4s ease,box-shadow .4s ease;
+}
+html:not([data-view="light"]) .acard:hover,
+html:not([data-view="light"]) .bcard:hover,
+html:not([data-view="light"]) .dev-mode:hover,
+html:not([data-view="light"]) .dev-mode.is-on{
+  box-shadow:inset 0 0 44px rgba(195,149,68,.05),
+             0 0 26px rgba(195,149,68,.07);
+}
+
+/* the wordmark and the monogram sit in a faint pool of light */
+html:not([data-view="light"]) .masthead img,
+html:not([data-view="light"]) .mono{
+  filter:drop-shadow(0 0 18px rgba(195,149,68,.14));
+}
+
+/* buttons answer to touch */
+html:not([data-view="light"]) .cta:hover .cta__text,
+html:not([data-view="light"]) .thoughts .open-btn:hover,
+html:not([data-view="light"]) .thoughts .send button:hover,
+html:not([data-view="light"]) .role .apply:hover,
+html:not([data-view="light"]) .obra6-btn:hover{
+  text-shadow:0 0 14px rgba(232,200,122,.16);
+}
+
+/* the ring's active node reads as lit rather than merely larger */
+html:not([data-view="light"]) .cnode.is-active .cnode__circle,
+html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
+  box-shadow:0 0 22px 3px rgba(195,149,68,.20),
+             inset 0 0 18px rgba(195,149,68,.05);
+}
+
+@media(prefers-reduced-motion:reduce){
+  html:not([data-view="light"]) .acard,
+  html:not([data-view="light"]) .bcard,
+  html:not([data-view="light"]) .dev-mode{transition:none}
+}
+</style>
+</head>
+
+<body>
+<div class="baci-ambient" aria-hidden="true"></div><div class="baci-orbit" aria-hidden="true"></div>
+
+<div class="wrap">
+
+  <div class="masthead"><a href="index.html" aria-label="BACI home"><img src="baci-wordmark.webp" alt="BACI"></a></div>
+
+  <header class="page-head">
+    <h1>SECURITY POLICY</h1>
+    <div class="rule"></div>
+  </header>
+
+  <section class="doc">
+    <p class="doc__meta">Version 1.0 &middot; Effective Date: 10 September 2026 &middot; Last Updated: 10 September 2026</p>
+    <p>This Security Policy and Security Addendum (&quot;Security Addendum&quot;) describes the administrative, technical and organisational safeguards BACI LLC (&quot;BACI&quot;) maintains to protect the confidentiality, integrity, availability and resilience of BACI Services and Customer Data.</p>
+    <p>Where incorporated into an Agreement, the contractual provisions of this Security Addendum constitute BACI&#x27;s security commitments for the applicable Services. The controls described here are risk-based and may be implemented through BACI systems, personnel, infrastructure providers and authorised service providers. BACI may evolve individual controls as technology and threats change, provided the overall level of protection applicable to Customer Data is not materially reduced during the applicable Service term.</p>
+    <h2>1. SCOPE</h2>
+    <p>This Security Addendum applies to BACI Services and to Customer Data processed by BACI in connection with those Services, subject to the applicable Agreement, Order, Service configuration and any product-specific or regional Supplemental Terms.</p>
+    <p>It addresses BACI&#x27;s security governance, access control, infrastructure, application security, cryptography, vulnerability management, monitoring, incident response, resilience, personnel security, third-party risk and related safeguards.</p>
+    <p>Customer-controlled devices, networks, identity systems, credentials, configurations, integrations and third-party services remain subject to Customer&#x27;s own security responsibilities except to the extent BACI expressly agrees otherwise.</p>
+    <h2>2. RELATIONSHIP TO THE BACI LEGAL FRAMEWORK</h2>
+    <p>This Security Addendum forms part of the BACI Legal Framework.</p>
+    <p>Under the Terms of Service order of precedence, this Security Addendum governs contracted security obligations for the matters it expressly addresses. The Data Processing Addendum governs BACI&#x27;s Processing of Customer Personal Data on Customer&#x27;s behalf. The Service Level Agreement governs service-level commitments and remedies. An executed Order, Statement of Work or amendment may impose additional security requirements where it expressly addresses them.</p>
+    <p>Nothing in this Security Addendum reduces a mandatory security obligation imposed by Applicable Law.</p>
+    <h2>3. SECURITY GOVERNANCE</h2>
+    <p>BACI will maintain a security programme appropriate to the nature, scale and risk of the Services.</p>
+    <p>The programme may include documented security policies and standards; assigned security responsibilities; risk assessment; access governance; secure development requirements; vulnerability management; incident response; business continuity and recovery planning; third-party risk management; personnel controls; security awareness; monitoring; and periodic review of material controls.</p>
+    <p>Security controls will be selected and operated using a risk-based approach that considers the sensitivity of information, foreseeable threats, Service architecture, Customer configuration and consequences of compromise.</p>
+    <h2>4. SECURITY RESPONSIBILITY AND ACCOUNTABILITY</h2>
+    <p>BACI will assign responsibility for material security functions to appropriate personnel.</p>
+    <p>Personnel with security responsibilities may establish standards, coordinate incident response, review material risks, oversee remediation, evaluate third-party risk and support security governance.</p>
+    <p>Security is a shared responsibility. BACI is responsible for controls within the Services and systems under BACI&#x27;s control. Customer is responsible for controls within Customer-controlled environments and for appropriate use and configuration of BACI functionality.</p>
+    <h2>5. RISK MANAGEMENT</h2>
+    <p>BACI will maintain processes reasonably designed to identify, assess, prioritise and address material security risks affecting the Services.</p>
+    <p>Risk-management activities may include architecture review, threat assessment, vulnerability assessment, control review, vendor assessment, incident analysis and evaluation of material changes to the Services.</p>
+    <p>BACI may prioritise remediation based on severity, exploitability, exposure, affected assets, available mitigations and foreseeable impact.</p>
+    <h2>6. ASSET AND SYSTEM MANAGEMENT</h2>
+    <p>BACI will maintain reasonable processes for identifying and managing material production systems, infrastructure and information assets under BACI&#x27;s control.</p>
+    <p>Access to production systems will be restricted according to operational need. BACI may use automated inventory, configuration, infrastructure-as-code, cloud-provider controls and other mechanisms appropriate to its architecture.</p>
+    <h2>7. IDENTITY AND ACCESS MANAGEMENT</h2>
+    <p>BACI will maintain controls designed to restrict access to systems and Customer Data to authorised persons and services.</p>
+    <p>Controls may include unique identities, authentication, role-based or attribute-based access, least-privilege principles, separation of duties where appropriate, privileged-access restrictions, access approval, access revocation and periodic access review.</p>
+    <p>Administrative access to production environments will be limited to personnel with a legitimate operational requirement.</p>
+    <p>BACI will revoke or adjust access within a reasonable period when access is no longer required or an individual&#x27;s role materially changes.</p>
+    <h2>8. AUTHENTICATION</h2>
+    <p>BACI will use authentication controls appropriate to the sensitivity and privilege of the relevant system.</p>
+    <p>BACI may require stronger authentication for privileged, administrative or otherwise sensitive access.</p>
+    <p>Where BACI controls the authentication system, BACI will not intentionally store user passwords in readable plaintext.</p>
+    <p>Customers are responsible for safeguarding their credentials, selecting appropriate authentication options available to them and promptly addressing suspected credential compromise.</p>
+    <h2>9. PRIVILEGED ACCESS</h2>
+    <p>Privileged access will be restricted to authorised personnel and services with a legitimate requirement.</p>
+    <p>BACI will use reasonable controls designed to reduce unnecessary standing privilege and to protect privileged credentials.</p>
+    <p>Privileged activity may be logged or monitored where appropriate to the system and risk.</p>
+    <p>The existence of technical access does not itself authorise personnel to access Customer Data for unrelated purposes.</p>
+    <h2>10. TENANT AND ORGANISATIONAL ISOLATION</h2>
+    <p>BACI will maintain controls designed to preserve logical separation between Customer environments and authorised organisational contexts.</p>
+    <p>Where BACI Services use tenant, organisation or workspace boundaries, BACI will implement access-control and application controls designed to prevent one Customer from obtaining unauthorised access to another Customer&#x27;s protected data.</p>
+    <p>BACI will treat failures of material tenant-isolation controls as security issues requiring appropriate investigation and remediation.</p>
+    <h2>11. DATA ACCESS AND MINIMISATION</h2>
+    <p>BACI personnel access to Customer Data will be limited to circumstances reasonably necessary to provide, secure, support, maintain or troubleshoot the Services; execute Customer instructions; investigate abuse or security events; comply with law; or perform another purpose authorised by the Agreement.</p>
+    <p>BACI will seek to minimise unnecessary access to Customer Data and may use technical, procedural or architectural controls to reduce exposure.</p>
+    <h2>12. ENCRYPTION AND CRYPTOGRAPHIC CONTROLS</h2>
+    <p>BACI will use encryption or equivalent protective controls appropriate to the risk for Customer Data transmitted over public networks and for protected Customer Data stored within applicable production systems where technically appropriate.</p>
+    <p>BACI will use recognised cryptographic protocols and implementations appropriate to the relevant environment.</p>
+    <p>Cryptographic keys and secrets under BACI&#x27;s control will be protected through reasonable access restrictions and lifecycle controls appropriate to their purpose.</p>
+    <p>Specific algorithms, key lengths and implementations may change as security standards evolve.</p>
+    <h2>13. SECRETS AND CREDENTIAL MANAGEMENT</h2>
+    <p>BACI will maintain reasonable controls for protecting production secrets, API credentials, service credentials, cryptographic material and other sensitive authentication information under BACI&#x27;s control.</p>
+    <p>BACI will not intentionally place production secrets in publicly accessible source repositories.</p>
+    <p>Where compromise is suspected, BACI may rotate, revoke or replace affected credentials or secrets.</p>
+    <h2>14. NETWORK AND INFRASTRUCTURE SECURITY</h2>
+    <p>BACI will maintain network and infrastructure controls appropriate to the Service architecture.</p>
+    <p>Controls may include network segmentation, firewall or security-group controls, restricted administrative interfaces, encrypted communications, cloud security controls, denial-of-service protections, threat detection, environment separation and hardened configuration.</p>
+    <p>BACI may rely on reputable infrastructure providers for physical facilities and underlying cloud infrastructure, subject to BACI&#x27;s third-party risk and contractual framework.</p>
+    <h2>15. PRODUCTION AND NON-PRODUCTION ENVIRONMENTS</h2>
+    <p>BACI will use reasonable controls to distinguish production environments from development, testing or other non-production environments.</p>
+    <p>Customer Data will not be copied into non-production environments unnecessarily. Where production-derived data is required for legitimate testing or support, BACI will apply protections appropriate to the sensitivity and purpose, including minimisation, masking, restricted access or other safeguards where reasonably practicable.</p>
+    <h2>16. SECURE DEVELOPMENT LIFECYCLE</h2>
+    <p>BACI will maintain secure development practices appropriate to the Services.</p>
+    <p>Practices may include security requirements, code review, dependency management, automated testing, static or dynamic analysis where appropriate, secrets detection, vulnerability scanning, change control, architecture review and security assessment for material features.</p>
+    <p>Security considerations will be incorporated into development and deployment processes proportionate to the risk of the change.</p>
+    <h2>17. CHANGE MANAGEMENT</h2>
+    <p>Material production changes will be subject to reasonable change-management controls designed to reduce unintended security and availability impact.</p>
+    <p>Controls may include version control, review, testing, automated deployment controls, approval requirements, rollback capability and monitoring.</p>
+    <p>Emergency changes may follow expedited procedures where necessary to protect security or restore Service.</p>
+    <h2>18. VULNERABILITY MANAGEMENT</h2>
+    <p>BACI will maintain processes designed to identify, assess, prioritise and remediate vulnerabilities affecting systems under BACI&#x27;s control.</p>
+    <p>Sources may include automated scanning, dependency alerts, infrastructure-provider notifications, penetration testing, security research, internal review and vulnerability reports.</p>
+    <p>Remediation priority will be risk-based. BACI may use compensating controls where immediate remediation is not reasonably practicable.</p>
+    <p>BACI will not represent that any system is free from all vulnerabilities.</p>
+    <h2>19. SECURITY TESTING</h2>
+    <p>BACI will perform security testing appropriate to the nature and maturity of the Services.</p>
+    <p>Testing may include automated vulnerability scanning, application-security testing, configuration review, dependency analysis, penetration testing or other assurance activities.</p>
+    <p>Independent testing may be performed where appropriate to BACI&#x27;s risk profile and contractual commitments.</p>
+    <p>Customer security testing of BACI systems requires prior written authorisation unless BACI publishes a programme expressly permitting such testing.</p>
+    <h2>20. MALWARE AND MALICIOUS ACTIVITY PROTECTION</h2>
+    <p>BACI will maintain controls reasonably designed to detect, prevent or contain malicious activity appropriate to the systems involved.</p>
+    <p>Controls may include endpoint protections, infrastructure monitoring, malicious-file detection, restricted execution, dependency controls, email protections and threat-detection capabilities.</p>
+    <p>BACI may isolate or restrict systems, credentials or functionality where reasonably necessary to address an active threat.</p>
+    <h2>21. LOGGING AND SECURITY MONITORING</h2>
+    <p>BACI will maintain logging and monitoring appropriate to material production systems and security risks.</p>
+    <p>Logs may record authentication events, administrative activity, application events, infrastructure events, security alerts, API activity and other information reasonably necessary for security, reliability, investigation and compliance.</p>
+    <p>Access to security logs will be restricted appropriately.</p>
+    <p>Retention of logs will be determined according to security purpose, Service architecture, Applicable Law, the Data Retention &amp; Deletion Policy and contractual requirements.</p>
+    <h2>22. DETECTION AND ALERTING</h2>
+    <p>BACI may use automated and manual mechanisms to detect anomalous or potentially malicious activity.</p>
+    <p>Security alerts may be prioritised based on severity, confidence, affected systems and potential impact.</p>
+    <p>BACI will maintain processes for escalation of material alerts to personnel capable of investigation and response.</p>
+    <h2>23. SECURITY INCIDENT MANAGEMENT</h2>
+    <p>BACI will maintain an incident-response process designed to identify, assess, contain, investigate, remediate and recover from material security incidents.</p>
+    <p>The process may include incident classification, escalation, evidence preservation, containment, eradication, recovery, communications, post-incident review and corrective action.</p>
+    <p>BACI may engage infrastructure providers, Subprocessors, forensic specialists, legal advisers or other appropriate parties where necessary to investigate or respond to an incident.</p>
+    <h2>24. CUSTOMER SECURITY INCIDENT NOTIFICATION</h2>
+    <p>Where a Security Incident affects Customer Personal Data processed by BACI on Customer&#x27;s behalf, BACI will provide notice in accordance with the Data Processing Addendum.</p>
+    <p>Where a material security incident affects Customer Data but falls outside the DPA&#x27;s definition of Security Incident, BACI will provide notification where required by the Agreement or Applicable Law.</p>
+    <p>Notification may be provided in phases as material information becomes reasonably available.</p>
+    <p>Notification is not an admission of fault or liability.</p>
+    <h2>25. INCIDENT COMMUNICATIONS</h2>
+    <p>Security incidents should be reported to security@bacihq.com.</p>
+    <p>BACI may use designated Customer security, administrative or contractual contacts to provide incident communications.</p>
+    <p>Customers are responsible for maintaining accurate contact information where the Services provide a mechanism for doing so.</p>
+    <h2>26. BACKUP AND RECOVERY</h2>
+    <p>BACI will maintain backup and recovery measures appropriate to the Services and data architecture.</p>
+    <p>Backup frequency, retention and recovery design may vary by Service, data type and architecture.</p>
+    <p>Backups will be protected using safeguards appropriate to the sensitivity of the information.</p>
+    <p>Deletion of data from backups may occur through ordinary secure backup rotation where immediate deletion is not technically practicable and Applicable Law permits.</p>
+    <h2>27. BUSINESS CONTINUITY AND DISASTER RECOVERY</h2>
+    <p>BACI will maintain reasonable business-continuity and disaster-recovery arrangements for material Service functions.</p>
+    <p>Measures may include redundancy, backups, infrastructure recovery procedures, documented response processes, restoration priorities and periodic review or testing.</p>
+    <p>Specific availability commitments, recovery-time commitments or recovery-point commitments apply only where expressly stated in an SLA, Order or Supplemental Terms.</p>
+    <h2>28. AVAILABILITY AND RESILIENCE</h2>
+    <p>BACI will design and operate material Services with resilience measures appropriate to their architecture and commercial purpose.</p>
+    <p>BACI may use redundancy, automated recovery, load distribution, infrastructure monitoring and capacity controls.</p>
+    <p>This Security Addendum does not independently create an uptime guarantee. Contractual uptime commitments and remedies are governed by the applicable Service Level Agreement or Order.</p>
+    <h2>29. PHYSICAL SECURITY</h2>
+    <p>Where BACI uses third-party cloud or data-centre infrastructure, physical security of those facilities may be operated by the applicable infrastructure provider.</p>
+    <p>BACI will select infrastructure providers using reasonable security and risk considerations and will rely on contractual commitments and available assurance information appropriate to the relationship.</p>
+    <p>BACI-controlled offices and equipment will be subject to physical protections appropriate to the information and systems present.</p>
+    <h2>30. PERSONNEL SECURITY</h2>
+    <p>BACI will apply reasonable personnel-security measures to individuals with access to material systems or Customer Data.</p>
+    <p>Measures may include confidentiality obligations, role-appropriate access, onboarding and offboarding controls, security awareness and disciplinary processes.</p>
+    <p>Background screening may be used where lawful, appropriate to the role and reasonably justified by risk. This Security Addendum does not represent that every BACI worker is subject to the same screening in every jurisdiction.</p>
+    <h2>31. SECURITY AWARENESS AND TRAINING</h2>
+    <p>BACI personnel with relevant responsibilities will receive security awareness or role-appropriate security guidance.</p>
+    <p>Personnel performing specialised security, engineering or administrative functions may receive additional training appropriate to their responsibilities.</p>
+    <p>BACI may update training as threats, technologies and legal requirements evolve.</p>
+    <h2>32. THIRD-PARTY AND SUBPROCESSOR SECURITY</h2>
+    <p>BACI will assess material service providers and Subprocessors using security and privacy criteria appropriate to the services they provide and the information they process.</p>
+    <p>Where a third party processes Customer Personal Data on BACI&#x27;s behalf, BACI will impose appropriate contractual data-protection and security obligations in accordance with the DPA.</p>
+    <p>BACI may consider available certifications, audit reports, security documentation, architecture, contractual commitments, incident history and other relevant factors.</p>
+    <p>Use of a third party does not eliminate BACI&#x27;s contractual responsibilities to the extent provided by the Agreement.</p>
+    <h2>33. CLOUD AND INFRASTRUCTURE PROVIDERS</h2>
+    <p>BACI may use cloud, hosting, networking, communications, security and other infrastructure providers.</p>
+    <p>Responsibilities will be allocated according to the relevant service model. BACI remains responsible for configuration and controls within BACI&#x27;s scope, while infrastructure providers may be responsible for underlying facilities, hardware, hypervisors, managed services or other provider-controlled components.</p>
+    <p>BACI will not claim that a provider&#x27;s certification automatically certifies BACI unless BACI is expressly within the applicable certification scope.</p>
+    <h2>34. CUSTOMER SECURITY RESPONSIBILITIES</h2>
+    <p>Customer is responsible for security matters under Customer&#x27;s control, including safeguarding credentials; managing Authorised Users; configuring permissions; promptly removing unnecessary access; securing Customer devices and networks; securing Customer-controlled integrations; maintaining appropriate endpoint protections; reviewing BACI configuration choices; protecting API credentials; maintaining lawful and appropriate connected-system permissions; and promptly notifying BACI of suspected compromise affecting the Services.</p>
+    <p>Customer must not disable, bypass or materially weaken BACI security controls except where BACI expressly permits configuration of the relevant control.</p>
+    <p>Customer remains responsible for determining whether the Services and selected configuration satisfy Customer&#x27;s own regulatory and security requirements.</p>
+    <h2>35. API AND INTEGRATION SECURITY</h2>
+    <p>BACI will apply security controls appropriate to BACI-controlled APIs and integrations.</p>
+    <p>Customers and developers must protect credentials, use authorised authentication mechanisms, respect rate and access controls and avoid exposing secrets in client-side code or public repositories.</p>
+    <p>BACI may revoke, rotate or restrict API credentials where reasonably necessary for security, legal compliance or material breach.</p>
+    <p>Third-party integrations may create security dependencies outside BACI&#x27;s control; Customer is responsible for evaluating and authorising those integrations.</p>
+    <h2>36. AUTONOMOUS SYSTEM SECURITY</h2>
+    <p>Where Customer enables Autonomous functionality, BACI will apply applicable technical authority boundaries and supported controls configured within the Service.</p>
+    <p>Such controls may include action permissions, approval thresholds, financial or spending limits, market or channel restrictions, connected-system permissions, frequency or volume controls and other configured constraints.</p>
+    <p>BACI will not treat the mere technical capability of a connected system as Customer authorisation for an Autonomous Action.</p>
+    <p>Customers are responsible for configuring authority boundaries appropriate to the consequence of permitted actions.</p>
+    <p>Autonomy does not remove governance.</p>
+    <h2>37. AI SYSTEM SECURITY</h2>
+    <p>BACI may implement security controls for AI-enabled functionality, including controls addressing access, prompt and input handling, output handling, model-provider access, abuse prevention, tool permissions, data isolation and monitoring.</p>
+    <p>BACI will not use private Customer Personal Data, Customer Confidential Information, private Inputs or private Outputs for general-purpose or shared model training for the benefit of other customers unless Customer expressly agrees in writing or affirmatively opts into a clearly identified programme, consistent with the Terms and DPA.</p>
+    <p>Third-party AI providers that process Customer Personal Data on BACI&#x27;s behalf are subject to BACI&#x27;s applicable Subprocessor and contractual framework.</p>
+    <h2>38. DATA LOSS AND EXFILTRATION RISK</h2>
+    <p>BACI will maintain safeguards reasonably designed to reduce unauthorised disclosure or exfiltration of Customer Data.</p>
+    <p>Controls may include access restrictions, tenant isolation, authentication, encryption, monitoring, secret protection, application controls and incident detection.</p>
+    <p>No technical control can eliminate all risk. Customer should avoid placing data into BACI that the applicable Service is not authorised to process.</p>
+    <h2>39. DATA RETENTION AND SECURE DELETION</h2>
+    <p>BACI will retain and delete Customer Data in accordance with the Agreement, Data Processing Addendum, Data Retention &amp; Deletion Policy, Customer instructions where applicable and Applicable Law.</p>
+    <p>Where storage media or cloud resources are retired or reallocated, BACI will rely on deletion, sanitisation or provider controls appropriate to the storage technology and risk.</p>
+    <p>Backup deletion may occur through ordinary secure rotation where permitted.</p>
+    <h2>40. SECURITY OF SUPPORT OPERATIONS</h2>
+    <p>BACI support personnel will access Customer Data only where reasonably necessary to provide requested support, troubleshoot, secure or maintain the Services, or as otherwise authorised by the Agreement.</p>
+    <p>Support access may be logged, time-limited, permission-controlled or otherwise restricted where appropriate.</p>
+    <p>Customers should not provide passwords, private keys or other unnecessary secrets in support communications.</p>
+    <h2>41. SECURITY OF REMOTE ACCESS</h2>
+    <p>Where BACI personnel remotely access production systems, BACI will use reasonable controls appropriate to the privilege and risk of the access.</p>
+    <p>Controls may include authenticated access, encrypted connections, managed identities, device controls, privileged-access restrictions, logging and session controls.</p>
+    <p>Direct public exposure of sensitive administrative interfaces will be restricted where reasonably practicable.</p>
+    <h2>42. CONFIGURATION MANAGEMENT AND HARDENING</h2>
+    <p>BACI will maintain reasonable configuration practices for material production systems.</p>
+    <p>BACI may use hardened baselines, infrastructure-as-code, automated configuration, provider-recommended security settings, patching and configuration monitoring.</p>
+    <p>Configuration standards may vary by technology and will evolve as systems change.</p>
+    <h2>43. PATCH MANAGEMENT</h2>
+    <p>BACI will maintain processes for evaluating and applying security patches and updates to systems within BACI&#x27;s control.</p>
+    <p>Patch priority and timing will be risk-based and may consider severity, exploitability, exposure, operational impact, vendor guidance and available compensating controls.</p>
+    <p>Emergency security patches may be deployed through expedited change procedures.</p>
+    <h2>44. DEPENDENCY AND SOFTWARE SUPPLY-CHAIN SECURITY</h2>
+    <p>BACI will use reasonable measures to manage security risks arising from software dependencies, packages, build processes and deployment pipelines.</p>
+    <p>Measures may include dependency scanning, version control, restricted repository access, build controls, secrets scanning, package review and remediation of known material vulnerabilities.</p>
+    <p>BACI may replace or update dependencies where reasonably necessary to maintain security.</p>
+    <h2>45. SOURCE CODE AND REPOSITORY SECURITY</h2>
+    <p>Access to non-public BACI source code and repositories will be restricted to authorised personnel and services with a legitimate requirement.</p>
+    <p>BACI will use access controls and version-management practices appropriate to its development environment.</p>
+    <p>Customers receive no right to access BACI source code except where expressly granted in writing.</p>
+    <h2>46. SECURITY ASSURANCE AND AUDIT MATERIALS</h2>
+    <p>BACI may make reasonable security documentation available to eligible Customers under appropriate confidentiality restrictions.</p>
+    <p>Where BACI obtains independent certifications, assessments, penetration-test summaries or audit reports, BACI may make applicable materials available according to their confidentiality, licensing and distribution restrictions.</p>
+    <p>BACI will not state that it holds SOC, ISO, government, industry or other certification unless that status has actually been obtained and remains applicable.</p>
+    <p>Customer audit rights concerning Customer Personal Data are governed by the DPA and applicable Agreement.</p>
+    <h2>47. CUSTOMER SECURITY QUESTIONNAIRES</h2>
+    <p>BACI may respond to reasonable enterprise security questionnaires concerning the Services.</p>
+    <p>Where information is already addressed by current security documentation, BACI may satisfy a request by providing or referencing that documentation.</p>
+    <p>BACI may decline to disclose information that would create a security risk, reveal another Customer&#x27;s information, disclose privileged material, violate law or expose sensitive internal defensive details.</p>
+    <h2>48. PENETRATION TESTING BY CUSTOMERS</h2>
+    <p>Customer must not conduct penetration testing, vulnerability scanning, load testing, denial-of-service testing or other intrusive testing against BACI without prior written authorisation unless BACI publishes a programme expressly permitting the activity.</p>
+    <p>Authorised testing must comply with the scope, timing, rate, reporting and safety requirements specified by BACI.</p>
+    <p>BACI may terminate testing that creates material risk to the Services or other Customers.</p>
+    <h2>49. VULNERABILITY REPORTING</h2>
+    <p>Security researchers and Customers may report suspected BACI vulnerabilities to security@bacihq.com.</p>
+    <p>Reports should provide sufficient technical information to permit reasonable investigation and should avoid unnecessary access to Customer Data, privacy violations, service disruption or destructive testing.</p>
+    <p>The existence of this reporting channel does not itself authorise testing otherwise prohibited by the Acceptable Use Policy or this Security Addendum.</p>
+    <h2>50. REGULATORY AND LEGAL SECURITY REQUIREMENTS</h2>
+    <p>BACI will comply with security obligations directly applicable to BACI under Applicable Law.</p>
+    <p>Where Customer is subject to industry-specific requirements, Customer is responsible for determining whether BACI has expressly agreed to support those requirements.</p>
+    <p>BACI will not represent that an ordinary Service environment satisfies a specialised regulatory regime, government accreditation or industry certification unless BACI has established the necessary contractual and factual basis.</p>
+    <h2>51. GOVERNMENT AND PUBLIC-SECTOR SECURITY</h2>
+    <p>Government and public-sector Customers may be subject to additional security requirements under the Government &amp; Public Sector Schedule, applicable Order or Supplemental Terms.</p>
+    <p>Classified information, controlled government information or information requiring specialised accreditation must not be submitted to an ordinary BACI environment unless BACI expressly authorises the environment for that category.</p>
+    <p>BACI will not claim a government security accreditation that BACI has not obtained.</p>
+    <h2>52. DATA RESIDENCY AND SECURITY</h2>
+    <p>Data residency is not itself a complete security control. Processing location may depend on Service architecture, infrastructure providers, Customer configuration, support, security, resilience and legal requirements.</p>
+    <p>BACI will not promise exclusive processing within a particular jurisdiction unless that commitment is expressly included in the applicable Order or Supplemental Terms.</p>
+    <p>Where a contracted residency configuration applies, BACI will operate it according to the applicable contractual terms.</p>
+    <h2>53. SECURITY CHANGES</h2>
+    <p>BACI may modify security controls as technology, Services, threats, providers and legal requirements evolve.</p>
+    <p>BACI may replace a control with another control that provides substantially equivalent or improved protection.</p>
+    <p>During an applicable Service term, BACI will not materially reduce the overall security of the contracted Services in a manner inconsistent with the Agreement.</p>
+    <h2>54. MATERIAL SECURITY DEGRADATION</h2>
+    <p>If BACI becomes aware that a material change under BACI&#x27;s control has materially reduced the overall security protections contractually applicable to Customer Data, BACI will take reasonable steps to remediate the degradation.</p>
+    <p>Where the change materially affects a contracted security commitment and cannot reasonably be remediated, the parties will address the matter under the Agreement and any applicable enterprise contractual process.</p>
+    <h2>55. NO ABSOLUTE SECURITY GUARANTEE</h2>
+    <p>BACI maintains safeguards designed to manage security risk, but no internet-connected or software system can guarantee absolute security.</p>
+    <p>This provision does not reduce BACI&#x27;s obligation to implement the safeguards expressly required by the Agreement or Applicable Law.</p>
+    <h2>56. SECURITY REPRESENTATIONS</h2>
+    <p>BACI will seek to ensure that material security representations made in this Security Addendum and formal BACI security documentation accurately describe BACI&#x27;s applicable controls.</p>
+    <p>BACI will not knowingly represent that it maintains a certification, control, architecture, geographic restriction, encryption commitment, testing programme or other security capability that BACI does not actually maintain.</p>
+    <p>Descriptions of planned or future controls will not be presented as existing contracted controls until implemented.</p>
+    <h2>57. EVIDENCE PRESERVATION</h2>
+    <p>BACI may preserve relevant security logs, system records, forensic information and other evidence where reasonably necessary to investigate an incident, protect systems, comply with law or establish, exercise or defend legal claims.</p>
+    <p>Preserved information will remain subject to applicable confidentiality, privacy, security and retention requirements.</p>
+    <h2>58. LAW-ENFORCEMENT AND GOVERNMENT ACCESS</h2>
+    <p>BACI will not provide governments or law-enforcement authorities with unrestricted access to Customer environments merely in response to an informal request.</p>
+    <p>Requests for Customer Data will be handled under the Terms, Privacy Policy, DPA and Applicable Law.</p>
+    <p>Where legally permitted and reasonably practicable, BACI may notify the affected Customer and may seek clarification, narrowing or legal review of requests reasonably believed to be unlawful, defective or materially overbroad.</p>
+    <h2>59. SECURITY COOPERATION</h2>
+    <p>Customer will reasonably cooperate with BACI in addressing security events associated with Customer-controlled credentials, configurations, users, integrations or systems.</p>
+    <p>BACI will reasonably cooperate with Customer concerning material security matters affecting the Services, subject to the Agreement, confidentiality, security and Applicable Law.</p>
+    <p>Neither party is required to disclose information that would materially compromise another customer&#x27;s security or violate legal obligations.</p>
+    <h2>60. LIMITATION OF SECURITY COMMITMENTS</h2>
+    <p>This Security Addendum describes BACI&#x27;s baseline security commitments for applicable Services. Product-specific, regulated or enterprise requirements apply only where expressly incorporated through an Order, Security Schedule, Statement of Work or other applicable Supplemental Terms.</p>
+    <p>Security commitments do not create service credits, warranties or remedies beyond those provided by the Agreement unless expressly stated.</p>
+    <h2>61. LIABILITY</h2>
+    <p>Liability arising from security matters is governed by the liability, indemnity, exclusion and enhanced-cap provisions of the applicable Agreement.</p>
+    <p>This Security Addendum does not create a separate or duplicative liability cap.</p>
+    <p>Nothing in this Security Addendum limits liability to the extent limitation is prohibited by Applicable Law.</p>
+    <h2>62. TERM AND SURVIVAL</h2>
+    <p>This Security Addendum applies while BACI provides the applicable Services and for as long thereafter as BACI retains Customer Data subject to security obligations under the Agreement.</p>
+    <p>Security obligations that by their nature apply to retained Customer Data survive termination for the period the relevant data remains retained.</p>
+    <h2>63. CHANGES TO THIS SECURITY ADDENDUM</h2>
+    <p>BACI may update this Security Addendum to reflect changes in technology, Services, threats, providers, security practices, Applicable Law or the BACI Legal Framework.</p>
+    <p>Each version will identify its effective date and last-updated date.</p>
+    <p>BACI will not use a unilateral update to materially reduce an express contracted security commitment during an existing Service term where the Agreement or Applicable Law prohibits that reduction.</p>
+    <h2>64. INTERPRETATION</h2>
+    <p>Examples of controls in this Security Addendum are illustrative unless expressly stated as mandatory.</p>
+    <p>A statement that BACI &quot;may&quot; use a particular control does not represent that every listed technology is deployed in every environment.</p>
+    <p>A statement that BACI &quot;will&quot; maintain a safeguard is a contractual commitment where this Security Addendum is incorporated into the Agreement, subject to its stated scope and qualifications.</p>
+    <p>Where a mandatory provision of Applicable Law requires greater protection, the mandatory provision controls to the extent of the inconsistency.</p>
+    <h2>65. CONTACT</h2>
+    <p>Security questions, suspected vulnerabilities and security incidents may be directed to:</p>
+    <p>BACI Security
+BACI LLC
+security@bacihq.com</p>
+    <p>Privacy matters may be directed to privacy@bacihq.com.</p>
+    <h2>ANNEX I — BASELINE TECHNICAL AND ORGANISATIONAL MEASURES</h2>
+    <p>The following control domains form BACI&#x27;s baseline technical and organisational security framework for applicable Services:</p>
+    <h2>1. Security governance and risk management.
+2. Identity, authentication and access management.
+3. Privileged-access restriction.
+4. Tenant and organisational isolation.
+5. Encryption and cryptographic protection appropriate to risk.
+6. Secrets and credential management.
+7. Network and infrastructure security.
+8. Production and non-production environment controls.
+9. Secure software development.
+10. Change and configuration management.
+11. Vulnerability and patch management.
+12. Dependency and software supply-chain security.
+13. Logging, monitoring and alerting.
+14. Security incident response.
+15. Backup, recovery and resilience.
+16. Business continuity and disaster recovery.
+17. Personnel confidentiality and security awareness.
+18. Third-party and Subprocessor security management.
+19. Data lifecycle, retention and deletion controls.
+20. API, integration, AI and Autonomous-system security controls appropriate to the functionality provided.</h2>
+    <p>The exact technical implementation may evolve provided BACI maintains protection appropriate to the risk and does not materially reduce the overall contracted security level during the applicable Service term.</p>
+    <h2>ANNEX II — SECURITY INCIDENT RESPONSE FRAMEWORK</h2>
+    <p>BACI&#x27;s incident-response lifecycle may include:</p>
+    <h2>1. Preparation — documented responsibilities, communication channels, tools and escalation procedures.
+2. Identification — review of alerts, reports and evidence to determine whether an event constitutes a security incident.
+3. Classification — assessment of severity, affected systems, information, Customers and foreseeable impact.
+4. Containment — reasonable actions to restrict further compromise or harm.
+5. Investigation — analysis of relevant systems, logs, access, indicators and available evidence.
+6. Eradication and Remediation — removal or correction of identified causes and implementation of appropriate corrective measures.
+7. Recovery — restoration and monitoring of affected systems.
+8. Notification — Customer, regulatory or other communications where required by the Agreement or Applicable Law.
+9. Post-Incident Review — evaluation of material lessons and appropriate corrective actions.</h2>
+    <p>The sequence may vary according to the nature and urgency of the incident.</p>
+    <h2>ANNEX III — CUSTOMER SECURITY RESPONSIBILITY MATRIX</h2>
+    <p>BACI Responsibility: security of BACI-controlled application and infrastructure configurations; BACI personnel access; BACI-controlled code and deployment processes; BACI security monitoring; BACI incident response; BACI-managed credentials and secrets; BACI&#x27;s Subprocessor security framework; and contractual security measures expressly assigned to BACI.</p>
+    <p>Customer Responsibility: Customer user lifecycle; Customer-selected permissions; Customer endpoints and local networks; Customer-controlled identity-provider configuration; Customer API-key handling after issuance; Customer-controlled integrations; Customer data classification and lawful submission; Customer selection of appropriate Service configuration; Customer review of Autonomous authority boundaries; and response to compromise within Customer-controlled systems.</p>
+    <p>Shared Responsibility: authentication configuration where Customer options exist; integration security; incident coordination; regulatory security assessment; data minimisation; access review; and secure operation of connected systems.</p>
+    <p>The applicable Agreement, Order and Service architecture control if a specific responsibility differs from this baseline matrix.</p>
+    <p>BACI SECURITY POLICY AND SECURITY ADDENDUM — VERSION 1.0
+Effective 10 September 2026</p>
+  </section>
+
+<footer>
+   <div class="footer-scroll">
+   <div class="footer-wrap">
+    <div class="cols">
+
+      <div class="col">
+        <h3>BUSINESS OS</h3>
+        <div class="rule"></div>
+        <div class="os-split">
+          <ul>
+            <li><a href="business-planning.html">Business Planning</a></li>
+            <li><a href="financial-planning.html">Financial Planning</a></li>
+            <li><a href="marketing-planning.html">Marketing Planning</a></li>
+            <li><a href="procurement.html">Procurement</a></li>
+            <li><a href="grants.html">Grants</a></li>
+            <li><a href="funding-capital-strategy.html">Funding &amp; Capital Strategy</a></li>
+          </ul>
+          <ul>
+            <li><a href="investors.html">Investors</a></li>
+            <li><a href="market-entry.html">Market Entry</a></li>
+            <li><a href="growth-strategy.html">Growth Strategy</a></li>
+            <li><a href="forecasting.html">Forecasting</a></li>
+            <li><a href="executive-intelligence.html">Executive Intelligence</a></li>
+            <li><a href="go-to-market.html">Go-to-Market</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col">
+        <h3>INTELLIGENCE</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="index.html#industry">Industry Intelligence</a></li>
+          <li><a href="index.html#conversion-intelligence">Conversion Intelligence</a></li>
+          <li><a href="index.html#global-reach">Global Reach</a></li>
+          <li><a href="index.html#doctrine">The Doctrine</a></li>
+          <li><a href="modes.html">Operating Modes</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>ACCESS</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="access-business.html">Business</a></li>
+          <li><a href="access-independent-professional.html">Independent Professionals</a></li>
+          <li><a href="access-advisory.html">Advisory</a></li>
+          <li><a href="access-agencies.html">Agencies</a></li>
+          <li><a href="access-developers.html">Developers</a></li>
+          <li><a href="access-enterprise.html">Enterprise</a></li>
+          <li><a href="access-technology-partners.html">Technology Partners</a></li>
+          <li><a href="access-affiliates.html">Affiliates</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>LICENSING</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="licensing.html#platform">Platform Licence</a></li>
+          <li><a href="licensing.html#territorial">Territorial Rights</a></li>
+          <li><a href="licensing.html#vertical">Vertical Rights</a></li>
+          <li><a href="licensing.html#engine">Engine Licensing</a></li>
+          <li><a href="licensing.html#feeds">Intelligence Feeds</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>COMPANY</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html#media">Press</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <nav class="policies" aria-label="Policies">
+      <a href="terms.html">Terms</a><span>&bull;</span>
+      <a href="privacy.html">Privacy</a><span>&bull;</span>
+      <a href="refund-policy.html">Refund Policy</a><span>&bull;</span>
+      <a href="billing.html">Billing</a><span>&bull;</span>
+      <a href="cancellation.html">Cancellation</a><span>&bull;</span>
+      <a href="acceptable-use.html">Acceptable Use</a><span>&bull;</span>
+      <a href="data-processing.html">Data Processing</a><span>&bull;</span>
+      <a href="security.html">Security</a><span>&bull;</span>
+      <a href="responsible-ai.html">Responsible AI</a><span>&bull;</span>
+      <a href="cookies.html">Cookies</a>
+    </nav>
+
+    <div class="pay">
+      <img src="assets/payment-methods.webp" alt="Payment methods accepted: Stripe, PayPal, Flutterwave, Visa, Mastercard, American Express, Apple Pay, G Pay, Alipay and cryptocurrency.">
+    </div>
+
+    <div class="base">
+      <div class="mono" aria-label="BACI"><img src="favicon-baci-monogram.webp" alt="" width="64" height="64"></div>
+      <div class="copy">&copy; 2026 BACI</div>
+      <div class="socials">
+        <a class="soc" href="#" aria-label="TikTok"><img src="assets/social-tiktok.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Reddit"><img src="assets/social-reddit.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Facebook"><img src="assets/social-facebook.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Instagram"><img src="assets/social-instagram.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="LinkedIn"><img src="assets/social-linkedin.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="X"><img src="assets/social-x.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="WhatsApp"><img src="assets/social-whatsapp.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Snapchat"><img src="assets/social-snapchat.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="YouTube"><img src="assets/social-youtube.webp" alt=""></a>
+      </div>
+      <button class="a11y" id="a11y" aria-pressed="false">
+        <span class="glyph" aria-hidden="true"><img src="assets/icon-accessibility.webp" alt=""></span>
+        <span class="lab">Enhance your experience</span>
+      </button>
+    </div>
+   </div>
+   </div>
+  </footer>
+
+<section class="thoughts">
+  <p class="listening">We're listening.</p>
+
+  <button type="button" class="open-btn" id="thoughts-open" aria-expanded="false" aria-controls="thoughts-panel">SHARE YOUR THOUGHTS</button>
+
+  <div class="panel" id="thoughts-panel">
+    <label class="sr-only" for="thoughts-text">Share your thoughts</label>
+    <textarea id="thoughts-text" placeholder="Share your thoughts&hellip;"></textarea>
+    <label class="sr-only" for="thoughts-email">Email, if you would like a reply</label>
+    <input type="email" id="thoughts-email" autocomplete="email" placeholder="Email, if you would like a reply">
+    <div class="send">
+      <button type="button" id="thoughts-send">SHARE YOUR THOUGHTS</button>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  /* signature CTA travel span: first letter to last letter */
+  var cta = document.getElementById('cta');
+  if(cta){
+    var span = cta.offsetWidth * 0.86;
+    cta.style.setProperty('--travel', span + 'px');
+    cta.style.setProperty('--start', (cta.offsetWidth * 0.07) + 'px');
+    window.addEventListener('resize', function(){
+      cta.style.setProperty('--travel', (cta.offsetWidth * 0.86) + 'px');
+      cta.style.setProperty('--start', (cta.offsetWidth * 0.07) + 'px');
+    });
+  }
+
+  /* route multi-select */
+  document.querySelectorAll('.pick').forEach(function(p){
+    function toggle(){
+      p.setAttribute('aria-pressed', p.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+    }
+    p.addEventListener('click', toggle);
+    p.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  });
+
+  /* thoughts box collapses until asked for */
+  var tOpen  = document.getElementById('thoughts-open');
+  var tPanel = document.getElementById('thoughts-panel');
+  if(tOpen && tPanel){
+    tOpen.addEventListener('click', function(){
+      tOpen.setAttribute('aria-expanded','true');
+      tOpen.classList.add('hidden');
+      tPanel.classList.add('open');
+      document.getElementById('thoughts-text').focus();
+    });
+  }
+})();
+</script>
+
+
+<div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="Display settings" aria-modal="false">
+  <h4>Display</h4>
+  <div class="a11y-row">
+    <span>Background</span>
+    <button type="button" class="a11y-opt" id="a11yView" aria-pressed="false">Dark</button>
+  </div>
+  <div class="a11y-row">
+    <span>Text size</span>
+    <div class="a11y-steps">
+      <button type="button" class="a11y-step" id="a11ySmaller" aria-label="Smaller text">&minus;</button>
+      <button type="button" class="a11y-step" id="a11yLarger" aria-label="Larger text">+</button>
+    </div>
+  </div>
+  <button type="button" class="a11y-close" id="a11yClose">Close</button>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+
+  /* restore whatever was chosen last time, before anything paints */
+  try{
+    var v = localStorage.getItem('baci-view');
+    var t = localStorage.getItem('baci-text');
+    if(v === 'light') root.setAttribute('data-view','light');
+    if(t) root.style.setProperty('--text-scale', t);
+  }catch(e){}
+
+  var toggle = document.getElementById('a11y');
+  var panel  = document.getElementById('a11yPanel');
+  if(!toggle || !panel) return;
+
+  var viewBtn = document.getElementById('a11yView');
+  var smaller = document.getElementById('a11ySmaller');
+  var larger  = document.getElementById('a11yLarger');
+  var closeB  = document.getElementById('a11yClose');
+
+  var STEPS = [1, 1.12, 1.25, 1.4];
+
+  function currentStep(){
+    var s = parseFloat(getComputedStyle(root).getPropertyValue('--text-scale')) || 1;
+    var i = 0, best = 9;
+    STEPS.forEach(function(v, n){
+      var d = Math.abs(v - s);
+      if(d < best){ best = d; i = n; }
+    });
+    return i;
+  }
+
+  function setScale(i){
+    i = Math.max(0, Math.min(STEPS.length - 1, i));
+    root.style.setProperty('--text-scale', STEPS[i]);
+    try{ localStorage.setItem('baci-text', STEPS[i]); }catch(e){}
+  }
+
+  function syncView(){
+    var light = root.getAttribute('data-view') === 'light';
+    viewBtn.textContent = light ? 'Light' : 'Dark';
+    viewBtn.setAttribute('aria-pressed', String(light));
+  }
+
+  function open(){
+    panel.classList.add('open');
+    toggle.setAttribute('aria-expanded','true');
+    syncView();
+    viewBtn.focus();
+  }
+  function close(){
+    panel.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+  }
+
+  toggle.setAttribute('aria-expanded','false');
+  toggle.addEventListener('click', function(e){
+    e.preventDefault();
+    panel.classList.contains('open') ? close() : open();
+  });
+
+  viewBtn.addEventListener('click', function(){
+    var light = root.getAttribute('data-view') === 'light';
+    if(light){ root.removeAttribute('data-view'); }
+    else { root.setAttribute('data-view','light'); }
+    try{ localStorage.setItem('baci-view', light ? 'dark' : 'light'); }catch(e){}
+    syncView();
+  });
+
+  smaller.addEventListener('click', function(){ setScale(currentStep() - 1); });
+  larger .addEventListener('click', function(){ setScale(currentStep() + 1); });
+  closeB .addEventListener('click', close);
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && panel.classList.contains('open')) { close(); toggle.focus(); }
+  });
+  document.addEventListener('click', function(e){
+    if(!panel.contains(e.target) && !toggle.contains(e.target)) close();
+  });
+
+  syncView();
+})();
+</script>
+
+</body>
+</html>

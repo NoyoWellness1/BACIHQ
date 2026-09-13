@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms Of Service &middot; BACI</title>
+<link rel="icon" href="favicon-baci-monogram.webp">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#C39544;
+  --gold-light:#CFA24E;
+  --dim:#8A6E3C;
+  --champagne:#E8C87A;
+  --head:#C99F5E;
+  --bg:#000;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--gold);
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--champagne);outline-offset:3px}
+
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 28px}
+.wrap.full{max-width:none;padding:0}
+
+/* ---------- masthead ---------- */
+.masthead{padding:38px 0 0;text-align:left}
+.masthead img{width:124px;height:auto;opacity:.92}
+
+/* ---------- page head ---------- */
+.page-head{text-align:center;padding:76px 0 0}
+.page-head h1{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--head);
+  font-size:clamp(2.4rem,7vw,4.5rem);
+  letter-spacing:.22em;
+  text-indent:.22em;
+  line-height:1.08;
+}
+
+/* ---------- light-point rule ---------- */
+.rule{
+  position:relative;
+  height:1px;
+  margin:26px auto 0;
+  max-width:420px;
+  background:linear-gradient(90deg,transparent,var(--dim) 18%,var(--dim) 82%,transparent);
+}
+.rule::after{
+  content:"";
+  position:absolute;
+  top:50%;left:50%;
+  width:7px;height:7px;
+  margin:-3.5px 0 0 -3.5px;
+  border-radius:50%;
+  background:var(--champagne);
+  box-shadow:0 0 10px 3px rgba(232,200,122,.55);
+}
+.rule.short{max-width:210px}
+
+/* ---------- intro ---------- */
+.intro{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto;
+  padding:38px 0 0;
+}
+.intro p{
+  font-size:clamp(1.06rem,2.1vw,1.32rem);
+  line-height:1.72;
+  color:var(--gold);
+  margin-bottom:1.15em;
+}
+.intro p:last-child{margin-bottom:0}
+
+/* ---------- routes ---------- */
+.routes{padding:86px 0 0;max-width:880px;margin:0 auto}
+.route{
+  padding:34px 0;
+  border-top:1px solid rgba(138,110,60,.34);
+  text-align:center;
+}
+.route:last-child{border-bottom:1px solid rgba(138,110,60,.34)}
+.route h2{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--gold-light);
+  font-size:clamp(1.02rem,2.3vw,1.34rem);
+  letter-spacing:.19em;
+  text-indent:.19em;
+  margin-bottom:14px;
+}
+.route p{
+  font-size:clamp(1rem,2vw,1.2rem);
+  line-height:1.66;
+  color:var(--gold);
+  max-width:560px;
+  margin:0 auto;
+}
+
+/* ---------- distinction ---------- */
+.distinction{
+  text-align:center;
+  padding:88px 0 0;
+}
+.distinction p{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:400;
+  color:var(--champagne);
+  font-size:clamp(1.24rem,3vw,1.92rem);
+  line-height:1.55;
+  max-width:820px;
+  margin:0 auto;
+}
+
+/* ---------- form ---------- */
+.enquiry{padding:92px 0 0;max-width:660px;margin:0 auto}
+.enquiry h2{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--head);
+  font-size:clamp(1.1rem,2.6vw,1.5rem);
+  letter-spacing:.2em;
+  text-indent:.2em;
+  text-align:center;
+}
+.fields{padding:44px 0 0}
+.field{margin-bottom:26px}
+.field label{
+  display:block;
+  font-family:'Cinzel',serif;
+  font-size:.68rem;
+  letter-spacing:.17em;
+  text-indent:.17em;
+  color:var(--dim);
+  margin-bottom:9px;
+  text-transform:uppercase;
+}
+.field input,.field textarea,.field select{
+  width:100%;
+  background:transparent;
+  border:none;
+  border-bottom:1px solid rgba(138,110,60,.46);
+  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.08rem;
+  font-weight:300;
+  padding:9px 2px;
+  transition:border-color .3s;
+}
+.field textarea{resize:vertical;min-height:96px;line-height:1.6}
+.field input:focus,.field textarea:focus,.field select:focus{
+  outline:none;
+  border-bottom-color:var(--champagne);
+}
+.field select option{background:#0a0a0a;color:var(--gold)}
+
+.routes-pick{display:flex;flex-wrap:wrap;gap:10px;padding-top:4px}
+.pick{
+  font-family:'Cinzel',serif;
+  font-size:.66rem;
+  letter-spacing:.14em;
+  text-indent:.14em;
+  text-transform:uppercase;
+  color:var(--dim);
+  border:1px solid rgba(138,110,60,.44);
+  border-radius:2px;
+  padding:9px 14px;
+  cursor:pointer;
+  transition:color .3s,border-color .3s;
+  user-select:none;
+}
+.pick[aria-pressed="true"]{
+  color:var(--champagne);
+  border-color:rgba(232,200,122,.7);
+}
+
+/* ---------- signature CTA ---------- */
+.cta-wrap{text-align:center;padding:56px 0 0}
+.cta{
+  position:relative;
+  display:inline-block;
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  font-size:clamp(.86rem,2vw,1.06rem);
+  letter-spacing:.24em;
+  text-indent:.24em;
+  color:var(--head);
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:0 0 16px;
+}
+.cta::after{
+  content:"";
+  position:absolute;
+  left:var(--start,0);
+  bottom:0;
+  width:6px;height:6px;
+  margin-left:-3px;
+  border-radius:50%;
+  background:var(--champagne);
+  box-shadow:0 0 9px 3px rgba(232,200,122,.5);
+  animation:travel 6s cubic-bezier(.42,0,.58,1) infinite;
+}
+@keyframes travel{
+  0%   {transform:translateX(0)}
+  50%  {transform:translateX(var(--travel,120px))}
+  100% {transform:translateX(0)}
+}
+.cta-line{
+  height:1px;
+  margin:0 auto;
+  max-width:300px;
+  background:linear-gradient(90deg,transparent,var(--dim) 20%,var(--dim) 80%,transparent);
+}
+
+/* ---------- footer ---------- */
+footer{margin-top:120px;padding-top:6px}
+.footer-wrap{max-width:1440px;margin:0 auto;padding:0 28px}
+.cols{
+  display:grid;
+  grid-template-columns:1.7fr 1.12fr 1.18fr 1fr .88fr;
+  gap:0;
+  padding:52px 0 0;
+  align-items:start;
+}
+.col{padding:0 22px;border-left:1px solid rgba(195,149,68,.42)}
+.col:first-child{border-left:none;padding-left:0}
+.col h3{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--head);
+  font-size:clamp(.82rem,1.5vw,1.06rem);
+  letter-spacing:.13em;
+  text-indent:.13em;
+  text-align:center;
+  margin-bottom:0;
+}
+.col .rule{margin:12px auto 30px;max-width:100%}
+.col ul{list-style:none}
+.col li{margin-bottom:17px;line-height:1.3}
+.col a{
+  font-size:.98rem;
+  color:var(--gold);
+  transition:color .25s;
+  display:inline-block;
+}
+.col a:hover{color:var(--champagne)}
+
+.os-split{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.os-split ul:first-child{padding-right:16px}
+.os-split ul:last-child{padding-left:20px;border-left:1px solid rgba(195,149,68,.26)}
+
+.policies{
+  margin-top:44px;
+  padding:20px 0;
+  border-top:1px solid rgba(195,149,68,.42);
+  border-bottom:1px solid rgba(195,149,68,.42);
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:0 8px;
+}
+.policies a{font-size:.98rem;color:var(--gold);padding:0 4px;white-space:nowrap}
+.policies span{color:var(--dim);font-size:.62rem;padding:0 4px}
+
+.pay{padding:6px 0 8px}
+.pay img{display:block;width:100%;height:auto}
+
+.base{
+  padding:32px 0 48px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+}
+/* The monogram artwork carries its own ring, so the element supplies
+   no border of its own — two concentric circles is not the mark. */
+.mono{
+  width:64px;height:64px;
+  display:grid;place-items:center;
+}
+.mono img{width:100%;height:100%;display:block;object-fit:contain}
+.copy{font-size:1rem;color:var(--gold);padding:0 20px;border-left:1px solid rgba(195,149,68,.34)}
+.socials{display:flex;gap:10px;padding:0 4px}
+.soc{display:block;width:46px;height:46px;transition:opacity .25s,transform .25s}
+.soc img{display:block;width:100%;height:100%}
+.soc:hover{opacity:.78;transform:translateY(-1px)}
+.a11y{
+  display:flex;align-items:center;gap:12px;
+  padding-left:20px;border-left:1px solid rgba(195,149,68,.34);
+  background:none;border-top:none;border-right:none;border-bottom:none;
+  cursor:pointer;
+}
+.a11y .glyph{width:58px;height:58px;display:block}
+.a11y .glyph img{display:block;width:100%;height:100%}
+.a11y .lab{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;
+  color:var(--gold);
+  text-align:left;
+  line-height:1.25;
+  max-width:104px;
+}
+
+/* ---------- responsive ---------- */
+/* The footer keeps its five-column shape at every width.
+   Below the width it needs, the whole footer scrolls sideways
+   as one piece rather than stacking. */
+.footer-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.footer-wrap{min-width:1180px}
+
+@media(max-width:1240px){
+  .col{padding:0 16px}
+  .col a{font-size:.94rem}
+  .col li{margin-bottom:15px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .cta::after{animation:none}
+  *{transition:none !important}
+}
+
+/* ---------- share your thoughts (universal, below the footer) ---------- */
+.thoughts{
+  border-top:1px solid rgba(195,149,68,.28);
+  text-align:center;
+  padding:78px 28px 92px;
+}
+.thoughts .listening{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  color:var(--champagne);
+  font-size:clamp(2rem,5.4vw,3.1rem);
+  line-height:1.1;
+  margin-bottom:38px;
+}
+.thoughts .ask{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  color:var(--gold);
+  font-size:clamp(1.1rem,2.5vw,1.42rem);
+  line-height:1.5;
+  max-width:560px;
+  margin:0 auto 34px;
+}
+.thoughts textarea{
+  display:block;
+  width:100%;
+  max-width:820px;
+  margin:0 auto;
+  min-height:200px;
+  background:rgba(195,149,68,.022);
+  border:1px solid rgba(195,149,68,.58);
+  border-radius:22px;
+  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:1.14rem;
+  line-height:1.6;
+  padding:26px 28px;
+  resize:vertical;
+  transition:border-color .3s;
+}
+.thoughts textarea::placeholder{color:var(--dim)}
+.thoughts textarea:focus{outline:none;border-color:var(--champagne)}
+
+.thoughts input[type="email"]{
+  display:block;
+  width:100%;
+  max-width:820px;
+  margin:18px auto 0;
+  background:rgba(195,149,68,.022);
+  border:1px solid rgba(195,149,68,.42);
+  border-radius:999px;
+  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:1.08rem;
+  padding:17px 28px;
+  transition:border-color .3s;
+}
+.thoughts input[type="email"]::placeholder{color:var(--dim)}
+.thoughts input[type="email"]:focus{outline:none;border-color:var(--champagne)}
+
+.thoughts .open-btn{
+  font-family:'Cinzel',serif;font-weight:500;
+  font-size:clamp(.76rem,1.7vw,.92rem);
+  letter-spacing:.19em;text-indent:.19em;
+  color:var(--gold-light);
+  background:rgba(195,149,68,.030);
+  border:1px solid rgba(195,149,68,.6);
+  border-radius:999px;
+  padding:18px 44px;
+  cursor:pointer;
+  transition:border-color .3s,color .3s;
+}
+.thoughts .open-btn:hover{border-color:var(--champagne);color:var(--champagne)}
+.thoughts .panel{display:none;padding-top:34px}
+.thoughts .panel.open{display:block}
+.thoughts .open-btn.hidden{display:none}
+.thoughts .send{padding-top:34px}
+.thoughts .send button{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  font-size:clamp(.76rem,1.7vw,.92rem);
+  letter-spacing:.19em;
+  text-indent:.19em;
+  color:var(--gold-light);
+  background:rgba(195,149,68,.030);
+  border:1px solid rgba(195,149,68,.6);
+  border-radius:999px;
+  padding:18px 44px;
+  cursor:pointer;
+  transition:border-color .3s,color .3s;
+}
+.thoughts .send button:hover{border-color:var(--champagne);color:var(--champagne)}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* BACKGROUND TREATMENT ONLY */
+.baci-ambient{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 75% 85% at -18% 48%,rgba(195,149,68,.055),rgba(195,149,68,.024) 35%,transparent 74%),radial-gradient(ellipse 62% 72% at 116% 35%,rgba(195,149,68,.045),rgba(195,149,68,.019) 38%,transparent 74%)}
+body::before,body::after{content:"";position:fixed;pointer-events:none;z-index:0}
+body::before{width:72vw;height:72vw;left:-34vw;top:14vh;border-radius:50%;border:1px solid rgba(195,149,68,.10);box-shadow:0 0 145px rgba(195,149,68,.040),inset 0 0 165px rgba(195,149,68,.028);transform:rotate(-9deg)}
+body::after{width:56vw;height:1px;right:-8vw;top:46vh;background:linear-gradient(90deg,transparent,rgba(232,200,122,.052),transparent);box-shadow:0 0 58px 2px rgba(195,149,68,.026);transform:rotate(-17deg)}
+.baci-orbit{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}.baci-orbit::before{content:"";position:absolute;width:980px;height:420px;right:-530px;top:19vh;border:1px solid rgba(195,149,68,.082);border-radius:50%;transform:rotate(24deg);box-shadow:0 0 115px rgba(195,149,68,.026)}.baci-orbit::after{content:none}
+input,textarea,button{
+  -webkit-appearance:none;
+  appearance:none;
+}
+input,textarea{
+  background-color:transparent;
+  -webkit-text-fill-color:var(--gold);
+  caret-color:var(--champagne);
+  color-scheme:dark;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus{
+  -webkit-text-fill-color:var(--gold) !important;
+  -webkit-box-shadow:0 0 0 1000px #000000 inset !important;
+  box-shadow:0 0 0 1000px #000000 inset !important;
+  transition:background-color 9999s ease-out 0s;
+}
+
+/* content sits above the ambient layers */
+main,header,footer,section,.wrap,.section,.hero,.thoughts{position:relative;z-index:1}
+.baci-ambient,.baci-orbit{z-index:0}
+
+.doc{max-width:760px;margin:0 auto;padding:44px 0 0}
+.doc__meta{text-align:center;font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.22em;
+  color:var(--dim);text-transform:uppercase;margin-bottom:8px}
+.doc__note{text-align:center;max-width:620px;margin:0 auto 12px;font-size:1rem;
+  line-height:1.62;color:var(--dim);font-style:italic}
+.doc h2{font-family:'Cinzel',serif;font-weight:500;color:var(--gold-light);
+  font-size:clamp(.86rem,1.9vw,1.04rem);letter-spacing:.16em;text-indent:.16em;
+  text-transform:uppercase;margin:52px 0 16px}
+.doc h2:first-of-type{margin-top:44px}
+.doc p{font-size:1.05rem;line-height:1.72;color:var(--gold);margin:0 0 1em}
+.doc ul{list-style:none;margin:0 0 1em;padding:0}
+.doc li{font-size:1.05rem;line-height:1.7;color:var(--gold);padding-left:22px;
+  position:relative;margin-bottom:.6em}
+.doc li::before{content:"";position:absolute;left:2px;top:.72em;width:4px;height:4px;
+  border-radius:50%;background:var(--dim)}
+.doc__contact{margin-top:56px;padding-top:34px;border-top:1px solid rgba(138,110,60,.34);text-align:center}
+.doc__contact a{color:var(--gold-light)}
+.doc-back{text-align:center;padding:56px 0 0}
+.doc-back a{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.2em;text-indent:.2em;
+  color:var(--dim);text-transform:uppercase;transition:color .3s}
+.doc-back a:hover{color:var(--champagne)}
+
+/* ═══ ACCESSIBILITY ═══
+   Two things only: a light mode, and text size. Both work by
+   swapping variables on the root, so nothing is restyled twice. */
+
+html{font-size:calc(100% * var(--text-scale,1))}
+
+html[data-view="light"]{
+  --bg:#F7F4EE;
+  --gold:#4A3616;
+  --gold-light:#3A2A10;
+  --dim:#6B573A;
+  --champagne:#7A5A18;
+  --closing:#4A3616;
+  --head:#3A2A10;
+  --metal:#3A2A10;
+}
+html[data-view="light"] body{background:var(--bg);color:var(--gold)}
+html[data-view="light"] .baci-ambient,
+html[data-view="light"] .baci-orbit,
+html[data-view="light"] body::before,
+html[data-view="light"] body::after{display:none}
+html[data-view="light"] img[src$="baci-wordmark.webp"],
+html[data-view="light"] img[src$="hero-shell.webp"],
+html[data-view="light"] img[src$="doctrine.webp"],
+html[data-view="light"] img[src$="dashboard.webp"],
+html[data-view="light"] .pay img,
+html[data-view="light"] .soc img,
+html[data-view="light"] .a11y .glyph img{
+  filter:invert(1) hue-rotate(180deg) saturate(.55) brightness(.85);
+}
+html[data-view="light"] .mono,
+html[data-view="light"] .cnode__circle,
+html[data-view="light"] .cring__centre{background:var(--bg)}
+
+/* the panel */
+.a11y-panel{
+  position:fixed;right:20px;bottom:20px;z-index:60;
+  width:min(300px,calc(100vw - 40px));
+  background:#000;
+  border:1px solid rgba(195,149,68,.5);
+  border-radius:16px;
+  padding:22px 22px 20px;
+  display:none;
+}
+html[data-view="light"] .a11y-panel{background:#FFFDF8;border-color:rgba(74,54,22,.35)}
+.a11y-panel.open{display:block}
+.a11y-panel h4{
+  font-family:'Cinzel',Georgia,serif;font-weight:500;font-size:.66rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin:0 0 18px;
+}
+.a11y-row{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}
+.a11y-row:last-of-type{margin-bottom:0}
+.a11y-row span{font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;color:var(--gold)}
+.a11y-opt{
+  font-family:'Cinzel',Georgia,serif;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--dim);background:none;border:1px solid rgba(195,149,68,.4);border-radius:999px;
+  padding:9px 15px;cursor:pointer;transition:color .3s,border-color .3s;
+}
+.a11y-opt[aria-pressed="true"]{color:var(--gold-light);border-color:rgba(207,162,78,.75)}
+.a11y-steps{display:flex;gap:8px}
+.a11y-step{
+  width:38px;height:38px;border-radius:50%;cursor:pointer;
+  background:none;border:1px solid rgba(195,149,68,.4);color:var(--gold-light);
+  font-family:'Cinzel',Georgia,serif;font-size:.9rem;line-height:1;
+  transition:border-color .3s,color .3s;
+}
+.a11y-step:hover{border-color:rgba(232,200,122,.7)}
+.a11y-close{
+  margin-top:20px;width:100%;background:none;border:0;cursor:pointer;
+  font-family:'Cinzel',Georgia,serif;font-size:.6rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--dim);padding:8px 0 0;
+}
+
+/* ═══ GLOW PASS ═══
+   Gold on black goes flat without a little light behind it. This adds
+   depth without brightening the palette: nothing changes colour, the
+   type just stops sitting dead on the background. Light mode gets none
+   of it, where glow would only look like a printing fault. */
+
+html:not([data-view="light"]) .page-head h1,
+html:not([data-view="light"]) .hero h1,
+html:not([data-view="light"]) .heading,
+html:not([data-view="light"]) .access__title,
+html:not([data-view="light"]) .drown__head,
+html:not([data-view="light"]) .reality__title,
+html:not([data-view="light"]) .doctrine__title,
+html:not([data-view="light"]) .bos__title,
+html:not([data-view="light"]) .title-stack .t1{
+  text-shadow:0 0 18px rgba(201,159,94,.17), 0 0 40px rgba(195,149,68,.07);
+}
+
+html:not([data-view="light"]) .band h2,
+html:not([data-view="light"]) .section-head h2,
+html:not([data-view="light"]) .enquiry h2,
+html:not([data-view="light"]) .doc h2,
+html:not([data-view="light"]) .mode__name,
+html:not([data-view="light"]) .control h2,
+{
+  text-shadow:0 0 14px rgba(201,159,94,.16);
+}
+
+/* the closing lines carry a touch more, since they are the last thing read */
+html:not([data-view="light"]) .bos__closer,
+html:not([data-view="light"]) .thoughts .listening,
+html:not([data-view="light"]) .distinction p,
+html:not([data-view="light"]) .control .closing,
+html:not([data-view="light"]) .engine-close,
+html:not([data-view="light"]) .access__ready{
+  text-shadow:0 0 20px rgba(207,162,78,.22);
+}
+
+/* the light points get a cleaner falloff rather than a bigger blur */
+html:not([data-view="light"]) .rule::after,
+html:not([data-view="light"]) .acard__rule::after,
+html:not([data-view="light"]) .bcard__rule::after,
+html:not([data-view="light"]) .col .rule::after{
+  box-shadow:0 0 6px 1px rgba(232,200,122,.55),
+             0 0 16px 4px rgba(232,200,122,.20);
+}
+
+/* the hairlines lift off the black a fraction */
+html:not([data-view="light"]) .rule,
+html:not([data-view="light"]) .cta__conduit,
+html:not([data-view="light"]) .cta-line{
+  box-shadow:0 0 12px rgba(195,149,68,.07);
+}
+
+/* cards: resting glow, stronger on touch */
+html:not([data-view="light"]) .acard,
+html:not([data-view="light"]) .bcard,
+html:not([data-view="light"]) .hcard,
+html:not([data-view="light"]) .tier,
+html:not([data-view="light"]) .dev-mode{
+  box-shadow:inset 0 0 40px rgba(195,149,68,.022);
+  transition:border-color .4s ease,transform .4s ease,box-shadow .4s ease;
+}
+html:not([data-view="light"]) .acard:hover,
+html:not([data-view="light"]) .bcard:hover,
+html:not([data-view="light"]) .dev-mode:hover,
+html:not([data-view="light"]) .dev-mode.is-on{
+  box-shadow:inset 0 0 44px rgba(195,149,68,.05),
+             0 0 26px rgba(195,149,68,.07);
+}
+
+/* the wordmark and the monogram sit in a faint pool of light */
+html:not([data-view="light"]) .masthead img,
+html:not([data-view="light"]) .mono{
+  filter:drop-shadow(0 0 18px rgba(195,149,68,.14));
+}
+
+/* buttons answer to touch */
+html:not([data-view="light"]) .cta:hover .cta__text,
+html:not([data-view="light"]) .thoughts .open-btn:hover,
+html:not([data-view="light"]) .thoughts .send button:hover,
+html:not([data-view="light"]) .role .apply:hover,
+html:not([data-view="light"]) .obra6-btn:hover{
+  text-shadow:0 0 14px rgba(232,200,122,.16);
+}
+
+/* the ring's active node reads as lit rather than merely larger */
+html:not([data-view="light"]) .cnode.is-active .cnode__circle,
+html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
+  box-shadow:0 0 22px 3px rgba(195,149,68,.20),
+             inset 0 0 18px rgba(195,149,68,.05);
+}
+
+@media(prefers-reduced-motion:reduce){
+  html:not([data-view="light"]) .acard,
+  html:not([data-view="light"]) .bcard,
+  html:not([data-view="light"]) .dev-mode{transition:none}
+}
+
+    .doc__related a{color:var(--gold-light);text-decoration:none;
+      border-bottom:1px solid rgba(195,149,68,.32);padding-bottom:2px}
+    .doc__related a:hover,.doc__related a:focus{color:var(--champagne);
+      border-bottom-color:var(--gold)}
+    .doc__related{margin-bottom:.75em}
+</style>
+</head>
+
+<body>
+<div class="baci-ambient" aria-hidden="true"></div><div class="baci-orbit" aria-hidden="true"></div>
+
+<div class="wrap">
+
+  <div class="masthead"><a href="index.html" aria-label="BACI home"><img src="baci-wordmark.webp" alt="BACI"></a></div>
+
+  <header class="page-head">
+    <h1>TERMS OF SERVICE</h1>
+    <div class="rule"></div>
+  </header>
+
+  <section class="doc">
+    <p class="doc__meta">Version 1.0 &middot; Effective Date: 30 August 2026 &middot; Last Updated: 30 August 2026</p>
+    <p>These Terms of Service constitute a legally binding agreement governing access to and use of BACI. Please read them carefully.</p>
+    <h2>1. PARTIES AND ACCEPTANCE</h2>
+    <p>1.1 Contracting Parties</p>
+    <p>These Terms of Service (&quot;Terms&quot;) are entered into between BACI LLC (&quot;BACI&quot;, &quot;we&quot;, &quot;us&quot; or &quot;our&quot;) and the person or legal entity accessing, purchasing, subscribing to or using the Services (&quot;Customer&quot;, &quot;you&quot; or &quot;your&quot;).</p>
+    <p>1.2 Organisational Customers</p>
+    <p>If you access or use the Services on behalf of a company, partnership, governmental body, non-governmental organisation or other legal entity, you represent and warrant that you have authority to bind that entity to these Terms.</p>
+    <p>In that case, &quot;Customer&quot;, &quot;you&quot; and &quot;your&quot; refer to that entity.</p>
+    <p>1.3 Acceptance</p>
+    <p>You accept these Terms by:</p>
+    <p>(a) creating an Account;</p>
+    <p>(b) selecting an electronic acceptance mechanism;</p>
+    <p>(c) purchasing or subscribing to a Service;</p>
+    <p>(d) accepting or executing an Order;</p>
+    <p>(e) accessing or using a Service after being presented with these Terms; or</p>
+    <p>(f) otherwise expressly agreeing to them.</p>
+    <p>If you do not agree to these Terms, you must not access or use the Services.</p>
+    <p>1.4 Mandatory Rights</p>
+    <p>Nothing in these Terms excludes, restricts or modifies rights or remedies that cannot lawfully be excluded, restricted or modified.</p>
+    <h2>2. BACI LEGAL FRAMEWORK</h2>
+    <p>2.1 Integrated Agreement</p>
+    <p>These Terms form part of the BACI Legal Framework.</p>
+    <p>Depending upon the Services, commercial relationship and jurisdiction involved, the agreement between BACI and Customer may also include:</p>
+    <p>(a) an Order or Order Form;</p>
+    <p>(b) Statement of Work;</p>
+    <p>(c) Enterprise Customer Agreement or Master Services Agreement;</p>
+    <p>(d) Service Level Agreement;</p>
+    <p>(e) Privacy Policy;</p>
+    <p>(f) Data Processing Addendum;</p>
+    <p>(g) Security Policy or Security Addendum;</p>
+    <p>(h) Acceptable Use Policy;</p>
+    <p>(i) Responsible AI Policy;</p>
+    <p>(j) AI &amp; Autonomous Systems Terms;</p>
+    <p>(k) Billing Policy;</p>
+    <p>(l) Refund Policy;</p>
+    <p>(m) Cancellation Policy;</p>
+    <p>(n) Cookie Policy;</p>
+    <p>(o) Developer &amp; API Terms;</p>
+    <p>(p) Mobile Application Terms;</p>
+    <p>(q) Data Retention &amp; Deletion Policy;</p>
+    <p>(r) Subprocessor Policy and List;</p>
+    <p>(s) International Data Transfer Addendum;</p>
+    <p>(t) Agency &amp; Adviser Agreement;</p>
+    <p>(u) Technology Partner Agreement;</p>
+    <p>(v) Affiliate Programme Agreement;</p>
+    <p>(w) Platform &amp; Intelligence Licensing Agreement;</p>
+    <p>(x) Intellectual Property &amp; Content Rights Policy;</p>
+    <p>(y) Government &amp; Public Sector Schedule;</p>
+    <p>(z) applicable regional, jurisdictional, product or commercial schedules; and</p>
+    <p>(aa) any amendment expressly agreed between BACI and Customer.</p>
+    <p>Together, the documents applicable to a Customer constitute the &quot;Agreement&quot;.</p>
+    <p>2.2 Supplemental Terms</p>
+    <p>Certain Services, features, programmes, relationships or jurisdictions may be governed by additional or Supplemental Terms.</p>
+    <p>By using a Service subject to Supplemental Terms, Customer agrees to those terms.</p>
+    <p>2.3 Order of Precedence</p>
+    <p>Unless an applicable document expressly states otherwise, a conflict concerning the same subject matter will be resolved in the following order:</p>
+    <p>1. a mutually executed amendment expressly identifying the provision being overridden;</p>
+    <p>2. an executed Order or Statement of Work for matters expressly addressed by it;</p>
+    <p>3. the Data Processing Addendum for processing Personal Data on Customer&#x27;s behalf;</p>
+    <p>4. an applicable Security Addendum for contracted security obligations;</p>
+    <p>5. an applicable Service Level Agreement for service-level commitments and remedies;</p>
+    <p>6. applicable product-, programme-, regional- or relationship-specific Supplemental Terms;</p>
+    <p>7. these Terms; and</p>
+    <p>8. other incorporated BACI policies.</p>
+    <p>Mandatory Applicable Law prevails where the parties cannot lawfully agree otherwise.</p>
+    <p>2.4 Enterprise Agreements</p>
+    <p>Where Customer and BACI execute a Master Services Agreement, Enterprise Customer Agreement or other negotiated commercial agreement, these Terms apply only to the extent incorporated into that agreement.</p>
+    <p>A negotiated provision expressly addressing a matter controls over a conflicting provision in these Terms.</p>
+    <p>2.5 Self-Service Customers</p>
+    <p>Customers purchasing Services through BACI&#x27;s standard online purchasing process are governed by these Terms, the applicable Order and incorporated BACI policies without modification unless BACI expressly agrees otherwise in writing.</p>
+    <p>Terms contained in Customer purchase orders, procurement portals, onboarding systems or similar Customer documents do not amend the Agreement merely because BACI receives, acknowledges or processes them.</p>
+    <h2>3. DEFINITIONS</h2>
+    <p>For purposes of the Agreement:</p>
+    <p>&quot;Account&quot; means an account through which Customer or an Authorised User accesses the Services.</p>
+    <p>&quot;Affiliate&quot; means an entity directly or indirectly controlling, controlled by or under common control with another entity.</p>
+    <p>&quot;Applicable Data Protection Law&quot; means privacy, data-protection and data-security laws applicable to relevant processing.</p>
+    <p>&quot;Applicable Law&quot; means applicable statutes, regulations, legally binding regulatory requirements, court orders and governmental requirements.</p>
+    <p>&quot;Authorised User&quot; means an individual authorised by Customer to access the Services.</p>
+    <p>&quot;Autonomous Action&quot; means an action performed through a Service without requiring Customer approval immediately before that particular action.</p>
+    <p>&quot;BACI Intelligence&quot; means intelligence, analyses, recommendations, forecasts, signals, classifications, scores, reports, opportunities, insights or other information generated, organised, identified or delivered through BACI.</p>
+    <p>&quot;BACI Technology&quot; means the Services and BACI&#x27;s software, source code, object code, APIs, architecture, systems, artificial-intelligence systems, models, algorithms, methodologies, intelligence engines, orchestration, prompts, workflows, schemas, ontologies, taxonomies, scoring systems, designs, interfaces, databases, inventions, processes, Documentation, know-how and related technology.</p>
+    <p>&quot;Capacity&quot; means usage, operational or resource allowances applicable to a Service.</p>
+    <p>&quot;Confidential Information&quot; has the meaning in Section 25.</p>
+    <p>&quot;Customer Data&quot; means data, information, files, content and materials submitted, uploaded, transmitted, connected or otherwise provided to BACI by or on behalf of Customer in connection with the Services. Customer Data does not include BACI Technology.</p>
+    <p>&quot;Documentation&quot; means documentation BACI makes available concerning the Services.</p>
+    <p>&quot;Fees&quot; means amounts payable for Services.</p>
+    <p>&quot;Input&quot; means information, instructions, prompts, content or other material submitted to an AI-enabled Service.</p>
+    <p>&quot;Intellectual Property Rights&quot; means patents, copyrights, database rights, trademarks, service marks, trade secrets, design rights and other proprietary rights recognised under Applicable Law.</p>
+    <p>&quot;Order&quot; means an online order, subscription selection, Order Form, accepted quotation or other agreed instrument identifying Services purchased by Customer.</p>
+    <p>&quot;Output&quot; means information or content generated or returned by an AI-enabled Service in response to an Input or Customer-authorised process.</p>
+    <p>&quot;Personal Data&quot; means information defined as personal data, personal information or an equivalent protected category under Applicable Data Protection Law.</p>
+    <p>&quot;Security Incident&quot; means an incident meeting the definition specified in the applicable Data Processing Addendum or Security Addendum.</p>
+    <p>&quot;Services&quot; means BACI&#x27;s platform, business intelligence services, artificial-intelligence systems, automation, APIs, applications, data products, reports, professional services and other offerings made available under an Agreement.</p>
+    <p>&quot;Subscription Term&quot; means the period during which Customer is authorised to use subscription Services.</p>
+    <p>&quot;Supplemental Terms&quot; means additional terms applying to a particular Service, programme, relationship or jurisdiction.</p>
+    <p>&quot;Third-Party Data&quot; means data or content originating from a third party rather than BACI or Customer.</p>
+    <p>&quot;Third-Party Service&quot; means a product, model, platform, application, website, API, database, information source, infrastructure component or other service supplied by a third party.</p>
+    <p>&quot;Usage Data&quot; means technical, diagnostic, security, operational and usage information concerning operation or use of the Services, excluding Customer Data except where information has been lawfully aggregated or de-identified so that it no longer reasonably identifies Customer, an individual or Customer Confidential Information.</p>
+    <h2>4. THE BACI SERVICES</h2>
+    <p>4.1 Services</p>
+    <p>BACI provides business intelligence, software, artificial intelligence, automation, data and related technologies and services.</p>
+    <p>Depending upon the applicable offering, BACI may provide capabilities relating to business, market, industry, customer, audience, competitor, acquisition, conversion, growth, campaign, content, distribution, procurement, bids, grants, funding, investors, forecasting, opportunity discovery, risk, planning, research, analysis, monitoring, automation, reporting, APIs, development and integrations.</p>
+    <p>4.2 Configuration</p>
+    <p>Available functionality may depend upon Customer&#x27;s:</p>
+    <p>(a) access category;</p>
+    <p>(b) plan;</p>
+    <p>(c) operating mode;</p>
+    <p>(d) Capacity;</p>
+    <p>(e) licence;</p>
+    <p>(f) organisation;</p>
+    <p>(g) workspace;</p>
+    <p>(h) Authorised Users;</p>
+    <p>(i) configured markets or monitored subjects;</p>
+    <p>(j) integrations;</p>
+    <p>(k) jurisdiction; and</p>
+    <p>(l) applicable Order.</p>
+    <p>4.3 Evolution</p>
+    <p>BACI may develop and evolve the Services.</p>
+    <p>BACI may introduce, improve, modify, replace or discontinue individual features where reasonably necessary for innovation, security, regulatory compliance, technological development, third-party dependency changes or operation of the Services.</p>
+    <p>BACI will not exercise this right for the purpose of avoiding an express contractual obligation.</p>
+    <p>4.4 Material Reduction</p>
+    <p>BACI will not materially reduce the core functionality of a paid Service during a committed Subscription Term without providing any notice or remedy required by the Agreement or Applicable Law.</p>
+    <h2>5. ELIGIBILITY</h2>
+    <p>Customer must possess legal capacity to enter into the Agreement.</p>
+    <p>The Services are intended primarily for businesses, organisations, professionals, developers and other commercial users unless BACI expressly makes a Service available to consumers.</p>
+    <p>Customer must not access or use a Service where prohibited by Applicable Law.</p>
+    <p>BACI may conduct reasonable identity, organisational, payment, fraud, sanctions or authority verification where reasonably necessary.</p>
+    <h2>6. ACCOUNTS AND AUTHORISED USERS</h2>
+    <p>6.1 Account Information</p>
+    <p>Customer must provide accurate Account information and keep material information current.</p>
+    <p>6.2 Security</p>
+    <p>Customer must maintain reasonable safeguards over Account credentials.</p>
+    <p>6.3 Authorised Users</p>
+    <p>Customer determines which individuals may use its Account and what permissions they receive.</p>
+    <p>6.4 Administrators</p>
+    <p>Customer-appointed administrators may manage Users, permissions, organisations, workspaces, integrations and other Account configurations within available functionality.</p>
+    <p>6.5 Responsibility</p>
+    <p>Customer is responsible for acts and omissions of its Authorised Users in connection with the Services to the same extent as if they were Customer&#x27;s own acts or omissions.</p>
+    <p>6.6 Compromise</p>
+    <p>Customer must promptly notify BACI at security@bacihq.com if Customer becomes aware of unauthorised Account access or compromised credentials.</p>
+    <p>BACI may temporarily restrict affected credentials or functionality where reasonably necessary to protect Customer, BACI or the Services.</p>
+    <h2>7. ORGANISATIONS, WORKSPACES AND CUSTOMER ENVIRONMENTS</h2>
+    <p>BACI may permit Customer to establish organisations, workspaces, client environments or similar logical environments.</p>
+    <p>Customer is responsible for assigning Users, permissions and information to appropriate environments.</p>
+    <p>Agencies, advisers and other intermediaries managing client environments must possess appropriate authority from those clients and comply with applicable relationship-specific terms.</p>
+    <p>Customer must not circumvent User, workspace, Capacity, plan or licensing restrictions through duplicate Accounts, artificial organisations or similar mechanisms.</p>
+    <h2>8. CUSTOMER RESPONSIBILITIES</h2>
+    <p>Customer will:</p>
+    <p>(a) use the Services according to the Agreement and Applicable Law;</p>
+    <p>(b) maintain lawful rights and authority concerning Customer Data;</p>
+    <p>(c) provide legally required notices and obtain legally required permissions or consents;</p>
+    <p>(d) maintain appropriate internal governance;</p>
+    <p>(e) configure permissions and operational controls appropriately;</p>
+    <p>(f) protect credentials and Customer-controlled systems;</p>
+    <p>(g) review material Outputs and actions at a level appropriate to their foreseeable consequences;</p>
+    <p>(h) satisfy requirements applicable to Customer&#x27;s industry;</p>
+    <p>(i) ensure Customer&#x27;s instructions to BACI are lawful;</p>
+    <p>(j) comply with applicable sanctions and export controls; and</p>
+    <p>(k) cooperate reasonably concerning security incidents affecting Customer-controlled systems.</p>
+    <p>Customer remains responsible for its business decisions and for determining whether a particular use of BACI is appropriate for Customer&#x27;s legal, regulatory and operational circumstances.</p>
+    <h2>9. OPERATING MODES</h2>
+    <p>Certain BACI Services may operate under different levels of Customer control.</p>
+    <p>9.1 Manual</p>
+    <p>In Manual mode, BACI may discover, analyse, organise, generate, prioritise or recommend information while Customer determines whether and how to act.</p>
+    <p>9.2 Hybrid</p>
+    <p>In Hybrid mode, BACI may perform Customer-authorised actions within defined parameters while designated decisions or actions remain subject to Customer approval.</p>
+    <p>9.3 Autonomous</p>
+    <p>In Autonomous mode, BACI may perform authorised actions or processes without individual approval immediately before each action, provided those actions remain within the authority and parameters established by Customer.</p>
+    <p>9.4 Authority Boundaries</p>
+    <p>Customer may establish controls including:</p>
+    <p>(a) spending or financial limits;</p>
+    <p>(b) approval thresholds;</p>
+    <p>(c) permitted markets;</p>
+    <p>(d) permitted channels;</p>
+    <p>(e) permitted categories;</p>
+    <p>(f) objectives;</p>
+    <p>(g) connected systems;</p>
+    <p>(h) authorised actions;</p>
+    <p>(i) User permissions;</p>
+    <p>(j) frequency or volume restrictions; and</p>
+    <p>(k) other operational constraints.</p>
+    <p>9.5 Customer Delegation</p>
+    <p>Customer is responsible for determining the authority it delegates and for configuring appropriate safeguards, approvals and governance.</p>
+    <p>Autonomy does not remove governance.</p>
+    <p>9.6 BACI&#x27;s Obligation</p>
+    <p>BACI will operate Autonomous functionality materially within the authority and operational boundaries configured by Customer and supported by the applicable Service.</p>
+    <p>BACI does not acquire authority merely because a technical integration could permit an action.</p>
+    <p>9.7 Actions Within Authority</p>
+    <p>Where BACI correctly performs an Autonomous Action within Customer&#x27;s authorised parameters, the commercial consequences of that authorised action remain Customer&#x27;s responsibility, except to the extent caused by BACI&#x27;s breach of the Agreement, negligence, wilful misconduct or other liability that cannot lawfully be excluded.</p>
+    <p>9.8 Actions Outside Authority</p>
+    <p>Where an Autonomous Action occurs materially outside Customer&#x27;s configured authority because of BACI&#x27;s failure to operate the Service in accordance with the Agreement, responsibility will be determined under the Agreement&#x27;s warranty, indemnification and liability provisions.</p>
+    <p>The mere use of artificial intelligence or automation does not by itself create unlimited liability.</p>
+    <p>9.9 Additional Terms</p>
+    <p>Autonomous functionality may also be governed by the AI &amp; Autonomous Systems Terms.</p>
+    <h2>10. ARTIFICIAL INTELLIGENCE</h2>
+    <p>10.1 AI Systems</p>
+    <p>BACI may use artificial intelligence, machine learning, statistical analysis, automated reasoning, language models and related computational technologies.</p>
+    <p>10.2 Nature of AI</p>
+    <p>AI-generated or computational results can be probabilistic and may occasionally be incomplete, inaccurate, outdated, ambiguous or unsuitable for a particular context.</p>
+    <p>10.3 Appropriate Review</p>
+    <p>Customer must apply a level of review appropriate to the nature, significance and foreseeable consequences of the use.</p>
+    <p>10.4 Consequential Decisions</p>
+    <p>Customer must not use an Output as the sole basis for a legally significant or high-consequence decision where Applicable Law prohibits such use or requires human review or additional safeguards.</p>
+    <p>10.5 Professional Advice</p>
+    <p>Unless BACI expressly contracts to provide a regulated professional service, BACI Intelligence does not substitute for professional legal, medical, accounting, tax, regulated financial or other professional advice where such advice is legally or reasonably required.</p>
+    <p>10.6 Responsible AI</p>
+    <p>AI-enabled Services are additionally subject to the Responsible AI Policy and, where applicable, AI &amp; Autonomous Systems Terms.</p>
+    <h2>11. INPUTS AND OUTPUTS</h2>
+    <p>11.1 Inputs</p>
+    <p>As between the parties, Customer retains its rights in Inputs constituting Customer Data.</p>
+    <p>Customer grants BACI the rights necessary to process Inputs to provide the Services and perform the Agreement.</p>
+    <p>11.2 Customer Use of Outputs</p>
+    <p>Subject to the Agreement and payment of applicable Fees, Customer may use Customer-specific Outputs for Customer&#x27;s internal business purposes and additional purposes expressly permitted by the applicable licence or Order.</p>
+    <p>11.3 Non-Uniqueness</p>
+    <p>Outputs may not be unique. Similar circumstances or Inputs may produce similar information for different customers.</p>
+    <p>11.4 Legal Protectability</p>
+    <p>The intellectual-property status of AI-generated material may vary by jurisdiction and circumstances.</p>
+    <p>BACI does not represent that every Output independently qualifies for copyright, patent or other intellectual-property protection.</p>
+    <p>11.5 BACI Technology</p>
+    <p>Rights relating to an Output do not transfer ownership of BACI Technology, proprietary methodologies, scoring systems, models, intelligence engines, taxonomies or other technology used to generate or organise the Output.</p>
+    <h2>12. CUSTOMER DATA</h2>
+    <p>12.1 Ownership</p>
+    <p>As between BACI and Customer, Customer retains all rights, title and interest it possesses in Customer Data.</p>
+    <p>BACI does not acquire ownership of Customer Data merely because BACI stores, transmits, analyses or processes it.</p>
+    <p>12.2 Processing Rights</p>
+    <p>Customer authorises BACI and authorised subprocessors to process Customer Data as reasonably necessary to:</p>
+    <p>(a) provide the Services;</p>
+    <p>(b) perform Customer&#x27;s instructions;</p>
+    <p>(c) authenticate and administer Accounts;</p>
+    <p>(d) secure and maintain the Services;</p>
+    <p>(e) prevent and investigate fraud, abuse and security threats;</p>
+    <p>(f) provide support;</p>
+    <p>(g) diagnose technical problems;</p>
+    <p>(h) comply with Applicable Law; and</p>
+    <p>(i) undertake other processing expressly authorised by Customer or the Agreement.</p>
+    <p>12.3 Customer Authority</p>
+    <p>Customer represents and warrants that it possesses sufficient lawful rights and authority to provide Customer Data and authorise processing contemplated by the Agreement.</p>
+    <p>12.4 Personal Data</p>
+    <p>Where BACI processes Personal Data on Customer&#x27;s behalf, the Data Processing Addendum applies.</p>
+    <h2>13. CUSTOMER DATA AND AI MODEL TRAINING</h2>
+    <p>13.1 No General Model Training by Default</p>
+    <p>Unless Customer expressly agrees otherwise in writing or affirmatively opts into a clearly identified programme, BACI will not use Customer Confidential Information, Customer Personal Data, private Inputs or private Outputs to train or fine-tune general-purpose or shared AI models for the benefit of other customers.</p>
+    <p>13.2 Permitted Processing</p>
+    <p>Section 13.1 does not prevent BACI from processing Customer Data as reasonably necessary to provide, secure, support, maintain or troubleshoot the Services, perform Customer instructions or comply with lawful obligations.</p>
+    <p>13.3 Customer-Specific Models</p>
+    <p>Customer-requested private model training, fine-tuning or other Customer-specific machine-learning activity may be governed by an Order or Supplemental Terms.</p>
+    <p>13.4 Aggregated and De-identified Information</p>
+    <p>Subject to Applicable Law, BACI may use information lawfully aggregated or de-identified so that it no longer reasonably identifies Customer, an individual or Customer Confidential Information to analyse and improve performance, security, reliability and functionality.</p>
+    <h2>14. USAGE DATA</h2>
+    <p>BACI may use Usage Data to operate, secure, maintain, analyse and improve the Services; detect abuse; troubleshoot; perform capacity planning; and satisfy legal obligations.</p>
+    <p>BACI will not publicly disclose Usage Data identifying Customer&#x27;s Confidential Information except with Customer&#x27;s authorisation or as required by Applicable Law.</p>
+    <h2>15. BACI INTELLIGENCE, DATA SOURCES AND PROVENANCE</h2>
+    <p>15.1 Sources</p>
+    <p>BACI Intelligence may be developed from combinations of:</p>
+    <p>(a) Customer Data;</p>
+    <p>(b) public information;</p>
+    <p>(c) licensed information;</p>
+    <p>(d) Third-Party Data;</p>
+    <p>(e) connected services;</p>
+    <p>(f) APIs;</p>
+    <p>(g) proprietary BACI analysis; and</p>
+    <p>(h) other information BACI is lawfully entitled to process.</p>
+    <p>15.2 Discovery and Analysis</p>
+    <p>The fact that information can be discovered, accessed or technically retrieved does not itself determine its legal status.</p>
+    <p>BACI may apply source governance, admission, provenance, reliability, licensing or other controls before information is incorporated into particular Services or Outputs.</p>
+    <p>15.3 Third-Party Rights</p>
+    <p>Third-Party Data remains subject to applicable third-party rights and restrictions.</p>
+    <p>Neither Customer nor BACI obtains ownership of third-party Intellectual Property Rights merely because Third-Party Data is processed through the Services.</p>
+    <p>15.4 Customer Restrictions</p>
+    <p>Customer must comply with third-party attribution, licence, confidentiality or usage restrictions communicated with particular Third-Party Data.</p>
+    <p>15.5 Source Changes</p>
+    <p>External information can change after BACI discovers or analyses it.</p>
+    <p>BACI does not control the continued availability, accuracy or completeness of independent third-party sources.</p>
+    <p>15.6 Provenance</p>
+    <p>Where BACI supplies provenance, source references, timestamps, confidence indicators, evidence status or similar information, Customer should consider those indicators when evaluating intelligence.</p>
+    <p>Customer must not knowingly remove or falsify provenance where doing so would materially misrepresent the origin or reliability of information.</p>
+    <p>15.7 Commercial Outcomes</p>
+    <p>Identification of an opportunity, market, customer, investor, funder, grant, procurement opportunity, competitor, trend, forecast or other intelligence does not guarantee a particular commercial outcome.</p>
+    <h2>16. THIRD-PARTY SERVICES AND INTEGRATIONS</h2>
+    <p>Customer may elect to connect BACI with Third-Party Services.</p>
+    <p>By enabling an integration, Customer authorises BACI to transmit, receive and process information through that integration as reasonably necessary to perform Customer&#x27;s instructions.</p>
+    <p>Third-Party Services may be governed by separate agreements between Customer and their providers.</p>
+    <p>BACI is not responsible for an independent third party&#x27;s acts, omissions, availability or contractual practices except where BACI expressly accepts responsibility or Applicable Law provides otherwise.</p>
+    <p>BACI may modify, restrict or discontinue an integration where the third-party provider changes or terminates access, security requires it, Applicable Law requires it or continued operation becomes materially impracticable.</p>
+    <h2>17. THIRD-PARTY AI TECHNOLOGY</h2>
+    <p>BACI may use third-party AI infrastructure, models or related technology to provide certain Services.</p>
+    <p>Where such a provider processes Customer Personal Data on BACI&#x27;s behalf, applicable processing will be governed through BACI&#x27;s Data Processing Addendum and subprocessor framework.</p>
+    <p>BACI may change underlying providers where reasonably necessary for functionality, performance, security, availability, legal compliance or technological development, subject to applicable contractual obligations.</p>
+    <p>BACI will not represent that a third-party provider provides a particular retention, training, localisation or security commitment unless BACI has a sufficient contractual or factual basis for that representation.</p>
+    <h2>18. BACI INTELLECTUAL PROPERTY</h2>
+    <p>BACI and its licensors retain all rights, title and interest in BACI Technology and associated Intellectual Property Rights.</p>
+    <p>Subject to Customer&#x27;s compliance with the Agreement and payment of applicable Fees, BACI grants Customer a limited, non-exclusive, non-transferable right during the applicable Subscription Term to access and use purchased Services for authorised purposes.</p>
+    <p>No rights are granted except those expressly provided.</p>
+    <p>Except where expressly authorised or Applicable Law prohibits restriction, Customer must not:</p>
+    <p>(a) reverse engineer, decompile or disassemble BACI Technology;</p>
+    <p>(b) attempt to discover source code;</p>
+    <p>(c) extract model weights, protected parameters or protected system instructions;</p>
+    <p>(d) bypass technical restrictions;</p>
+    <p>(e) circumvent access, Capacity or security controls;</p>
+    <p>(f) systematically extract proprietary BACI information;</p>
+    <p>(g) reproduce proprietary BACI methodologies or scoring systems;</p>
+    <p>(h) use BACI Technology to construct a materially substitutive competing service;</p>
+    <p>(i) remove proprietary notices;</p>
+    <p>(j) misrepresent BACI Technology as Customer&#x27;s technology;</p>
+    <p>(k) use unauthorised automated means to extract the Services; or</p>
+    <p>(l) facilitate another person&#x27;s prohibited conduct.</p>
+    <h2>19. CUSTOMER-SPECIFIC OUTPUT RIGHTS</h2>
+    <p>To the extent BACI owns Intellectual Property Rights specifically arising in a Customer-specific Output, and subject to payment of applicable Fees, BACI grants Customer a worldwide, perpetual, non-exclusive licence to use, reproduce, adapt and exploit that Customer-specific Output for purposes permitted by the Agreement.</p>
+    <p>This licence does not transfer ownership of:</p>
+    <p>(a) BACI Technology;</p>
+    <p>(b) underlying methodologies;</p>
+    <p>(c) algorithms;</p>
+    <p>(d) models;</p>
+    <p>(e) scoring systems;</p>
+    <p>(f) taxonomies;</p>
+    <p>(g) intelligence engines;</p>
+    <p>(h) generic templates;</p>
+    <p>(i) pre-existing BACI materials; or</p>
+    <p>(j) technology capable of producing similar Outputs.</p>
+    <p>Third-Party Data incorporated into an Output remains subject to applicable third-party rights.</p>
+    <h2>20. FEEDBACK</h2>
+    <p>Customer may voluntarily provide suggestions, ideas or feedback.</p>
+    <p>Customer grants BACI a perpetual, worldwide, royalty-free right to use such feedback to develop and improve BACI, provided BACI does not thereby disclose Customer Confidential Information or acquire ownership of Customer Data.</p>
+    <h2>21. DEVELOPER AND API ACCESS</h2>
+    <p>Where BACI provides APIs, developer credentials, SDKs, sandbox environments or similar capabilities, use may additionally be governed by Developer &amp; API Terms.</p>
+    <p>API credentials are confidential authentication information.</p>
+    <p>Customer must not sell, sublicense, publicly disclose or transfer credentials except as expressly authorised.</p>
+    <p>BACI may rotate, revoke or restrict credentials where reasonably necessary for security, legal compliance or material breach.</p>
+    <h2>22. ACCEPTABLE USE</h2>
+    <p>Customer and Authorised Users must comply with BACI&#x27;s Acceptable Use Policy.</p>
+    <p>Without limiting that Policy, the Services must not be used to:</p>
+    <p>(a) violate Applicable Law;</p>
+    <p>(b) commit or facilitate fraud;</p>
+    <p>(c) infringe Intellectual Property Rights;</p>
+    <p>(d) unlawfully invade privacy;</p>
+    <p>(e) distribute malware;</p>
+    <p>(f) steal or compromise credentials;</p>
+    <p>(g) obtain unauthorised system access;</p>
+    <p>(h) materially interfere with Service availability;</p>
+    <p>(i) evade security or usage controls;</p>
+    <p>(j) falsify evidence or provenance;</p>
+    <p>(k) deliberately manipulate BACI intelligence systems;</p>
+    <p>(l) facilitate unlawful exploitation, trafficking or abuse;</p>
+    <p>(m) engage in prohibited discriminatory automated decision-making;</p>
+    <p>(n) engage in unlawful deceptive impersonation;</p>
+    <p>(o) conduct prohibited high-risk AI activity;</p>
+    <p>(p) violate sanctions or export controls; or</p>
+    <p>(q) assist another person in such activity.</p>
+    <h2>23. SECURITY</h2>
+    <p>BACI will maintain reasonable and appropriate administrative, technical and organisational safeguards designed to protect Customer Data against unauthorised access, alteration, disclosure or destruction.</p>
+    <p>Detailed commitments are governed by the applicable Security Policy or Security Addendum.</p>
+    <p>Customer remains responsible for security matters under its control, including devices, User access, Customer systems, permissions, credentials, integrations and Customer-selected configurations.</p>
+    <p>Customer must report suspected Service-related security incidents to:</p>
+    <p>security@bacihq.com</p>
+    <p>Security Incident obligations involving Personal Data processed on Customer&#x27;s behalf are governed by the Data Processing Addendum.</p>
+    <p>No internet-connected system can guarantee absolute security.</p>
+    <h2>24. DATA PROTECTION</h2>
+    <p>Where BACI processes Personal Data as processor or service provider on Customer&#x27;s behalf, the Data Processing Addendum applies.</p>
+    <p>Where BACI independently determines the purposes and means of processing Personal Data, processing is governed by BACI&#x27;s Privacy Policy and Applicable Data Protection Law.</p>
+    <p>Where legally required, international transfers will use an applicable lawful transfer mechanism.</p>
+    <p>Privacy enquiries and requests may be directed to:</p>
+    <p>privacy@bacihq.com</p>
+    <h2>25. CONFIDENTIALITY</h2>
+    <p>25.1 Definition</p>
+    <p>&quot;Confidential Information&quot; means non-public information disclosed by or on behalf of one party (&quot;Disclosing Party&quot;) to the other (&quot;Receiving Party&quot;) that is identified as confidential or that a reasonable person would understand to be confidential given its nature and circumstances.</p>
+    <p>Customer Data constitutes Customer Confidential Information.</p>
+    <p>Non-public BACI Technology, proprietary methodologies, security architecture, trade secrets and Customer-specific negotiated pricing constitute BACI Confidential Information.</p>
+    <p>25.2 Protection</p>
+    <p>Receiving Party will:</p>
+    <p>(a) protect Confidential Information using at least reasonable care;</p>
+    <p>(b) use it only to exercise rights and perform obligations under the Agreement;</p>
+    <p>(c) disclose it only to persons with a legitimate need to know and appropriate confidentiality obligations; and</p>
+    <p>(d) remain responsible for unauthorised disclosure by persons to whom it provides access to the extent provided by Applicable Law.</p>
+    <p>25.3 Exclusions</p>
+    <p>Confidential Information excludes information Receiving Party can demonstrate:</p>
+    <p>(a) is or becomes public without breach;</p>
+    <p>(b) was lawfully known without confidentiality restriction before disclosure;</p>
+    <p>(c) is lawfully received from another source without confidentiality restriction; or</p>
+    <p>(d) was independently developed without use of Disclosing Party&#x27;s Confidential Information.</p>
+    <p>25.4 Compelled Disclosure</p>
+    <p>Receiving Party may make a legally compelled disclosure provided that, where legally permitted, it gives reasonable notice, reasonably cooperates concerning protective measures and discloses only what is legally required.</p>
+    <p>25.5 Equitable Relief</p>
+    <p>Unauthorised use or disclosure may cause irreparable harm. Either party may seek appropriate emergency or equitable relief consistent with Section 61.</p>
+    <h2>26. ORDERS AND COMMERCIAL COMMITMENTS</h2>
+    <p>An Order may identify:</p>
+    <p>(a) Services;</p>
+    <p>(b) Subscription Term;</p>
+    <p>(c) Fees;</p>
+    <p>(d) operating mode;</p>
+    <p>(e) Capacity;</p>
+    <p>(f) Authorised Users;</p>
+    <p>(g) workspaces;</p>
+    <p>(h) licences;</p>
+    <p>(i) support;</p>
+    <p>(j) implementation or professional services;</p>
+    <p>(k) renewal terms;</p>
+    <p>(l) usage or consumption arrangements; and</p>
+    <p>(m) other commercial conditions.</p>
+    <p>Customer is responsible for reviewing an Order before accepting it.</p>
+    <p>An Order becomes binding when accepted through BACI&#x27;s purchasing process or executed by authorised representatives.</p>
+    <h2>27. ENTERPRISE PROCUREMENT</h2>
+    <p>27.1 Procurement Systems</p>
+    <p>BACI may participate in Customer procurement, vendor-management or onboarding processes for administrative purposes.</p>
+    <p>Participation does not amend the Agreement.</p>
+    <p>27.2 Purchase Orders</p>
+    <p>Customer purchase orders may be used for administrative identification, invoicing and payment.</p>
+    <p>Terms printed on, linked from or incorporated into a purchase order do not modify the Agreement unless expressly accepted in a document executed by an authorised BACI representative.</p>
+    <p>27.3 Security and Procurement Questionnaires</p>
+    <p>Responses to due-diligence, procurement or security questionnaires describe BACI&#x27;s position as of the date provided but do not independently create warranties or amend the Agreement unless expressly incorporated into an executed agreement.</p>
+    <p>27.4 Customer Policies</p>
+    <p>BACI&#x27;s access to Customer premises or systems may be subject to reasonable Customer security procedures communicated in advance.</p>
+    <p>Customer internal policies do not otherwise bind BACI unless expressly agreed in writing.</p>
+    <p>27.5 Affiliates</p>
+    <p>A Customer Affiliate may purchase Services under a separate Order where BACI agrees.</p>
+    <p>Unless expressly stated otherwise, each Affiliate Order creates obligations between BACI and the entity identified as Customer on that Order.</p>
+    <h2>28. FEES AND PAYMENT</h2>
+    <p>Customer will pay Fees specified in the applicable Order.</p>
+    <p>Unless otherwise stated or required by Applicable Law:</p>
+    <p>(a) Fees are exclusive of applicable taxes;</p>
+    <p>(b) Fees are payable in the currency identified before commitment;</p>
+    <p>(c) payment is not contingent upon Customer obtaining a particular business result; and</p>
+    <p>(d) Customer remains responsible for Fees properly incurred before termination becomes effective.</p>
+    <p>The Billing Policy contains additional payment provisions.</p>
+    <h2>29. PAYMENT PROCESSING</h2>
+    <p>BACI may use third-party payment processors.</p>
+    <p>Available payment methods may vary by jurisdiction, currency and commercial arrangement and will be displayed during the applicable purchasing process.</p>
+    <p>Where payment credentials are supplied directly to an independent payment processor, BACI need not receive or store complete payment credentials.</p>
+    <p>Customer authorises BACI and its payment processors to process amounts properly due.</p>
+    <p>Independent banks, card issuers or payment providers may impose currency-conversion or transaction charges. Those charges are not BACI Fees.</p>
+    <p>Billing enquiries may be directed to:</p>
+    <p>billing@bacihq.com</p>
+    <h2>30. SUBSCRIPTIONS AND RENEWAL</h2>
+    <p>Where Customer purchases a recurring subscription, the billing frequency and renewal arrangement will be disclosed before purchase.</p>
+    <p>Unless the applicable Order provides otherwise, recurring Services renew for successive periods until cancelled in accordance with the Cancellation Policy.</p>
+    <p>BACI will provide renewal notices where required by Applicable Law.</p>
+    <h2>31. CAPACITY, USAGE AND PLAN CHANGES</h2>
+    <p>Certain Services may have Capacity or usage allowances.</p>
+    <p>The applicable Order or Account will identify relevant Capacity.</p>
+    <p>If Customer requests additional Capacity or changes a plan, applicable changes in Fees will be presented before the change becomes effective where reasonably practicable.</p>
+    <p>Where part of the Service design, BACI may pause or restrict activity exceeding contracted Capacity rather than permitting uncontrolled charges.</p>
+    <p>BACI is not required to provide Services beyond purchased Capacity without additional agreement.</p>
+    <h2>32. TAXES</h2>
+    <p>Customer is responsible for applicable sales, use, value-added, goods-and-services, withholding and similar taxes or governmental assessments arising from purchases, excluding taxes based upon BACI&#x27;s net income.</p>
+    <p>Where BACI must legally collect a tax, BACI may add it to the amount charged.</p>
+    <p>Where Customer must legally withhold tax, Customer will provide appropriate documentation and the parties will reasonably cooperate regarding legally available exemptions, credits or treaty relief.</p>
+    <h2>33. BILLING DISPUTES</h2>
+    <p>Customer should promptly report suspected billing errors to:</p>
+    <p>billing@bacihq.com</p>
+    <p>The parties will cooperate in good faith to investigate legitimate billing disputes.</p>
+    <p>A billing dispute does not relieve Customer from paying undisputed amounts when due.</p>
+    <p>BACI will correct verified billing errors as appropriate.</p>
+    <h2>34. REFUNDS</h2>
+    <p>Refunds are governed by the Refund Policy, applicable Order and Applicable Law.</p>
+    <p>Cancellation does not by itself create a right to reimbursement of Fees already properly incurred.</p>
+    <p>Mandatory statutory refund rights remain unaffected.</p>
+    <h2>35. CANCELLATION</h2>
+    <p>Customer may cancel recurring Services in accordance with the Cancellation Policy.</p>
+    <p>The applicable cancellation process will identify when cancellation becomes effective.</p>
+    <p>Once cancellation becomes effective, future renewal charges for the cancelled Service cease, subject to Fees already properly incurred.</p>
+    <p>Negotiated Enterprise Agreements may establish different termination and non-renewal requirements.</p>
+    <h2>36. CROSS-PLATFORM AND MOBILE ACCESS</h2>
+    <p>BACI may make Services accessible through web, iOS, Android and other supported platforms.</p>
+    <p>Customer&#x27;s purchased entitlements are associated with the applicable BACI Account or organisation rather than a particular device unless expressly stated otherwise.</p>
+    <p>Unless BACI expressly introduces another purchasing mechanism, purchases and subscriptions are entered into through BACI&#x27;s supported web-based commercial arrangements.</p>
+    <p>Installing a BACI application does not itself create a separate subscription.</p>
+    <p>Application-specific matters may additionally be governed by Mobile Application Terms and legally applicable platform requirements.</p>
+    <h2>37. FREE, TRIAL, PREVIEW AND BETA SERVICES</h2>
+    <p>BACI may provide free, trial, preview, early-access, experimental or beta functionality.</p>
+    <p>Unless expressly stated otherwise, such functionality may be modified or discontinued, may contain errors, may have limited support and is not subject to a paid-Service SLA.</p>
+    <p>Customer should not rely upon preview functionality for critical operations unless BACI expressly authorises such use.</p>
+    <h2>38. PROFESSIONAL AND IMPLEMENTATION SERVICES</h2>
+    <p>Implementation, configuration, advisory, technical or other professional services may be provided under an Order or Statement of Work.</p>
+    <p>The applicable document will specify scope, deliverables, Fees and responsibilities.</p>
+    <p>Professional services do not transfer ownership of pre-existing BACI Technology unless expressly agreed.</p>
+    <h2>39. SUPPORT</h2>
+    <p>BACI may provide support according to Customer&#x27;s applicable Service or support level.</p>
+    <p>Binding response-time or resolution commitments apply only where expressly stated in an SLA or Order.</p>
+    <h2>40. SERVICE LEVELS</h2>
+    <p>Service-level commitments apply only where expressly provided by an applicable SLA.</p>
+    <p>The SLA will govern availability calculations, exclusions, procedures and remedies.</p>
+    <p>General statements concerning availability do not independently create an SLA.</p>
+    <h2>41. SUSPENSION</h2>
+    <p>BACI may suspend all or part of Customer&#x27;s access where reasonably necessary because of:</p>
+    <p>(a) material breach;</p>
+    <p>(b) overdue undisputed payment;</p>
+    <p>(c) credible security risk;</p>
+    <p>(d) suspected Account compromise;</p>
+    <p>(e) unlawful activity;</p>
+    <p>(f) material Acceptable Use Policy violation;</p>
+    <p>(g) material risk to BACI, Customers, third parties or Service integrity;</p>
+    <p>(h) legal or regulatory requirement; or</p>
+    <p>(i) an emergency requiring immediate action.</p>
+    <p>Where reasonably practicable, BACI will limit suspension to affected Services, Users, credentials, integrations or functionality.</p>
+    <p>Where circumstances permit, BACI will provide reasonable notice and an opportunity to cure a curable issue.</p>
+    <p>Immediate suspension may occur where delay could materially increase security, legal, financial or operational harm.</p>
+    <p>BACI will restore access within a commercially reasonable period after the underlying issue is satisfactorily resolved.</p>
+    <h2>42. TERM</h2>
+    <p>These Terms take effect upon Customer&#x27;s acceptance and continue until the applicable Agreement terminates.</p>
+    <p>Individual Orders may have separate Subscription Terms.</p>
+    <p>Expiration of one Order does not terminate another active Order.</p>
+    <h2>43. TERMINATION FOR BREACH</h2>
+    <p>Either party may terminate an affected Agreement if the other materially breaches it and fails to cure the breach within thirty (30) days after written notice.</p>
+    <p>If the breach is incapable of cure, involves unlawful activity that materially affects the Agreement or continued performance would itself be unlawful, termination may be immediate to the extent permitted by Applicable Law.</p>
+    <p>Failure to pay an undisputed amount may be subject to a shorter cure period where the applicable Order or Billing Policy expressly provides one.</p>
+    <h2>44. TERMINATION FOR INSOLVENCY</h2>
+    <p>To the extent permitted by Applicable Law, either party may terminate an affected Agreement if the other becomes insolvent, enters liquidation or a substantially similar formal proceeding, ceases substantially all business operations or becomes subject to an insolvency event materially impairing performance.</p>
+    <h2>45. EFFECT OF TERMINATION</h2>
+    <p>Upon termination of an affected Service:</p>
+    <p>(a) Customer&#x27;s right to access that Service ends on the effective termination date, subject to any agreed transition period;</p>
+    <p>(b) accrued payment obligations remain due;</p>
+    <p>(c) each party must cease unauthorised use of the other&#x27;s Confidential Information;</p>
+    <p>(d) Customer Data will be handled under the Data Processing Addendum, Data Retention &amp; Deletion Policy and Applicable Law;</p>
+    <p>(e) Customer should export eligible information before access expires where export functionality is available; and</p>
+    <p>(f) provisions intended to survive remain effective.</p>
+    <p>Termination does not invalidate rights or obligations accrued before termination.</p>
+    <h2>46. DATA RETURN, RETENTION AND DELETION</h2>
+    <p>Where applicable functionality exists, Customer may export eligible Customer Data before termination.</p>
+    <p>Following termination, BACI will return, delete, retain or render inaccessible Customer Data in accordance with the Data Processing Addendum, Data Retention &amp; Deletion Policy and Applicable Law.</p>
+    <p>BACI may retain information where legally required or reasonably necessary for security, fraud prevention, dispute resolution or establishment, exercise or defence of legal claims, subject to applicable confidentiality and data-protection obligations.</p>
+    <p>Backup deletion may occur through ordinary secure backup rotation where permitted by Applicable Law.</p>
+    <h2>47. WARRANTIES</h2>
+    <p>Each party represents that it has authority to enter into the Agreement.</p>
+    <p>For paid Services, BACI warrants that it will provide the Services materially in accordance with applicable Documentation and express contractual commitments.</p>
+    <p>Customer warrants that its provision and authorised processing of Customer Data under the Agreement will not knowingly violate Applicable Law or third-party rights.</p>
+    <h2>48. DISCLAIMERS</h2>
+    <p>Except for express warranties contained in the Agreement and to the maximum extent permitted by Applicable Law, BACI disclaims implied warranties that may lawfully be disclaimed, including merchantability, satisfactory quality, fitness for a particular purpose and non-infringement.</p>
+    <p>BACI does not warrant that:</p>
+    <p>(a) every Output will be correct;</p>
+    <p>(b) every external source will remain available;</p>
+    <p>(c) every forecast will occur;</p>
+    <p>(d) every opportunity identified will result in a transaction;</p>
+    <p>(e) every recommendation will produce a particular outcome;</p>
+    <p>(f) the Services will eliminate all business risk; or</p>
+    <p>(g) Services will operate without interruption except as expressly provided by an SLA.</p>
+    <p>Nothing excludes rights that cannot lawfully be excluded.</p>
+    <h2>49. CUSTOMER INDEMNIFICATION</h2>
+    <p>Customer will defend BACI, its Affiliates and their respective officers, directors and personnel against a third-party claim to the extent arising from:</p>
+    <p>(a) Customer Data infringing a third party&#x27;s Intellectual Property Rights;</p>
+    <p>(b) Customer&#x27;s unlawful use of the Services;</p>
+    <p>(c) Customer&#x27;s material violation of the Acceptable Use Policy; or</p>
+    <p>(d) Customer&#x27;s use of the Services materially outside expressly authorised rights.</p>
+    <p>Customer has no obligation to the extent a claim results from BACI&#x27;s breach, unauthorised modification of Customer Data, negligence, wilful misconduct or violation of Applicable Law.</p>
+    <p>The indemnification procedures in Section 51 apply.</p>
+    <h2>50. BACI INTELLECTUAL PROPERTY INDEMNIFICATION</h2>
+    <p>50.1 BACI Protection</p>
+    <p>For paid Services, BACI will defend Customer against a third-party claim alleging that Customer&#x27;s authorised use of BACI Technology provided by BACI infringes a United States patent, copyright or trademark, or misappropriates a third party&#x27;s trade secret, and BACI will indemnify Customer against covered damages and reasonable costs finally awarded against Customer or included in a settlement approved by BACI.</p>
+    <p>50.2 Exclusions</p>
+    <p>BACI has no obligation to the extent a claim arises from:</p>
+    <p>(a) Customer Data;</p>
+    <p>(b) Customer specifications or instructions;</p>
+    <p>(c) modification not made or authorised by BACI;</p>
+    <p>(d) combination with products, services, data or technology not supplied by BACI where the combination causes the claim;</p>
+    <p>(e) use contrary to the Agreement or Documentation;</p>
+    <p>(f) continued use after BACI provides a materially equivalent non-infringing replacement or instructs Customer to cease affected use;</p>
+    <p>(g) Third-Party Data or separately licensed third-party materials identified as such; or</p>
+    <p>(h) use for which Customer did not possess required rights.</p>
+    <p>50.3 Remedies</p>
+    <p>If BACI reasonably believes a paid Service may become subject to a covered infringement claim, BACI may, at its expense and option:</p>
+    <p>(a) obtain the right for Customer to continue using the affected Service;</p>
+    <p>(b) modify or replace the affected component with a materially equivalent non-infringing alternative; or</p>
+    <p>(c) if neither option is commercially reasonable, terminate the affected Service and refund prepaid Fees attributable to the unused remainder of the terminated Subscription Term.</p>
+    <p>50.4 Exclusive IP Remedy</p>
+    <p>To the extent permitted by Applicable Law, Sections 50 and 51 state BACI&#x27;s obligations and Customer&#x27;s remedies for third-party intellectual-property infringement claims concerning BACI Technology.</p>
+    <h2>51. INDEMNIFICATION PROCEDURE</h2>
+    <p>A party seeking indemnification (&quot;Indemnified Party&quot;) must:</p>
+    <p>(a) provide reasonably prompt written notice of the claim, provided delay relieves the indemnifying party only to the extent materially prejudiced;</p>
+    <p>(b) provide reasonable cooperation at the indemnifying party&#x27;s expense for reasonable external costs; and</p>
+    <p>(c) permit the indemnifying party to control defence and settlement.</p>
+    <p>The indemnifying party may not settle a claim in a manner that:</p>
+    <p>(a) admits wrongdoing or liability by the Indemnified Party;</p>
+    <p>(b) imposes material non-monetary obligations upon the Indemnified Party; or</p>
+    <p>(c) fails to provide an unconditional release of covered claims,</p>
+    <p>without the Indemnified Party&#x27;s prior written consent, not to be unreasonably withheld.</p>
+    <p>The Indemnified Party may participate through counsel of its choosing at its own expense.</p>
+    <h2>52. LIMITATION OF LIABILITY</h2>
+    <p>52.1 General Liability Cap</p>
+    <p>Except as provided below, each party&#x27;s aggregate liability arising out of or relating to the Agreement will not exceed 100% of the Fees paid or payable by Customer to BACI for the affected Services during the twelve (12) months immediately preceding the event giving rise to the claim.</p>
+    <p>If the claim arises during the first twelve months of a paid Service, the cap will be calculated using Fees paid or payable for the first twelve months of the applicable Order.</p>
+    <p>52.2 Enhanced Liability Cap</p>
+    <p>For claims arising from:</p>
+    <p>(a) BACI&#x27;s breach of its contractual data-protection obligations concerning Customer Personal Data;</p>
+    <p>(b) BACI&#x27;s breach of confidentiality obligations specifically concerning Customer Data; or</p>
+    <p>(c) BACI&#x27;s breach of expressly contracted security obligations resulting in unauthorised disclosure of Customer Data,</p>
+    <p>BACI&#x27;s aggregate liability will not exceed 200% of the Fees paid or payable for the affected Services during the applicable twelve-month period described in Section 52.1.</p>
+    <p>52.3 Excluded Damages</p>
+    <p>To the maximum extent permitted by Applicable Law, neither party will be liable for indirect, incidental, special, exemplary, punitive or consequential damages or loss of profits, revenue, goodwill or business opportunity, whether arising in contract, tort or otherwise.</p>
+    <p>This exclusion does not apply to the extent such damages constitute amounts payable to a third party under a covered indemnification obligation or cannot lawfully be excluded.</p>
+    <p>52.4 Matters Outside the Contractual Caps</p>
+    <p>The limitations in Sections 52.1 and 52.2 do not limit:</p>
+    <p>(a) Customer&#x27;s obligation to pay Fees properly due;</p>
+    <p>(b) liability for fraud or fraudulent misrepresentation;</p>
+    <p>(c) liability for wilful misconduct to the extent it cannot lawfully be limited;</p>
+    <p>(d) liability expressly made unlimited by Applicable Law; or</p>
+    <p>(e) any other liability that Applicable Law prohibits the parties from limiting.</p>
+    <p>52.5 Autonomous Services</p>
+    <p>The mere fact that an action was performed using artificial intelligence or Autonomous functionality does not remove the liability limitations in this Section.</p>
+    <p>Responsibility for an Autonomous Action is determined according to Customer&#x27;s authorised parameters, the applicable AI &amp; Autonomous Systems Terms and the circumstances giving rise to the claim.</p>
+    <p>52.6 Allocation of Risk</p>
+    <p>The limitations in this Section are fundamental elements of the parties&#x27; allocation of risk and apply regardless of the form or theory of action and even if a limited remedy fails of its essential purpose, to the maximum extent permitted by Applicable Law.</p>
+    <h2>53. INSURANCE</h2>
+    <p>Where an Enterprise Agreement or Order requires either party to maintain specified insurance, the applicable coverage requirements will be stated in that agreement.</p>
+    <p>Nothing in these Terms represents that BACI maintains a particular insurance policy or coverage amount unless BACI expressly confirms it.</p>
+    <h2>54. COMPLIANCE WITH LAW</h2>
+    <p>Each party will comply with Applicable Law applicable to its performance under the Agreement.</p>
+    <p>Customer is responsible for determining whether its particular use of BACI is permitted within its industry and jurisdiction.</p>
+    <p>BACI may restrict functionality where reasonably necessary to comply with Applicable Law.</p>
+    <h2>55. EXPORT CONTROLS AND SANCTIONS</h2>
+    <p>Customer must not access, use, export, re-export, transfer or make the Services available in violation of applicable sanctions, export-control or trade-control laws.</p>
+    <p>Customer must not knowingly use BACI in connection with a prohibited transaction or prohibited person.</p>
+    <p>BACI may conduct legally required screening and restrict access where necessary for compliance.</p>
+    <h2>56. ANTI-BRIBERY AND ANTI-CORRUPTION</h2>
+    <p>Neither party will use the Agreement or Services to offer, promise, authorise, solicit or provide an unlawful bribe, kickback or improper payment.</p>
+    <p>Each party will comply with anti-bribery and anti-corruption laws applicable to its activities.</p>
+    <h2>57. GOVERNMENT AND PUBLIC-SECTOR CUSTOMERS</h2>
+    <p>57.1 Public-Sector Use</p>
+    <p>Governmental bodies, public authorities and other public-sector Customers may use BACI only where the individual accepting the Agreement possesses appropriate contracting authority.</p>
+    <p>57.2 Additional Terms</p>
+    <p>Government and public-sector use may be subject to a Government &amp; Public Sector Schedule or other procurement-specific terms.</p>
+    <p>57.3 Mandatory Government Law</p>
+    <p>Where Applicable Law prevents a governmental Customer from accepting a particular contractual provision, an authorised written government-specific agreement may modify that provision.</p>
+    <p>57.4 Restricted Information</p>
+    <p>Customer must not submit classified information, state secrets, controlled government information or similarly restricted information to an ordinary BACI environment unless BACI has expressly authorised the relevant Service or environment in writing for that category of information.</p>
+    <p>57.5 Public Records</p>
+    <p>Government Customers are responsible for identifying public-records, freedom-of-information, archival or retention obligations applicable to them.</p>
+    <p>BACI will cooperate as required by an applicable Agreement and Applicable Law.</p>
+    <p>57.6 Government AI Use</p>
+    <p>Government Customers remain responsible for legally required human oversight, due process, review, transparency and other safeguards applicable to governmental use of AI-supported intelligence or automated decision-making.</p>
+    <h2>58. GOVERNMENT AND LAW-ENFORCEMENT REQUESTS</h2>
+    <p>BACI may disclose information where legally required by valid governmental, regulatory or judicial process.</p>
+    <p>Where legally permitted and reasonably practicable, BACI will provide affected Customers with notice before disclosing Customer Data.</p>
+    <p>BACI may seek clarification, narrowing or legal review of requests it reasonably considers unlawful, defective or overbroad.</p>
+    <p>Additional practices may be contained in BACI&#x27;s Government &amp; Law-Enforcement Data Request Guidelines.</p>
+    <h2>59. CHANGES TO THE SERVICES</h2>
+    <p>BACI may update the Services as technology, markets and legal requirements evolve.</p>
+    <p>BACI will not materially reduce contracted core functionality during a committed Subscription Term solely to avoid contractual obligations.</p>
+    <p>Where a material reduction occurs, Customer will receive any notice or remedy required by the Agreement or Applicable Law.</p>
+    <h2>60. CHANGES TO THESE TERMS</h2>
+    <p>BACI may update these Terms to reflect changes in Services, Applicable Law, security requirements, technology, commercial practices or the BACI Legal Framework.</p>
+    <p>Each version will identify its Last Updated date and version number.</p>
+    <p>Where a change materially affects existing paid Customer rights or obligations, BACI will provide reasonable advance notice where required by Applicable Law or the Agreement.</p>
+    <p>Unless legally required or expressly agreed, an update will not retroactively deprive Customer of rights accrued before the update became effective.</p>
+    <p>BACI may maintain archived versions for contractual and compliance purposes.</p>
+    <h2>61. DISPUTE RESOLUTION AND BINDING ARBITRATION</h2>
+    <p>61.1 Agreement to Arbitrate</p>
+    <p>Except for the limited circumstances expressly identified below, Customer and BACI agree that any dispute, controversy or claim arising out of or relating to the Agreement, the Services or the relationship between Customer and BACI will be finally resolved through confidential, binding arbitration rather than litigation in court.</p>
+    <p>This agreement to arbitrate is intended to be interpreted broadly to the fullest extent permitted by Applicable Law.</p>
+    <p>61.2 Informal Resolution</p>
+    <p>Before commencing arbitration, the complaining party must provide written notice describing:</p>
+    <p>(a) the nature of the dispute;</p>
+    <p>(b) material facts supporting the claim; and</p>
+    <p>(c) the relief requested.</p>
+    <p>The parties will attempt in good faith to resolve the dispute through representatives authorised to resolve it.</p>
+    <p>61.3 Executive Escalation</p>
+    <p>If unresolved, either party may require escalation to appropriately authorised senior representatives.</p>
+    <p>The representatives will attempt in good faith to resolve the dispute for thirty (30) days after written escalation notice unless the parties agree to another period.</p>
+    <p>The limitation period applicable to the claim will be tolled during this mandatory thirty-day escalation period to the extent permitted by Applicable Law.</p>
+    <p>61.4 Arbitration Rules</p>
+    <p>If the dispute remains unresolved, it will be finally determined by arbitration administered by the American Arbitration Association (&quot;AAA&quot;) under its Commercial Arbitration Rules and Mediation Procedures, as applicable and in effect when arbitration is commenced, except to the extent those rules conflict with an express provision of the Agreement.</p>
+    <p>61.5 Federal Arbitration Act</p>
+    <p>The parties agree that the arbitration agreement is governed by the Federal Arbitration Act, 9 U.S.C. §§ 1–16, to the extent applicable.</p>
+    <p>61.6 Seat and Place</p>
+    <p>The legal seat of arbitration will be Wilmington, Delaware, United States.</p>
+    <p>Hearings may occur remotely or at another location by agreement of the parties or direction of the tribunal without changing the legal seat.</p>
+    <p>61.7 Tribunal</p>
+    <p>Unless an applicable Enterprise Agreement provides otherwise, arbitration will be determined by one neutral arbitrator.</p>
+    <p>The arbitrator must possess appropriate experience concerning complex commercial or technology disputes.</p>
+    <p>61.8 Authority</p>
+    <p>Subject to mandatory law, the arbitrator may determine disputes concerning interpretation, performance, breach and enforceability of the Agreement and may award remedies available under the Agreement or Applicable Law, subject to enforceable contractual limitations.</p>
+    <p>61.9 Confidentiality of Arbitration</p>
+    <p>To the extent permitted by Applicable Law, the parties will keep confidential:</p>
+    <p>(a) the existence of non-public arbitration proceedings;</p>
+    <p>(b) submissions;</p>
+    <p>(c) evidence;</p>
+    <p>(d) hearing materials;</p>
+    <p>(e) testimony;</p>
+    <p>(f) orders; and</p>
+    <p>(g) awards.</p>
+    <p>Disclosure may be made where reasonably necessary to conduct or enforce the arbitration, obtain professional advice, notify insurers or auditors, satisfy legal obligations or enforce or challenge an award.</p>
+    <p>61.10 Individual Proceedings</p>
+    <p>To the fullest extent permitted by Applicable Law, disputes subject to this Section will be resolved between the individual parties and not through a class, collective, consolidated or representative proceeding.</p>
+    <p>The arbitrator may not consolidate claims of unrelated parties without all affected parties&#x27; consent unless Applicable Law requires otherwise.</p>
+    <p>61.11 Emergency and Interim Relief</p>
+    <p>Notwithstanding this arbitration agreement, either party may seek temporary, preliminary or emergency injunctive or equitable relief from a court of competent jurisdiction where reasonably necessary to prevent imminent or irreparable harm involving:</p>
+    <p>(a) misuse of Intellectual Property Rights;</p>
+    <p>(b) unauthorised disclosure of Confidential Information;</p>
+    <p>(c) cybersecurity compromise;</p>
+    <p>(d) unauthorised system access; or</p>
+    <p>(e) circumstances in which waiting for arbitral relief would materially prejudice the requested protection.</p>
+    <p>Seeking such relief does not waive arbitration of the underlying dispute.</p>
+    <p>61.12 Non-Arbitrable Matters</p>
+    <p>A claim that Applicable Law prohibits from being arbitrated may be brought before a court of competent jurisdiction.</p>
+    <p>61.13 Enforcement</p>
+    <p>Judgment upon an arbitration award may be entered and enforced by any court possessing jurisdiction.</p>
+    <p>61.14 Costs</p>
+    <p>Arbitration fees and costs will be allocated according to applicable AAA rules and the arbitrator&#x27;s authority, subject to Applicable Law and the Agreement.</p>
+    <p>Each party will ordinarily bear its own legal fees unless the Agreement, Applicable Law or arbitral award provides otherwise.</p>
+    <p>61.15 Government Customers</p>
+    <p>The arbitration requirement does not apply to a governmental Customer to the extent Applicable Law prohibits that Customer from agreeing to binding arbitration.</p>
+    <h2>62. GOVERNING LAW</h2>
+    <p>The Agreement and any dispute arising out of or relating to it are governed by the laws of the State of Delaware, United States, without regard to conflict-of-laws principles, except that the arbitration agreement is governed by the Federal Arbitration Act to the extent applicable.</p>
+    <p>Mandatory law that cannot lawfully be displaced remains applicable.</p>
+    <p>The United Nations Convention on Contracts for the International Sale of Goods does not apply to the Agreement.</p>
+    <h2>63. LIMITED COURT JURISDICTION</h2>
+    <p>For proceedings permitted notwithstanding Section 61, including proceedings concerning emergency judicial relief, enforcement of an arbitration agreement or recognition, confirmation, vacation or enforcement of an arbitral award, each party irrevocably consents, to the extent legally permissible, to the jurisdiction of the state and federal courts located in Delaware.</p>
+    <p>This provision does not convert arbitrable disputes into court disputes.</p>
+    <h2>64. WAIVER OF JURY TRIAL</h2>
+    <p>TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, EACH PARTY KNOWINGLY AND VOLUNTARILY WAIVES ANY RIGHT TO A TRIAL BY JURY FOR A DISPUTE THAT IS PERMITTED TO PROCEED IN COURT AND ARISES OUT OF OR RELATES TO THE AGREEMENT OR SERVICES.</p>
+    <p>This Section does not alter the parties&#x27; primary obligation to arbitrate disputes under Section 61.</p>
+    <h2>65. INTERNATIONAL CUSTOMERS</h2>
+    <p>65.1 Global Availability</p>
+    <p>BACI may make Services available internationally.</p>
+    <p>65.2 Current Contracting Entity</p>
+    <p>Unless an Order expressly identifies another BACI entity, BACI LLC is the contracting entity under these Terms.</p>
+    <p>65.3 Future Regional Entities</p>
+    <p>BACI may establish or designate regional Affiliates as contracting entities.</p>
+    <p>Where another BACI entity contracts with Customer, the applicable Order or Contracting Entity Schedule will identify that entity and any corresponding governing-law, tax, invoicing or dispute provisions.</p>
+    <p>65.4 Mandatory Local Law</p>
+    <p>International availability does not waive mandatory local laws that legally apply despite the Agreement&#x27;s choice of Delaware law.</p>
+    <p>65.5 International Data Transfers</p>
+    <p>Personal Data transfers are governed by the Data Processing Addendum and International Data Transfer Addendum where applicable.</p>
+    <h2>66. CONSUMER RIGHTS</h2>
+    <p>Where Customer legally qualifies as a consumer, mandatory consumer protections apply notwithstanding inconsistent provisions of these Terms.</p>
+    <p>Nothing in these Terms:</p>
+    <p>(a) waives non-waivable consumer rights;</p>
+    <p>(b) excludes mandatory statutory warranties;</p>
+    <p>(c) prevents exercise of mandatory withdrawal or cancellation rights; or</p>
+    <p>(d) limits remedies Applicable Law requires to remain available.</p>
+    <p>Where a provision designed for business Customers cannot lawfully apply to a consumer, it will not apply to that consumer to the prohibited extent.</p>
+    <h2>67. ASSIGNMENT</h2>
+    <p>Neither party may assign the Agreement without the other party&#x27;s prior written consent, except as provided below.</p>
+    <p>Either party may assign the Agreement in connection with a merger, corporate reorganisation, acquisition or sale of substantially all assets relating to the Agreement, provided the successor assumes applicable obligations.</p>
+    <p>BACI may assign the Agreement to an Affiliate as part of a bona fide corporate or regional contracting structure, provided the assignment does not materially diminish Customer&#x27;s contractual rights.</p>
+    <p>Customer may not assign the Agreement to a direct competitor of BACI where doing so would create a material confidentiality, intellectual-property or security risk without BACI&#x27;s prior written consent.</p>
+    <h2>68. CHANGE OF CONTROL</h2>
+    <p>A change of ownership does not itself terminate the Agreement unless an applicable negotiated agreement provides otherwise.</p>
+    <p>Where a change of control creates a material sanctions, regulatory, confidentiality or security concern, the parties will cooperate in good faith to address it.</p>
+    <h2>69. FORCE MAJEURE</h2>
+    <p>Neither party will be liable for failure or delay caused by circumstances beyond its reasonable control, except payment obligations already properly due.</p>
+    <p>Such circumstances may include natural disasters, war, civil disorder, terrorism, governmental action, widespread telecommunications or internet failure, utility failure, labour disruption, public-health emergency, extraordinary cyberattack despite reasonable safeguards or critical third-party infrastructure failure outside the affected party&#x27;s reasonable control.</p>
+    <p>The affected party will use commercially reasonable efforts to mitigate the effect and resume performance.</p>
+    <h2>70. NOTICES</h2>
+    <p>70.1 Legal Notices to BACI</p>
+    <p>Formal legal notices to BACI must be sent to:</p>
+    <h2>BACI LLC</h2>
+    <p>Email: legal@bacihq.com</p>
+    <p>BACI may designate an additional or replacement notice method through these Terms or an applicable Order.</p>
+    <p>70.2 Notices to Customer</p>
+    <p>BACI may send notices to the email address or administrator associated with Customer&#x27;s Account or Order or through another legally valid method.</p>
+    <p>Customer must maintain current contact information.</p>
+    <p>70.3 Operational Communications</p>
+    <p>Service, security, billing and operational communications may be delivered electronically.</p>
+    <h2>71. ELECTRONIC COMMUNICATIONS AND SIGNATURES</h2>
+    <p>Legally permissible electronic communications satisfy applicable writing requirements.</p>
+    <p>Electronic acceptance, signatures and Orders may have the same legal effect as physical signatures to the extent permitted by Applicable Law.</p>
+    <p>Individuals accepting commercial terms on behalf of organisations represent that they possess appropriate authority.</p>
+    <h2>72. NO PARTNERSHIP, FIDUCIARY RELATIONSHIP OR AGENCY</h2>
+    <p>Except where an executed Agency, Adviser, Technology Partner or other agreement expressly provides otherwise, the Agreement does not create a partnership, joint venture, employment relationship, fiduciary relationship or agency.</p>
+    <p>Neither party has authority to bind the other except as expressly agreed.</p>
+    <h2>73. INDEPENDENT CONTRACTORS</h2>
+    <p>The parties are independent contractors.</p>
+    <p>Each party is responsible for its personnel, operations, taxes and business obligations except as expressly provided.</p>
+    <h2>74. THIRD-PARTY BENEFICIARIES</h2>
+    <p>Except where the Agreement expressly provides otherwise or Applicable Law requires otherwise, no third party has a right to enforce these Terms.</p>
+    <h2>75. WAIVER</h2>
+    <p>Failure or delay in enforcing a right does not waive that right.</p>
+    <p>A waiver applies only to the specific circumstance for which it is given unless expressly stated otherwise.</p>
+    <h2>76. SEVERABILITY</h2>
+    <p>If a provision is invalid or unenforceable, it will be modified to the minimum extent necessary to make it enforceable where legally permissible.</p>
+    <p>If modification is not possible, the invalid portion will be severed and the remaining Agreement will continue in effect.</p>
+    <h2>77. INTERPRETATION</h2>
+    <p>Unless context requires otherwise:</p>
+    <p>(a) headings are for convenience;</p>
+    <p>(b) &quot;including&quot; means &quot;including without limitation&quot;;</p>
+    <p>(c) singular includes plural and vice versa;</p>
+    <p>(d) references to persons may include legal entities;</p>
+    <p>(e) references to laws include applicable amendments and successor legislation;</p>
+    <p>(f) &quot;written&quot; includes legally valid electronic communications;</p>
+    <p>(g) &quot;days&quot; means calendar days unless expressly stated otherwise; and</p>
+    <p>(h) the Agreement will not be construed against a party merely because that party drafted it.</p>
+    <h2>78. ENTIRE AGREEMENT</h2>
+    <p>The applicable Terms, Orders, Supplemental Terms, policies, addenda, Statements of Work and executed amendments comprising the Agreement constitute the entire agreement between the parties concerning the relevant Services.</p>
+    <p>They supersede prior or contemporaneous proposals, discussions, representations and agreements concerning the same subject matter.</p>
+    <p>Nothing in this Section excludes liability for fraud or fraudulent misrepresentation.</p>
+    <h2>79. SURVIVAL</h2>
+    <p>Provisions that by their nature should survive termination will survive, including those concerning:</p>
+    <p>(a) accrued payment obligations;</p>
+    <p>(b) Intellectual Property Rights;</p>
+    <p>(c) confidentiality;</p>
+    <p>(d) Customer Data handling;</p>
+    <p>(e) indemnification;</p>
+    <p>(f) limitations of liability;</p>
+    <p>(g) arbitration and dispute resolution;</p>
+    <p>(h) governing law;</p>
+    <p>(i) interpretation; and</p>
+    <p>(j) obligations intended to operate following termination.</p>
+    <h2>80. CONTACT BACI</h2>
+    <p>Legal</p>
+    <p>legal@bacihq.com</p>
+    <p>Privacy</p>
+    <p>privacy@bacihq.com</p>
+    <p>Security</p>
+    <p>security@bacihq.com</p>
+    <p>Billing</p>
+    <p>billing@bacihq.com</p>
+    <h2>DOCUMENT CONTROL</h2>
+    <p>Document: BACI Terms of Service</p>
+    <p>Version: 1.0</p>
+    <p>Effective Date: 30 August 2026</p>
+    <p>Last Updated: 30 August 2026</p>
+    <p>Contracting Entity: BACI LLC</p>
+    <p>Governing Law: State of Delaware, United States</p>
+    <p>Primary Dispute Resolution: Confidential Binding Arbitration</p>
+    <p>Arbitration Administrator: American Arbitration Association</p>
+    <p>Arbitration Rules: Commercial Arbitration Rules and Mediation Procedures</p>
+    <p>Seat of Arbitration: Wilmington, Delaware</p>
+    <p>General Liability Cap: 100% of applicable twelve-month Fees</p>
+    <p>Enhanced Data, Customer Data Confidentiality and Security Liability Cap: 200% of applicable twelve-month Fees</p>
+    <h2>END OF BACI TERMS OF SERVICE — VERSION 1.0</h2>
+    <h2>RELATED</h2>
+    <p class="doc__related"><a href="ip-rights.html">Who owns intelligence, inputs and outputs</a></p>
+    <p class="doc__related"><a href="ai-terms.html">How BACI’s AI and autonomous systems operate</a></p>
+    <p class="doc__related"><a href="mobile-terms.html">Terms that apply to the BACI mobile application</a></p>
+
+  </section>
+
+<footer>
+   <div class="footer-scroll">
+   <div class="footer-wrap">
+    <div class="cols">
+
+      <div class="col">
+        <h3>BUSINESS OS</h3>
+        <div class="rule"></div>
+        <div class="os-split">
+          <ul>
+            <li><a href="business-planning.html">Business Planning</a></li>
+            <li><a href="financial-planning.html">Financial Planning</a></li>
+            <li><a href="marketing-planning.html">Marketing Planning</a></li>
+            <li><a href="procurement.html">Procurement</a></li>
+            <li><a href="grants.html">Grants</a></li>
+            <li><a href="funding-capital-strategy.html">Funding &amp; Capital Strategy</a></li>
+          </ul>
+          <ul>
+            <li><a href="investors.html">Investors</a></li>
+            <li><a href="market-entry.html">Market Entry</a></li>
+            <li><a href="growth-strategy.html">Growth Strategy</a></li>
+            <li><a href="forecasting.html">Forecasting</a></li>
+            <li><a href="executive-intelligence.html">Executive Intelligence</a></li>
+            <li><a href="go-to-market.html">Go-to-Market</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col">
+        <h3>INTELLIGENCE</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="index.html#industry">Industry Intelligence</a></li>
+          <li><a href="index.html#conversion-intelligence">Conversion Intelligence</a></li>
+          <li><a href="index.html#global-reach">Global Reach</a></li>
+          <li><a href="index.html#doctrine">The Doctrine</a></li>
+          <li><a href="modes.html">Operating Modes</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>ACCESS</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="access-business.html">Business</a></li>
+          <li><a href="access-independent-professional.html">Independent Professionals</a></li>
+          <li><a href="access-advisory.html">Advisory</a></li>
+          <li><a href="access-agencies.html">Agencies</a></li>
+          <li><a href="access-developers.html">Developers</a></li>
+          <li><a href="access-enterprise.html">Enterprise</a></li>
+          <li><a href="access-technology-partners.html">Technology Partners</a></li>
+          <li><a href="access-affiliates.html">Affiliates</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>LICENSING</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="licensing.html#platform">Platform Licence</a></li>
+          <li><a href="licensing.html#territorial">Territorial Rights</a></li>
+          <li><a href="licensing.html#vertical">Vertical Rights</a></li>
+          <li><a href="licensing.html#engine">Engine Licensing</a></li>
+          <li><a href="licensing.html#feeds">Intelligence Feeds</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>COMPANY</h3>
+        <div class="rule"></div>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html#media">Press</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <nav class="policies" aria-label="Policies">
+      <a href="terms.html">Terms</a><span>&bull;</span>
+      <a href="privacy.html">Privacy</a><span>&bull;</span>
+      <a href="refund-policy.html">Refund Policy</a><span>&bull;</span>
+      <a href="billing.html">Billing</a><span>&bull;</span>
+      <a href="cancellation.html">Cancellation</a><span>&bull;</span>
+      <a href="acceptable-use.html">Acceptable Use</a><span>&bull;</span>
+      <a href="data-processing.html">Data Processing</a><span>&bull;</span>
+      <a href="security.html">Security</a><span>&bull;</span>
+      <a href="responsible-ai.html">Responsible AI</a><span>&bull;</span>
+      <a href="cookies.html">Cookies</a>
+    </nav>
+
+    <div class="pay">
+      <img src="assets/payment-methods.webp" alt="Payment methods accepted: Stripe, PayPal, Flutterwave, Visa, Mastercard, American Express, Apple Pay, G Pay, Alipay and cryptocurrency.">
+    </div>
+
+    <div class="base">
+      <div class="mono" aria-label="BACI"><img src="favicon-baci-monogram.webp" alt="" width="64" height="64"></div>
+      <div class="copy">&copy; 2026 BACI</div>
+      <div class="socials">
+        <a class="soc" href="#" aria-label="TikTok"><img src="assets/social-tiktok.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Reddit"><img src="assets/social-reddit.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Facebook"><img src="assets/social-facebook.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Instagram"><img src="assets/social-instagram.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="LinkedIn"><img src="assets/social-linkedin.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="X"><img src="assets/social-x.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="WhatsApp"><img src="assets/social-whatsapp.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Snapchat"><img src="assets/social-snapchat.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="YouTube"><img src="assets/social-youtube.webp" alt=""></a>
+      </div>
+      <button class="a11y" id="a11y" aria-pressed="false">
+        <span class="glyph" aria-hidden="true"><img src="assets/icon-accessibility.webp" alt=""></span>
+        <span class="lab">Enhance your experience</span>
+      </button>
+    </div>
+   </div>
+   </div>
+  </footer>
+
+<section class="thoughts">
+  <p class="listening">We're listening.</p>
+
+  <button type="button" class="open-btn" id="thoughts-open" aria-expanded="false" aria-controls="thoughts-panel">SHARE YOUR THOUGHTS</button>
+
+  <div class="panel" id="thoughts-panel">
+    <label class="sr-only" for="thoughts-text">Share your thoughts</label>
+    <textarea id="thoughts-text" placeholder="Share your thoughts&hellip;"></textarea>
+    <label class="sr-only" for="thoughts-email">Email, if you would like a reply</label>
+    <input type="email" id="thoughts-email" autocomplete="email" placeholder="Email, if you would like a reply">
+    <div class="send">
+      <button type="button" id="thoughts-send">SHARE YOUR THOUGHTS</button>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  /* signature CTA travel span: first letter to last letter */
+  var cta = document.getElementById('cta');
+  if(cta){
+    var span = cta.offsetWidth * 0.86;
+    cta.style.setProperty('--travel', span + 'px');
+    cta.style.setProperty('--start', (cta.offsetWidth * 0.07) + 'px');
+    window.addEventListener('resize', function(){
+      cta.style.setProperty('--travel', (cta.offsetWidth * 0.86) + 'px');
+      cta.style.setProperty('--start', (cta.offsetWidth * 0.07) + 'px');
+    });
+  }
+
+  /* route multi-select */
+  document.querySelectorAll('.pick').forEach(function(p){
+    function toggle(){
+      p.setAttribute('aria-pressed', p.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+    }
+    p.addEventListener('click', toggle);
+    p.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  });
+
+  /* thoughts box collapses until asked for */
+  var tOpen  = document.getElementById('thoughts-open');
+  var tPanel = document.getElementById('thoughts-panel');
+  if(tOpen && tPanel){
+    tOpen.addEventListener('click', function(){
+      tOpen.setAttribute('aria-expanded','true');
+      tOpen.classList.add('hidden');
+      tPanel.classList.add('open');
+      document.getElementById('thoughts-text').focus();
+    });
+  }
+})();
+</script>
+
+
+<div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="Display settings" aria-modal="false">
+  <h4>Display</h4>
+  <div class="a11y-row">
+    <span>Background</span>
+    <button type="button" class="a11y-opt" id="a11yView" aria-pressed="false">Dark</button>
+  </div>
+  <div class="a11y-row">
+    <span>Text size</span>
+    <div class="a11y-steps">
+      <button type="button" class="a11y-step" id="a11ySmaller" aria-label="Smaller text">&minus;</button>
+      <button type="button" class="a11y-step" id="a11yLarger" aria-label="Larger text">+</button>
+    </div>
+  </div>
+  <button type="button" class="a11y-close" id="a11yClose">Close</button>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+
+  /* restore whatever was chosen last time, before anything paints */
+  try{
+    var v = localStorage.getItem('baci-view');
+    var t = localStorage.getItem('baci-text');
+    if(v === 'light') root.setAttribute('data-view','light');
+    if(t) root.style.setProperty('--text-scale', t);
+  }catch(e){}
+
+  var toggle = document.getElementById('a11y');
+  var panel  = document.getElementById('a11yPanel');
+  if(!toggle || !panel) return;
+
+  var viewBtn = document.getElementById('a11yView');
+  var smaller = document.getElementById('a11ySmaller');
+  var larger  = document.getElementById('a11yLarger');
+  var closeB  = document.getElementById('a11yClose');
+
+  var STEPS = [1, 1.12, 1.25, 1.4];
+
+  function currentStep(){
+    var s = parseFloat(getComputedStyle(root).getPropertyValue('--text-scale')) || 1;
+    var i = 0, best = 9;
+    STEPS.forEach(function(v, n){
+      var d = Math.abs(v - s);
+      if(d < best){ best = d; i = n; }
+    });
+    return i;
+  }
+
+  function setScale(i){
+    i = Math.max(0, Math.min(STEPS.length - 1, i));
+    root.style.setProperty('--text-scale', STEPS[i]);
+    try{ localStorage.setItem('baci-text', STEPS[i]); }catch(e){}
+  }
+
+  function syncView(){
+    var light = root.getAttribute('data-view') === 'light';
+    viewBtn.textContent = light ? 'Light' : 'Dark';
+    viewBtn.setAttribute('aria-pressed', String(light));
+  }
+
+  function open(){
+    panel.classList.add('open');
+    toggle.setAttribute('aria-expanded','true');
+    syncView();
+    viewBtn.focus();
+  }
+  function close(){
+    panel.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+  }
+
+  toggle.setAttribute('aria-expanded','false');
+  toggle.addEventListener('click', function(e){
+    e.preventDefault();
+    panel.classList.contains('open') ? close() : open();
+  });
+
+  viewBtn.addEventListener('click', function(){
+    var light = root.getAttribute('data-view') === 'light';
+    if(light){ root.removeAttribute('data-view'); }
+    else { root.setAttribute('data-view','light'); }
+    try{ localStorage.setItem('baci-view', light ? 'dark' : 'light'); }catch(e){}
+    syncView();
+  });
+
+  smaller.addEventListener('click', function(){ setScale(currentStep() - 1); });
+  larger .addEventListener('click', function(){ setScale(currentStep() + 1); });
+  closeB .addEventListener('click', close);
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && panel.classList.contains('open')) { close(); toggle.focus(); }
+  });
+  document.addEventListener('click', function(e){
+    if(!panel.contains(e.target) && !toggle.contains(e.target)) close();
+  });
+
+  syncView();
+})();
+</script>
+
+</body>
+</html>
