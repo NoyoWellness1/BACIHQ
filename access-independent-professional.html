@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/webp" href="favicon-baci-monogram.webp">
-<title>BACI — Enterprise Access</title>
+<title>BACI — Independent Professional Access</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
@@ -56,6 +56,7 @@ body::after{
   padding:clamp(96px,14vh,var(--s-section)) clamp(18px,5vw,40px) clamp(56px,10vh,110px);
 }
 
+/* ── Masthead ─────────────────────────────────────────── */
 .eyebrow{
   font-family:'Cinzel',Georgia,serif;
   font-size:clamp(9px,1.05vw,12px); letter-spacing:.32em;
@@ -74,65 +75,97 @@ body::after{
   max-width:var(--read-max); margin:0 auto var(--s-block); text-align:center;
 }
 
+/* ── Step marker ──────────────────────────────────────── */
+/* Two steps only. Numbering earns its place here because the
+   sequence is real: choose, then start. */
 .step{
   font-family:'Cinzel',Georgia,serif;
   font-size:clamp(9px,1vw,11px); letter-spacing:.28em;
   color:var(--dim); margin:0 0 22px;
 }
 
-/* ── Governed configuration ───────────────────────────── */
-/* Enterprise has no plan to pick, so the page shows how the
-   decision is actually made: what BACI may do alone, and what
-   waits for you. */
-.governed{margin:0 0 var(--s-block);}
-.governed__price{
-  font-family:'Cinzel',Georgia,serif;
-  font-size:clamp(22px,3.2vw,38px); color:var(--gold-light);
-  margin:0 0 var(--s-para); text-align:center;
+/* ── Mode ladder ──────────────────────────────────────── */
+.ladder__track{
+  position:relative; display:grid; grid-template-columns:repeat(3,1fr);
+  align-items:end; margin-bottom:0;
 }
-.governed__price small{
+.ladder__rail{
+  position:absolute; left:6%; right:6%; bottom:0; height:1px;
+  background:linear-gradient(90deg,transparent,rgba(212,175,90,.30) 14%,rgba(212,175,90,.30) 86%,transparent);
+}
+.ladder__dot{
+  position:absolute; bottom:-2px; width:5px; height:5px; margin-left:-2.5px;
+  border-radius:50%; background:var(--champagne);
+  box-shadow:0 0 8px 2px rgba(232,200,122,.5);
+  transition:left .7s var(--travel-ease); will-change:left;
+}
+.mode-btn{
+  appearance:none; background:none; border:0; cursor:pointer;
+  font-family:'Cinzel',Georgia,serif;
+  font-size:clamp(11px,1.5vw,18px); letter-spacing:.16em;
+  color:var(--dim); padding:0 0 18px;
+  transition:color .45s ease;
+}
+.mode-btn[aria-selected="true"]{color:var(--gold-light);}
+.mode-btn:focus-visible{outline:1px solid rgba(212,175,90,.55); outline-offset:6px;}
+
+/* ── Plan summary ─────────────────────────────────────── */
+/* Stays visible while the form is filled in — nobody should
+   have to scroll back to remember what they're buying. */
+.summary{margin:var(--s-content) 0 0;}
+.summary__price{
+  font-family:'Cinzel',Georgia,serif;
+  font-size:clamp(24px,3.6vw,42px); color:var(--gold-light);
+  margin:0; text-align:center; transition:opacity .3s ease;
+}
+.summary__price small{
   display:block; font-family:'Cormorant Garamond',Georgia,serif;
   font-size:clamp(11px,1.2vw,15px); letter-spacing:.18em;
   color:var(--dim); margin-top:8px;
 }
-.governed__lead{
-  font-size:clamp(14px,1.6vw,20px); line-height:1.6; color:var(--gold);
-  max-width:var(--read-max); margin:0 auto var(--s-content); text-align:center;
-}
+.summary__price.is-swapping{opacity:0;}
 
-.split{
-  display:grid; grid-template-columns:1fr 1fr;
-  column-gap:clamp(20px,5vw,56px); row-gap:var(--s-content);
-  padding-top:28px; position:relative;
+.billing{display:flex; justify-content:center; align-items:center; margin:18px 0 0;}
+.bill-btn{
+  appearance:none; background:none; border:0; cursor:pointer;
+  font-family:'Cinzel',Georgia,serif;
+  font-size:clamp(9px,1.05vw,11px); letter-spacing:.24em;
+  color:var(--dim); padding:8px 16px; transition:color .4s ease;
 }
-.split::before{
+.bill-btn[aria-selected="true"]{color:var(--gold-light);}
+.bill-btn:focus-visible{outline:1px solid rgba(212,175,90,.55); outline-offset:4px;}
+.bill-sep{width:1px; height:12px; background:rgba(212,175,90,.28);}
+
+.includes{
+  margin:var(--s-content) 0 0; padding-top:26px; position:relative;
+}
+.includes::before{
   content:""; position:absolute; top:0; left:0; right:0; height:1px;
   background:linear-gradient(90deg,transparent,rgba(212,175,90,.22) 10%,rgba(212,175,90,.22) 90%,transparent);
 }
-.split h3{
-  font-family:'Cinzel',Georgia,serif; font-weight:400;
-  font-size:clamp(10px,1.15vw,13px); letter-spacing:.2em;
-  color:var(--dim); margin:0 0 16px;
+.includes__lead{
+  font-size:clamp(14px,1.6vw,20px); color:var(--gold-light);
+  margin:0 0 var(--s-para); text-align:center;
 }
-.split ul{list-style:none; margin:0; padding:0;}
-.split li{
-  font-size:clamp(12px,1.35vw,17px); line-height:1.5; color:var(--gold);
-  padding-left:16px; position:relative; margin-bottom:10px;
+.includes__list{
+  list-style:none; margin:0; padding:0;
+  display:grid; grid-template-columns:1fr 1fr;
+  column-gap:clamp(18px,4vw,48px); row-gap:11px;
 }
-.split li::before{
+.includes__list li{
+  font-size:clamp(12px,1.35vw,17px); line-height:1.5; color:var(--dim);
+  padding-left:16px; position:relative;
+}
+.includes__list li::before{
   content:""; position:absolute; left:0; top:.62em;
   width:3px; height:3px; border-radius:50%;
-  background:var(--champagne); opacity:.7;
+  background:var(--champagne); opacity:.75;
 }
-.split__note{
-  grid-column:1 / -1;
-  font-size:clamp(12px,1.3vw,16px); line-height:1.6; color:var(--dim);
-  margin:0; text-align:center; max-width:var(--read-max);
-  margin-left:auto; margin-right:auto;
-}
+.includes__list li b{color:var(--gold); font-weight:400;}
 
 /* ── Form ─────────────────────────────────────────────── */
-.form{margin:0;}
+.form{margin:var(--s-block) 0 0;}
+
 .field{margin:0 0 26px;}
 .field label{
   display:block;
@@ -140,47 +173,65 @@ body::after{
   font-size:clamp(9px,1vw,11px); letter-spacing:.24em;
   color:var(--dim); margin:0 0 10px;
 }
-.field label span{letter-spacing:.06em; text-transform:none; font-family:'Cormorant Garamond',Georgia,serif; opacity:.75;}
 .field input,
-.field select,
-.field textarea{
-  width:100%; appearance:none;
-  background:transparent; border:0;
-  border-bottom:1px solid rgba(212,175,90,.26); border-radius:0;
+.field select{
+  width:100%;
+  appearance:none;
+  background:transparent;
+  border:0; border-bottom:1px solid rgba(212,175,90,.26);
+  border-radius:0;
   padding:8px 0 12px;
   font-family:'Cormorant Garamond',Georgia,serif;
-  font-size:clamp(15px,1.8vw,21px); color:var(--gold);
+  font-size:clamp(15px,1.8vw,21px);
+  color:var(--gold);
   transition:border-color .4s ease;
 }
-.field textarea{resize:vertical; min-height:76px; line-height:1.5;}
 .field select{
   background-image:linear-gradient(45deg,transparent 50%,rgba(212,175,90,.6) 50%),
                    linear-gradient(135deg,rgba(212,175,90,.6) 50%,transparent 50%);
   background-position:calc(100% - 12px) calc(1em + 2px),calc(100% - 7px) calc(1em + 2px);
-  background-size:5px 5px,5px 5px; background-repeat:no-repeat; padding-right:28px;
+  background-size:5px 5px,5px 5px;
+  background-repeat:no-repeat;
+  padding-right:28px;
 }
 .field select option{background:#0a0a0a; color:var(--gold);}
-.field input::placeholder,
-.field textarea::placeholder{color:rgba(181,145,84,.5);}
+.field input::placeholder{color:rgba(181,145,84,.5);}
 .field input:focus,
-.field select:focus,
-.field textarea:focus{outline:none; border-bottom-color:var(--champagne);}
-.field__hint{font-size:clamp(11px,1.2vw,15px); color:var(--dim); margin:9px 0 0; opacity:.8;}
-.field__error{font-size:clamp(11px,1.2vw,15px); color:var(--closing); margin:9px 0 0; display:none;}
+.field select:focus{outline:none; border-bottom-color:var(--champagne);}
+.field input:focus-visible,
+.field select:focus-visible{outline:none;}
+
+.field__hint{
+  font-size:clamp(11px,1.2vw,15px); color:var(--dim);
+  margin:9px 0 0; opacity:.8;
+}
+.field__error{
+  font-size:clamp(11px,1.2vw,15px); color:var(--closing);
+  margin:9px 0 0; display:none;
+}
 .field.is-invalid input,
-.field.is-invalid select,
-.field.is-invalid textarea{border-bottom-color:var(--closing);}
+.field.is-invalid select{border-bottom-color:var(--closing);}
 .field.is-invalid .field__error{display:block;}
 
 .pair{display:grid; grid-template-columns:1fr 1fr; column-gap:clamp(18px,4vw,40px);}
 @media (max-width:560px){
   .pair{grid-template-columns:1fr; column-gap:0;}
-  .split{grid-template-columns:1fr;}
+  .includes__list{grid-template-columns:1fr;}
 }
 
-/* ── CTA ──────────────────────────────────────────────── */
+/* ── What happens next ────────────────────────────────── */
+.next{
+  margin:var(--s-content) 0 0;
+  font-size:clamp(12px,1.3vw,16px); line-height:1.6; color:var(--dim);
+  text-align:center; max-width:var(--read-max); margin-left:auto; margin-right:auto;
+}
+
+/* ── Signature CTA ────────────────────────────────────── */
 .cta-wrap{text-align:center; margin-top:var(--s-cta);}
-.cta{display:inline-block; appearance:none; background:none; border:0; cursor:pointer; padding:0;}
+.cta{
+  display:inline-block; appearance:none; background:none; border:0;
+  cursor:pointer; padding:0; text-decoration:none;
+}
 .cta__text{
   display:block; font-family:'Cinzel',Georgia,serif; font-weight:400;
   font-size:clamp(10px,1.16vw,18px); letter-spacing:.3em;
@@ -221,28 +272,6 @@ body::after{
 }
 .formerror.is-shown{display:block;}
 
-/* ── Sent ─────────────────────────────────────────────── */
-.sent{display:none; text-align:center; padding:var(--s-block) 0;}
-.sent.is-shown{display:block;}
-.sent h2{
-  font-family:'Cinzel',Georgia,serif; font-weight:400;
-  font-size:clamp(18px,2.4vw,30px); letter-spacing:.13em;
-  color:var(--gold-light); margin:0 0 var(--s-para);
-}
-.sent p{
-  font-size:clamp(14px,1.6vw,20px); line-height:1.6; color:var(--gold);
-  max-width:var(--read-max); margin:0 auto;
-}
-.sent__rule{
-  position:relative; width:min(70%,420px); height:1px; margin:var(--s-content) auto 0;
-  background:linear-gradient(90deg,transparent,rgba(212,175,90,.32) 20%,rgba(212,175,90,.32) 80%,transparent);
-}
-.sent__rule::after{
-  content:""; position:absolute; top:-2px; left:50%; width:5px; height:5px;
-  margin-left:-2.5px; border-radius:50%; background:var(--champagne);
-  box-shadow:0 0 8px 2px rgba(232,200,122,.5);
-}
-
 /* ── Brand marks ──────────────────────────────────────── */
 /* Her artwork, blended to true #000 so both sit on the page
    rather than on top of it. Never redrawn. */
@@ -260,6 +289,7 @@ body::after{
 @media (prefers-reduced-motion:reduce){
   .cta__dot{animation:none; transform:translateX(0);}
   .reveal{opacity:1; transform:none; transition:none;}
+  .ladder__dot,.summary__price{transition:none;}
 }
 /* ---------- footer ---------- */
 footer{margin-top:120px;padding-top:6px}
@@ -693,132 +723,86 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
 <main class="page">
 
   <p class="eyebrow reveal">Access</p>
-  <h1 class="heading reveal">ENTERPRISE</h1>
+  <h1 class="heading reveal">INDEPENDENT PROFESSIONAL</h1>
   <p class="standfirst reveal">
-    BACI as governed intelligence infrastructure. You decide where it acts on its own
-    and where it waits for you.
+    BACI for your own professional practice. The same intelligence the largest organisations run on, scaled to one person.
   </p>
 
-  <section class="governed reveal" aria-labelledby="step1">
-    <p class="step" id="step1">One · How Enterprise works</p>
+  <!-- Step one: what you're buying -->
+  <section class="reveal" aria-labelledby="step1">
+    <p class="step" id="step1">One · Your plan</p>
 
-    <p class="governed__price">From $7,500<small>A MONTH · CONFIGURED TO YOUR ORGANISATION</small></p>
 
-    <p class="governed__lead">
-      Enterprise isn't a larger plan with more seats. Rather than putting an entire
-      organisation into one operating mode, you draw the line yourself.
-    </p>
-
-    <div class="split">
-      <div>
-        <h3>BACI ACTS</h3>
-        <ul>
-          <li>Continuous monitoring</li>
-          <li>Routine intelligence</li>
-          <li>Opportunity detection</li>
-          <li>Low-risk execution</li>
-          <li>Whatever else you authorise</li>
-        </ul>
+    <div class="summary">
+      <p class="summary__price" id="price"></p>
+      <div class="billing" role="tablist" aria-label="Billing period">
+        <button class="bill-btn" role="tab" aria-selected="true"  data-bill="monthly">MONTHLY</button>
+        <span class="bill-sep" aria-hidden="true"></span>
+        <button class="bill-btn" role="tab" aria-selected="false" data-bill="annual">ANNUAL</button>
       </div>
-      <div>
-        <h3>YOU APPROVE</h3>
-        <ul>
-          <li>Major procurement decisions</li>
-          <li>Financial commitments</li>
-          <li>External communications</li>
-          <li>M&amp;A and strategic investment</li>
-          <li>Any introduction or disclosure</li>
-        </ul>
-      </div>
-      <p class="split__note">
-        Capacity, governance, integrations, security and support are configured around
-        how your organisation actually works. Price follows scale, not a tier.
-      </p>
+    </div>
+
+    <div class="includes">
+      <p class="includes__lead" id="modeLead"></p>
+      <ul class="includes__list" id="includes"></ul>
     </div>
   </section>
 
-  <section class="reveal" id="formSection" aria-labelledby="step2">
+  <!-- Step two: the only things BACI needs to start -->
+  <section class="reveal" aria-labelledby="step2">
     <form class="form" id="accessForm" novalidate>
-      <p class="step" id="step2">Two · Tell us where to start</p>
+      <p class="step" id="step2">Two · Where BACI starts</p>
 
       <div class="field" id="f-email">
         <label for="email">Work email</label>
         <input type="email" id="email" name="email" autocomplete="email"
-               placeholder="you@organisation.com" required>
+               placeholder="you@company.com" required>
         <p class="field__error">Enter a work email address.</p>
       </div>
 
-      <div class="pair">
-        <div class="field" id="f-company">
-          <label for="company">Organisation</label>
-          <input type="text" id="company" name="company" autocomplete="organization"
-                 placeholder="Meridian Group" required>
-          <p class="field__error">Enter your organisation.</p>
-        </div>
+      <div class="field" id="f-company">
+        <label for="company">Practice or trading name</label>
+        <input type="text" id="company" name="company" autocomplete="organization"
+               placeholder="Okonkwo Advisory" required>
+        <p class="field__error">Enter your company name.</p>
+      </div>
 
+      <div class="pair">
         <div class="field" id="f-domain">
           <label for="domain">Website</label>
           <input type="text" id="domain" name="domain" autocomplete="url"
-                 placeholder="meridiangroup.com" required>
+                 placeholder="acme.com" required>
+          <p class="field__hint">BACI reads this to understand what you do.</p>
           <p class="field__error">Enter your website.</p>
         </div>
-      </div>
 
-      <div class="pair">
-        <div class="field" id="f-size">
-          <label for="size">Size</label>
-          <select id="size" name="size" required>
-            <option value="" disabled selected>Select</option>
-            <option value="50-250">50 – 250 people</option>
-            <option value="250-1000">250 – 1,000 people</option>
-            <option value="1000-5000">1,000 – 5,000 people</option>
-            <option value="5000+">5,000+ people</option>
+        <div class="field" id="f-market">
+          <label for="market">Primary market</label>
+          <select id="market" name="market" required>
+            <option value="" disabled selected>Select a country</option>
           </select>
-          <p class="field__error">Choose a range.</p>
-        </div>
-
-        <div class="field" id="f-markets">
-          <label for="markets">Markets</label>
-          <select id="markets" name="markets" required>
-            <option value="" disabled selected>Select</option>
-            <option value="1">One country</option>
-            <option value="2-5">2 – 5 countries</option>
-            <option value="6-20">6 – 20 countries</option>
-            <option value="20+">20+ countries</option>
-          </select>
-          <p class="field__error">Choose a range.</p>
+          <p class="field__hint">Add more once you're inside.</p>
+          <p class="field__error">Choose your primary market.</p>
         </div>
       </div>
 
-      <div class="field" id="f-context">
-        <label for="context">What are you trying to solve <span>— optional</span></label>
-        <textarea id="context" name="context" rows="2"
-                  placeholder="A sentence or two is plenty."></textarea>
-        <p class="field__hint">It means we come to the first conversation prepared.</p>
-      </div>
+      <p class="next">
+        Advising across several clients? <a href="/access/advisory">Advisory</a> gives each one its own separate workspace.
+      </p>
 
       <p class="formerror" id="formError" role="alert"></p>
 
       <div class="cta-wrap">
         <button class="cta" type="submit" id="submitBtn">
-          <span class="cta__text" id="ctaText">REQUEST ACCESS</span>
+          <span class="cta__text" id="ctaText">CONNECT YOUR BUSINESS</span>
           <span class="cta__conduit" id="ctaConduit"><span class="cta__dot"></span></span>
         </button>
       </div>
 
       <p class="reassure">
-        We reply within one working day. <a href="/pricing">Compare every plan</a>
+        Cancel any time. <a href="/pricing">Compare every plan</a>
       </p>
     </form>
-  </section>
-
-  <section class="sent" id="sent" aria-live="polite">
-    <h2>REQUEST RECEIVED</h2>
-    <p>
-      Someone will be in touch within one working day to walk through how BACI would
-      be configured for your organisation.
-    </p>
-    <div class="sent__rule" aria-hidden="true"></div>
   </section>
 
   <div class="signoff reveal">
@@ -831,47 +815,118 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
 (function () {
   'use strict';
 
-  var ACCESS = 'enterprise';
+  /* Business access. Monthly prices; annual is monthly x10. */
+  var PRICES = {"manual": 149};
 
+  var LEADS = {
+    "manual": "BACI surfaces the intelligence. You decide every move."
+};
+
+  /* Only what changes between modes. "Unlimited intelligence" leads
+     every list because it is the claim competitors cannot make. */
+  var INCLUDES = {
+    "manual": [
+        "<b>Unlimited</b> intelligence, analysis and reports",
+        "<b>1</b> workspace",
+        "<b>1</b> market watched",
+        "<b>3</b> competitors tracked",
+        "<b>3</b> strategic research briefs a month",
+        "No credits. No surprise bills."
+    ]
+};
+
+  /* Kept short deliberately: the markets BACI covers at launch.
+     Everything else is added inside, in context. */
+  var MARKETS = [
+    ['GB','United Kingdom'],['US','United States'],['CA','Canada'],['IE','Ireland'],
+    ['NG','Nigeria'],['GH','Ghana'],['GM','Gambia'],['SN','Senegal'],['KE','Kenya'],
+    ['ZA','South Africa'],['AE','United Arab Emirates'],['SA','Saudi Arabia'],
+    ['DE','Germany'],['FR','France'],['NL','Netherlands'],['ES','Spain'],
+    ['AU','Australia'],['NZ','New Zealand'],['IN','India'],['SG','Singapore']
+  ];
+
+  var state = { mode: 'manual', billing: 'monthly' };
+
+  var money = function (n) {
+    return '$' + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  };
+
+  var priceEl    = document.getElementById('price');
+  var leadEl     = document.getElementById('modeLead');
+  var includesEl = document.getElementById('includes');
+
+  var renderPlan = function () {
+    var monthly = PRICES[state.mode];
+    var amount  = state.billing === 'annual' ? monthly * 10 : monthly;
+    var per     = state.billing === 'annual' ? 'A YEAR · TWO MONTHS FREE' : 'A MONTH';
+
+    priceEl.innerHTML = money(amount) + '<small>' + per + '</small>';
+    leadEl.textContent = LEADS[state.mode];
+
+    includesEl.innerHTML = '';
+    INCLUDES[state.mode].forEach(function (line) {
+      var li = document.createElement('li');
+      li.innerHTML = line;
+      includesEl.appendChild(li);
+    });
+  };
+
+  /* Manual only — no ladder on this page. */
+  var setDot = function () {};
+
+  /* Billing */
+  var billBtns = document.querySelectorAll('.bill-btn');
+  Array.prototype.forEach.call(billBtns, function (btn) {
+    btn.addEventListener('click', function () {
+      Array.prototype.forEach.call(billBtns, function (b) {
+        b.setAttribute('aria-selected', String(b === btn));
+      });
+      state.billing = btn.dataset.bill;
+      renderPlan();
+    });
+  });
+
+  /* Markets */
+  var marketEl = document.getElementById('market');
+  MARKETS.forEach(function (m) {
+    var opt = document.createElement('option');
+    opt.value = m[0];
+    opt.textContent = m[1];
+    marketEl.appendChild(opt);
+  });
+
+  /* Validation — quiet until submit, then specific about what to fix */
   var EMAIL_RE  = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   var DOMAIN_RE = /^(https?:\/\/)?([\w-]+\.)+[a-z]{2,}(\/.*)?$/i;
-
-  var form      = document.getElementById('accessForm');
-  var submitBtn = document.getElementById('submitBtn');
-  var ctaText   = document.getElementById('ctaText');
-  var formError = document.getElementById('formError');
 
   var setInvalid = function (id, invalid) {
     document.getElementById(id).classList.toggle('is-invalid', invalid);
   };
 
-  ['email','company','domain','size','markets'].forEach(function (id) {
-    var el = document.getElementById(id);
-    if (!el) return;
-    el.addEventListener('input', function () {
+  var form      = document.getElementById('accessForm');
+  var submitBtn = document.getElementById('submitBtn');
+  var formError = document.getElementById('formError');
+
+  ['email','company','domain','market'].forEach(function (id) {
+    document.getElementById(id).addEventListener('input', function () {
       setInvalid('f-' + id, false);
       formError.classList.remove('is-shown');
-    });
-    el.addEventListener('change', function () {
-      setInvalid('f-' + id, false);
     });
   });
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    var v = function (id) { return document.getElementById(id).value.trim(); };
-    var email = v('email'), company = v('company'), domain = v('domain');
-    var size = document.getElementById('size').value;
-    var markets = document.getElementById('markets').value;
-    var context = v('context');
+    var email   = document.getElementById('email').value.trim();
+    var company = document.getElementById('company').value.trim();
+    var domain  = document.getElementById('domain').value.trim();
+    var market  = marketEl.value;
 
     var bad = false;
     if (!EMAIL_RE.test(email))   { setInvalid('f-email', true);   bad = true; }
     if (company.length < 2)      { setInvalid('f-company', true); bad = true; }
     if (!DOMAIN_RE.test(domain)) { setInvalid('f-domain', true);  bad = true; }
-    if (!size)                   { setInvalid('f-size', true);    bad = true; }
-    if (!markets)                { setInvalid('f-markets', true); bad = true; }
+    if (!market)                 { setInvalid('f-market', true);  bad = true; }
 
     if (bad) {
       var first = document.querySelector('.field.is-invalid input, .field.is-invalid select');
@@ -880,50 +935,62 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
     }
 
     submitBtn.disabled = true;
-    ctaText.textContent = 'SENDING';
+    document.getElementById('ctaText').textContent = 'ONE MOMENT';
 
-    fetch('/api/access/request', {
+    /* Hands off to checkout. The server creates the Stripe session for
+       this access category, mode and billing period, then provisions the
+       tenant with the matching capacity envelope on payment confirmation. */
+    fetch('/api/access/checkout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        access:  ACCESS,
+        access:  'independent_professional',
+        mode:    state.mode,
+        billing: state.billing,
         email:   email,
         company: company,
         domain:  domain.replace(/^https?:\/\//i, '').replace(/\/.*$/, ''),
-        size:    size,
-        markets: markets,
-        context: context
+        market:  market
       })
     })
-      .then(function (r) { if (!r.ok) throw new Error('unavailable'); return r.json(); })
-      .then(function () {
-        document.getElementById('formSection').style.display = 'none';
-        document.getElementById('sent').classList.add('is-shown');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+      .then(function (r) {
+        if (!r.ok) throw new Error('checkout unavailable');
+        return r.json();
+      })
+      .then(function (data) {
+        if (!data || !data.url) throw new Error('no checkout url');
+        window.location.assign(data.url);
       })
       .catch(function () {
         submitBtn.disabled = false;
-        ctaText.textContent = 'REQUEST ACCESS';
+        document.getElementById('ctaText').textContent = 'CONNECT YOUR BUSINESS';
         formError.textContent =
-          'That did not send. Try again, or email access@bacihq.com and we will pick it up from there.';
+          'We could not open checkout just then. Try again, or email access@bacihq.com and we will set you up.';
         formError.classList.add('is-shown');
       });
   });
 
+  /* CTA light: C-of-START to final-I of BACI */
   var measureCta = function () {
+    var text    = document.getElementById('ctaText');
     var conduit = document.getElementById('ctaConduit');
-    if (!ctaText || !conduit) return;
-    var width = ctaText.getBoundingClientRect().width;
-    var size  = parseFloat(window.getComputedStyle(ctaText).fontSize) || 16;
+    if (!text || !conduit) return;
+    var width = text.getBoundingClientRect().width;
+    var size  = parseFloat(window.getComputedStyle(text).fontSize) || 16;
     var span  = width - (size * 0.30);
     conduit.style.width = span + 'px';
     conduit.style.setProperty('--travel', span + 'px');
   };
 
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(measureCta);
-  window.addEventListener('load', measureCta);
-  window.addEventListener('resize', measureCta);
+  var onResize = function () { setDot(); measureCta(); };
+
+  renderPlan();
+  setDot();
   measureCta();
+
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(onResize);
+  window.addEventListener('load', onResize);
+  window.addEventListener('resize', onResize);
 
   var items = document.querySelectorAll('.reveal');
   if (!('IntersectionObserver' in window)) {

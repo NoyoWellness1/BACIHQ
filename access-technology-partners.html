@@ -324,15 +324,13 @@ footer{margin-top:120px;padding-top:6px}
   justify-content:center;
   gap:16px;
 }
+/* The monogram artwork carries its own ring, so the element supplies
+   no border of its own — two concentric circles is not the mark. */
 .mono{
   width:64px;height:64px;
-  border:1px solid var(--gold);
-  border-radius:50%;
   display:grid;place-items:center;
-  font-family:'Cinzel',serif;
-  font-size:1.75rem;
-  color:var(--gold);
 }
+.mono img{width:100%;height:100%;display:block;object-fit:contain}
 .copy{font-size:1rem;color:var(--gold);padding:0 20px;border-left:1px solid rgba(195,149,68,.34)}
 .socials{display:flex;gap:10px;padding:0 4px}
 .soc{display:block;width:46px;height:46px;transition:opacity .25s,transform .25s}
@@ -684,13 +682,6 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
   html:not([data-view="light"]) .dev-mode{transition:none}
 }
 </style>
-
-  <style>
-    .agreement-links{margin:34px 0 8px;padding-top:22px;border-top:1px solid rgba(195,149,68,.22)}
-    .agreement-links__intro{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.2em;color:var(--gold);margin-bottom:10px}
-    .agreement-link{display:block;color:var(--gold-light);text-decoration:none;margin-bottom:7px;border-bottom:1px solid rgba(195,149,68,.3);padding-bottom:2px;width:fit-content}
-    .agreement-link:hover,.agreement-link:focus{color:var(--champagne);border-bottom-color:var(--gold)}
-  </style>
 </head>
 <body>
 <div class="baci-ambient" aria-hidden="true"></div><div class="baci-orbit" aria-hidden="true"></div>
@@ -951,11 +942,6 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
   Array.prototype.forEach.call(items, function (el) { io.observe(el); });
 })();
 </script>
-    <div class="agreement-links">
-      <p class="agreement-links__intro">The terms that apply to this route:</p>
-      <a class="agreement-link" href="partner-agreement.html">Technology Partner Agreement</a>
-    </div>
-
 
   <footer>
    <div class="footer-scroll">
@@ -1056,7 +1042,7 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
     </div>
 
     <div class="base">
-      <div class="mono" aria-label="BACI">B</div>
+      <div class="mono" aria-label="BACI"><img src="favicon-baci-monogram.webp" alt="" width="64" height="64"></div>
       <div class="copy">&copy; 2026 BACI</div>
       <div class="socials">
         <a class="soc" href="#" aria-label="TikTok"><img src="assets/social-tiktok.webp" alt=""></a>
