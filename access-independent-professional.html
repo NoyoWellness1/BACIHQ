@@ -750,7 +750,7 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
 
   <!-- Step two: the only things BACI needs to start -->
   <section class="reveal" aria-labelledby="step2">
-    <form class="form" id="accessForm" novalidate>
+    <form data-baci-form="contact" class="form" id="accessForm" novalidate>
       <p class="step" id="step2">Two · Where BACI starts</p>
 
       <div class="field" id="f-email">
@@ -1265,5 +1265,6 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
 })();
 </script>
 
+<script src="/baci-forms.js" defer></script>
 </body>
 </html>
