@@ -352,15 +352,13 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 @media(max-width:900px){.bos__grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:520px){.bos__domains{letter-spacing:.18em;}}
 
-/* ══ §11 DROWNING (manifesto + dashboard tile) ══ */
+/* ══ §11 DROWNING ══ */
 .drown__head{font-family:'Cinzel',Georgia,serif;font-weight:600;font-size:clamp(25px,4.4vw,52px);letter-spacing:.04em;text-align:center;margin:0;
   color:var(--metal);line-height:1.05;}
 .drown__body{text-align:center;margin-top:var(--s-block);}
 .drown__body p{color:var(--gold);font-size:clamp(15px,1.9vw,22px);line-height:1.5;margin:0 auto var(--s-para);max-width:var(--read-max);}
 .drown__body .em{color:var(--gold-light);font-weight:500;}
 .drown__body .pull{color:var(--gold-light);font-size:clamp(18px,2.4vw,28px);margin:var(--s-content) auto;}
-.drown__tile{margin-top:var(--s-block);width:100%;}
-.drown__tile img{width:100%;height:auto;display:block;opacity:.94;aspect-ratio:1536/1024;}
 
 /* ══ §12 FILM ══ */
 .film{text-align:center;}
@@ -681,7 +679,6 @@ html[data-view="light"] body::after{display:none}
 html[data-view="light"] img[src$="baci-wordmark.webp"],
 html[data-view="light"] img[src$="hero-shell.webp"],
 html[data-view="light"] img[src$="doctrine.webp"],
-html[data-view="light"] img[src$="dashboard.webp"],
 html[data-view="light"] .pay img,
 html[data-view="light"] .soc img,
 html[data-view="light"] .a11y .glyph img{
@@ -1068,10 +1065,6 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
     <p class="pull">Less noise. More clarity. Better decisions.</p>
     <p>The intelligence is already there. <span class="em">BACI makes it useful.</span></p>
   </div>
-  <div class="drown__tile">
-    <img src="dashboard.webp" alt="" aria-hidden="true" width="1536" height="1024"
-      onerror="this.style.display='none';">
-  </div>
   <div class="cta-wrap"><a class="cta" href="#access"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div>
 </section>
 
@@ -1105,7 +1098,7 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
   <div class="access__grid" id="accessGrid"></div>
   <div class="access__foot">
     <p class="access__ready">The intelligence is ready&#8230;</p>
-    <div class="cta-wrap"><a class="cta" href="/access-business"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div>
+    <div class="cta-wrap"><a class="cta" href="access-business.html"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div>
   </div>
 </section>
 
@@ -1290,14 +1283,14 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
     "Distribution Intelligence":"Where your message lands hardest, and where it's wasted."
   };
   var ACCESS = [
-    ["Enterprise","Lead with intelligence your competitors don't have.","/access-enterprise"],
-    ["Developers","Build on intelligence that never stops evolving.","/access-developers"],
-    ["Agencies","Deliver results your competitors can't explain.","/access-agencies"],
-    ["Affiliates","Earn from intelligence, not just referrals.","/access-affiliates"],
-    ["Technology Partners","Integrate intelligence your product can't deliver on its own.","/access-technology-partners"],
-    ["Independent Professionals","Compete like you have a team behind you.","/access-independent-professional"],
-    ["Advisory","BACI finds what matters. Your reading makes it valuable. Best for consultants and advisers who trade on insight.","/access-advisory"],
-    ["Business","Grow with intelligence your competitors can't match.","/access-business"]
+    ["Enterprise","Lead with intelligence your competitors don't have.","access-enterprise.html"],
+    ["Developers","Build on intelligence that never stops evolving.","access-developers.html"],
+    ["Agencies","Deliver results your competitors can't explain.","access-agencies.html"],
+    ["Affiliates","Earn from intelligence, not just referrals.","access-affiliates.html"],
+    ["Technology Partners","Integrate intelligence your product can't deliver on its own.","access-technology-partners.html"],
+    ["Independent Professionals","Compete like you have a team behind you.","access-independent-professional.html"],
+    ["Advisory","BACI finds what matters. Your reading makes it valuable. Best for consultants and advisers who trade on insight.","access-advisory.html"],
+    ["Business","Grow with intelligence your competitors can't match.","access-business.html"]
   ];
 
   var $ = function(id){return document.getElementById(id);};
