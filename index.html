@@ -9,24 +9,52 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
 <link rel="icon" type="image/webp" href="favicon-baci-monogram.webp">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#000000">
 <style>
 :root{
   --bg:#000000; --gold:#C39544; --gold-light:#CFA24E; --dim:#8A6E3C;
   --champagne:#E8C87A; --closing:#DCC17E; --head:#C99F5E;
   --purple:#976CC4; --purple-bright:#B86CFF;
   --metal:#C99F5E;
-  --s-section:96px; --s-related:64px; --s-block:48px; --s-content:34px;
-  --s-cta:36px; --s-heading:24px; --s-para:16px;
+  --s-section:clamp(38px,6vw,104px); --s-related:clamp(44px,5.5vw,88px);
+  --s-block:clamp(34px,4.5vw,64px); --s-content:clamp(24px,3vw,44px);
+  --s-cta:clamp(26px,3vw,44px); --s-heading:24px; --s-para:18px;
   --read-max:640px; --panel-max:760px; --wide-max:1180px;
   --travel-dur:6s; --travel-ease:cubic-bezier(.42,0,.58,1);
 }
 *{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+/* the glide is animated in JS so Safari behaves like everything else */
+html{scroll-behavior:auto;}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--gold);-webkit-font-smoothing:antialiased;}
 body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x:hidden;}
 
 /* shared type */
 .eyebrow{font-family:'Cinzel',Georgia,serif;font-size:clamp(9px,1.05vw,12px);letter-spacing:.32em;color:var(--dim);margin:0 0 var(--s-heading);text-transform:uppercase;}
+.intro__word{font-size:clamp(14px,2.3vw,27px);letter-spacing:.46em;color:var(--dim);
+  margin-bottom:var(--s-heading);}
+.intro__word span{display:inline-block;white-space:pre;opacity:0;transform:translateY(.4em);filter:blur(5px);}
+.intro__word.is-spelling span{animation:introLetter 7s cubic-bezier(.22,.8,.3,1) infinite both;}
+@keyframes introLetter{
+  0%{opacity:0;transform:translateY(.4em);filter:blur(5px);color:var(--dim);}
+  7%{opacity:1;transform:translateY(0);filter:blur(0);color:var(--champagne);}
+  15%{opacity:1;transform:translateY(0);filter:blur(0);color:var(--dim);}
+  84%{opacity:1;transform:translateY(0);filter:blur(0);color:var(--dim);}
+  93%{opacity:0;transform:translateY(-.3em);filter:blur(4px);color:var(--dim);}
+  100%{opacity:0;transform:translateY(.4em);filter:blur(5px);color:var(--dim);}
+}
+@media(prefers-reduced-motion:reduce){
+  .intro__word span{opacity:1;transform:none;filter:none;}
+  .intro__word.is-spelling span{animation:none;}
+}
+/* baci-wordmark.webp carries wide transparent bands top and bottom (the mark
+   itself is only ~16% of the file's height). This shows the mark at its true
+   proportions without altering the artwork. */
+.wm-tight{display:block;margin-inline:auto;object-fit:cover;object-position:center;}
 .h-metal{font-family:'Cinzel',Georgia,serif;font-weight:500;letter-spacing:.14em;color:var(--metal);}
 .body-copy{font-size:clamp(15px,1.9vw,22px);line-height:1.62;color:var(--gold);max-width:var(--read-max);margin-inline:auto;}
 .body-copy.center{text-align:center;}
@@ -38,7 +66,7 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
   color:var(--metal);}
 .cta__conduit{display:block;position:relative;height:1px;margin:14px auto 0;background:rgba(212,175,90,.055);overflow:visible;}
 .cta__dot{position:absolute;top:50%;left:0;width:60px;height:2px;margin:-1px 0 0 -30px;
-  background:radial-gradient(ellipse 50% 100% at 50% 50%,var(--champagne) 0%,rgba(255,232,176,.55) 26%,transparent 72%);
+  background:radial-gradient(ellipse 50% 100% at 50% 50%,var(--champagne) 0%,rgba(232,200,122,.55) 26%,transparent 72%);
   animation:travel var(--travel-dur) var(--travel-ease) infinite alternate;will-change:transform;}
 @keyframes travel{0%{transform:translateX(0) scaleX(.92);}6%{transform:translateX(0) scaleX(1);}
   94%{transform:translateX(var(--travel,0)) scaleX(1);}100%{transform:translateX(var(--travel,0)) scaleX(.92);}}
@@ -48,7 +76,7 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 .rule{position:relative;height:1px;width:min(320px,60%);margin:22px auto;
   background:linear-gradient(90deg,transparent,rgba(212,175,90,.28) 20%,rgba(212,175,90,.28) 80%,transparent);}
 .rule::after{content:"";position:absolute;top:50%;left:50%;width:4px;height:4px;margin:-2px 0 0 -2px;border-radius:50%;
-  background:var(--champagne);box-shadow:0 0 8px 2px rgba(255,232,176,.5);}
+  background:var(--champagne);box-shadow:0 0 8px 2px rgba(232,200,122,.5);}
 
 /* reveal */
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .9s ease,transform .9s ease;}
@@ -68,13 +96,13 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
   -webkit-mask-image:linear-gradient(90deg,#000 0%,#000 var(--wipe,0%),transparent var(--wipe,0%));
   mask-image:linear-gradient(90deg,#000 0%,#000 var(--wipe,0%),transparent var(--wipe,0%));}
 .splash__spark{width:5px;height:5px;border-radius:50%;background:var(--champagne);
-  box-shadow:0 0 10px 3px rgba(255,232,176,.55);margin-top:22px;opacity:0;transition:opacity .5s ease;}
+  box-shadow:0 0 10px 3px rgba(232,200,122,.55);margin-top:22px;opacity:0;transition:opacity .5s ease;}
 .splash.spark-on .splash__spark{opacity:1;}
 
 /* == S2 HERO -- artwork shell + live text layer (lock 1536x823) == */
-.hero{position:relative;width:100%;background:#000;overflow:hidden;}
+.hero{position:relative;width:100%;overflow:hidden;}
 .hero__stage{position:relative;width:min(1536px,100vw);aspect-ratio:1536/823;margin:0 auto;
-  background:#000;container-type:inline-size;}
+  container-type:inline-size;}
 .hero__img{display:block;width:100%;height:100%;object-fit:contain;position:relative;z-index:0;}
 
 .hx{position:absolute;margin:0;z-index:2;}
@@ -82,13 +110,15 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
   -webkit-tap-highlight-color:transparent;display:block;text-decoration:none;z-index:3;}
 .hot:focus-visible{outline:1px solid rgba(232,200,122,.7);outline-offset:2px;}
 
-.hnav{font-family:'Cinzel',Georgia,serif;font-size:1.02cqw;letter-spacing:.14em;
+.hnav{font-family:'Cinzel',Georgia,serif;font-size:.8cqw;letter-spacing:.07em;
   color:var(--gold);text-transform:uppercase;text-align:center;white-space:nowrap;
   display:flex;align-items:center;justify-content:center;width:100%;height:100%;
   transition:color .4s ease;}
 .hot:hover .hnav,.hot:focus-visible .hnav{color:var(--champagne);}
 .hmk{font-family:'Cinzel',Georgia,serif;font-size:2.5cqw;letter-spacing:.18em;color:var(--gold-light);
   display:flex;align-items:center;justify-content:center;width:100%;height:100%;}
+/* the masthead is the wordmark itself, scaled to its hotspot */
+.hmk-img{width:100%;height:100%;object-fit:contain;display:block;}
 .hsub{font-family:'Cinzel',Georgia,serif;font-size:.78cqw;letter-spacing:.1em;
   color:var(--gold);text-transform:uppercase;line-height:1.35;}
 
@@ -113,10 +143,19 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 .hcard .v{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.06cqw;
   color:var(--gold);line-height:1.55;margin:0;}
 .hsearchlabel{justify-content:flex-start;padding-left:4.5cqw;}
+.hcard .spk{display:block;width:78%;height:1.3cqw;margin-top:.85cqw;color:var(--gold-light);fill:currentColor;opacity:.9;}
+.hcard .spk--dots{height:1.05cqw;width:62%;}
+
 
 /* ══ §3 REGIONS (spotlight ribbon, finished behaviour) ══ */
-.regions{position:relative;padding:64px 0 44px;min-height:clamp(280px,36vh,360px);overflow:visible;}
-.regions__mask{position:absolute;inset:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);}
+/* THE SECTION NO LONGER CLIPS ITS OWN PANEL.
+   It carried a fixed height with overflow:hidden, which the ribbon
+   needs and the panel underneath does not: the heading and rule fitted
+   inside that height and the three lines of region data were cut off
+   below it. The clipping now belongs to the ribbon alone, and the
+   section grows to whatever the panel needs. */
+.regions{position:relative;padding:var(--s-section) 0;}
+.regions__mask{position:relative;height:clamp(110px,16vh,160px);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);}
 .regions__track{position:absolute;top:50%;left:0;white-space:nowrap;will-change:transform;}
 .region{display:inline-block;font-family:'Cinzel',Georgia,serif;letter-spacing:.16em;
   color:var(--dim);cursor:pointer;background:none;border:0;
@@ -126,8 +165,8 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 .region::before{content:"";position:absolute;left:50%;top:50%;width:150%;height:280%;transform:translate(-50%,-50%);
   background:radial-gradient(ellipse 50% 50% at 50% 50%,rgba(196,149,68,.16),rgba(196,149,68,.05) 44%,transparent 72%);
   opacity:var(--glow,0);pointer-events:none;z-index:-1;filter:blur(2px);}
-.region__panel{max-width:var(--read-max);margin:clamp(22px,3vh,36px) auto 0;padding:0 clamp(18px,5vw,40px);
-  text-align:center;min-height:120px;opacity:0;transition:opacity .5s ease;pointer-events:none;}
+.region__panel{max-width:var(--read-max);margin:clamp(20px,3.1vh,38px) auto 0;padding:0 clamp(18px,5vw,40px);
+  text-align:center;min-height:54px;opacity:0;transition:opacity .5s ease;pointer-events:none;}
 .region__panel.is-shown{opacity:1;pointer-events:auto;}
 .region__panel h3{font-family:'Cinzel',Georgia,serif;font-weight:500;font-size:clamp(15px,2vw,22px);
   letter-spacing:.12em;color:var(--gold-light);margin:0;}
@@ -138,21 +177,36 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 .region__panel .opp{color:var(--dim);font-style:italic;margin-top:8px;}
 
 /* ══ credits scroll (§5 languages, §6 countries) ══ */
-.credits{position:relative;height:clamp(220px,30vh,320px);overflow:hidden;margin-top:36px;
+.credits{position:relative;height:clamp(200px,28vh,320px);overflow:hidden;margin-top:var(--s-block);
   -webkit-mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent);mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent);}
-.credits__inner{position:absolute;left:0;right:0;top:100%;text-align:center;animation:rise 60s linear infinite;}
+.credits__inner{position:absolute;left:0;right:0;top:0;text-align:center;animation:rise 74s linear infinite;}
 .credits__title{font-family:'Cinzel',Georgia,serif;font-size:clamp(13px,1.6vw,18px);letter-spacing:.24em;color:var(--dim);margin:0 0 22px;text-transform:uppercase;}
-.credits__list{font-size:clamp(13px,1.5vw,17px);line-height:1.9;color:var(--gold);columns:3;column-gap:40px;max-width:900px;margin:0 auto;text-align:center;}
+.credits__list{font-size:clamp(13px,1.5vw,17px);line-height:1.9;color:var(--gold);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(24px,4vw,56px);width:min(900px,92vw);margin:0 auto;text-align:center;}
+.credits__col{display:block;min-width:0;}
 .credits__region{break-inside:avoid;margin:0 0 14px;}
 .credits__region b{display:block;font-family:'Cinzel',Georgia,serif;font-weight:500;letter-spacing:.14em;color:var(--gold-light);font-size:.92em;margin-bottom:2px;}
-@keyframes rise{from{transform:translateY(0);}to{transform:translateY(-100%);}}
-@media(max-width:640px){.credits__list{columns:2;}}
+@keyframes rise{from{transform:translateY(0);}to{transform:translateY(-50%);}}
+@media(max-width:640px){.credits__list{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:12px;font-size:clamp(10px,3vw,13px);}}
 
-/* Legacy spine styles retained for compatibility; current §4 uses Growth Signals */
+/* ══ §4 SIGNALS — three columns ══ */
+.signals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  column-gap:clamp(26px,4.5vw,72px);row-gap:clamp(26px,3.6vw,48px);
+  max-width:1120px;margin:0 auto;align-items:start;}
+.signals__col{display:flex;flex-direction:column;gap:clamp(26px,3.4vw,44px);}
+.signals__closer{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;
+  font-size:clamp(15px,1.7vw,21px);line-height:1.45;letter-spacing:0;text-transform:none;
+  color:var(--gold);max-width:620px;margin:0 auto;}
+.signals__block .lead{color:var(--gold);font-size:clamp(15px,1.7vw,21px);line-height:1.4;margin:0 0 6px;}
+.signals__block .sub{color:var(--dim);font-size:clamp(13px,1.45vw,18px);line-height:1.4;margin:0 0 4px;}
+@media(max-width:820px){
+  .signals{grid-template-columns:1fr;row-gap:clamp(24px,5vw,38px);text-align:center;}
+  .signals__col{gap:clamp(22px,4.5vw,34px);}
+}
+
+/* ══ §4 GROWTH IS BROKEN (spine) ══ */
 .reality__head{text-align:center;margin-bottom:var(--s-block);}
 .reality__eyebrow{font-family:'Cinzel',Georgia,serif;font-size:clamp(13px,1.7vw,20px);letter-spacing:.1em;color:var(--gold);margin:0 0 10px;}
-.reality__title{font-family:'Cinzel',Georgia,serif;font-weight:600;font-size:clamp(34px,6vw,68px);letter-spacing:.04em;color:var(--gold);margin:0;
-  color:var(--metal);}
+.reality__title{font-family:'Cinzel',Georgia,serif;font-weight:600;font-size:clamp(23px,3.6vw,42px);letter-spacing:.05em;color:var(--gold);margin:0;line-height:1.24;}
 .spine{position:relative;max-width:960px;margin:0 auto;}
 .spine__line{position:absolute;left:50%;top:0;bottom:0;width:1px;transform:translateX(-.5px);
   background:linear-gradient(180deg,transparent,rgba(212,175,90,.3) 6%,rgba(212,175,90,.3) 94%,transparent);}
@@ -163,7 +217,7 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 .pair__l .sub{color:var(--dim);font-size:clamp(13px,1.5vw,18px);line-height:1.4;margin:0;}
 .pair__r p{color:var(--gold);font-size:clamp(15px,1.8vw,21px);line-height:1.4;margin:0 0 6px;}
 .pair__node{position:absolute;left:50%;top:calc(clamp(22px,3.4vh,40px) + 6px);width:7px;height:7px;margin-left:-3.5px;border-radius:50%;
-  background:var(--champagne);box-shadow:0 0 8px 2px rgba(255,232,176,.45);}
+  background:var(--champagne);box-shadow:0 0 8px 2px rgba(232,200,122,.45);}
 .bridge{text-align:center;margin-top:var(--s-block);}
 .bridge__q{font-family:'Cinzel',Georgia,serif;font-weight:500;font-size:clamp(26px,4.4vw,48px);letter-spacing:.06em;color:var(--gold);
   color:var(--metal);margin:0;}
@@ -176,6 +230,35 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
   .pair__l,.pair__r{text-align:left;}
   .pair__node{left:14px;}
 }
+
+
+/* ══ §6 artwork ══ */
+.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+  clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;}
+/* the copy sits ON the artwork: pulled up so it starts clear of the circle,
+   with the particle field showing behind it. The negative margin is a % of the
+   wrapper's WIDTH, and the art's height is a fixed ratio of that same width,
+   so the clearance holds at every screen size. */
+.reach{position:relative;max-width:min(1280px,100vw);margin:0 auto;}
+.reach-art{margin:0;}
+.reach-art img{display:block;width:100%;height:auto;}
+.reach-copy{position:relative;z-index:1;margin-top:-20%;}
+.reach--noart .reach-copy{margin-top:0;}
+@media(max-width:700px){.reach-copy{margin-top:-17%;}}
+
+/* ══ §7 EXPLORER TILE — the design, with the Intelligence Zone alive inside it ══ */
+.explorer{position:relative;margin:var(--s-block) auto 0;max-width:min(1400px,100vw);}
+.explorer__tile{display:block;width:100%;height:auto;}
+/* the canvas sits exactly where the ring was lifted out of the artwork */
+.explorer__zone{position:absolute;left:53.060%;top:52.734%;width:45.898%;height:36.133%;pointer-events:none;}
+.explorer__zone canvas{display:block;width:100%;height:100%;}
+
+/* ══ §7 mesh stage ══ */
+.ind-stage{position:relative;margin:var(--s-content) 0 0;}
+.ind-stage__fore{position:relative;}
+.ind-stage .ind-counter{margin-top:0;}
+
+/* ══ §7 intelligence zone ══ */
 
 /* ══ §6 GLOBAL REACH stats ══ */
 .stats{display:flex;flex-wrap:wrap;justify-content:center;gap:0;margin:var(--s-block) auto 0;max-width:var(--wide-max);}
@@ -190,6 +273,8 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 
 /* ══ §7 INDUSTRY INTELLIGENCE — real system (Healthcare reference) ══ */
 .ind-counter{text-align:center;margin:var(--s-block) 0 var(--s-content);}
+.ind-counter__detail{max-width:820px;margin:18px auto 0;padding:0 20px;font-size:clamp(15px,1.65vw,20px);line-height:1.55;color:var(--gold);opacity:.88;animation:industryDrop .38s ease both;}
+@keyframes industryDrop{from{opacity:0;transform:translateY(-8px)}to{opacity:.88;transform:none}}
 .ind-counter__num{font-family:'Cinzel',Georgia,serif;font-weight:400;font-size:clamp(30px,5.6vw,64px);letter-spacing:.04em;color:var(--gold-light);line-height:1;font-variant-numeric:tabular-nums;}
 .ind-counter__stmt{font-family:'Cinzel',Georgia,serif;font-size:clamp(10px,1.4vw,15px);letter-spacing:.2em;color:var(--dim);text-transform:uppercase;margin-top:16px;min-height:1.4em;}
 .ind-counter__stmt .lit{color:var(--gold);}
@@ -200,8 +285,9 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 .ind-tab.is-active{color:var(--gold-light);}
 .ind-tab.is-active::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--gold-light);}
 .ind-builder{max-width:820px;margin:0 auto;}
-.ind-q{margin-bottom:var(--s-block);opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease;}
-.ind-q--show,.ind-q.ind-q--show{opacity:1;transform:none;}
+.ind-q{margin-bottom:0;max-height:0;overflow:hidden;opacity:0;transform:translateY(10px);
+  transition:opacity .6s ease,transform .6s ease,max-height .6s ease,margin-bottom .6s ease;}
+.ind-q--show,.ind-q.ind-q--show{max-height:760px;margin-bottom:var(--s-block);opacity:1;transform:none;}
 .ind-q__label{font-family:'Cinzel',Georgia,serif;font-size:clamp(12px,1.5vw,17px);letter-spacing:.1em;color:var(--gold);text-align:center;margin:0 0 20px;}
 .ind-chips{display:flex;flex-wrap:wrap;gap:clamp(10px,1.4vw,16px);justify-content:center;}
 .ind-chips--scroll{max-height:260px;overflow-y:auto;padding:6px 4px;}
@@ -210,8 +296,9 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
   transition:border-color .4s ease,color .4s ease,background .4s ease;letter-spacing:.02em;}
 .ind-chip:hover{border-color:rgba(196,149,68,.55);color:var(--gold-light);}
 .ind-chip.ind-sel{border-color:var(--gold-light);color:var(--gold-light);background:rgba(196,149,68,.06);}
-.ind-results{max-width:960px;margin:var(--s-content) auto 0;opacity:0;transition:opacity .7s ease;}
-.ind-results.ind-show{opacity:1;}
+.ind-results{max-width:960px;margin:0 auto;max-height:0;overflow:hidden;opacity:0;
+  transition:opacity .7s ease,max-height .7s ease,margin-top .7s ease;}
+.ind-results.ind-show{max-height:4000px;margin-top:var(--s-content);opacity:1;}
 .ind-results__head{font-family:'Cinzel',Georgia,serif;font-size:clamp(11px,1.3vw,15px);letter-spacing:.2em;color:var(--dim);text-transform:uppercase;text-align:center;margin:0 0 28px;}
 .ind-rgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2vw,26px);}
 .ind-rcard{padding:clamp(20px,2.6vw,32px);border:1px solid rgba(196,149,68,.2);border-radius:3px;transition:border-color .4s ease,transform .4s ease;}
@@ -247,8 +334,10 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 
 /* ══ §9 CONVERSION INTELLIGENCE — revolving ring (finished) ══ */
 .doctrine-overlay{max-width:var(--panel-max,760px);margin:0 auto;}
-.doctrine-img{width:100%;height:auto;display:block;}
-.cring{position:relative;width:min(100%,680px);aspect-ratio:1;margin:0 auto;max-width:100%;overflow:visible;}
+/* the ratio is declared so the space exists before the file lands */
+.doctrine-img{width:100%;height:auto;display:block;aspect-ratio:1024/1468;}
+.cring{position:relative;width:min(100%,680px);aspect-ratio:1;margin:0 auto;
+  max-width:100%;overflow:visible;}
 .cring__centre{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;
   width:40%;aspect-ratio:1;border-radius:50%;border:1px solid rgba(181,145,84,.4);
   display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -272,7 +361,7 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 .cnode.is-focus{z-index:4;}
 .cnode.is-focus .cnode__circle{border-color:rgba(212,175,90,.7);transform:scale(1.55);box-shadow:0 0 18px 2px rgba(181,145,84,.16);}
 .cnode.is-focus .cnode__label{color:var(--gold-light);}
-.wheel__panel{max-width:var(--read-max);margin:var(--s-content) auto 0;text-align:center;min-height:80px;opacity:0;transition:opacity .5s ease;}
+.wheel__panel{max-width:var(--read-max);margin:var(--s-content) auto 0;text-align:center;opacity:0;transition:opacity .5s ease;}
 .wheel__panel.is-shown{opacity:1;}
 .wheel__panel h3{font-family:'Cinzel',Georgia,serif;font-weight:500;letter-spacing:.12em;color:var(--gold-light);margin:0 0 6px;font-size:clamp(14px,1.7vw,20px);}
 .wheel__panel p{color:var(--gold);font-size:clamp(14px,1.6vw,19px);line-height:1.5;margin:0;}
@@ -298,15 +387,29 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
   color:var(--gold-light);margin:0;text-transform:uppercase;line-height:1.35;}
 .bcard__rule{height:1px;width:46%;margin:14px auto;background:linear-gradient(90deg,transparent,rgba(212,175,90,.5),transparent);position:relative;}
 .bcard__rule::after{content:"";position:absolute;top:50%;left:50%;width:3px;height:3px;margin:-1.5px 0 0 -1.5px;border-radius:50%;
-  background:var(--champagne);box-shadow:0 0 6px 2px rgba(255,232,176,.4);}
-.bcard p{color:var(--gold);font-size:clamp(12px,1.4vw,17px);line-height:1.45;margin:0;}
+  background:var(--champagne);box-shadow:0 0 6px 2px rgba(232,200,122,.4);}
+.bcard > p{color:var(--gold);font-size:clamp(12px,1.4vw,17px);line-height:1.45;margin:0;}
+.bcard{cursor:pointer;}
+.bcard__detail{width:100%;max-height:0;overflow:hidden;opacity:0;transition:max-height .55s ease,opacity .35s ease,margin-top .45s ease;}
+.bcard.is-open .bcard__detail{max-height:520px;opacity:1;margin-top:20px;}
+.bcard__detail p{color:var(--gold);font-size:clamp(12px,1.2vw,15px);line-height:1.65;margin:0 auto;max-width:34em;}
+.bcard__detail .cta-wrap{margin-top:20px;}
+.bcard__detail .cta{font-size:clamp(9px,.9vw,11px);}
+.bcard:focus-visible{outline:1px solid var(--champagne);outline-offset:4px;}
 @media(max-width:900px){.bos__grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:520px){.bos__domains{letter-spacing:.18em;}}
 
+/* ══ §11 DROWNING ══ */
+.drown__head{font-family:'Cinzel',Georgia,serif;font-weight:600;font-size:clamp(25px,4.4vw,52px);letter-spacing:.04em;text-align:center;margin:0;
+  color:var(--metal);line-height:1.05;}
+.drown__body{text-align:center;margin-top:var(--s-block);}
+.drown__body p{color:var(--gold);font-size:clamp(15px,1.9vw,22px);line-height:1.5;margin:0 auto var(--s-para);max-width:var(--read-max);}
+.drown__body .em{color:var(--gold-light);font-weight:500;}
+.drown__body .pull{color:var(--gold-light);font-size:clamp(18px,2.4vw,28px);margin:var(--s-content) auto;}
 
 /* ══ §12 FILM ══ */
 .film{text-align:center;}
-.film__frame{position:relative;max-width:var(--wide-max);margin:var(--s-block) auto 0;aspect-ratio:16/9;
+.film__frame{position:relative;max-width:var(--wide-max);margin:var(--s-block) auto 0;aspect-ratio:21/9;
   display:flex;align-items:center;justify-content:center;
   background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(199,143,58,.08),transparent 70%);}
 .film__play{width:clamp(60px,8vw,92px);height:clamp(60px,8vw,92px);border-radius:50%;
@@ -336,7 +439,7 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 .acard:hover{border-color:rgba(212,175,90,.5);transform:translateY(-3px);}
 .acard h3{font-family:'Cinzel',Georgia,serif;font-weight:500;font-size:clamp(13px,1.5vw,19px);letter-spacing:.1em;color:var(--gold-light);margin:0 0 12px;text-transform:uppercase;}
 .acard__rule{height:1px;width:44%;margin:0 auto 14px;background:linear-gradient(90deg,transparent,rgba(212,175,90,.5),transparent);position:relative;}
-.acard__rule::after{content:"";position:absolute;top:50%;left:50%;width:3px;height:3px;margin:-1.5px 0 0 -1.5px;border-radius:50%;background:var(--champagne);box-shadow:0 0 6px 2px rgba(255,232,176,.4);}
+.acard__rule::after{content:"";position:absolute;top:50%;left:50%;width:3px;height:3px;margin:-1.5px 0 0 -1.5px;border-radius:50%;background:var(--champagne);box-shadow:0 0 6px 2px rgba(232,200,122,.4);}
 .acard p{color:var(--gold);font-size:clamp(13px,1.5vw,18px);line-height:1.45;margin:0;}
 .access__foot{text-align:center;margin-top:var(--s-block);}
 .access__ready{font-family:'Cinzel',Georgia,serif;font-size:clamp(13px,1.6vw,20px);letter-spacing:.06em;color:var(--gold-light);margin:0 0 var(--s-content);}
@@ -355,13 +458,13 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
   .splash__mark img{-webkit-mask-image:none;mask-image:none;}
 }
 /* ---------- footer ---------- */
-footer{margin-top:72px;padding-top:6px}
+footer{margin-top:clamp(56px,7vw,110px);padding-top:6px}
 .footer-wrap{max-width:1440px;margin:0 auto;padding:0 28px}
 .cols{
   display:grid;
   grid-template-columns:1.7fr 1.12fr 1.18fr 1fr .88fr;
   gap:0;
-  padding:36px 0 0;
+  padding:52px 0 0;
   align-items:start;
 }
 .col{padding:0 22px;border-left:1px solid rgba(195,149,68,.42)}
@@ -377,7 +480,7 @@ footer{margin-top:72px;padding-top:6px}
   margin-bottom:0;
 }
 .col .rule{margin:12px auto 30px;max-width:100%}
-.col ul{list-style:none}
+.col ul{list-style:none;margin:0;padding:0}
 .col li{margin-bottom:17px;line-height:1.3}
 .col a{
   font-size:.98rem;
@@ -392,7 +495,7 @@ footer{margin-top:72px;padding-top:6px}
 .os-split ul:last-child{padding-left:20px;border-left:1px solid rgba(195,149,68,.26)}
 
 .policies{
-  margin-top:32px;
+  margin-top:44px;
   padding:20px 0;
   border-top:1px solid rgba(195,149,68,.42);
   border-bottom:1px solid rgba(195,149,68,.42);
@@ -409,22 +512,20 @@ footer{margin-top:72px;padding-top:6px}
 .pay img{display:block;width:100%;height:auto}
 
 .base{
-  padding:26px 0 36px;
+  padding:32px 0 48px;
   display:flex;
   flex-wrap:wrap;
   align-items:center;
   justify-content:center;
   gap:16px;
 }
+/* The monogram artwork carries its own ring, so the element supplies
+   no border of its own — two concentric circles is not the mark. */
 .mono{
   width:64px;height:64px;
-  border:1px solid var(--gold);
-  border-radius:50%;
   display:grid;place-items:center;
-  font-family:'Cinzel',serif;
-  font-size:1.75rem;
-  color:var(--gold);
 }
+.mono img{width:100%;height:100%;display:block;object-fit:contain}
 .copy{font-size:1rem;color:var(--gold);padding:0 20px;border-left:1px solid rgba(195,149,68,.34)}
 .socials{display:flex;gap:10px;padding:0 4px}
 .soc{display:block;width:46px;height:46px;transition:opacity .25s,transform .25s}
@@ -469,7 +570,7 @@ footer{margin-top:72px;padding-top:6px}
 .thoughts{
   border-top:1px solid rgba(195,149,68,.28);
   text-align:center;
-  padding:56px 28px 68px;
+  padding:78px 28px 92px;
 }
 .thoughts .listening{
   font-family:'Cormorant Garamond',serif;
@@ -477,7 +578,7 @@ footer{margin-top:72px;padding-top:6px}
   color:var(--champagne);
   font-size:clamp(2rem,5.4vw,3.1rem);
   line-height:1.1;
-  margin-bottom:28px;
+  margin-bottom:38px;
 }
 .thoughts .ask{
   font-family:'Cormorant Garamond',serif;
@@ -486,15 +587,15 @@ footer{margin-top:72px;padding-top:6px}
   font-size:clamp(1.1rem,2.5vw,1.42rem);
   line-height:1.5;
   max-width:560px;
-  margin:0 auto 26px;
+  margin:0 auto 34px;
 }
 .thoughts textarea{
   display:block;
   width:100%;
   max-width:820px;
   margin:0 auto;
-  min-height:160px;
-  background:rgba(255,255,255,.012);
+  min-height:200px;
+  background:rgba(195,149,68,.022);
   border:1px solid rgba(195,149,68,.58);
   border-radius:22px;
   color:var(--gold);
@@ -514,7 +615,7 @@ footer{margin-top:72px;padding-top:6px}
   width:100%;
   max-width:820px;
   margin:18px auto 0;
-  background:rgba(255,255,255,.012);
+  background:rgba(195,149,68,.022);
   border:1px solid rgba(195,149,68,.42);
   border-radius:999px;
   color:var(--gold);
@@ -532,7 +633,7 @@ footer{margin-top:72px;padding-top:6px}
   font-size:clamp(.76rem,1.7vw,.92rem);
   letter-spacing:.19em;text-indent:.19em;
   color:var(--gold-light);
-  background:rgba(255,255,255,.02);
+  background:rgba(195,149,68,.030);
   border:1px solid rgba(195,149,68,.6);
   border-radius:999px;
   padding:18px 44px;
@@ -551,7 +652,7 @@ footer{margin-top:72px;padding-top:6px}
   letter-spacing:.19em;
   text-indent:.19em;
   color:var(--gold-light);
-  background:rgba(255,255,255,.02);
+  background:rgba(195,149,68,.030);
   border:1px solid rgba(195,149,68,.6);
   border-radius:999px;
   padding:18px 44px;
@@ -569,76 +670,211 @@ footer .rule::after,.col .rule::after{width:7px;height:7px;margin:-3.5px 0 0 -3.
   background:var(--champagne);box-shadow:0 0 10px 3px rgba(232,200,122,.55);}
 .thoughts{max-width:none;}
 
-
-/* cleanup pass: tighter rhythm, safer fallbacks and usable controls */
-@media(max-width:900px){
-  :root{--s-section:72px;--s-related:48px;--s-block:40px;--s-content:30px;--s-cta:32px;--s-para:15px;}
-  .section{padding-top:var(--s-section);padding-bottom:var(--s-section);}
-  .credits{height:250px;margin-top:30px;}
-  .regions{padding:54px 0 38px;min-height:300px;}
+/* BACKGROUND TREATMENT ONLY */
+.baci-ambient{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 75% 85% at -18% 48%,rgba(195,149,68,.055),rgba(195,149,68,.024) 35%,transparent 74%),radial-gradient(ellipse 62% 72% at 116% 35%,rgba(195,149,68,.045),rgba(195,149,68,.019) 38%,transparent 74%)}
+body::before,body::after{content:"";position:fixed;pointer-events:none;z-index:0}
+body::before{width:72vw;height:72vw;left:-34vw;top:14vh;border-radius:50%;border:1px solid rgba(195,149,68,.10);box-shadow:0 0 145px rgba(195,149,68,.040),inset 0 0 165px rgba(195,149,68,.028);transform:rotate(-9deg)}
+body::after{width:56vw;height:1px;right:-8vw;top:46vh;background:linear-gradient(90deg,transparent,rgba(232,200,122,.052),transparent);box-shadow:0 0 58px 2px rgba(195,149,68,.026);transform:rotate(-17deg)}
+.baci-orbit{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}.baci-orbit::before{content:"";position:absolute;width:980px;height:420px;right:-530px;top:19vh;border:1px solid rgba(195,149,68,.082);border-radius:50%;transform:rotate(24deg);box-shadow:0 0 115px rgba(195,149,68,.026)}.baci-orbit::after{content:none}
+input,textarea,button{
+  -webkit-appearance:none;
+  appearance:none;
+}
+input,textarea{
+  background-color:transparent;
+  -webkit-text-fill-color:var(--gold);
+  caret-color:var(--champagne);
+  color-scheme:dark;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus{
+  -webkit-text-fill-color:var(--gold) !important;
+  -webkit-box-shadow:0 0 0 1000px #000000 inset !important;
+  box-shadow:0 0 0 1000px #000000 inset !important;
+  transition:background-color 9999s ease-out 0s;
 }
 
-/* Missing optional artwork should collapse rather than leave broken-image gaps. */
-img.is-missing{display:none !important;}
-.pay.is-missing{display:none !important;}
-.soc.is-missing{display:none !important;}
+/* content sits above the ambient layers */
+main,header,footer,section,.wrap,.section,.hero,.thoughts{position:relative;z-index:1}
+.baci-ambient,.baci-orbit{z-index:0}
 
-/* Accessibility enhancement is intentionally visible and reversible. */
-body.a11y-on{--gold:#D8B969;--gold-light:#F0D284;--dim:#A98E57;--metal:#E2C278;}
-body.a11y-on .body-copy,
-body.a11y-on .pair__l .lead,
-body.a11y-on .pair__r p,
-body.a11y-on .acard p,
-body.a11y-on .bcard p{font-size:clamp(17px,2vw,23px);line-height:1.72;}
-body.a11y-on a:focus-visible,
-body.a11y-on button:focus-visible,
-body.a11y-on input:focus-visible,
-body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-offset:4px;}
-.a11y[aria-pressed="true"] .lab{color:var(--champagne);}
+/* ═══ ACCESSIBILITY ═══
+   Two things only: a light mode, and text size. Both work by
+   swapping variables on the root, so nothing is restyled twice. */
 
-.thoughts-status{min-height:1.4em;margin:18px auto 0;max-width:820px;color:var(--champagne);font-size:1rem;}
+html{font-size:calc(100% * var(--text-scale,1))}
 
-
-/* ══ VERTICAL RHYTHM — tightened to remove accidental dead space ══ */
-:root{
-  --s-section:64px;
-  --s-related:48px;
-  --s-block:36px;
-  --s-content:28px;
-  --s-cta:28px;
+html[data-view="light"]{
+  --bg:#F7F4EE;
+  --gold:#4A3616;
+  --gold-light:#3A2A10;
+  --dim:#6B573A;
+  --champagne:#7A5A18;
+  --closing:#4A3616;
+  --head:#3A2A10;
+  --metal:#3A2A10;
 }
-.section{padding-top:var(--s-section);padding-bottom:var(--s-section);}
-.regions{padding:42px 0 30px;min-height:clamp(230px,29vh,290px);}
-.region__panel{margin-top:clamp(16px,2vh,24px);min-height:96px;}
-.credits{height:clamp(190px,25vh,260px);margin-top:24px;}
-.reality__head{margin-bottom:36px;}
-.pair{padding:clamp(18px,2.5vh,30px) 0;}
-.pair__node{top:calc(clamp(18px,2.5vh,30px) + 6px);}
-.bridge{margin-top:36px;}
-.bos__intro{margin-top:36px;}
-.bos__closer{margin:36px auto;}
-.drown__body{margin-top:36px;}
-.drown__tile{margin-top:36px;}
-.film__frame{margin-top:36px;}
-@media(max-width:700px){
-  :root{--s-section:48px;--s-related:38px;--s-block:30px;--s-content:24px;--s-cta:24px;}
-  .section{padding-top:48px;padding-bottom:48px;}
-  .regions{padding:34px 0 26px;min-height:240px;}
-  .credits{height:210px;margin-top:20px;}
+html[data-view="light"] body{background:var(--bg);color:var(--gold)}
+html[data-view="light"] .baci-ambient,
+html[data-view="light"] .baci-orbit,
+html[data-view="light"] body::before,
+html[data-view="light"] body::after{display:none}
+html[data-view="light"] img[src$="baci-wordmark.webp"],
+html[data-view="light"] img[src$="hero-shell.webp"],
+html[data-view="light"] img[src$="doctrine.webp"],
+html[data-view="light"] .pay img,
+html[data-view="light"] .soc img,
+html[data-view="light"] .a11y .glyph img{
+  filter:invert(1) hue-rotate(180deg) saturate(.55) brightness(.85);
+}
+html[data-view="light"] .mono,
+html[data-view="light"] .cnode__circle,
+html[data-view="light"] .cring__centre{background:var(--bg)}
+
+/* the panel */
+.a11y-panel{
+  position:fixed;right:20px;bottom:20px;z-index:60;
+  width:min(300px,calc(100vw - 40px));
+  background:#000;
+  border:1px solid rgba(195,149,68,.5);
+  border-radius:16px;
+  padding:22px 22px 20px;
+  display:none;
+}
+html[data-view="light"] .a11y-panel{background:#FFFDF8;border-color:rgba(74,54,22,.35)}
+.a11y-panel.open{display:block}
+.a11y-panel h4{
+  font-family:'Cinzel',Georgia,serif;font-weight:500;font-size:.66rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin:0 0 18px;
+}
+.a11y-row{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}
+.a11y-row:last-of-type{margin-bottom:0}
+.a11y-row span{font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;color:var(--gold)}
+.a11y-opt{
+  font-family:'Cinzel',Georgia,serif;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--dim);background:none;border:1px solid rgba(195,149,68,.4);border-radius:999px;
+  padding:9px 15px;cursor:pointer;transition:color .3s,border-color .3s;
+}
+.a11y-opt[aria-pressed="true"]{color:var(--gold-light);border-color:rgba(207,162,78,.75)}
+.a11y-steps{display:flex;gap:8px}
+.a11y-step{
+  width:38px;height:38px;border-radius:50%;cursor:pointer;
+  background:none;border:1px solid rgba(195,149,68,.4);color:var(--gold-light);
+  font-family:'Cinzel',Georgia,serif;font-size:.9rem;line-height:1;
+  transition:border-color .3s,color .3s;
+}
+.a11y-step:hover{border-color:rgba(232,200,122,.7)}
+.a11y-close{
+  margin-top:20px;width:100%;background:none;border:0;cursor:pointer;
+  font-family:'Cinzel',Georgia,serif;font-size:.6rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--dim);padding:8px 0 0;
 }
 
-/* Growth signals — approved two-column 5×5 composition */
-.growth-signals__head{max-width:1100px;margin:0 auto clamp(38px,5vw,64px);text-align:center}
-.growth-signals__head h2{font-family:var(--serif);font-size:clamp(30px,4.6vw,58px);font-weight:400;line-height:1.08;letter-spacing:.025em;color:var(--gold-light);margin:0}
-.growth-signals__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(42px,7vw,100px);max-width:1180px;margin:0 auto}
-.growth-signals__col{display:grid;grid-template-rows:repeat(5,minmax(0,1fr));gap:clamp(26px,3.2vw,42px)}
-.growth-signal{padding-top:18px;border-top:1px solid rgba(195,149,68,.22)}
-.growth-signal h3{font-family:var(--serif);font-size:clamp(20px,2vw,27px);font-weight:400;line-height:1.22;color:var(--gold);margin:0 0 9px}
-.growth-signal p{font-family:var(--body);font-size:clamp(17px,1.45vw,20px);line-height:1.55;color:var(--cream);margin:0}
-@media(max-width:760px){.growth-signals__grid{grid-template-columns:1fr;gap:26px}.growth-signals__col{display:contents}.growth-signal{margin:0}.growth-signals__head{margin-bottom:36px}}
+/* ═══ GLOW PASS ═══
+   Gold on black goes flat without a little light behind it. This adds
+   depth without brightening the palette: nothing changes colour, the
+   type just stops sitting dead on the background. Light mode gets none
+   of it, where glow would only look like a printing fault. */
+
+html:not([data-view="light"]) .page-head h1,
+html:not([data-view="light"]) .hero h1,
+html:not([data-view="light"]) .heading,
+html:not([data-view="light"]) .access__title,
+html:not([data-view="light"]) .drown__head,
+html:not([data-view="light"]) .reality__title,
+html:not([data-view="light"]) .doctrine__title,
+html:not([data-view="light"]) .bos__title,
+html:not([data-view="light"]) .title-stack .t1{
+  text-shadow:0 0 18px rgba(201,159,94,.17), 0 0 40px rgba(195,149,68,.07);
+}
+
+html:not([data-view="light"]) .band h2,
+html:not([data-view="light"]) .section-head h2,
+html:not([data-view="light"]) .enquiry h2,
+html:not([data-view="light"]) .doc h2,
+html:not([data-view="light"]) .mode__name,
+html:not([data-view="light"]) .control h2{
+  text-shadow:0 0 14px rgba(201,159,94,.16);
+}
+
+/* the closing lines carry a touch more, since they are the last thing read */
+html:not([data-view="light"]) .bos__closer,
+html:not([data-view="light"]) .thoughts .listening,
+html:not([data-view="light"]) .distinction p,
+html:not([data-view="light"]) .control .closing,
+html:not([data-view="light"]) .engine-close,
+html:not([data-view="light"]) .access__ready{
+  text-shadow:0 0 20px rgba(207,162,78,.22);
+}
+
+/* the light points get a cleaner falloff rather than a bigger blur */
+html:not([data-view="light"]) .rule::after,
+html:not([data-view="light"]) .acard__rule::after,
+html:not([data-view="light"]) .bcard__rule::after,
+html:not([data-view="light"]) .col .rule::after{
+  box-shadow:0 0 6px 1px rgba(232,200,122,.55),
+             0 0 16px 4px rgba(232,200,122,.20);
+}
+
+/* the hairlines lift off the black a fraction */
+html:not([data-view="light"]) .rule,
+html:not([data-view="light"]) .cta__conduit,
+html:not([data-view="light"]) .cta-line{
+  box-shadow:0 0 12px rgba(195,149,68,.07);
+}
+
+/* cards: resting glow, stronger on touch */
+html:not([data-view="light"]) .acard,
+html:not([data-view="light"]) .bcard,
+html:not([data-view="light"]) .hcard,
+html:not([data-view="light"]) .tier,
+html:not([data-view="light"]) .dev-mode{
+  box-shadow:inset 0 0 40px rgba(195,149,68,.022);
+  transition:border-color .4s ease,transform .4s ease,box-shadow .4s ease;
+}
+html:not([data-view="light"]) .acard:hover,
+html:not([data-view="light"]) .bcard:hover,
+html:not([data-view="light"]) .dev-mode:hover,
+html:not([data-view="light"]) .dev-mode.is-on{
+  box-shadow:inset 0 0 44px rgba(195,149,68,.05),
+             0 0 26px rgba(195,149,68,.07);
+}
+
+/* the wordmark and the monogram sit in a faint pool of light */
+html:not([data-view="light"]) .masthead img,
+html:not([data-view="light"]) .mono{
+  filter:drop-shadow(0 0 18px rgba(195,149,68,.14));
+}
+
+/* buttons answer to touch */
+html:not([data-view="light"]) .cta:hover .cta__text,
+html:not([data-view="light"]) .thoughts .open-btn:hover,
+html:not([data-view="light"]) .thoughts .send button:hover,
+html:not([data-view="light"]) .role .apply:hover,
+html:not([data-view="light"]) .obra6-btn:hover{
+  text-shadow:0 0 14px rgba(232,200,122,.16);
+}
+
+/* the ring's active node reads as lit rather than merely larger */
+html:not([data-view="light"]) .cnode.is-active .cnode__circle,
+html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
+  box-shadow:0 0 22px 3px rgba(195,149,68,.20),
+             inset 0 0 18px rgba(195,149,68,.05);
+}
+
+@media(prefers-reduced-motion:reduce){
+  html:not([data-view="light"]) .acard,
+  html:not([data-view="light"]) .bcard,
+  html:not([data-view="light"]) .dev-mode{transition:none}
+}
 </style>
 </head>
 <body>
+<div class="baci-ambient" aria-hidden="true"></div><div class="baci-orbit" aria-hidden="true"></div>
 
 <!-- ══ §1 SPLASH ══ -->
 <div class="splash" id="splash">
@@ -649,17 +885,17 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
 <!-- ══ §2 HERO ══ -->
 <header class="hero" id="top">
   <div class="hero__stage">
-    <img class="hero__img" src="hero-shell.webp" alt="" aria-hidden="true">
+    <img class="hero__img" src="hero-shell.webp" alt="" aria-hidden="true" width="1536" height="823">
 
     <a class="hot" href="#top" aria-label="BACI home" style="left:1.43%;top:2.79%;width:12.17%;height:8.02%">
-      <span class="hmk">BACI</span>
+      <img class="hmk-img" src="baci-wordmark.webp" alt="BACI">
     </a>
     <div class="hx hsub" style="left:14.2%;top:3.4%;width:16%;height:7.2%" aria-hidden="true">Business Acquisition<br>&amp; Conversion Intelligence</div>
 
     <a class="hot" href="#global-reach" style="left:28.91%;top:5.47%;width:5.86%;height:2.55%"><span class="hnav">Discover</span></a>
-    <a class="hot" href="access-business.html#modes" style="left:39.13%;top:5.47%;width:5.86%;height:2.55%"><span class="hnav">Modes</span></a>
+    <a class="hot" href="modes.html" style="left:39.13%;top:5.47%;width:5.86%;height:2.55%"><span class="hnav">Modes</span></a>
     <a class="hot" href="#industry" style="left:49.35%;top:5.47%;width:5.79%;height:2.55%"><span class="hnav">Solutions</span></a>
-    <a class="hot" href="#industry" style="left:59.51%;top:5.47%;width:5.79%;height:2.55%"><span class="hnav">Insights</span></a>
+    <a class="hot" href="#drowning" style="left:59.51%;top:5.47%;width:5.79%;height:2.55%"><span class="hnav">Insights</span></a>
     <a class="hot" href="#access" style="left:69.60%;top:5.47%;width:5.86%;height:2.55%"><span class="hnav">Access</span></a>
     <a class="hot" href="#industry" aria-label="Search industries" style="left:80.47%;top:3.40%;width:18.68%;height:7.05%">
       <span class="hnav hsearchlabel">Search industries</span>
@@ -672,16 +908,16 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
     <p class="hx hbullet" style="left:5.9%;top:62.1%">Infinite intelligence</p>
     <p class="hx hbullet" style="left:5.9%;top:71.4%">A system that evolves, analyses,<br>optimises and grows your business.</p>
 
-    <p class="hx hsignal" style="left:53.5%;top:19.2%">Analysing <span id="heroCount">37,942,118</span><br>signals in real time</p>
+    <p class="hx hsignal" style="left:53.5%;top:19.2%">Analysing <span id="heroCount"></span><br>signals in real time</p>
 
-    <div class="hx hcard" style="left:34.77%;top:18.71%;width:13.54%;height:18.71%"><p class="t">Business Pattern</p><p class="v">+1,338,884<br>Confidence 92.7%</p></div>
-    <div class="hx hcard" style="left:80.66%;top:18.71%;width:14.19%;height:15.80%"><p class="t">Conversion Probability</p><p class="v">87.6%</p></div>
-    <div class="hx hcard" style="left:64.65%;top:32.93%;width:14.19%;height:17.86%"><p class="t">Audience Cluster</p><p class="v">M.23 | High intent<br>Value score 81.3</p></div>
-    <div class="hx hcard" style="left:86.07%;top:41.68%;width:12.89%;height:17.74%"><p class="t">Content Optimisation</p><p class="v">Variant 1A7<br>Performance +24.6%</p></div>
-    <div class="hx hcard" style="left:85.42%;top:64.52%;width:13.15%;height:17.38%"><p class="t">Channel Opportunity</p><p class="v">Discord | Organic<br>Growth score 78.4</p></div>
-    <div class="hx hcard" style="left:34.57%;top:71.45%;width:13.61%;height:19.08%"><p class="t">Market Shift Detected</p><p class="v">Health &amp; wellness<br>Trend velocity +41%</p></div>
-    <div class="hx hcard" style="left:50.78%;top:81.41%;width:14.00%;height:16.04%"><p class="t">Intelligence Engine</p><p class="v">67 / 70 active</p></div>
-    <div class="hx hcard" style="left:67.32%;top:79.71%;width:13.74%;height:17.74%"><p class="t">Predictive Outcome</p><p class="v">LTV +32.4%</p></div>
+    <div class="hx hcard" style="left:34.77%;top:18.71%;width:13.54%;height:18.71%"><p class="t">Business Pattern</p><p class="v">+1,338,884<br>Confidence 92.7%</p><svg class="spk" viewBox="0 0 80 12" preserveAspectRatio="xMinYMax meet" aria-hidden="true"><rect x="2" y="5" width="1.6" height="7" rx=".6"/><rect x="9" y="4" width="1.6" height="8" rx=".6"/><rect x="16" y="3" width="1.6" height="9" rx=".6"/><rect x="23" y="4" width="1.6" height="8" rx=".6"/><rect x="30" y="8" width="1.6" height="4" rx=".6"/><rect x="37" y="6" width="1.6" height="6" rx=".6"/><rect x="44" y="1" width="1.6" height="11" rx=".6"/><rect x="51" y="6" width="1.6" height="6" rx=".6"/><rect x="58" y="5" width="1.6" height="7" rx=".6"/><rect x="65" y="7" width="1.6" height="5" rx=".6"/><rect x="72" y="8" width="1.6" height="4" rx=".6"/></svg></div>
+    <div class="hx hcard" style="left:80.66%;top:18.71%;width:14.19%;height:15.80%"><p class="t">Conversion Probability</p><p class="v">87.6%</p><svg class="spk" viewBox="0 0 82 12" preserveAspectRatio="xMinYMax meet" aria-hidden="true"><polyline points="2.0,8.7 9.0,9.1 16.0,9.8 23.0,9.7 30.0,10.0 37.0,9.6 44.0,10.3 51.0,9.9 58.0,8.5 65.0,7.9 72.0,7.4 79.0,8.2" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg></div>
+    <div class="hx hcard" style="left:64.65%;top:32.93%;width:14.19%;height:17.86%"><p class="t">Audience Cluster</p><p class="v">M.23 | High intent<br>Value score 81.3</p><svg class="spk" viewBox="0 0 80 12" preserveAspectRatio="xMinYMax meet" aria-hidden="true"><rect x="2" y="7" width="1.6" height="5" rx=".6"/><rect x="9" y="4" width="1.6" height="8" rx=".6"/><rect x="16" y="4" width="1.6" height="8" rx=".6"/><rect x="23" y="7" width="1.6" height="5" rx=".6"/><rect x="30" y="2" width="1.6" height="10" rx=".6"/><rect x="37" y="6" width="1.6" height="6" rx=".6"/><rect x="44" y="4" width="1.6" height="8" rx=".6"/><rect x="51" y="1" width="1.6" height="11" rx=".6"/><rect x="58" y="1" width="1.6" height="11" rx=".6"/><rect x="65" y="4" width="1.6" height="8" rx=".6"/><rect x="72" y="4" width="1.6" height="8" rx=".6"/></svg></div>
+    <div class="hx hcard" style="left:86.07%;top:41.68%;width:12.89%;height:17.74%"><p class="t">Content Optimisation</p><p class="v">Variant 1A7<br>Performance +24.6%</p><svg class="spk" viewBox="0 0 80 12" preserveAspectRatio="xMinYMax meet" aria-hidden="true"><rect x="2" y="3" width="1.6" height="9" rx=".6"/><rect x="9" y="1" width="1.6" height="11" rx=".6"/><rect x="16" y="1" width="1.6" height="11" rx=".6"/><rect x="23" y="6" width="1.6" height="6" rx=".6"/><rect x="30" y="4" width="1.6" height="8" rx=".6"/><rect x="37" y="3" width="1.6" height="9" rx=".6"/><rect x="44" y="7" width="1.6" height="5" rx=".6"/><rect x="51" y="2" width="1.6" height="10" rx=".6"/><rect x="58" y="8" width="1.6" height="4" rx=".6"/><rect x="65" y="7" width="1.6" height="5" rx=".6"/><rect x="72" y="6" width="1.6" height="6" rx=".6"/></svg></div>
+    <div class="hx hcard" style="left:85.42%;top:64.52%;width:13.15%;height:17.38%"><p class="t">Channel Opportunity</p><p class="v">Discord | Organic<br>Growth score 78.4</p><svg class="spk" viewBox="0 0 82 12" preserveAspectRatio="xMinYMax meet" aria-hidden="true"><polyline points="2.0,10.5 9.0,9.1 16.0,9.7 23.0,8.8 30.0,7.7 37.0,6.8 44.0,6.9 51.0,7.0 58.0,6.2 65.0,4.8 72.0,4.1 79.0,3.7" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg></div>
+    <div class="hx hcard" style="left:34.57%;top:71.45%;width:13.61%;height:19.08%"><p class="t">Market Shift Detected</p><p class="v">Health &amp; wellness<br>Trend velocity +41%</p><svg class="spk" viewBox="0 0 80 12" preserveAspectRatio="xMinYMax meet" aria-hidden="true"><rect x="2" y="5" width="1.6" height="7" rx=".6"/><rect x="9" y="4" width="1.6" height="8" rx=".6"/><rect x="16" y="3" width="1.6" height="9" rx=".6"/><rect x="23" y="4" width="1.6" height="8" rx=".6"/><rect x="30" y="8" width="1.6" height="4" rx=".6"/><rect x="37" y="6" width="1.6" height="6" rx=".6"/><rect x="44" y="1" width="1.6" height="11" rx=".6"/><rect x="51" y="6" width="1.6" height="6" rx=".6"/><rect x="58" y="5" width="1.6" height="7" rx=".6"/><rect x="65" y="7" width="1.6" height="5" rx=".6"/><rect x="72" y="8" width="1.6" height="4" rx=".6"/></svg></div>
+    <div class="hx hcard" style="left:50.78%;top:81.41%;width:14.00%;height:16.04%"><p class="t">Intelligence Engine</p><p class="v">67 / 70 active</p><svg class="spk spk--dots" viewBox="0 0 80 12" preserveAspectRatio="xMinYMid meet" aria-hidden="true"><circle cx="3" cy="6" r="1.9"/><circle cx="14" cy="6" r="1.9"/><circle cx="25" cy="6" r="1.9"/><circle cx="36" cy="6" r="1.9"/><circle cx="47" cy="6" r="1.9"/><circle cx="58" cy="6" r="1.9"/><circle cx="69" cy="6" r="1.9"/></svg></div>
+    <div class="hx hcard" style="left:67.32%;top:79.71%;width:13.74%;height:17.74%"><p class="t">Predictive Outcome</p><p class="v">LTV +32.4%</p><svg class="spk" viewBox="0 0 82 12" preserveAspectRatio="xMinYMax meet" aria-hidden="true"><polyline points="2.0,10.5 9.0,10.4 16.0,10.5 23.0,10.3 30.0,10.5 37.0,9.3 44.0,8.9 51.0,8.0 58.0,6.7 65.0,6.4 72.0,6.2 79.0,6.8" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg></div>
     <a class="hot" id="heroFilm" href="#film" aria-label="Watch the film" style="left:2.6%;top:86.2%;width:18.5%;height:11%">
       <span class="hfilm">Watch the film</span>
     </a>
@@ -696,35 +932,30 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
   <div class="region__panel" id="regionPanel" aria-live="polite"></div>
 </section>
 
-<!-- ══ §4 GROWTH SIGNALS ══ -->
-<section class="section section--wide reveal growth-signals" id="reality">
-  <div class="growth-signals__head">
-    <h2>GROWTH IS EVERYWHERE. YOU'RE MISSING THE SIGNALS.</h2>
+<!-- ══ §4 GROWTH IS BROKEN ══ -->
+<section class="section section--wide reveal" id="reality">
+  <div class="reality__head">
+    <p class="reality__eyebrow">The Reality.</p>
+    <h2 class="reality__title">Growth is everywhere.<br>You&rsquo;re missing the signals.</h2>
   </div>
-  <div class="growth-signals__grid">
-    <div class="growth-signals__col">
-      <div class="growth-signal"><h3>Outdated strategies. Disconnected systems.</h3><p>Motion without direction.</p></div>
-      <div class="growth-signal"><h3>Effort is never the issue.</h3><p>Knowing where to direct it is.</p></div>
-      <div class="growth-signal"><h3>Leaders aren't the weak point.</h3><p>They decide every day, under real pressure.</p></div>
-      <div class="growth-signal"><h3>The system beneath them was built for a slower market.</h3><p>One where decisions were often reactive.</p></div>
-      <div class="growth-signal"><h3>Every business owns more data than they can process.</h3><p>Almost none of it reaches the decision channel in time.</p></div>
-    </div>
-    <div class="growth-signals__col">
-      <div class="growth-signal"><h3>Everyone claims to be data-driven.</h3><p>Almost no one is. Volume isn't insight.</p></div>
-      <div class="growth-signal"><h3>The problem isn’t information.</h3><p>It’s knowing what’s effective now.</p></div>
-      <div class="growth-signal"><h3>The signals are already there.</h3><p>Across markets, customers, competitors, capital and behaviour.</p></div>
-      <div class="growth-signal"><h3>The businesses that see them early move first.</h3><p>The businesses that don't react after the opportunity has moved.</p></div>
-      <div class="growth-signal"><h3>BACI was built to see what others miss —</h3><p>and turn those signals into decisions while they still matter.</p></div>
-    </div>
+  <div class="signals" id="signals"></div>
+  <div class="bridge">
+    <p class="signals__closer">BACI was built to see what others miss, and turn those signals into decisions while they still matter.</p>
+    <div class="rule"></div>
+    <p class="bridge__sub">What if growth was intelligent, predictive and always one step ahead?</p>
+    <a class="bridge__mark" href="#intro" aria-label="BACI"><img class="wm-tight" src="baci-wordmark.webp" alt="BACI"
+      style="width:clamp(120px,16vw,200px);height:calc(clamp(120px,16vw,200px) * .215);"></a>
+    <div class="cta-wrap"><a class="cta" href="#access"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div>
   </div>
 </section>
 
 <!-- ══ §5 INTRODUCING BACI ══ -->
 <section class="section reveal" id="intro">
-  <p class="eyebrow" style="text-align:center;">Introducing</p>
-  <div style="text-align:center;margin-bottom:var(--s-block);"><img src="baci-wordmark.webp" alt="BACI" style="width:clamp(200px,30vw,420px);height:auto;"></div>
+  <p class="eyebrow intro__word" id="introWord" style="text-align:center;">Introducing</p>
+  <div style="text-align:center;margin-bottom:var(--s-block);"><img class="wm-tight" src="baci-wordmark.webp" alt="BACI"
+    style="width:clamp(200px,30vw,420px);height:calc(clamp(200px,30vw,420px) * .215);"></div>
   <div class="body-copy center">
-    <p>Businesses today hold more information than they've ever had and less certainty about market direction and growth opportunities. The signals are there. The intelligence is fragmented.</p>
+    <p>Businesses today hold more information than they&rsquo;ve ever had and less certainty about market direction and growth opportunities. The signals are there. The intelligence is fragmented.</p>
     <p style="margin-top:var(--s-para);">BACI closes that gap.</p>
     <p style="margin-top:var(--s-para);">Not another dashboard. Not another tool. One intelligence system for the work that actually moves a business forward, finding the audiences and partners most likely to convert, writing the bids that win, identifying the markets worth entering, connecting you to the capital that fuels what comes next.</p>
     <p style="margin-top:var(--s-para);">It turns attention into conversion, and conversion into revenue that compounds.</p>
@@ -743,22 +974,22 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
 
 <!-- ══ §6 GLOBAL REACH ══ -->
 <section class="section section--wide reveal" id="global-reach">
-  <div class="title-stack">
-    <h2 class="t1">Global Reach</h2>
-    <p class="t2">Infinite Intelligence</p>
-  </div>
-  <div class="reach-art" aria-hidden="true">
-    <img src="global-reach-globe.webp" alt="" width="980" height="681" loading="lazy" decoding="async">
-  </div>
-  <div class="body-copy center">
+  <h2 class="visually-hidden">Global Reach — Infinite Intelligence</h2>
+  <div class="reach">
+    <div class="reach-art">
+      <img src="global-reach-globe.webp" alt="Global Reach — Infinite Intelligence" width="1280" height="853" decoding="async"
+        onerror="this.closest('.reach').classList.add('reach--noart');">
+    </div>
+  <div class="body-copy center reach-copy">
     <p>BACI reads signals across 181 countries, hundreds of sectors and over 118 languages at once, surfacing the markets worth entering before your competitors even know they exist.</p>
     <p style="margin-top:var(--s-para);">It doesn't stop at markets. It finds the investors, funders and resources within them, the capital most businesses never know exists because no one ever told them where to look.</p>
     <p style="margin-top:var(--s-para);">No time zone slows it down. No language limits what it sees. No border defines where your next opportunity, or your next investor, comes from.</p>
     <p style="margin-top:var(--s-para);">One system. Every market. Every resource. Always searching.</p>
     <p style="margin-top:var(--s-para);">Growth was never meant to stop at a border. Neither does BACI.</p>
   </div>
+  </div>
   <div class="cta-wrap"><a class="cta" href="#access"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div>
-  <!-- countries credits rising, by region -->
+  <!-- 181 countries credits rising, by region -->
   <div class="credits">
     <div class="credits__inner">
       <p class="credits__title">181 Countries</p>
@@ -780,20 +1011,14 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
     <p style="margin-top:var(--s-para);">Industry intelligence is delivered in real time, specific to the market you're in and current to the moment you need it.</p>
     <p style="margin-top:var(--s-para);color:var(--gold-light);">Not last quarter's report. Not a template. Intelligence for your industry, happening now.</p>
   </div>
-  <!-- Industry Intelligence — approved artwork with live controls layered above it -->
-  <div class="ind-stage">
-    <div class="ind-stage__art" aria-hidden="true">
-      <img src="industry-mesh.webp" alt="" width="1086" height="358" loading="lazy" decoding="async">
-    </div>
-    <div class="ind-stage__fore">
-      <div class="ind-counter">
-        <div class="ind-counter__num" id="indCounterNum">0</div>
-        <div class="ind-counter__stmt" id="indCounterStmt"></div>
-      </div>
-      <div class="ind-tabs" id="indTabs" role="tablist"></div>
+  <!-- Industry Intelligence — one system, industry configurations swap in place (Healthcare = reference) -->
+  <div class="explorer">
+    <img class="explorer__tile" src="industry-explorer.webp"
+      alt="Industry Intelligence Explorer" width="1536" height="1024" decoding="async">
+    <div class="explorer__zone" aria-hidden="true">
+      <canvas id="izoneCanvas" width="705" height="370"></canvas>
     </div>
   </div>
-  <div class="izone" aria-hidden="true"><canvas id="izoneCanvas" width="705" height="370"></canvas></div>
   <div class="ind-builder">
     <div class="ind-q ind-q--show" id="indQIntent"><p class="ind-q__label">What are you looking to achieve?</p><div class="ind-chips" id="indIntentChips"></div></div>
     <div class="ind-q" id="indQWhere"><p class="ind-q__label">Where?</p><div class="ind-chips" id="indWhereChips"></div></div>
@@ -811,7 +1036,7 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
 <!-- ══ §8 THE BACI DOCTRINE (image overlay) ══ -->
 <section class="section section--wide reveal" id="doctrine">
   <div class="doctrine-overlay">
-    <img src="doctrine.webp" alt="The BACI Doctrine — Acquire, Convert, Grow" class="doctrine-img">
+    <img src="doctrine.webp" alt="The BACI Doctrine — Acquire, Convert, Grow" class="doctrine-img" width="1024" height="1468">
   </div>
   <div class="cta-wrap"><a class="cta" href="#access"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div>
 </section>
@@ -850,21 +1075,34 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
   </div>
 
   <div class="bos__grid">
-    <div class="bcard"><h3>Business Planning</h3><div class="bcard__rule"></div><p>Define. Structure. Direct. Build.</p></div>
-    <div class="bcard"><h3>Financial Planning</h3><div class="bcard__rule"></div><p>Model. Control. Allocate. Grow.</p></div>
-    <div class="bcard"><h3>Marketing Planning</h3><div class="bcard__rule"></div><p>Position. Target. Launch. Convert.</p></div>
-    <div class="bcard"><h3>Procurement</h3><div class="bcard__rule"></div><p>Source. Vet. Negotiate. Secure.</p></div>
-    <div class="bcard"><h3>Grants</h3><div class="bcard__rule"></div><p>Discover. Match. Apply. Win.</p></div>
-    <div class="bcard"><h3>Funding &amp; Capital Strategy</h3><div class="bcard__rule"></div><p>Assess. Structure. Position. Scale.</p></div>
-    <div class="bcard"><h3>Investors</h3><div class="bcard__rule"></div><p>Identify. Engage. Pitch. Close.</p></div>
-    <div class="bcard"><h3>Market Entry</h3><div class="bcard__rule"></div><p>Research. Validate. Enter. Capture.</p></div>
-    <div class="bcard"><h3>Growth Strategy</h3><div class="bcard__rule"></div><p>Analyse. Prioritise. Expand. Compound.</p></div>
-    <div class="bcard"><h3>Forecasting</h3><div class="bcard__rule"></div><p>Track. Model. Predict. Adapt.</p></div>
-    <a class="bcard" href="executive-briefing-board.html" aria-label="Open Executive Briefing Board"><h3>Executive Briefing Board</h3><div class="bcard__rule"></div><p>Brief. Prioritise. Decide. Follow through.</p></a>
-    <div class="bcard"><h3>Go-to-Market</h3><div class="bcard__rule"></div><p>Design. Schedule. Launch. Measure.</p></div>
+    <div class="bcard" tabindex="0" role="button" aria-expanded="false"><h3>Business Planning</h3><div class="bcard__rule"></div><p>Define. Structure. Direct. Build.</p><div class="bcard__detail"><p>BACI transforms strategic intent into an executable business plan. It brings together market conditions, competitive dynamics, operating priorities, financial assumptions and growth objectives to establish what the business should do, why it should do it and what must happen next. As conditions change, the plan evolves with them. Strategy, resources and execution stay aligned throughout.</p><div class="cta-wrap"><a class="cta" href="#access"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div></div></div>
+    <div class="bcard" tabindex="0" role="button" aria-expanded="false"><h3>Financial Planning</h3><div class="bcard__rule"></div><p>Model. Control. Allocate. Grow.</p><div class="bcard__detail"><p>BACI connects financial planning to the conditions actually shaping the business. It models revenue, cost, cash, capital requirements and performance under multiple scenarios, while incorporating market and operational signals that can change those assumptions. Leaders can weigh trade-offs, allocate capital and act with a clearer view of financial consequence.</p><div class="cta-wrap"><a class="cta" href="#access"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div></div></div>
+    <div class="bcard" tabindex="0" role="button" aria-expanded="false"><h3>Marketing Planning</h3><div class="bcard__rule"></div><p>Position. Target. Launch. Convert.</p><div class="bcard__detail"><p>BACI turns marketing from a calendar of activity into a commercially accountable growth system. It connects market demand, audience behaviour, competitive positioning, channel economics and conversion performance to determine where to compete, whom to target, how to position and where investment is most likely to produce return.</p><div class="cta-wrap"><a class="cta" href="#access"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div></div></div>
+    <div class="bcard" tabindex="0" role="button" aria-expanded="false"><h3>Procurement</h3><div class="bcard__rule"></div><p>Source. Vet. Negotiate. Secure.</p><div class="bcard__detail"><p>BACI provides intelligence across the procurement lifecycle: from identifying requirements and sourcing opportunities to supplier assessment, commercial evaluation and award decisions. It analyses supplier capability, pricing, market conditions, risk and alternatives so procurement decisions can balance cost, resilience, quality and strategic value rather than price alone.</p><div class="cta-wrap"><a class="cta" href="#access"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div></div></div>
+    <div class="bcard" tabindex="0" role="button" aria-expanded="false"><h3>Grants</h3><div class="bcard__rule"></div><p>Discover. Match. Apply. Win.</p><div class="bcard__detail"><p>BACI continuously identifies grant opportunities and evaluates them against the organisation's eligibility, objectives, geography, sector and funding requirements. It prioritises the opportunities worth pursuing, surfaces requirements and deadlines, and supports the evidence and positioning needed to build stronger applications. This reduces effort spent on funding the organisation is unlikely to secure.</p><div class="cta-wrap"><a class="cta" href="#access"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div></div></div>
+    <div class="bcard" tabindex="0" role="button" aria-expanded="false"><h3>Funding &amp; Capital Strategy</h3><div class="bcard__rule"></div><p>Assess. Structure. Position. Scale.</p><div class="bcard__detail"><p>BACI determines what capital the business requires, when it requires it and which sources are most appropriate. It evaluates funding structures, capital requirements, business readiness, market conditions and strategic objectives to help decision-makers determine whether to raise, borrow, partner, restructure or deploy existing capital, and how to position the business for that decision.</p><div class="cta-wrap"><a class="cta" href="#access"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div></div></div>
+    <div class="bcard" tabindex="0" role="button" aria-expanded="false"><h3>Investors</h3><div class="bcard__rule"></div><p>Identify. Engage. Pitch. Close.</p><div class="bcard__detail"><p>BACI identifies investors whose mandate, geography, sector, investment stage and capital profile align with the business. It goes beyond producing a list of names by assessing strategic fit, investment relevance and approach priorities, helping teams focus engagement on the investors most likely to understand the opportunity and have the capacity to act.</p><div class="cta-wrap"><a class="cta" href="#access"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div></div></div>
+    <div class="bcard" tabindex="0" role="button" aria-expanded="false"><h3>Market Entry</h3><div class="bcard__rule"></div><p>Research. Validate. Enter. Capture.</p><div class="bcard__detail"><p>BACI evaluates whether, where and how the business should enter a new market. It brings together demand, competition, regulation, pricing, distribution, operating requirements, partners, customer behaviour and entry risk to compare opportunities and determine the most viable route to market. Expansion becomes an evidence-led capital decision rather than a geographic assumption.</p><div class="cta-wrap"><a class="cta" href="#access"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div></div></div>
+    <div class="bcard" tabindex="0" role="button" aria-expanded="false"><h3>Growth Strategy</h3><div class="bcard__rule"></div><p>Analyse. Prioritise. Expand. Compound.</p><div class="bcard__detail"><p>BACI identifies where the next material sources of growth can come from and what is required to capture them. It evaluates customers, products, markets, channels, partnerships, competitors and operating capacity to distinguish sustainable opportunities from incremental activity. The growth paths with the strongest strategic and economic case rise to the top for prioritisation.</p><div class="cta-wrap"><a class="cta" href="#access"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div></div></div>
+    <div class="bcard" tabindex="0" role="button" aria-expanded="false"><h3>Forecasting</h3><div class="bcard__rule"></div><p>Track. Model. Predict. Adapt.</p><div class="bcard__detail"><p>BACI converts current signals into forward-looking decision intelligence. It combines historical performance with market, competitive, financial and operational indicators to model likely outcomes, alternative scenarios and emerging deviations. Forecasts are continuously recalibrated as conditions change, giving decision-makers earlier visibility into what may happen and more time to respond.</p><div class="cta-wrap"><a class="cta" href="#access"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div></div></div>
+    <div class="bcard" tabindex="0" role="button" aria-expanded="false"><h3>Executive Intelligence</h3><div class="bcard__rule"></div><p>Monitor. Synthesise. Decide. Lead.</p><div class="bcard__detail"><p>BACI brings the signals that matter across the organisation into a decision-level view for leadership. It synthesises financial, commercial, operational, market and competitive intelligence to surface material changes, dependencies, risks and opportunities. This reduces the distance between what is happening in the business and the decisions executives need to make.</p><div class="cta-wrap"><a class="cta" href="#access"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div></div></div>
+    <div class="bcard" tabindex="0" role="button" aria-expanded="false"><h3>Go-to-Market</h3><div class="bcard__rule"></div><p>Design. Schedule. Launch. Measure.</p><div class="bcard__detail"><p>BACI converts a commercial proposition into a coordinated route to market. It connects customer selection, positioning, pricing, channels, distribution, campaign activity, sales readiness and performance measurement into a single execution framework. This shows not only how the business intends to enter the market, but whether the strategy is gaining traction and where intervention is required.</p><div class="cta-wrap"><a class="cta" href="#access"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div></div></div>
   </div>
 
+  <div class="cta-wrap"><a class="cta" href="#access"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div>
+</section>
 
+<!-- ══ §11 DROWNING IN DATA ══ -->
+<section class="section reveal" id="drowning">
+  <h2 class="drown__head">You're not missing information.<br>You're missing clarity.</h2>
+  <div class="rule"></div>
+  <div class="drown__body">
+    <p>BACI transforms information into intelligence you can use right now.</p>
+    <p>Because more information was never the answer. <span class="em">Knowing what to do with it is.</span></p>
+    <p>BACI surfaces the signals that actually affect your business, cutting through the noise so you can see where to focus and when to act.</p>
+    <p class="pull">Less noise. More clarity. Better decisions.</p>
+    <p>The intelligence is already there. <span class="em">BACI makes it useful.</span></p>
+  </div>
   <div class="cta-wrap"><a class="cta" href="#access"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div>
 </section>
 
@@ -898,7 +1136,7 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
   <div class="access__grid" id="accessGrid"></div>
   <div class="access__foot">
     <p class="access__ready">The intelligence is ready&#8230;</p>
-    <div class="cta-wrap"><a class="cta" href="/access-business"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div>
+    <div class="cta-wrap"><a class="cta" href="access-business.html"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div>
   </div>
 </section>
 
@@ -912,20 +1150,20 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
         <div class="rule"></div>
         <div class="os-split">
           <ul>
-            <li><a href="#">Business Planning</a></li>
-            <li><a href="#">Financial Planning</a></li>
-            <li><a href="#">Marketing Planning</a></li>
-            <li><a href="#">Procurement</a></li>
-            <li><a href="#">Grants</a></li>
-            <li><a href="#">Funding &amp; Capital Strategy</a></li>
+            <li><a href="business-planning.html">Business Planning</a></li>
+            <li><a href="financial-planning.html">Financial Planning</a></li>
+            <li><a href="marketing-planning.html">Marketing Planning</a></li>
+            <li><a href="procurement.html">Procurement</a></li>
+            <li><a href="grants.html">Grants</a></li>
+            <li><a href="funding-capital-strategy.html">Funding &amp; Capital Strategy</a></li>
           </ul>
           <ul>
-            <li><a href="#">Investors</a></li>
-            <li><a href="#">Market Entry</a></li>
-            <li><a href="#">Growth Strategy</a></li>
-            <li><a href="#">Forecasting</a></li>
-            <li><a href="executive-briefing-board.html">Executive Briefing Board</a></li>
-            <li><a href="#">Go-to-Market</a></li>
+            <li><a href="investors.html">Investors</a></li>
+            <li><a href="market-entry.html">Market Entry</a></li>
+            <li><a href="growth-strategy.html">Growth Strategy</a></li>
+            <li><a href="forecasting.html">Forecasting</a></li>
+            <li><a href="executive-intelligence.html">Executive Intelligence</a></li>
+            <li><a href="go-to-market.html">Go-to-Market</a></li>
           </ul>
         </div>
       </div>
@@ -934,11 +1172,11 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
         <h3>INTELLIGENCE</h3>
         <div class="rule"></div>
         <ul>
-          <li><a href="#">Industry Intelligence</a></li>
-          <li><a href="#">Conversion Intelligence</a></li>
-          <li><a href="#">Global Reach</a></li>
-          <li><a href="#">The Doctrine</a></li>
-          <li><a href="#">Operating Modes</a></li>
+          <li><a href="index.html#industry">Industry Intelligence</a></li>
+          <li><a href="index.html#conversion-intelligence">Conversion Intelligence</a></li>
+          <li><a href="index.html#global-reach">Global Reach</a></li>
+          <li><a href="index.html#doctrine">The Doctrine</a></li>
+          <li><a href="modes.html">Operating Modes</a></li>
         </ul>
       </div>
 
@@ -973,7 +1211,7 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
         <h3>COMPANY</h3>
         <div class="rule"></div>
         <ul>
-          <li><a href="#">About</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="support.html">Support</a></li>
           <li><a href="careers.html">Careers</a></li>
@@ -984,16 +1222,16 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
     </div>
 
     <nav class="policies" aria-label="Policies">
-      <a href="#">Terms</a><span>&bull;</span>
-      <a href="#">Privacy</a><span>&bull;</span>
-      <a href="#">Refund Policy</a><span>&bull;</span>
-      <a href="#">Billing</a><span>&bull;</span>
-      <a href="#">Cancellation</a><span>&bull;</span>
-      <a href="#">Acceptable Use</a><span>&bull;</span>
-      <a href="#">Data Processing</a><span>&bull;</span>
-      <a href="#">Security</a><span>&bull;</span>
-      <a href="#">Responsible AI</a><span>&bull;</span>
-      <a href="#">Cookies</a>
+      <a href="terms.html">Terms</a><span>&bull;</span>
+      <a href="privacy.html">Privacy</a><span>&bull;</span>
+      <a href="refund-policy.html">Refund Policy</a><span>&bull;</span>
+      <a href="billing.html">Billing</a><span>&bull;</span>
+      <a href="cancellation.html">Cancellation</a><span>&bull;</span>
+      <a href="acceptable-use.html">Acceptable Use</a><span>&bull;</span>
+      <a href="data-processing.html">Data Processing</a><span>&bull;</span>
+      <a href="security.html">Security</a><span>&bull;</span>
+      <a href="responsible-ai.html">Responsible AI</a><span>&bull;</span>
+      <a href="cookies.html">Cookies</a>
     </nav>
 
     <div class="pay">
@@ -1001,7 +1239,7 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
     </div>
 
     <div class="base">
-      <div class="mono" aria-label="BACI">B</div>
+      <div class="mono" aria-label="BACI"><img src="favicon-baci-monogram.webp" alt="" width="64" height="64"></div>
       <div class="copy">&copy; 2026 BACI</div>
       <div class="socials">
         <a class="soc" href="#" aria-label="TikTok"><img src="assets/social-tiktok.webp" alt=""></a>
@@ -1034,7 +1272,7 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
     <label class="sr-only" for="thoughts-email">Email, if you would like a reply</label>
     <input type="email" id="thoughts-email" autocomplete="email" placeholder="Email, if you would like a reply">
     <div class="send">
-      <button type="button" id="thoughts-send">SHARE YOUR THOUGHTS</button><p class="thoughts-status" id="thoughts-status" aria-live="polite"></p>
+      <button type="button" id="thoughts-send">SHARE YOUR THOUGHTS</button>
     </div>
   </div>
 </section>
@@ -1068,29 +1306,30 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
     ["Caribbean","Bahamas, Barbados, Cuba, Dominican Republic, Guyana, Haiti, Jamaica, Puerto Rico, Suriname, Trinidad & Tobago"],
     ["Oceania","Australia, Fiji, New Zealand, Papua New Guinea, Samoa"]
   ];
-  var WHEEL = ["Performance Intelligence","Conversion Intelligence","Acquisition Intelligence","Campaign Intelligence","Content Intelligence","Investors & Funding Intelligence","Behavioural Intelligence","Audience Intelligence","Affiliate Intelligence","Creator & Influencer Intelligence","Distribution Intelligence"];
+  var WHEEL = ["Performance Intelligence","Conversion Intelligence","Acquisition Intelligence","Campaign Intelligence","Content Intelligence","Personalisation Intelligence","Behaviour Intelligence","Audience Intelligence","Affiliate Intelligence","Creator Intelligence","Influencer Intelligence","Distribution Intelligence"];
   var WHEEL_INFO = {
-    "Performance Intelligence":"What's working, what's not, and what to do next — measured continuously.",
-    "Conversion Intelligence":"The signals that turn attention into decisions, surfaced as they happen.",
-    "Acquisition Intelligence":"Your next customers, found before your competitors know where to look.",
-    "Campaign Intelligence":"Campaigns built on what the market is doing now, not last quarter.",
-    "Content Intelligence":"The formats, angles and moments most likely to convert in your market.",
-    "Investors & Funding Intelligence":"The capital most businesses never know exists, mapped to you.",
-    "Behavioural Intelligence":"How your audience actually behaves, not how you assume they do.",
-    "Audience Intelligence":"The people most likely to choose you, identified at scale.",
-    "Affiliate Intelligence":"The networks and partners that move results, not just referrals.",
-    "Creator & Influencer Intelligence":"The voices your audience already trusts, matched to your business.",
-    "Distribution Intelligence":"Where your message lands hardest, and where it's wasted."
+    "Performance Intelligence":"The businesses that improve fastest are the ones that measure best. BACI tracks every outcome across every capability and channel, interpreting performance signals to identify where the real opportunities for improvement sit. Those learnings are applied directly to the next campaign, sharpening execution rather than repeating it. Over time, this builds a system that becomes sharper with every cycle, not a report that gets filed and forgotten.",
+    "Conversion Intelligence":"Attention is the beginning. Conversion is the objective. BACI reads every signal across the conversion journey, removing friction and strengthening intent at each touchpoint along the way. The result is movement, from awareness to committed action, not just visibility. Every outcome is tracked and every learning carried into the next cycle, so conversion keeps improving rather than plateauing.",
+    "Acquisition Intelligence":"Most businesses pursue growth. BACI systematises it. It identifies the highest-value acquisition opportunities across every channel and builds the systems that turn them into consistent, qualified pipeline rather than one-off wins. Each channel is continuously refined for maximum return, so scale comes from precision, not from adding more noise. Growth expands without acquisition becoming more complex to manage.",
+    "Campaign Intelligence":"Most campaigns are built on instinct. BACI builds them on intelligence, not assumption. Every campaign executes across the right channels with precision and timing, guided by performance signals tracked in real time at every touchpoint. Targeting, messaging and conversion sharpen as the campaign runs, not after it ends.",
+    "Content Intelligence":"The most effective businesses do not communicate more. They communicate better. BACI generates intelligence-led content aligned to every stage of the journey, then refines the messaging as real audience response and performance come in. Content deploys across the right channels at the right moment, not on a fixed schedule. What resonates is tracked, and every insight feeds directly into what comes next.",
+    "Personalisation Intelligence":"The same message will not convert everyone. BACI makes sure they don't all receive it. It uses audience, behaviour, intent and performance signals to determine the message, offer and experience most likely to move each audience or segment to act. Personalisation adapts across channels and stages of the journey rather than stopping at surface-level customisation. As response signals come in, BACI sharpens what each audience receives next, turning relevance into a conversion advantage.",
+    "Behaviour Intelligence":"Your competitors know who their audience is. Very few know why they buy. BACI identifies the triggers and motivations that actually drive people to act, mapping the decision journey from first awareness through to commitment. Campaigns are designed around that psychology, not assumption, and refined as new behavioural outcomes come in.",
+    "Audience Intelligence":"Most businesses chase audiences. BACI finds them. It discovers the right audiences across platforms, channels and markets, using behavioural, demographic and intent signals to reveal what actually drives them to act. Effort concentrates on the segments with the highest value and strongest potential, not the widest reach. The result is an audience strategy built to connect, engage and convert, not just to grow a list.",
+    "Affiliate Intelligence":"The most scalable businesses build ecosystems that create demand for them. BACI finds affiliate partners with the highest probability of conversion, assessing audience alignment, influence and revenue potential before a single partnership goes live. Programmes launch in a coordinated way rather than partner by partner, and reach, acquisition and revenue are refined as results come in.",
+    "Creator Intelligence":"Great content needs more than creativity. It needs the right creator behind it. BACI identifies creators whose content, audience and style align with your business and what you want to achieve, then assesses their relevance, engagement quality and potential to drive action. The right creators are matched to the right campaigns rather than selected on visibility alone. Performance feeds back into every decision, revealing who creates content that does more than attract attention. It converts.",
+    "Influencer Intelligence":"Reach means very little without influence. BACI finds the people whose audiences listen, trust and act. It evaluates audience alignment, credibility, engagement quality and conversion potential before a partnership begins, distinguishing genuine influence from follower count and surface-level popularity. Each relationship is matched to the campaign and audience where it can have the greatest effect, then measured against real outcomes as it runs.",
+    "Distribution Intelligence":"The right message at the wrong moment is wasted. BACI eliminates that. It identifies the optimal channels for every message and audience, then times deployment to the moment people are most likely to act. Execution runs across every channel with the same precision, not a primary channel and afterthoughts. Distribution is continuously refined against performance data, so timing and placement keep improving."
   };
   var ACCESS = [
-    ["Enterprise","Lead with intelligence your competitors don't have.","/access-enterprise"],
-    ["Developers","Build on intelligence that never stops evolving.","/access-developers"],
-    ["Agencies","Deliver results your competitors can't explain.","/access-agencies"],
-    ["Affiliates","Earn from intelligence, not just referrals.","/access-affiliates"],
-    ["Technology Partners","Integrate intelligence your product can't deliver on its own.","/access-technology-partners"],
-    ["Independent Professionals","Compete like you have a team behind you.","/access-independent-professional"],
-    ["Advisory","BACI finds what matters. Your reading makes it valuable. Best for consultants and advisers who trade on insight.","/access-advisory"],
-    ["Business","Grow with intelligence your competitors can't match.","/access-business"]
+    ["Enterprise","Lead with intelligence your competitors don't have.","access-enterprise.html"],
+    ["Developers","Build on intelligence that never stops evolving.","access-developers.html"],
+    ["Agencies","Deliver results your competitors can't explain.","access-agencies.html"],
+    ["Affiliates","Earn from intelligence, not just referrals.","access-affiliates.html"],
+    ["Technology Partners","Integrate intelligence your product can't deliver on its own.","access-technology-partners.html"],
+    ["Independent Professionals","Compete like you have a team behind you.","access-independent-professional.html"],
+    ["Advisory","BACI finds what matters. Your reading makes it valuable. Best for consultants and advisers who trade on insight.","access-advisory.html"],
+    ["Business","Grow with intelligence your competitors can't match.","access-business.html"]
   ];
 
   var $ = function(id){return document.getElementById(id);};
@@ -1133,19 +1372,37 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
     }
     function render(i){
       var r=REGIONS[i];
-      regionPanel.innerHTML='<h3>'+esc(r[0])+'</h3><div class="rrule"></div><p class="muted">'+esc(r[1])+'</p><p>'+esc(r[2])+'</p><p class="opp">'+esc(r[3])+'</p>';
+      regionPanel.innerHTML='<h3>'+esc(r[0])+'</h3><div class="rrule"></div><p class="muted">'+esc(r[1])+'</p><p>'+esc(r[2])+'</p><p class="opp">'+esc(r[3])+'</p>'
+        +'<div class="cta-wrap"><a class="cta" href="#access"><span class="cta__text">CONNECT YOUR BUSINESS</span><span class="cta__conduit"><span class="cta__dot"></span></span></a></div>';
+      /* the travelling light-point is measured from the rendered text, so a
+         CTA built after page load has to be measured when it is built */
+      if(typeof measureCTAs==='function') measureCTAs();
       regionPanel.classList.add('is-shown');
     }
     function openDemo(i){ paused=true; render(i); }
     function closeDemo(){ if(userTapped)return; paused=false; regionPanel.classList.remove('is-shown'); last=null; }
     function open(i){ userTapped=true; if(demoTimer)clearTimeout(demoTimer); paused=true; render(i); }
-    function close(){ paused=false; regionPanel.classList.remove('is-shown'); last=null; }
+    function close(){ userTapped=true; paused=false; regionPanel.classList.remove('is-shown'); last=null; }
+    /* TAPPING AGAIN LETS IT GO.
+       The ribbon paused on a tap and only resumed when the reader
+       happened to tap outside the whole section — so tapping the same
+       region again, or the panel, or anywhere within the band, left it
+       frozen. Now the open region closes on a second tap, another
+       region swaps to it, and a tap anywhere else releases it. */
+    var openIdx = -1;
     nodes.forEach(function(nd){
       var i=+nd.getAttribute('data-i');
-      nd.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();open(i);});
+      nd.addEventListener('click',function(e){
+        e.preventDefault(); e.stopPropagation();
+        if(openIdx === i){ openIdx = -1; close(); }
+        else { openIdx = i; open(i); }
+      });
     });
     document.addEventListener('click',function(e){
-      if(!regionsSec.contains(e.target)) close();
+      /* any tap that is not a region button releases the ribbon,
+         including one inside the section or on the panel itself */
+      if(e.target.closest && e.target.closest('.region')) return;
+      if(openIdx !== -1){ openIdx = -1; close(); }
     });
     if(!RM) requestAnimationFrame(frame);
     else { nodes[0].style.transform='translateY(-50%) scale(1.5)'; nodes[0].style.setProperty('--glow','1'); }
@@ -1154,18 +1411,77 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
   /* ── RENDER: credits ── */
   function buildLangs(){
     var el=$('langList'); if(!el) return;
-    el.innerHTML='<div class="credits__region">'+LANGS.map(esc).join('<br>')+'</div>';
-    el.style.columns='3';
+    var perCol=Math.ceil(LANGS.length/3);
+    var cols=[LANGS.slice(0,perCol),LANGS.slice(perCol,perCol*2),LANGS.slice(perCol*2)];
+    el.innerHTML=cols.map(function(col){
+      return '<div class="credits__region">'+col.map(esc).join('<br>')+'</div>';
+    }).join('');
   }
   function buildCountries(){
     var el=$('countryList'); if(!el) return;
-    el.innerHTML=COUNTRIES.map(function(c){
-      return '<div class="credits__region"><b>'+esc(c[0])+'</b>'+esc(c[1])+'</div>';
+    /* explicit columns, not grid auto-flow: the regions differ hugely in length,
+       so row-based flow leaves ragged gaps. Caribbean and Oceania sit in the left
+       column to balance it against Africa and Asia. */
+    var by={}; COUNTRIES.forEach(function(c){ by[c[0]]=c[1]; });
+    var COLS=[
+      ["Africa","Caribbean","Oceania"],
+      ["Asia","MENA","North America"],
+      ["Europe","Europe / MENA","Latin America"]
+    ];
+    var used={};
+    COLS.forEach(function(col){ col.forEach(function(n){ used[n]=1; }); });
+    COUNTRIES.forEach(function(c){ if(!used[c[0]]) COLS[2].push(c[0]); });
+    el.innerHTML=COLS.map(function(col){
+      return '<div class="credits__col">'+col.filter(function(n){return by[n];}).map(function(n){
+        return '<div class="credits__region"><b>'+esc(n)+'</b>'+esc(by[n])+'</div>';
+      }).join('')+'</div>';
+    }).join('');
+  }
+
+  /* ── RENDER: signals, three columns ── */
+  var SIGNALS=[
+    [
+      ["Outdated strategies. Disconnected systems.","Motion without direction."],
+      ["Effort is never the issue.","Knowing where to direct it is."],
+      ["Leaders aren't the weak point.","They decide every day, under real pressure.","The system beneath them was built for a slower market.","One where decisions were often reactive."]
+    ],
+    [
+      ["Every business owns more data than they can process.","Almost none of it reaches the decision channel in time."],
+      ["Everyone claims to be data-driven.","Almost no one is. Volume isn't insight."],
+      ["The problem isn't information.","It's knowing what's effective now."]
+    ],
+    [
+      ["The signals are already there.","Across markets, customers, competitors, capital and behaviour."],
+      ["The businesses that see them early move first.","The businesses that don't react after the opportunity has moved."]
+    ]
+  ];
+  function buildSignals(){
+    var el=$('signals'); if(!el) return;
+    el.innerHTML=SIGNALS.map(function(col){
+      return '<div class="signals__col">'+col.map(function(b){
+        return '<div class="signals__block"><p class="lead">'+esc(b[0])+'</p>'+
+          b.slice(1).map(function(x){return '<p class="sub">'+esc(x)+'</p>';}).join('')+'</div>';
+      }).join('')+'</div>';
     }).join('');
   }
 
   /* ══ §7 INDUSTRY INTELLIGENCE — real system engine (Healthcare reference; other industries = config swap) ══ */
   var INDUSTRY_LIST=["Healthcare","Energy","Construction","Financial Services","Technology","Real Estate","Education","Hospitality","Retail","Legal","Agriculture","Logistics"];
+  var INDUSTRY_COPY={
+    "Healthcare":"Healthcare intelligence tracks patient demand, care trends, provider activity, workforce pressures, procurement, clinical innovation and funding flows. It reveals where care is being delivered differently and where new health markets are forming.",
+    "Energy":"Energy intelligence tracks demand, generation capacity, infrastructure investment, commodity movement, regulatory shifts, project pipelines and the energy transition. It identifies where supply, investment and pricing pressure are beginning to shift.",
+    "Construction":"Construction intelligence tracks project pipelines, tenders, material costs, contractor activity, planning approvals, infrastructure spending and regional development. It shows where projects, capital and demand are moving next.",
+    "Financial Services":"Financial services intelligence tracks lending activity, credit exposure, capital markets movement, insurance trends, fintech disruption, deposit flows and compliance pressure. It surfaces risk, opportunity and competitive advantage before they reach the balance sheet.",
+    "Technology":"Technology intelligence tracks adoption patterns, product demand, funding activity, competitive launches, talent movement, platform shifts and infrastructure investment. It identifies where innovation is accelerating and disruption is about to break through.",
+    "Real Estate":"Real estate intelligence tracks property demand, pricing movement, development pipelines, transaction activity, occupancy, investment flows and location-level opportunity. It reveals where markets are strengthening, weakening or beginning to move.",
+    "Education":"Education intelligence tracks enrolment demand, skills gaps, institutional activity, funding, workforce requirements, programme trends and industry partnerships. It shows how learning needs are changing and where new demand is forming.",
+    "Hospitality":"Hospitality intelligence tracks travel demand, occupancy, pricing, booking behaviour, destination movement, consumer preferences and seasonal patterns. It reveals where guests are going, what they want and how demand is changing.",
+    "Retail":"Retail intelligence tracks consumer demand, product movement, pricing, channel performance, competitor activity, purchasing behaviour and category shifts. It shows what customers are buying, where demand is moving and what is gaining momentum.",
+    "Legal":"Legal intelligence tracks regulatory change, litigation patterns, client demand, sector exposure, competitive movement, legal-market activity and emerging risk. It identifies developments that can create new obligations, exposure or commercial opportunity.",
+    "Agriculture":"Agricultural intelligence tracks crop and commodity movement, input costs, weather exposure, supply conditions, trade flows, procurement and market demand. It reveals changes across production, supply and commercial opportunity.",
+    "Logistics":"Logistics intelligence tracks freight movement, route pressure, capacity, port activity, fuel and transport costs, supply-chain disruption and trade flows. It identifies where goods are moving, where pressure is building and where disruption may emerge."
+  };
+
   var INTENTS=[{k:"start",label:"Start a business"},{k:"invest",label:"Invest"},{k:"procurement",label:"Win contracts"},{k:"funding",label:"Find funding"},{k:"market-entry",label:"Enter a market"},{k:"acquire",label:"Acquire or sell"},{k:"partners",label:"Find partners"}];
   var INTENT_WORD={start:"OPPORTUNITY",invest:"INVESTMENT",procurement:"PROCUREMENT",funding:"FUNDING","market-entry":"MARKET ENTRY",acquire:"ACQUISITION",partners:"PARTNERSHIP"};
   var IND_SCOPES=[{k:"country",label:"Country"},{k:"region",label:"Region"},{k:"global",label:"Worldwide"}];
@@ -1187,18 +1503,35 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
     "Logistics":["Freight & Shipping","Warehousing & Distribution","Last-Mile Delivery","Supply Chain Management","Customs & Trade Compliance","Cold Chain Logistics","Ports & Maritime","Air Cargo","Rail Freight","Logistics Technology","Third-Party Logistics","Fleet Management"]
   };
   function indSubsFor(ind){ return SUBSECTORS[ind] || ["Market Overview","Opportunities","Partners","Regulation","Investment"]; }
-  var IND_BASE={"Healthcare":4827391,"Energy":6120044,"Construction":3550218,"Financial Services":8903117,"Technology":9412006,"Real Estate":2988540,"Education":1740922,"Hospitality":2103788,"Retail":5216480,"Legal":1322905,"Agriculture":2450173,"Logistics":3891264};
-  function indBaseFor(ind){ return IND_BASE[ind]||3000000; }
+  /* The per-industry figures were invented and then multiplied by
+     invented factors for scope and intent. They now come from what BACI
+     has actually collected, and where that is not yet meaningful the
+     statement stands on its own without a number. */
+  var SIGNAL_API='https://api.bacihq.com/api/signals', indSignalCache={};
+  function indFetchSignals(ind, scope, place, done){
+    var key=(ind||'')+'|'+(scope||'worldwide')+'|'+(place||'');
+    if(Object.prototype.hasOwnProperty.call(indSignalCache,key)){ done(indSignalCache[key]); return; }
+    var qs='industry='+encodeURIComponent(String(ind||'').toLowerCase());
+    if(scope==='country'&&place) qs+='&scope=country&code='+encodeURIComponent(place);
+    else if(scope==='region'&&place) qs+='&scope=region&code='+encodeURIComponent(place);
+    fetch(SIGNAL_API+'?'+qs,{credentials:'omit'})
+      .then(function(r){ return r.ok?r.json():null; })
+      .then(function(j){
+        var v=(j&&j.sufficient&&typeof j.signals==='number')?j.signals:null;
+        indSignalCache[key]=v; done(v);
+      })
+      .catch(function(){ indSignalCache[key]=null; done(null); });
+  }
 
   function buildIndustryEngine(){
     var indState={industry:"Healthcare",intent:null,scope:null,place:null,sub:null};
-    var indTargetVal=indBaseFor(indState.industry), indShownVal=indTargetVal;
+    var indHasNumber=false, indTargetVal=0, indShownVal=0;
     function indFmt(n){ return Math.round(n).toLocaleString('en-GB'); }
     function indBuildStatement(){
       var ind=indState.industry.toUpperCase();
       var hasGeo = indState.scope && (indState.scope==='global' || indState.place);
       var scopeTok = !hasGeo ? null : (indState.scope==='global' ? 'GLOBAL' : indState.place.toUpperCase());
-      if(!hasGeo && !indState.intent){ return 'ANALYSING <span class="lit">'+indFmt(indTargetVal)+'</span> '+ind+' SIGNALS'; }
+      if(!hasGeo && !indState.intent){ return 'ANALYSING '+ind+' SIGNALS IN REAL TIME'; }
       if(hasGeo && !indState.intent){
         if(indState.scope==='global') return 'ANALYSING '+ind+' INTELLIGENCE ACROSS <span class="lit">'+IND_GLOBAL_MARKETS+'</span> MARKETS';
         return 'ANALYSING '+ind+' INTELLIGENCE · <span class="lit">'+scopeTok+'</span>';
@@ -1207,23 +1540,37 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
       return 'ANALYSING '+ind+' '+iw+' SIGNALS · <span class="lit">'+sc+'</span>';
     }
     function indRefreshCounter(){
-      var base=indBaseFor(indState.industry), factor=1;
-      if(indState.scope==='country' && indState.place)factor=0.11;
-      else if(indState.scope==='region' && indState.place)factor=0.42;
-      else if(indState.scope==='global')factor=1;
-      if(indState.intent)factor*=0.63;
-      indTargetVal=Math.max(1200, Math.round(base*factor));
-      $('indCounterStmt').innerHTML=indBuildStatement();
+      var stmt=$('indCounterStmt'); if(stmt) stmt.innerHTML=indBuildStatement();
+      var indDetail=$('indCounterDetail');
+      if(indDetail){ indDetail.style.animation='none'; indDetail.textContent=INDUSTRY_COPY[indState.industry]||''; void indDetail.offsetWidth; indDetail.style.animation=''; }
+      var scope = indState.scope==='global' ? 'worldwide' : indState.scope;
+      indFetchSignals(indState.industry, scope, indState.place||null, function(v){
+        /* Intent no longer scales the number: multiplying a real count
+           by an invented factor would make it invented again. The
+           statement already carries the intent in words. */
+        var num=$('indCounterNum');
+        if(typeof v==='number'){
+          indHasNumber=true; indTargetVal=v;
+          if(num) num.style.display='';
+        } else {
+          indHasNumber=false; indTargetVal=0; indShownVal=0;
+          if(num){ num.textContent=''; num.style.display='none'; }
+        }
+      });
     }
     function indTick(){
-      indShownVal += (indTargetVal-indShownVal)*0.08;
-      var drift = indTargetVal*0.0003*Math.sin(Date.now()/900);
-      $('indCounterNum').textContent=indFmt(indShownVal+drift);
-      requestAnimationFrame(indTick);
+      var num=$('indCounterNum');
+      if(indHasNumber && num){
+        indShownVal += (indTargetVal-indShownVal)*0.08;
+        var drift = indTargetVal*0.0003*Math.sin(Date.now()/900);
+        num.textContent=indFmt(indShownVal+drift);
+      }
+      if(num) requestAnimationFrame(indTick);
     }
     function indRenderTabs(){
-      $('indTabs').innerHTML=INDUSTRY_LIST.map(function(n){return '<button class="ind-tab'+(n===indState.industry?' is-active':'')+'" data-ind="'+esc(n)+'">'+esc(n)+'</button>';}).join('');
-      Array.prototype.forEach.call($('indTabs').querySelectorAll('.ind-tab'),function(b){
+      var t=$('indTabs'); if(!t) return;
+      t.innerHTML=INDUSTRY_LIST.map(function(n){return '<button class="ind-tab'+(n===indState.industry?' is-active':'')+'" data-ind="'+esc(n)+'">'+esc(n)+'</button>';}).join('');
+      Array.prototype.forEach.call(t.querySelectorAll('.ind-tab'),function(b){
         b.addEventListener('click',function(){ indSwitchIndustry(b.getAttribute('data-ind')); });
       });
     }
@@ -1295,7 +1642,7 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
       indRenderTabs(); indRenderIntents(); indRenderWhere(); indRenderPlace(); indRenderSub();
       $('indQWhere').classList.remove('ind-q--show'); $('indPlaceWrap').classList.remove('ind-q--show'); $('indQSub').classList.remove('ind-q--show');
       $('indResults').classList.remove('ind-show');
-      indTargetVal=indBaseFor(ind); indRefreshCounter();
+      indRefreshCounter();
     }
     $('indRefineBtn').addEventListener('click',function(){
       $('indResults').classList.remove('ind-show');
@@ -1303,7 +1650,8 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
     });
     indRenderTabs(); indRenderIntents(); indRenderWhere(); indRenderPlace(); indRenderSub();
     indRefreshCounter();
-    if(!RM) requestAnimationFrame(indTick); else $('indCounterNum').textContent=indFmt(indTargetVal);
+    if(!RM) requestAnimationFrame(indTick);
+    else if(indHasNumber){ var n0=$('indCounterNum'); if(n0) n0.textContent=indFmt(indTargetVal); }
   }
 
   /* ── conversion intelligence: revolving ring, top-pop, finished ── */
@@ -1321,13 +1669,24 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
     var base=-Math.PI/2, ang=0, speed=0.00010, last=null, paused=false, active=-1, focusIdx=-1;
     var NODE_PCT=0.155;
     function place(){
+      /* THE RING MUST BE SQUARE AND MUST AGREE WITH ITSELF.
+         This measured width only and centred the nodes on (W/2, W/2),
+         while the centre circle is placed by CSS at top:50% of the
+         element's HEIGHT. Wherever aspect-ratio:1 did not hold — an
+         older Safari, a flex parent, a text-size change — the two
+         disagreed: the nodes orbited one point and the BACI circle sat
+         at another, and the whole arrangement drifted off its margin.
+         Squaring the element here makes the two definitions the same
+         one. */
       var W=ring.clientWidth||1;
-      if(Math.abs(ring.clientHeight-W)>1) ring.style.height=W+'px';
-      var H=ring.clientHeight||W, S=Math.min(W,H);
+      if(Math.abs(ring.clientHeight - W) > 1) ring.style.height = W + 'px';
+      var H=ring.clientHeight||W;
+      var S=Math.min(W,H);
       var px=S*NODE_PCT, R=(S*0.5)-(px*0.5)-2, cx=W*0.5, cy=H*0.5;
       var topI=-1, topDist=1e9;
       for(var i=0;i<n;i++){
         var a=base+ang+(i/n)*Math.PI*2;
+        /* Node coordinates are their CENTRES; CSS translate(-50%,-50%) centres each circle. */
         var x=cx+R*Math.cos(a), y=cy+R*Math.sin(a);
         nodes[i].style.left=x+'px'; nodes[i].style.top=y+'px';
         nodes[i].style.width=px+'px'; nodes[i].style.height=px+'px';
@@ -1354,13 +1713,18 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
       active=i; paused=true; ring.classList.add('has-active');
       nodes.forEach(function(nd){nd.classList.remove('is-active','is-focus');}); focusIdx=-1;
       nodes[i].classList.add('is-active');
+      clearTimeout(panelClear);
       panel.innerHTML='<h3>'+esc(WHEEL[i])+'</h3><p>'+esc(WHEEL_INFO[WHEEL[i]]||'')+'</p>';
       panel.classList.add('is-shown');
     }
+    var panelClear=null;
     function close(){
       active=-1; paused=false; ring.classList.remove('has-active');
       nodes.forEach(function(nd){nd.classList.remove('is-active');});
       panel.classList.remove('is-shown');
+      /* empty it once it has faded, so a closed panel holds no height */
+      clearTimeout(panelClear);
+      panelClear=setTimeout(function(){ if(active<0) panel.innerHTML=''; },560);
     }
     nodes.forEach(function(nd,i){
       nd.addEventListener('click',function(e){ e.stopPropagation(); (active===i)?close():open(i); });
@@ -1451,23 +1815,155 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
   }
 
 
-  /* hero signal counter - drifts continuously, never lands */
+  /* HERO SIGNAL COUNTER — REAL, OR ABSENT.
+     This began at a made-up 37,942,118 and climbed a few hundred every
+     frame for as long as the page stayed open, so the figure a visitor
+     read depended on how long they had been looking at it. It now shows
+     what BACI is actually watching, and where that is not yet a
+     meaningful number the line reads "Analysing signals in real time"
+     without one. */
   (function(){
-    var el = $('heroCount'); if(!el || RM) return;
-    var v = 37942118, t0 = null;
-    requestAnimationFrame(function tick(ts){
-      if(!t0) t0 = ts;
-      v += 140 + Math.random()*260;
-      var drift = Math.sin((ts-t0)/1400) * 900;
-      el.textContent = Math.round(v + drift).toLocaleString('en-GB');
-      requestAnimationFrame(tick);
-    });
+    var el = $('heroCount'); if(!el) return;
+    el.textContent = '';
+
+    fetch('https://api.bacihq.com/api/signals/total', { credentials:'omit' })
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(j){
+        if(!j || !j.sufficient || typeof j.signals !== 'number'){
+          var gap = el.previousSibling;
+          if(gap && gap.nodeType === 3) gap.textContent = gap.textContent.replace(/\s+$/,' ');
+          if(el.parentNode) el.parentNode.removeChild(el);
+          return;
+        }
+        var target = j.signals;
+        el.textContent = target.toLocaleString('en-GB');
+        if(RM) return;
+        var t0 = null;
+        requestAnimationFrame(function tick(ts){
+          if(!t0) t0 = ts;
+          /* a small drift so it reads as live; it never departs from the
+             real figure by more than a rounding error, and never climbs */
+          var drift = Math.sin((ts-t0)/1400) * Math.max(1, target*0.00002);
+          el.textContent = Math.round(target + drift).toLocaleString('en-GB');
+          requestAnimationFrame(tick);
+        });
+      })
+      .catch(function(){ if(el.parentNode) el.parentNode.removeChild(el); });
   })();
 
+
+  /* SMOOTH IN-PAGE MOVEMENT, EVERYWHERE.
+     scroll-behavior:smooth is CSS-only and Safari ignored it until
+     15.4, so on an iPhone the page jumped instantly from the hero to
+     the section — the "boom" rather than the glide. This animates the
+     scroll itself, which every browser honours.
+
+     The easing is deliberately long and soft at both ends: the point is
+     that a section appears to open rather than that the page travels to
+     it. Reduced-motion users still get the instant move they asked for. */
+  function glide(){
+    if(RM) return;
+    var DURATION = 1150;
+
+    function ease(t){
+      /* slow to leave, slow to arrive, quick in the middle — the shape
+         that reads as a reveal rather than a scroll */
+      return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3)/2;
+    }
+
+    function scrollTo(target){
+      var start = window.pageYOffset || document.documentElement.scrollTop;
+      var rect  = target.getBoundingClientRect();
+      var end   = start + rect.top;
+      var max   = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+      if(end > max) end = max;
+      var dist = end - start;
+      if(Math.abs(dist) < 2) return;
+
+
+      var t0 = null;
+      function step(ts){
+        if(t0 === null) t0 = ts;
+        var p = Math.min((ts - t0) / DURATION, 1);
+
+        /* Re-read the target each frame. If an image finishes loading
+           mid-glide and moves the section, the glide follows it instead
+           of arriving where it used to be — which is what made one tap
+           feel like two or three. */
+        var now = window.pageYOffset || document.documentElement.scrollTop;
+        var live = now + target.getBoundingClientRect().top;
+        var cap  = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+        if(live > cap) live = cap;
+        if(Math.abs(live - end) > 4){ end = live; dist = end - start; }
+
+        window.scrollTo(0, start + dist * ease(p));
+        if(p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    document.addEventListener('click', function(e){
+      var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+      if(!a) return;
+      var id = a.getAttribute('href');
+      if(!id || id === '#') return;
+      var target = document.querySelector(id);
+      if(!target) return;
+      e.preventDefault();
+      scrollTo(target);
+      /* the address bar still reflects where the reader is, without the
+         browser performing a second jump of its own */
+      /* a convenience, never allowed to interrupt the scroll */
+      try{
+        if(window.history && window.history.replaceState){
+          window.history.replaceState(null, '', id);
+        }
+      }catch(err){}
+    }, false);
+  }
+
   /* ── init ── */
-  buildRegions(); buildLangs(); buildCountries();
+  /* INTRODUCING spells itself out on a loop, each letter flaring to champagne,
+     settling, then dissolving in the same order before it writes itself again */
+  (function(){
+    var w=document.getElementById('introWord'); if(!w) return;
+    var txt=w.textContent, frag='';
+    for(var i=0;i<txt.length;i++){
+      frag+='<span style="animation-delay:'+(i*0.085).toFixed(3)+'s">'+
+            (txt[i]===' '?'&nbsp;':txt[i])+'</span>';
+    }
+    w.innerHTML=frag;
+    if(!('IntersectionObserver' in window)){ w.classList.add('is-spelling'); return; }
+    /* it keeps cycling, but only while it is on screen, so it is not
+       spending battery animating somewhere nobody is looking */
+    var io=new IntersectionObserver(function(es){
+      w.classList.toggle('is-spelling', es[0].isIntersecting);
+    },{threshold:.35});
+    io.observe(w);
+  })();
+
+  /* the roll carries two copies of itself and travels exactly one copy's
+     worth, so the window is full at every point of the cycle instead of
+     starting empty and filling up */
+  function loopCredits(){
+    Array.prototype.forEach.call(document.querySelectorAll('.credits__inner'),function(inner){
+      if(inner.getAttribute('data-looped')) return;
+      inner.setAttribute('data-looped','1');
+      var copy=document.createDocumentFragment();
+      Array.prototype.forEach.call(inner.children,function(node){
+        var c=node.cloneNode(true);
+        c.removeAttribute('id');
+        Array.prototype.forEach.call(c.querySelectorAll('[id]'),function(x){x.removeAttribute('id');});
+        c.setAttribute('aria-hidden','true');
+        copy.appendChild(c);
+      });
+      inner.appendChild(copy);
+    });
+  }
+
+  buildRegions(); buildLangs(); buildCountries(); buildSignals(); loopCredits();
   buildIndustryEngine(); buildWheel(); buildAccess();
-  observe(); film(); runSplash();
+  observe(); film(); runSplash(); glide();
   /* thoughts box collapses until asked for */
   var tOpen  = document.getElementById('thoughts-open');
   var tPanel = document.getElementById('thoughts-panel');
@@ -1479,56 +1975,263 @@ body.a11y-on textarea:focus-visible{outline:2px solid var(--champagne);outline-o
       document.getElementById('thoughts-text').focus();
     });
   }
-  /* footer accessibility control */
-  var a11yBtn=document.getElementById('a11y');
-  if(a11yBtn){
-    a11yBtn.addEventListener('click',function(){
-      var on=!document.body.classList.contains('a11y-on');
-      document.body.classList.toggle('a11y-on',on);
-      a11yBtn.setAttribute('aria-pressed',on?'true':'false');
-    });
-  }
-
-  /* Share-your-thoughts interaction. This build has no submission backend,
-     so preserve the user's text and report that clearly instead of failing silently. */
-  var thoughtSend=document.getElementById('thoughts-send');
-  if(thoughtSend){
-    thoughtSend.addEventListener('click',function(){
-      var text=document.getElementById('thoughts-text');
-      var email=document.getElementById('thoughts-email');
-      var status=document.getElementById('thoughts-status');
-      var value=(text&&text.value||'').trim();
-      if(!value){
-        if(status)status.textContent='Please enter your thoughts first.';
-        if(text)text.focus();
-        return;
-      }
-      try{
-        localStorage.setItem('baci_thoughts_draft',JSON.stringify({text:value,email:(email&&email.value||'').trim(),savedAt:new Date().toISOString()}));
-      }catch(e){}
-      if(status)status.textContent='Saved on this device. Connect a form endpoint to send submissions from the live site.';
-    });
-  }
-
-  /* Never jump to the top for footer placeholders that are not wired yet. */
-  Array.prototype.forEach.call(document.querySelectorAll('a[href="#"]'),function(link){
-    link.addEventListener('click',function(e){e.preventDefault();});
-    link.setAttribute('aria-disabled','true');
-  });
-
-  /* Missing optional images collapse cleanly instead of showing browser broken-image UI. */
-  Array.prototype.forEach.call(document.images,function(img){
-    img.addEventListener('error',function(){
-      img.classList.add('is-missing');
-      var soc=img.closest&&img.closest('.soc'); if(soc)soc.classList.add('is-missing');
-      var pay=img.closest&&img.closest('.pay'); if(pay)pay.classList.add('is-missing');
-    });
-  });
-
   measureCTAs();
   window.addEventListener('resize',measureCTAs);
   window.addEventListener('load',measureCTAs);
   if(document.fonts&&document.fonts.ready)document.fonts.ready.then(measureCTAs);
+})();
+</script>
+
+<div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="Display settings" aria-modal="false">
+  <h4>Display</h4>
+  <div class="a11y-row">
+    <span>Background</span>
+    <button type="button" class="a11y-opt" id="a11yView" aria-pressed="false">Dark</button>
+  </div>
+  <div class="a11y-row">
+    <span>Text size</span>
+    <div class="a11y-steps">
+      <button type="button" class="a11y-step" id="a11ySmaller" aria-label="Smaller text">&minus;</button>
+      <button type="button" class="a11y-step" id="a11yLarger" aria-label="Larger text">+</button>
+    </div>
+  </div>
+  <button type="button" class="a11y-close" id="a11yClose">Close</button>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+
+  /* restore whatever was chosen last time, before anything paints */
+  try{
+    var v = localStorage.getItem('baci-view');
+    var t = localStorage.getItem('baci-text');
+    if(v === 'light') root.setAttribute('data-view','light');
+    if(t) root.style.setProperty('--text-scale', t);
+  }catch(e){}
+
+  var toggle = document.getElementById('a11y');
+  var panel  = document.getElementById('a11yPanel');
+  if(!toggle || !panel) return;
+
+  var viewBtn = document.getElementById('a11yView');
+  var smaller = document.getElementById('a11ySmaller');
+  var larger  = document.getElementById('a11yLarger');
+  var closeB  = document.getElementById('a11yClose');
+
+  var STEPS = [1, 1.12, 1.25, 1.4];
+
+  function currentStep(){
+    var s = parseFloat(getComputedStyle(root).getPropertyValue('--text-scale')) || 1;
+    var i = 0, best = 9;
+    STEPS.forEach(function(v, n){
+      var d = Math.abs(v - s);
+      if(d < best){ best = d; i = n; }
+    });
+    return i;
+  }
+
+  function setScale(i){
+    i = Math.max(0, Math.min(STEPS.length - 1, i));
+    root.style.setProperty('--text-scale', STEPS[i]);
+    try{ localStorage.setItem('baci-text', STEPS[i]); }catch(e){}
+  }
+
+  function syncView(){
+    var light = root.getAttribute('data-view') === 'light';
+    viewBtn.textContent = light ? 'Light' : 'Dark';
+    viewBtn.setAttribute('aria-pressed', String(light));
+  }
+
+  function open(){
+    panel.classList.add('open');
+    toggle.setAttribute('aria-expanded','true');
+    syncView();
+    viewBtn.focus();
+  }
+  function close(){
+    panel.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+  }
+
+  toggle.setAttribute('aria-expanded','false');
+  toggle.addEventListener('click', function(e){
+    e.preventDefault();
+    panel.classList.contains('open') ? close() : open();
+  });
+
+  viewBtn.addEventListener('click', function(){
+    var light = root.getAttribute('data-view') === 'light';
+    if(light){ root.removeAttribute('data-view'); }
+    else { root.setAttribute('data-view','light'); }
+    try{ localStorage.setItem('baci-view', light ? 'dark' : 'light'); }catch(e){}
+    syncView();
+  });
+
+  smaller.addEventListener('click', function(){ setScale(currentStep() - 1); });
+  larger .addEventListener('click', function(){ setScale(currentStep() + 1); });
+  closeB .addEventListener('click', close);
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && panel.classList.contains('open')) { close(); toggle.focus(); }
+  });
+  document.addEventListener('click', function(e){
+    if(!panel.contains(e.target) && !toggle.contains(e.target)) close();
+  });
+
+  syncView();
+})();
+</script>
+
+
+<!-- ══ §7 INTELLIGENCE ZONE — particle disperse / reform ══ -->
+<script>
+(function(){
+  var wrap = document.querySelector('.explorer__zone');
+  var cvs  = document.getElementById('izoneCanvas');
+  if(!wrap || !cvs || !cvs.getContext) { if(wrap) wrap.style.display='none'; return; }
+
+  var RM = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var W = 1060, H = 556;
+  cvs.width = W; cvs.height = H;
+  var ctx = cvs.getContext('2d');
+
+  var img = new Image();
+  img.decoding = 'async';
+  img.onerror = function(){ wrap.style.display = 'none'; };
+  img.onload  = function(){ build(); };
+  img.src = 'intelligence-zone.webp';
+
+  var P = null, cx = W/2, cy = H/2, radius = H*0.46;
+
+  function build(){
+    /* draw the source once, sample it, then work only from particles */
+    ctx.clearRect(0,0,W,H);
+    ctx.drawImage(img, 0, 0, W, H);
+
+    if(RM){ return; }                       /* static: leave the drawn image in place */
+
+    var src;
+    try { src = ctx.getImageData(0,0,W,H).data; }
+    catch(e){ return; }                     /* readback blocked: keep the static image */
+
+    var cand = [], step = 3, i, x, y, a, lum;
+    for(y=0; y<H; y+=step){
+      for(x=0; x<W; x+=step){
+        i = (y*W + x) * 4;
+        a = src[i+3]; if(a < 20) continue;
+        lum = (src[i]*0.2126 + src[i+1]*0.7152 + src[i+2]*0.0722) * (a/255);
+        if(lum < 26) continue;
+        cand.push([x, y, src[i], src[i+1], src[i+2], a]);
+      }
+    }
+    if(!cand.length){ return; }
+
+    var MAX = 5500, keep = cand;
+    if(cand.length > MAX){
+      keep = []; var stride = cand.length / MAX;
+      for(i=0; i<MAX; i++) keep.push(cand[(i*stride)|0]);
+    }
+
+    P = new Array(keep.length);
+    for(i=0; i<keep.length; i++){
+      var c = keep[i];
+      var dx = c[0]-cx, dy = c[1]-cy;
+      var d  = Math.sqrt(dx*dx+dy*dy) || 1;
+      var jit = (Math.random()-0.5)*0.55;
+      var ux = dx/d, uy = dy/d;
+      var nx = ux*Math.cos(jit) - uy*Math.sin(jit);
+      var ny = ux*Math.sin(jit) + uy*Math.cos(jit);
+      P[i] = {
+        x:c[0], y:c[1], r:c[2], g:c[3], b:c[4], a:c[5],
+        vx:nx, vy:ny,
+        /* outer particles travel further, so the ring opens rather than inflates */
+        reach: (0.55 + 0.85*Math.min(d/radius,1.4)) * (0.7 + Math.random()*0.6),
+        lag: Math.random()*0.16
+      };
+    }
+
+    buf = ctx.createImageData(W,H);
+    running = true;
+    io.observe(wrap);
+  }
+
+  /* ── cycle: quick apart, slow together, then a beat held whole ── */
+  var OUT = 1800, LOOSE = 600, BACK = 4000, HOLD = 900;
+  var PERIOD = OUT + LOOSE + BACK + HOLD;
+  var BASE = 0.20;                 /* resting amplitude, as a share of radius */
+  var buf = null, running = false, visible = false, raf = 0;
+  var t0 = 0, burst = 0;
+
+  function easeOut(p){ return 1 - (1-p)*(1-p); }
+  function easeInOut(p){ return p<0.5 ? 2*p*p : 1-Math.pow(-2*p+2,2)/2; }
+
+  function phase(ms){
+    var t = ms % PERIOD;
+    if(t < OUT)               return easeOut(t/OUT);
+    if(t < OUT+LOOSE)         return 1;
+    if(t < OUT+LOOSE+BACK)    return 1 - easeInOut((t-OUT-LOOSE)/BACK);
+    return 0;
+  }
+
+  function frame(ts){
+    if(!running || !visible){ raf = 0; return; }
+    if(!t0) t0 = ts;
+    var ms = ts - t0;
+
+    if(burst > 0){ burst = Math.max(0, burst - 0.00016*16.7); }
+    var amp = (BASE + burst) * radius;
+    var k = phase(ms);
+
+    var d = buf.data;
+    d.fill(0);
+
+    for(var i=0; i<P.length; i++){
+      var p = P[i];
+      var kp = Math.max(0, Math.min(1, (k - p.lag) / (1 - p.lag)));
+      var off = kp * amp * p.reach;
+      var x = (p.x + p.vx*off)|0;
+      var y = (p.y + p.vy*off)|0;
+      if(x<0 || y<0 || x>=W || y>=H) continue;
+      /* never fully gone: alpha floors at 45% at the loosest point */
+      var al = p.a * (1 - 0.55*kp);
+      var j = (y*W + x)*4;
+      if(al > d[j+3]){ d[j]=p.r; d[j+1]=p.g; d[j+2]=p.b; d[j+3]=al; }
+    }
+    ctx.putImageData(buf,0,0);
+    raf = requestAnimationFrame(frame);
+  }
+
+  var io = new IntersectionObserver(function(es){
+    visible = es[0].isIntersecting;
+    if(visible && running && !raf){ t0 = 0; raf = requestAnimationFrame(frame); }
+  }, {threshold:0.05});
+
+  /* industry switch: one deeper cycle, then settle back to the resting rhythm */
+  var tabs = document.getElementById('indTabs');
+  if(tabs){
+    tabs.addEventListener('click', function(){
+      if(!running) return;
+      burst = 0.34;
+      t0 = 0;
+    }, true);
+  }
+})();
+</script>
+<script src="/baci-forms.js" defer></script>
+
+<script>
+(function(){
+  var cards=document.querySelectorAll('#business-os .bcard');
+  function toggle(card){
+    var open=card.classList.contains('is-open');
+    cards.forEach(function(c){c.classList.remove('is-open');c.setAttribute('aria-expanded','false');});
+    if(!open){card.classList.add('is-open');card.setAttribute('aria-expanded','true');}
+  }
+  cards.forEach(function(card){
+    card.addEventListener('click',function(e){if(e.target.closest('a'))return;toggle(card);});
+    card.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(card);}});
+  });
 })();
 </script>
 </body>
