@@ -21,7 +21,7 @@
   --champagne:#E8C87A; --closing:#DCC17E; --head:#C99F5E;
   --purple:#976CC4; --purple-bright:#B86CFF;
   --metal:#C99F5E;
-  --s-section:clamp(38px,6vw,104px); --s-related:clamp(44px,5.5vw,88px);
+  --s-section:clamp(38px,6vw,104px); --s-h2:clamp(25px,5.8vw,50px); --s-related:clamp(44px,5.5vw,88px);
   --s-block:clamp(34px,4.5vw,64px); --s-content:clamp(24px,3vw,44px);
   --s-cta:clamp(26px,3vw,44px); --s-heading:24px; --s-para:18px;
   --read-max:640px; --panel-max:760px; --wide-max:1180px;
@@ -38,13 +38,13 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 .intro__word{font-size:clamp(14px,2.3vw,27px);letter-spacing:.46em;color:var(--dim);
   margin-bottom:var(--s-heading);}
 .intro__word span{display:inline-block;white-space:pre;opacity:0;transform:translateY(.4em);filter:blur(5px);}
-.intro__word.is-spelling span{animation:introLetter 7s cubic-bezier(.22,.8,.3,1) infinite both;}
+.intro__word.is-spelling span{animation:introLetter 4s cubic-bezier(.22,.8,.3,1) infinite both;}
 @keyframes introLetter{
   0%{opacity:0;transform:translateY(.4em);filter:blur(5px);color:var(--dim);}
-  7%{opacity:1;transform:translateY(0);filter:blur(0);color:var(--champagne);}
-  15%{opacity:1;transform:translateY(0);filter:blur(0);color:var(--dim);}
-  84%{opacity:1;transform:translateY(0);filter:blur(0);color:var(--dim);}
-  93%{opacity:0;transform:translateY(-.3em);filter:blur(4px);color:var(--dim);}
+  12%{opacity:1;transform:translateY(0);filter:blur(0);color:var(--champagne);}
+  26%{opacity:1;transform:translateY(0);filter:blur(0);color:var(--dim);}
+  74%{opacity:1;transform:translateY(0);filter:blur(0);color:var(--dim);}
+  88%{opacity:0;transform:translateY(-.3em);filter:blur(4px);color:var(--dim);}
   100%{opacity:0;transform:translateY(.4em);filter:blur(5px);color:var(--dim);}
 }
 @media(prefers-reduced-motion:reduce){
@@ -110,7 +110,7 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
   -webkit-tap-highlight-color:transparent;display:block;text-decoration:none;z-index:3;}
 .hot:focus-visible{outline:1px solid rgba(232,200,122,.7);outline-offset:2px;}
 
-.hnav{font-family:'Cinzel',Georgia,serif;font-size:.8cqw;letter-spacing:.07em;
+.hnav{font-family:'Cinzel',Georgia,serif;font-size:1.04cqw;letter-spacing:.07em;
   color:var(--gold);text-transform:uppercase;text-align:center;white-space:nowrap;
   display:flex;align-items:center;justify-content:center;width:100%;height:100%;
   transition:color .4s ease;}
@@ -118,7 +118,7 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 .hmk{font-family:'Cinzel',Georgia,serif;font-size:2.5cqw;letter-spacing:.18em;color:var(--gold-light);
   display:flex;align-items:center;justify-content:center;width:100%;height:100%;}
 /* the masthead is the wordmark itself, scaled to its hotspot */
-.hmk-img{width:100%;height:100%;object-fit:contain;display:block;}
+.hmk-img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transform:scale(1.7);}
 .hsub{font-family:'Cinzel',Georgia,serif;font-size:.78cqw;letter-spacing:.1em;
   color:var(--gold);text-transform:uppercase;line-height:1.35;}
 
@@ -206,7 +206,7 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 /* ══ §4 GROWTH IS BROKEN (spine) ══ */
 .reality__head{text-align:center;margin-bottom:var(--s-block);}
 .reality__eyebrow{font-family:'Cinzel',Georgia,serif;font-size:clamp(13px,1.7vw,20px);letter-spacing:.1em;color:var(--gold);margin:0 0 10px;}
-.reality__title{font-family:'Cinzel',Georgia,serif;font-weight:600;font-size:clamp(23px,3.6vw,42px);letter-spacing:.05em;color:var(--gold);margin:0;line-height:1.24;}
+.reality__title{font-family:'Cinzel',Georgia,serif;font-weight:600;font-size:var(--s-h2);letter-spacing:.05em;color:var(--gold);margin:0;line-height:1.24;}
 .spine{position:relative;max-width:960px;margin:0 auto;}
 .spine__line{position:absolute;left:50%;top:0;bottom:0;width:1px;transform:translateX(-.5px);
   background:linear-gradient(180deg,transparent,rgba(212,175,90,.3) 6%,rgba(212,175,90,.3) 94%,transparent);}
@@ -247,11 +247,55 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 @media(max-width:700px){.reach-copy{margin-top:-17%;}}
 
 /* ══ §7 EXPLORER TILE — the design, with the Intelligence Zone alive inside it ══ */
-.explorer{position:relative;margin:var(--s-block) auto 0;max-width:min(1400px,100vw);}
+.explorer{position:relative;margin:var(--s-block) auto 0;max-width:min(1400px,100vw);container-type:inline-size;}
 .explorer__tile{display:block;width:100%;height:auto;}
 /* the canvas sits exactly where the ring was lifted out of the artwork */
-.explorer__zone{position:absolute;left:53.060%;top:52.734%;width:45.898%;height:36.133%;pointer-events:none;}
+.explorer__zone{position:absolute;left:53.646%;top:51.367%;width:46.354%;height:39.844%;pointer-events:none;}
 .explorer__zone canvas{display:block;width:100%;height:100%;}
+/* the fifteen industry names are painted into the artwork, so the tabs are
+   invisible boxes laid over them; only the active rule and heading are drawn */
+.explorer__tabs{position:absolute;inset:0;pointer-events:none;}
+.ind-tab{position:absolute;margin:0;padding:0;border:0;background:none;color:transparent;
+  font-size:0;line-height:0;cursor:pointer;pointer-events:auto;-webkit-tap-highlight-color:transparent;}
+/* the boxes meet their neighbours and run past the row top and bottom, because
+   at phone width a painted name like Retail is only a few pixels wide */
+.ind-tab::before{content:"";position:absolute;left:0;right:0;top:-70%;bottom:-115%;}
+.ind-tab:focus-visible{outline:1px solid rgba(232,200,122,.75);outline-offset:3px;}
+.ind-tab__rule{position:absolute;top:100%;margin-top:.72cqw;height:.26cqw;
+  background:#E8C87A;opacity:0;transition:opacity .28s ease;}
+.ind-tab.is-active .ind-tab__rule{opacity:1;}
+.explorer__head{position:absolute;left:3.060%;top:56.348%;margin:0;
+  font-family:system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-size:1.276cqw;line-height:1;letter-spacing:.12em;color:#E8C87A;
+  white-space:nowrap;pointer-events:none;}
+@media(prefers-reduced-motion:reduce){.ind-tab__rule{transition:none;}}
+/* the five mesh labels are painted too, and only ~10px tall in the artwork,
+   so the tap target is grown well past the ink */
+.explorer__pins{position:absolute;inset:0;pointer-events:none;}
+.explorer__search{position:absolute;left:79.36%;top:91.31%;width:17.38%;height:4.20%;
+  -webkit-tap-highlight-color:transparent;}
+.explorer__search:focus-visible{outline:1px solid rgba(232,200,122,.75);outline-offset:4px;}
+.pin{position:absolute;margin:0;padding:0;border:0;background:none;color:transparent;
+  font-size:0;line-height:0;cursor:pointer;pointer-events:auto;-webkit-tap-highlight-color:transparent;}
+.pin::before{content:"";position:absolute;inset:-320% -22%;}
+.pin::after{content:"";position:absolute;left:-3%;right:-3%;top:150%;height:.14cqw;
+  background:#E8C87A;opacity:0;transition:opacity .3s ease;}
+.pin.is-open::after{opacity:.9;}
+.pin:focus-visible{outline:1px solid rgba(232,200,122,.75);outline-offset:4px;}
+.pin-panel{max-width:var(--read-max);margin:0 auto;padding:0 clamp(18px,5vw,40px);text-align:center;
+  max-height:0;overflow:hidden;opacity:0;
+  transition:max-height .5s ease,opacity .5s ease,margin-top .5s ease;}
+.pin-panel.is-open{max-height:460px;opacity:1;margin-top:var(--s-content);}
+.pin-panel__name{font-family:'Cinzel',Georgia,serif;font-size:clamp(10px,1.3vw,14px);letter-spacing:.2em;
+  text-transform:uppercase;color:var(--dim);margin:0;}
+.pin-panel__rule{width:120px;height:1px;margin:12px auto;
+  background:linear-gradient(90deg,transparent,rgba(196,149,68,.5),transparent);}
+.pin-panel__line{font-size:clamp(15px,1.65vw,20px);line-height:1.55;color:var(--gold);margin:0 auto;max-width:720px;}
+.pin-panel__num{font-family:'Cinzel',Georgia,serif;font-size:clamp(26px,4.4vw,52px);letter-spacing:.04em;
+  color:var(--gold-light);line-height:1;font-variant-numeric:tabular-nums;margin:20px 0 0;}
+.pin-panel__cap{font-family:'Cinzel',Georgia,serif;font-size:clamp(9px,1.05vw,12px);letter-spacing:.16em;
+  text-transform:uppercase;color:var(--dim);margin:9px 0 0;}
+@media(prefers-reduced-motion:reduce){.pin-panel{transition:none;}.pin::after{transition:none;}}
 
 /* ══ §7 mesh stage ══ */
 .ind-stage{position:relative;margin:var(--s-content) 0 0;}
@@ -278,12 +322,7 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 .ind-counter__num{font-family:'Cinzel',Georgia,serif;font-weight:400;font-size:clamp(30px,5.6vw,64px);letter-spacing:.04em;color:var(--gold-light);line-height:1;font-variant-numeric:tabular-nums;}
 .ind-counter__stmt{font-family:'Cinzel',Georgia,serif;font-size:clamp(10px,1.4vw,15px);letter-spacing:.2em;color:var(--dim);text-transform:uppercase;margin-top:16px;min-height:1.4em;}
 .ind-counter__stmt .lit{color:var(--gold);}
-.ind-tabs{display:flex;flex-wrap:wrap;gap:clamp(10px,1.6vw,22px);justify-content:center;margin:0 auto var(--s-block);max-width:var(--wide-max);}
-.ind-tab{font-family:'Cinzel',Georgia,serif;font-size:clamp(10px,1.05vw,13px);letter-spacing:.12em;color:var(--dim);
-  background:none;border:0;cursor:pointer;padding:6px 2px;text-transform:uppercase;transition:color .4s ease;position:relative;}
-.ind-tab:hover{color:var(--gold);}
-.ind-tab.is-active{color:var(--gold-light);}
-.ind-tab.is-active::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--gold-light);}
+/* the old free-standing tab row is gone; the tabs now sit on the artwork */
 .ind-builder{max-width:820px;margin:0 auto;}
 .ind-q{margin-bottom:0;max-height:0;overflow:hidden;opacity:0;transform:translateY(10px);
   transition:opacity .6s ease,transform .6s ease,max-height .6s ease,margin-bottom .6s ease;}
@@ -333,7 +372,8 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 @media(max-width:820px){.doctrine__grid{grid-template-columns:1fr;}.doctrine__diagram{margin:0 auto;order:-1;}}
 
 /* ══ §9 CONVERSION INTELLIGENCE — revolving ring (finished) ══ */
-.doctrine-overlay{max-width:var(--panel-max,760px);margin:0 auto;}
+.doctrine-overlay{width:min(860px,100vw);margin-inline:auto;
+  position:relative;left:50%;transform:translateX(-50%);}
 /* the ratio is declared so the space exists before the file lands */
 .doctrine-img{width:100%;height:auto;display:block;aspect-ratio:1024/1468;}
 .cring{position:relative;width:min(100%,680px);aspect-ratio:1;margin:0 auto;
@@ -368,7 +408,7 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 
 /* ══ §10 BUSINESS OS ══ */
 .bos__head{text-align:center;}
-.bos__title{font-family:'Cinzel',Georgia,serif;font-weight:600;font-size:clamp(32px,6vw,72px);letter-spacing:.14em;margin:0;color:var(--metal);}
+.bos__title{font-family:'Cinzel',Georgia,serif;font-weight:600;font-size:var(--s-h2);letter-spacing:.14em;margin:0;color:var(--metal);}
 .bos__tag{font-family:'Cinzel',Georgia,serif;font-weight:400;font-size:clamp(12px,1.8vw,22px);letter-spacing:.24em;color:var(--gold);margin:0;text-transform:uppercase;}
 .bos__intro{text-align:center;max-width:var(--panel-max);margin:var(--s-block) auto 0;}
 .bos__intro p{color:var(--gold);font-size:clamp(15px,1.85vw,21px);line-height:1.6;margin:0 auto var(--s-para);max-width:var(--read-max);}
@@ -400,7 +440,7 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 @media(max-width:520px){.bos__domains{letter-spacing:.18em;}}
 
 /* ══ §11 DROWNING ══ */
-.drown__head{font-family:'Cinzel',Georgia,serif;font-weight:600;font-size:clamp(25px,4.4vw,52px);letter-spacing:.04em;text-align:center;margin:0;
+.drown__head{font-family:'Cinzel',Georgia,serif;font-weight:600;font-size:var(--s-h2);letter-spacing:.04em;text-align:center;margin:0;
   color:var(--metal);line-height:1.05;}
 .drown__body{text-align:center;margin-top:var(--s-block);}
 .drown__body p{color:var(--gold);font-size:clamp(15px,1.9vw,22px);line-height:1.5;margin:0 auto var(--s-para);max-width:var(--read-max);}
@@ -427,7 +467,7 @@ body{font-family:'Cormorant Garamond',Georgia,serif;position:relative;overflow-x
 
 /* ══ §13 ACCESS ══ */
 .access__head{text-align:center;}
-.access__title{font-family:'Cinzel',Georgia,serif;font-weight:600;font-size:clamp(38px,7vw,84px);letter-spacing:.12em;margin:0;
+.access__title{font-family:'Cinzel',Georgia,serif;font-weight:600;font-size:var(--s-h2);letter-spacing:.12em;margin:0;
   color:var(--metal);}
 .access__eyebrow{font-family:'Cinzel',Georgia,serif;font-size:clamp(10px,1.2vw,14px);letter-spacing:.24em;color:var(--dim);margin:12px 0 0;text-transform:uppercase;}
 .access__lead{font-family:'Cinzel',Georgia,serif;font-size:clamp(15px,2vw,24px);letter-spacing:.04em;color:var(--gold-light);text-align:center;margin:var(--s-block) 0 8px;}
@@ -890,13 +930,13 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
     <a class="hot" href="#top" aria-label="BACI home" style="left:1.43%;top:2.79%;width:12.17%;height:8.02%">
       <img class="hmk-img" src="baci-wordmark.webp" alt="BACI">
     </a>
-    <div class="hx hsub" style="left:14.2%;top:3.4%;width:16%;height:7.2%" aria-hidden="true">Business Acquisition<br>&amp; Conversion Intelligence</div>
+    <div class="hx hsub" style="left:13.9%;top:5.0%;width:14.6%" aria-hidden="true">Business Acquisition<br>&amp; Conversion Intelligence</div>
 
-    <a class="hot" href="#global-reach" style="left:28.91%;top:5.47%;width:5.86%;height:2.55%"><span class="hnav">Discover</span></a>
-    <a class="hot" href="modes.html" style="left:39.13%;top:5.47%;width:5.86%;height:2.55%"><span class="hnav">Modes</span></a>
-    <a class="hot" href="#industry" style="left:49.35%;top:5.47%;width:5.79%;height:2.55%"><span class="hnav">Solutions</span></a>
-    <a class="hot" href="#drowning" style="left:59.51%;top:5.47%;width:5.79%;height:2.55%"><span class="hnav">Insights</span></a>
-    <a class="hot" href="#access" style="left:69.60%;top:5.47%;width:5.86%;height:2.55%"><span class="hnav">Access</span></a>
+    <a class="hot" href="#global-reach" style="left:33.21%;top:5.47%;width:5.86%;height:2.55%"><span class="hnav">Discover</span></a>
+    <a class="hot" href="modes.html" style="left:43.43%;top:5.47%;width:5.86%;height:2.55%"><span class="hnav">Modes</span></a>
+    <a class="hot" href="#industry" style="left:53.65%;top:5.47%;width:5.79%;height:2.55%"><span class="hnav">Solutions</span></a>
+    <a class="hot" href="#drowning" style="left:63.81%;top:5.47%;width:5.79%;height:2.55%"><span class="hnav">Insights</span></a>
+    <a class="hot" href="#access" style="left:73.90%;top:5.47%;width:5.86%;height:2.55%"><span class="hnav">Access</span></a>
     <a class="hot" href="#industry" aria-label="Search industries" style="left:80.47%;top:3.40%;width:18.68%;height:7.05%">
       <span class="hnav hsearchlabel">Search industries</span>
     </a>
@@ -936,7 +976,7 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
 <section class="section section--wide reveal" id="reality">
   <div class="reality__head">
     <p class="reality__eyebrow">The Reality.</p>
-    <h2 class="reality__title">Growth is everywhere.<br>You&rsquo;re missing the signals.</h2>
+    <h2 class="reality__title">Growth is everywhere.<br>You may be missing the signals.</h2>
   </div>
   <div class="signals" id="signals"></div>
   <div class="bridge">
@@ -1001,7 +1041,7 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
 <!-- ══ §7 INDUSTRY INTELLIGENCE ══ -->
 <section class="section section--wide reveal" id="industry">
   <div style="text-align:center;">
-    <h2 class="h-metal" style="font-size:clamp(30px,5.4vw,60px);margin:0;">Industry Intelligence</h2>
+    <h2 class="h-metal" style="font-size:var(--s-h2);margin:0;">Industry Intelligence</h2>
     <p style="font-size:clamp(16px,2.2vw,26px);color:var(--gold-light);margin:18px 0 0;">Every industry is different. So is the intelligence.</p>
   </div>
   <div class="body-copy center" style="margin-top:var(--s-block);">
@@ -1016,8 +1056,18 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
     <img class="explorer__tile" src="industry-explorer.webp"
       alt="Industry Intelligence Explorer" width="1536" height="1024" decoding="async">
     <div class="explorer__zone" aria-hidden="true">
-      <canvas id="izoneCanvas" width="705" height="370"></canvas>
+      <canvas id="izoneCanvas" width="712" height="408"></canvas>
     </div>
+    <p class="explorer__head" id="expHead" aria-hidden="true"></p>
+    <div class="explorer__tabs" id="indTabs" role="tablist" aria-label="Choose an industry"></div>
+    <div class="explorer__pins" id="meshPins"></div>
+    <a class="explorer__search" id="expSearch" href="#indQIntent"><span class="visually-hidden">Search other industries</span></a>
+  </div>
+  <div class="pin-panel" id="pinPanel" aria-live="polite"></div>
+  <div class="ind-counter">
+    <p class="ind-counter__num" id="indCounterNum"></p>
+    <p class="ind-counter__stmt" id="indCounterStmt"></p>
+    <p class="ind-counter__detail" id="indCounterDetail"></p>
   </div>
   <div class="ind-builder">
     <div class="ind-q ind-q--show" id="indQIntent"><p class="ind-q__label">What are you looking to achieve?</p><div class="ind-chips" id="indIntentChips"></div></div>
@@ -1044,7 +1094,7 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
 <!-- ══ §9 CONVERSION INTELLIGENCE (revolving ring) ══ -->
 <section class="section section--wide reveal" id="conversion-intelligence">
   <div style="text-align:center;">
-    <h2 style="font-family:'Cinzel',Georgia,serif;font-weight:500;letter-spacing:.14em;color:#C99F5E;font-size:clamp(28px,5vw,56px);margin:0 0 var(--s-block);">Conversion Intelligence</h2>
+    <h2 style="font-family:'Cinzel',Georgia,serif;font-weight:500;letter-spacing:.14em;color:#C99F5E;font-size:var(--s-h2);margin:0 0 var(--s-block);">Conversion Intelligence</h2>
   </div>
   <div class="cring" id="cring">
     <div class="cring__centre">
@@ -1466,7 +1516,7 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
   }
 
   /* ══ §7 INDUSTRY INTELLIGENCE — real system engine (Healthcare reference; other industries = config swap) ══ */
-  var INDUSTRY_LIST=["Healthcare","Energy","Construction","Financial Services","Technology","Real Estate","Education","Hospitality","Retail","Legal","Agriculture","Logistics"];
+  var INDUSTRY_LIST=["Social Media","Skincare & Beauty","Healthcare","Human Resources","Retail","Real Estate","Hospitality","Legal","Education","Technology","Construction","Energy","Agriculture","Logistics","Financial Services"];
   var INDUSTRY_COPY={
     "Healthcare":"Healthcare intelligence tracks patient demand, care trends, provider activity, workforce pressures, procurement, clinical innovation and funding flows. It reveals where care is being delivered differently and where new health markets are forming.",
     "Energy":"Energy intelligence tracks demand, generation capacity, infrastructure investment, commodity movement, regulatory shifts, project pipelines and the energy transition. It identifies where supply, investment and pricing pressure are beginning to shift.",
@@ -1474,12 +1524,15 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
     "Financial Services":"Financial services intelligence tracks lending activity, credit exposure, capital markets movement, insurance trends, fintech disruption, deposit flows and compliance pressure. It surfaces risk, opportunity and competitive advantage before they reach the balance sheet.",
     "Technology":"Technology intelligence tracks adoption patterns, product demand, funding activity, competitive launches, talent movement, platform shifts and infrastructure investment. It identifies where innovation is accelerating and disruption is about to break through.",
     "Real Estate":"Real estate intelligence tracks property demand, pricing movement, development pipelines, transaction activity, occupancy, investment flows and location-level opportunity. It reveals where markets are strengthening, weakening or beginning to move.",
-    "Education":"Education intelligence tracks enrolment demand, skills gaps, institutional activity, funding, workforce requirements, programme trends and industry partnerships. It shows how learning needs are changing and where new demand is forming.",
+    "Education":"Education intelligence tracks enrolment demand, workforce readiness, institutional funding, curriculum development, accreditation requirements, industry partnerships and student outcomes. It surfaces the moment a market is ready for a new programme, a new procurement opportunity or a new source of capital, before a competitor gets there first.",
     "Hospitality":"Hospitality intelligence tracks travel demand, occupancy, pricing, booking behaviour, destination movement, consumer preferences and seasonal patterns. It reveals where guests are going, what they want and how demand is changing.",
-    "Retail":"Retail intelligence tracks consumer demand, product movement, pricing, channel performance, competitor activity, purchasing behaviour and category shifts. It shows what customers are buying, where demand is moving and what is gaining momentum.",
+    "Retail":"Retail intelligence tracks consumer demand, product movement, pricing, channel performance, competitor activity, purchasing behaviour and category momentum. It shows what customers are buying, where demand is moving and what is gaining momentum.",
     "Legal":"Legal intelligence tracks regulatory change, litigation patterns, client demand, sector exposure, competitive movement, legal-market activity and emerging risk. It identifies developments that can create new obligations, exposure or commercial opportunity.",
-    "Agriculture":"Agricultural intelligence tracks crop and commodity movement, input costs, weather exposure, supply conditions, trade flows, procurement and market demand. It reveals changes across production, supply and commercial opportunity.",
-    "Logistics":"Logistics intelligence tracks freight movement, route pressure, capacity, port activity, fuel and transport costs, supply-chain disruption and trade flows. It identifies where goods are moving, where pressure is building and where disruption may emerge."
+    "Agriculture":"Agricultural intelligence tracks crop and commodity movement, input costs, weather exposure, supply conditions, trade corridors, procurement and market demand. It reveals changes across production, supply and commercial opportunity.",
+    "Logistics":"Logistics intelligence tracks freight movement, route pressure, capacity, port activity, fuel and transport costs, supply-chain disruption and trade flows. It identifies where goods are moving, where pressure is building and where disruption may emerge.",
+    "Human Resources":"Human Resources intelligence tracks workforce demand, hiring activity, talent movement, compensation benchmarks, employee sentiment, skills gaps and retention patterns. It highlights where talent is shifting, where skills are becoming harder to find and where retention risk is building.",
+    "Social Media":"Social media intelligence tracks platform trends, content performance, audience sentiment, engagement patterns, influencer activity, algorithm shifts and community growth. It maps where attention is moving, what content is gaining traction and where audiences are forming new habits.",
+    "Skincare & Beauty":"Skincare & beauty intelligence tracks product trends, formulation innovation, clinical claims, consumer sentiment, price positioning, retail performance and category shifts. It points to which products are breaking through, what consumers are responding to and where the next breakout category is taking shape."
   };
 
   var INTENTS=[{k:"start",label:"Start a business"},{k:"invest",label:"Invest"},{k:"procurement",label:"Win contracts"},{k:"funding",label:"Find funding"},{k:"market-entry",label:"Enter a market"},{k:"acquire",label:"Acquire or sell"},{k:"partners",label:"Find partners"}];
@@ -1500,7 +1553,10 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
     "Retail":["E-commerce","Fashion & Apparel","Grocery & Consumer Goods","Luxury Retail","Specialty Retail","Retail Technology","Supply Chain & Logistics","Direct-to-Consumer","Marketplaces","Beauty & Personal Care","Home & Furniture","Convenience & Quick Commerce"],
     "Legal":["Corporate Law","Litigation","Intellectual Property","Regulatory & Compliance","LegalTech","Immigration Law","Real Estate Law","Employment Law","Tax Law","Mergers & Acquisitions","Arbitration & Dispute Resolution","Legal Process Outsourcing"],
     "Agriculture":["Crop Production","Livestock & Animal Husbandry","AgTech","Food Processing","Agricultural Trade & Export","Fisheries & Aquaculture","Forestry","Irrigation & Water Management","Agricultural Finance","Organic & Sustainable Farming","Seed & Agrochemicals","Farm Equipment & Machinery"],
-    "Logistics":["Freight & Shipping","Warehousing & Distribution","Last-Mile Delivery","Supply Chain Management","Customs & Trade Compliance","Cold Chain Logistics","Ports & Maritime","Air Cargo","Rail Freight","Logistics Technology","Third-Party Logistics","Fleet Management"]
+    "Logistics":["Freight & Shipping","Warehousing & Distribution","Last-Mile Delivery","Supply Chain Management","Customs & Trade Compliance","Cold Chain Logistics","Ports & Maritime","Air Cargo","Rail Freight","Logistics Technology","Third-Party Logistics","Fleet Management"],
+    "Human Resources":["Recruitment & Talent Acquisition","Compensation & Benefits","Learning & Development","Employee Relations","Workforce Planning","HR Technology & HRIS","Diversity, Equity & Inclusion","Performance Management","Payroll & Compliance","Employee Wellbeing","Organisational Design","Talent Retention & Succession Planning"],
+    "Social Media":["Content Creation","Influencer Marketing","Paid Social Advertising","Community Management","Social Commerce","Platform Analytics","Video & Short-Form Content","Live Streaming","Social Listening & Sentiment","Crisis & Reputation Management","Brand Account Management","Emerging Platforms & Trends"],
+    "Skincare & Beauty":["Haircare","Colour Cosmetics","Fragrance","Personal Care & Hygiene","Skincare","Men's Grooming","Clean & Natural Beauty","Dermatology & Clinical Skincare","Beauty Devices & Tools","Wellness & Nutricosmetics","Manufacturing & Contract Production","Beauty Retail & E-commerce"]
   };
   function indSubsFor(ind){ return SUBSECTORS[ind] || ["Market Overview","Opportunities","Partners","Regulation","Investment"]; }
   /* The per-industry figures were invented and then multiplied by
@@ -1524,7 +1580,7 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
   }
 
   function buildIndustryEngine(){
-    var indState={industry:"Healthcare",intent:null,scope:null,place:null,sub:null};
+    var indState={industry:"Social Media",intent:null,scope:null,place:null,sub:null};
     var indHasNumber=false, indTargetVal=0, indShownVal=0;
     function indFmt(n){ return Math.round(n).toLocaleString('en-GB'); }
     function indBuildStatement(){
@@ -1567,12 +1623,33 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
       }
       if(num) requestAnimationFrame(indTick);
     }
+    /* Each pair is the painted label's left and right edge in the 1536-wide
+       artwork, in tile order. The boxes were measured off the file, so the
+       invisible tab and the rule it draws land on the name itself. */
+    var TAB_X=[[46,139],[165,232],[262,330],[371,436],[475,503],[560,630],[663,729],[766,796],
+               [833,895],[927,998],[1028,1106],[1137,1179],[1207,1274],[1304,1356],[1385,1494]];
+    var TILE_W=1536, TILE_H=1024, TAB_TOP=448, TAB_BOT=490;
     function indRenderTabs(){
       var t=$('indTabs'); if(!t) return;
-      t.innerHTML=INDUSTRY_LIST.map(function(n){return '<button class="ind-tab'+(n===indState.industry?' is-active':'')+'" data-ind="'+esc(n)+'">'+esc(n)+'</button>';}).join('');
+      t.innerHTML=INDUSTRY_LIST.map(function(n,i){
+        var b=TAB_X[i]; if(!b) return '';
+        /* the hit box runs to the midpoint between neighbouring names; the rule
+           is a child placed back over the word itself */
+        var prev=TAB_X[i-1], next=TAB_X[i+1];
+        var hL = prev ? (prev[1]+b[0])/2 : 20;
+        var hR = next ? (b[1]+next[0])/2 : TILE_W-20;
+        var st='left:'+(hL/TILE_W*100).toFixed(3)+'%;width:'+((hR-hL)/TILE_W*100).toFixed(3)+'%;'+
+               'top:'+(TAB_TOP/TILE_H*100).toFixed(3)+'%;height:'+((TAB_BOT-TAB_TOP)/TILE_H*100).toFixed(3)+'%';
+        var rs='left:'+((b[0]-hL)/(hR-hL)*100).toFixed(3)+'%;width:'+((b[1]-b[0])/(hR-hL)*100).toFixed(3)+'%';
+        var on=n===indState.industry;
+        return '<button type="button" role="tab" class="ind-tab'+(on?' is-active':'')+'" style="'+st+'"'+
+               ' aria-selected="'+on+'" data-ind="'+esc(n)+'"><span class="ind-tab__rule" style="'+rs+'"></span>'+
+               '<span class="visually-hidden">'+esc(n)+'</span></button>';
+      }).join('');
       Array.prototype.forEach.call(t.querySelectorAll('.ind-tab'),function(b){
         b.addEventListener('click',function(){ indSwitchIndustry(b.getAttribute('data-ind')); });
       });
+      var h=$('expHead'); if(h) h.textContent=indState.industry.toUpperCase();
     }
     function indRenderIntents(){
       $('indIntentChips').innerHTML=INTENTS.map(function(i){return '<button class="ind-chip'+(indState.intent&&indState.intent.k===i.k?' ind-sel':'')+'" data-k="'+i.k+'">'+esc(i.label)+'</button>';}).join('');
@@ -2084,6 +2161,133 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
 </script>
 
 
+<!-- ══ §7 MESH PINS — the five signal types, counted from what scrapex holds ══ -->
+<script>
+(function(){
+  var layer = document.getElementById('meshPins');
+  var panel = document.getElementById('pinPanel');
+  if(!layer || !panel) return;
+
+  /* label boxes measured off the 1536x1024 artwork, so each target sits on its
+     own painted words rather than on a guess */
+  var TW = 1536, TH = 1024;
+  var PINS = [
+    { k:'audience_shifts', name:'Audience Shifts', box:[619,213,732,223], cap:'Audience signals collected',
+      line:'What people are saying and where their attention is moving, read from reviews, forums, communities and social platforms — so a market changing its mind shows up before the numbers do.' },
+    { k:'opportunities', name:'Opportunities', box:[844,165,945,175], cap:'Opportunities identified',
+      line:'Partnerships, affiliate openings and routes to market, surfaced as they appear rather than after the advantage has already gone.' },
+    { k:'content_velocity', name:'Content Velocity', box:[990,91,1117,101], cap:'In the last 24 hours',
+      line:'How fast a subject is being published, posted and talked about right now. The rate, not the volume, because acceleration is what tells you something is starting.' },
+    { k:'market_movement', name:'Market Movement', box:[1290,72,1417,83], cap:'Market signals collected',
+      line:'Pricing changes, product launches, regulatory shifts and market signals, gathered as they land across the markets that matter to your business.' },
+    { k:'demand_signals', name:'Demand Signals', box:[1154,335,1265,345], cap:'Demand signals collected',
+      line:'Where demand is forming, rising or falling, read from search behaviour, trend data and the language people use when they are close to buying.' }
+  ];
+
+  function esc(t){ return String(t).replace(/[&<>"]/g, function(c){
+    return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]; }); }
+
+  layer.innerHTML = PINS.map(function(p,i){
+    var b=p.box;
+    var st='left:'+(b[0]/TW*100).toFixed(3)+'%;top:'+(b[1]/TH*100).toFixed(3)+'%;'+
+           'width:'+((b[2]-b[0])/TW*100).toFixed(3)+'%;height:'+((b[3]-b[1])/TH*100).toFixed(3)+'%';
+    return '<button type="button" class="pin" style="'+st+'" data-i="'+i+'" aria-expanded="false">'+
+           '<span class="visually-hidden">'+esc(p.name)+'</span></button>';
+  }).join('');
+  var btns = layer.querySelectorAll('.pin');
+
+  /* ── counts ──────────────────────────────────────────────────────
+     scrapex is the unrestricted global supply chain, so nothing here is
+     narrowed by industry, tenant or country. A pin filters to its own
+     signal type and to nothing else. Where the collection is not yet
+     meaningful the line stands on its own, without a number. */
+  var API = 'https://api.bacihq.com/api/signals/pins';
+  var cache = null, cacheAt = 0, inflight = null, TTL = 60000;
+
+  function counts(){
+    var now = Date.now();
+    if(cache && now - cacheAt < TTL) return Promise.resolve(cache);
+    if(inflight) return inflight;
+    inflight = fetch(API, {credentials:'omit'})
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(j){ cache = j || {}; cacheAt = Date.now(); inflight = null; return cache; })
+      .catch(function(){ cache = {}; cacheAt = Date.now(); inflight = null; return cache; });
+    return inflight;
+  }
+
+  var raf = 0;
+  function stopCount(){ if(raf){ cancelAnimationFrame(raf); raf = 0; } }
+
+  function countTo(el, target){
+    stopCount();
+    var t0 = 0, dur = 1100;
+    (function step(ts){
+      if(!t0) t0 = ts;
+      var q = Math.min(1, (ts - t0) / dur);
+      var e = 1 - Math.pow(1 - q, 3);
+      el.textContent = Math.round(target * e).toLocaleString('en-GB');
+      if(q < 1) raf = requestAnimationFrame(step); else raf = 0;
+    })(0 || performance.now());
+  }
+
+  var open = -1;
+
+  function close(){
+    stopCount();
+    open = -1;
+    panel.classList.remove('is-open');
+    Array.prototype.forEach.call(btns, function(b){
+      b.classList.remove('is-open'); b.setAttribute('aria-expanded','false');
+    });
+    /* nothing left running or rendered once it is shut */
+    setTimeout(function(){ if(open === -1) panel.innerHTML = ''; }, 520);
+  }
+
+  function show(i){
+    var p = PINS[i];
+    open = i;
+    Array.prototype.forEach.call(btns, function(b,j){
+      b.classList.toggle('is-open', j === i);
+      b.setAttribute('aria-expanded', j === i ? 'true' : 'false');
+    });
+    panel.innerHTML =
+      '<p class="pin-panel__name">' + esc(p.name) + '</p>' +
+      '<div class="pin-panel__rule"></div>' +
+      '<p class="pin-panel__line">' + esc(p.line) + '</p>' +
+      '<p class="pin-panel__num" id="pinNum" style="display:none"></p>' +
+      '<p class="pin-panel__cap" id="pinCap" style="display:none">' + esc(p.cap) + '</p>';
+    panel.classList.add('is-open');
+
+    counts().then(function(data){
+      if(open !== i) return;                     /* closed or swapped while fetching */
+      var d = data && data[p.k];
+      var v = (d && d.sufficient && typeof d.count === 'number') ? d.count : null;
+      var num = document.getElementById('pinNum'), cap = document.getElementById('pinCap');
+      if(v === null || !num) return;             /* no number yet: the line stands alone */
+      num.style.display = ''; if(cap) cap.style.display = '';
+      countTo(num, v);
+    });
+  }
+
+  Array.prototype.forEach.call(btns, function(b){
+    b.addEventListener('click', function(e){
+      e.preventDefault();
+      var i = +b.getAttribute('data-i');
+      if(i === open) close(); else show(i);
+    });
+  });
+
+  /* tapping an industry, or anywhere off the pins, puts the panel away */
+  var tabs = document.getElementById('indTabs');
+  if(tabs) tabs.addEventListener('click', function(){ if(open !== -1) close(); }, true);
+  document.addEventListener('click', function(e){
+    if(open === -1) return;
+    if(layer.contains(e.target) || panel.contains(e.target)) return;
+    close();
+  });
+})();
+</script>
+
 <!-- ══ §7 INTELLIGENCE ZONE — particle disperse / reform ══ -->
 <script>
 (function(){
@@ -2092,7 +2296,7 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
   if(!wrap || !cvs || !cvs.getContext) { if(wrap) wrap.style.display='none'; return; }
 
   var RM = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-  var W = 1060, H = 556;
+  var W = 1068, H = 612;                  /* 712 x 408 source, at 1.5x */
   cvs.width = W; cvs.height = H;
   var ctx = cvs.getContext('2d');
 
@@ -2115,7 +2319,7 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
     try { src = ctx.getImageData(0,0,W,H).data; }
     catch(e){ return; }                     /* readback blocked: keep the static image */
 
-    var cand = [], step = 3, i, x, y, a, lum;
+    var cand = [], step = 2, i, x, y, a, lum;
     for(y=0; y<H; y+=step){
       for(x=0; x<W; x+=step){
         i = (y*W + x) * 4;
@@ -2127,7 +2331,7 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
     }
     if(!cand.length){ return; }
 
-    var MAX = 5500, keep = cand;
+    var MAX = 16000, keep = cand;
     if(cand.length > MAX){
       keep = []; var stride = cand.length / MAX;
       for(i=0; i<MAX; i++) keep.push(cand[(i*stride)|0]);
@@ -2195,8 +2399,16 @@ html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
       if(x<0 || y<0 || x>=W || y>=H) continue;
       /* never fully gone: alpha floors at 45% at the loosest point */
       var al = p.a * (1 - 0.55*kp);
+      /* a single pixel per particle left the reformed ring thinner than the
+         artwork it was sampled from, so each one is stamped 2x2 */
       var j = (y*W + x)*4;
       if(al > d[j+3]){ d[j]=p.r; d[j+1]=p.g; d[j+2]=p.b; d[j+3]=al; }
+      if(x+1<W){ j+=4; if(al > d[j+3]){ d[j]=p.r; d[j+1]=p.g; d[j+2]=p.b; d[j+3]=al; } }
+      if(y+1<H){
+        j = ((y+1)*W + x)*4;
+        if(al > d[j+3]){ d[j]=p.r; d[j+1]=p.g; d[j+2]=p.b; d[j+3]=al; }
+        if(x+1<W){ j+=4; if(al > d[j+3]){ d[j]=p.r; d[j+1]=p.g; d[j+2]=p.b; d[j+3]=al; } }
+      }
     }
     ctx.putImageData(buf,0,0);
     raf = requestAnimationFrame(frame);
