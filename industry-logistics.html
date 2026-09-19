@@ -137,16 +137,16 @@ h1{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(9px,1vw,11px);letter-spacing:.3em;color:var(--dim);text-transform:uppercase}
 
 /* ── sub-sectors ──────────────────────────── */
-.subs{padding:clamp(72px,11vh,132px) 0 clamp(32px,4vh,48px)}
+.subs{padding:clamp(56px,9vh,104px) 0 clamp(20px,3vh,32px)}
 .subs h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
   font-size:clamp(11px,1.15vw,13px);letter-spacing:.34em;color:var(--head);
   text-align:center;margin:0 0 clamp(44px,6.5vh,76px)}
-.grid{display:grid;grid-template-columns:1fr;gap:clamp(64px,9vh,104px) clamp(48px,5.5vw,104px)}
+.grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,5.4vh,60px) clamp(40px,4.5vw,84px)}
 @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
-article{padding-top:clamp(30px,4.4vh,44px);border-top:1px solid var(--rule-soft)}
+.sub__n{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.2em;color:var(--dim);display:block;margin-bottom:12px}
 .sub__h{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(14px,1.45vw,18px);letter-spacing:.15em;color:var(--gold-light);
-  margin:0 0 18px;line-height:1.3}
+  margin:0 0 16px;line-height:1.3}
 .sub__b{margin:0;color:var(--gold);font-size:clamp(16px,1.15vw,18px);line-height:1.66}
 
 /* ── explorer link + CTA ──────────────────── */
@@ -256,6 +256,19 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
 @media(prefers-contrast:more){
   :root{--dim:var(--gold);--rule:rgba(196,149,68,.4)}
 }
+/* OTHERS-CSS */
+.others{border-top:1px solid var(--rule-soft);margin-top:clamp(52px,8vh,96px);
+  padding:clamp(44px,6.5vh,78px) 0 0;text-align:center}
+.others h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
+  font-size:clamp(10px,1.05vw,12px);letter-spacing:.32em;color:var(--head);
+  margin:0 0 clamp(24px,3.4vh,34px)}
+.otherlist{display:flex;flex-wrap:wrap;justify-content:center;
+  gap:13px clamp(16px,2vw,30px);max-width:880px;margin:0 auto}
+.otherlist a{font-family:'Cinzel',serif;text-transform:uppercase;
+  font-size:clamp(9.5px,1vw,11.5px);letter-spacing:.2em;color:var(--dim);
+  padding-bottom:5px;border-bottom:1px solid transparent}
+.otherlist a:hover{color:var(--gold);border-bottom-color:var(--rule-soft)}
+
 </style>
 </head>
 <body>
@@ -277,70 +290,84 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
     <h2>Sub-sectors</h2>
     <div class="grid">
       <article>
+        <span class="sub__n">01</span>
         <h3 class="sub__h">Freight &amp; Shipping</h3>
         <p class="sub__b">This market runs on two clocks that never agree. Demand moves week to week with trade, while supply is decided years ahead when a vessel is ordered, so rates swing far harder than the underlying trade does and every participant is either short or long of capacity almost all the time. BACI reads orderbooks, deliveries, scrapping and service changes against current volumes, because the mismatch is where contract timing, capacity deals and rate negotiations are actually won.</p>
       </article>
 
       <article>
+        <span class="sub__n">02</span>
         <h3 class="sub__h">Warehousing &amp; Distribution</h3>
         <p class="sub__b">Lease commitments, distribution centre openings, automation investment and contract awards are dated and name the occupier. Inventory levels and warehouse vacancy move earlier and say where space will be needed or released. BACI reads inventory build-up as the leading signal, since a retailer or manufacturer holding more stock than its network was designed for is about to take space, automate, or outsource, and it identifies which of the three that pressure usually produces.</p>
       </article>
 
       <article>
+        <span class="sub__n">03</span>
         <h3 class="sub__h">Last-Mile Delivery</h3>
         <p class="sub__b">Carrier contracts, depot openings, fleet procurement and emissions zone rules are dated and enforceable. Parcel volumes and service performance move earlier and say where a network is straining. BACI pays close attention to city-level regulation, because a low emission zone or an access restriction can invalidate a whole fleet on a published date, and identifies where operators will be forced to re-equip, re-route or subcontract within a known window.</p>
       </article>
 
       <article>
+        <span class="sub__n">04</span>
         <h3 class="sub__h">Supply Chain Management</h3>
         <p class="sub__b">Here the customer's problem is visible before the customer is. Disruption propagates: a port closure, a supplier failure, a border delay or a commodity shortage reaches a business weeks after it becomes observable somewhere upstream, and by then the firm is reacting rather than planning. BACI watches the upstream events and traces them forward to the sectors, corridors and firms they'll actually reach, which is what turns a news item into a specific commercial conversation.</p>
       </article>
 
       <article>
+        <span class="sub__n">05</span>
         <h3 class="sub__h">Customs &amp; Trade Compliance</h3>
         <p class="sub__b">Tariff changes, trade agreements, sanctions, documentation requirements and authorised trader status are dated and jurisdiction-specific. Enforcement patterns and trade volumes move earlier and show where scrutiny is tightening. BACI tracks both, since a rule change creates immediate demand among everyone shipping that lane and enforcement activity identifies which of them are already struggling, and it maps the corridors, commodities and trader categories a given change actually affects.</p>
       </article>
 
       <article>
+        <span class="sub__n">06</span>
         <h3 class="sub__h">Cold Chain Logistics</h3>
         <p class="sub__b">Facility investment, temperature compliance certification and contract awards in pharmaceutical and food distribution are dated and named. Production growth and regulatory direction move earlier and say where capacity will be short. BACI treats certification as the decisive qualifier, because a business without validated cold chain capability can't bid for the contracts that matter however competitive its price is, and identifies where qualified capacity is scarce relative to the demand arriving.</p>
       </article>
 
       <article>
+        <span class="sub__n">07</span>
         <h3 class="sub__h">Ports &amp; Maritime</h3>
         <p class="sub__b">Very little changes hands here, and when it does it changes for a generation. A concession, a terminal award or a privatisation fixes who controls a gateway for twenty or thirty years, which means the commercial opportunities around a port arrive in rare concentrated bursts and are closed for long stretches in between. BACI tracks concession cycles, terminal investment, dredging and capacity programmes, so a business knows which gateways are actually open to new entrants and when.</p>
       </article>
 
       <article>
+        <span class="sub__n">08</span>
         <h3 class="sub__h">Air Cargo</h3>
         <p class="sub__b">Freighter orders, capacity agreements, ground handling contracts and route authorities are dated and named. Yields and passenger schedules move earlier, and they matter unusually here because most air cargo capacity travels in the hold of a passenger aircraft, so a network decision taken for passenger reasons changes freight capacity in a market overnight. BACI reads both sides, identifying where capacity is arriving or leaving and which handlers, forwarders and shippers it affects.</p>
       </article>
 
       <article>
+        <span class="sub__n">09</span>
         <h3 class="sub__h">Rail Freight</h3>
         <p class="sub__b">Path allocation, terminal investment, open access approvals and long-term haulage contracts are dated and administered. Modal shift policy and road cost pressure move earlier and are what eventually make rail competitive on a given flow. BACI reads policy alongside allocation, because capacity on a route is finite and allocated in advance, and a business that identifies a shift before paths are applied for has options that disappear entirely once they've been granted.</p>
       </article>
 
       <article>
+        <span class="sub__n">10</span>
         <h3 class="sub__h">Logistics Technology</h3>
         <p class="sub__b">Transport and warehouse system selections, integration programmes and network-wide rollouts are dated commitments with a named operator. Pilots and funding rounds are softer. BACI concentrates on the system replacement, since an operator changing its core platform re-tenders visibility, telematics, planning and integration at the same moment, and identifies which operators are approaching that decision rather than those locked into an implementation for the next several years.</p>
       </article>
 
       <article>
+        <span class="sub__n">11</span>
         <h3 class="sub__h">Third-Party Logistics</h3>
         <p class="sub__b">Contract awards, renewal windows, in-house reviews and client network redesigns are dated and traceable. Client volumes and cost pressure move earlier and decide whether an outsourcing decision is revisited at all. BACI reads the client's own business for those signals, because a 3PL contract is reopened when the client's volumes, footprint or cost position change rather than on the contract's anniversary, and identifies which clients are entering that kind of change.</p>
       </article>
 
       <article>
+        <span class="sub__n">12</span>
         <h3 class="sub__h">Fleet Management</h3>
         <p class="sub__b">Fleet procurement, leasing agreements, telematics requirements and emissions compliance deadlines are dated and enforceable. Fuel costs and utilisation move earlier and decide whether a replacement is brought forward or deferred. BACI reads compliance deadlines as the firmest signal, since an operator facing a date by which its vehicles become unusable has no option to defer, and identifies which fleets are exposed, in which markets, and how soon.</p>
       </article>
     </div>
   </section>
 
+  <section class="others"><h2>Other industries</h2><nav class="otherlist"><a href="industry-healthcare.html">Healthcare</a><a href="industry-energy.html">Energy</a><a href="industry-construction.html">Construction</a><a href="industry-financial-services.html">Financial Services</a><a href="industry-technology.html">Technology</a><a href="industry-real-estate.html">Real Estate</a><a href="industry-education.html">Education</a><a href="industry-hospitality.html">Hospitality</a><a href="industry-retail.html">Retail</a><a href="industry-legal.html">Legal</a><a href="industry-agriculture.html">Agriculture</a><a href="industry-social-media.html">Social Media</a><a href="industry-human-resources.html">Human Resources</a><a href="industry-skincare-beauty.html">Skincare &amp; Beauty</a></nav></section>
+
   <section class="close">
-    <p>Every sub-sector runs the same way across <span data-stat="countries">181</span> countries and <span data-stat="regions">9</span> regions. Choose a market and an objective, and the intelligence reshapes around it.</p>
-    <a class="explorer" href="index.html#every-industry">Open the industry explorer</a>
+    <p>Every sub-sector runs the same way across 181 countries and 9 regions. Choose a market and an objective, and the intelligence reshapes around it.</p>
+    <a class="explorer" href="index.html#industry">Open the industry explorer</a>
     <br>
     <a class="cta" href="index.html#access" id="cta"><span id="c1">C</span>ONNECT YOUR BUSINES<span id="c2">S</span><span class="line"></span><span class="dot" id="dot"></span></a>
   </section>
@@ -373,7 +400,7 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
       <div class="col">
         <h3>Intelligence<span class="lp"></span><span class="pt"></span></h3>
         <ul>
-          <li><a href="index.html#every-industry">Industry Intelligence</a></li>
+          <li><a href="index.html#industry">Industry Intelligence</a></li>
           <li><a href="index.html#conversion">Conversion Intelligence</a></li>
           <li><a href="index.html#global-reach">Global Reach</a></li>
           <li><a href="index.html#doctrine">The Doctrine</a></li>
@@ -494,6 +521,5 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
   });
 })();
 </script>
-<script src="/js/site-stats.js" defer></script>
 </body>
 </html>

@@ -137,16 +137,16 @@ h1{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(9px,1vw,11px);letter-spacing:.3em;color:var(--dim);text-transform:uppercase}
 
 /* ── sub-sectors ──────────────────────────── */
-.subs{padding:clamp(72px,11vh,132px) 0 clamp(32px,4vh,48px)}
+.subs{padding:clamp(56px,9vh,104px) 0 clamp(20px,3vh,32px)}
 .subs h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
   font-size:clamp(11px,1.15vw,13px);letter-spacing:.34em;color:var(--head);
   text-align:center;margin:0 0 clamp(44px,6.5vh,76px)}
-.grid{display:grid;grid-template-columns:1fr;gap:clamp(64px,9vh,104px) clamp(48px,5.5vw,104px)}
+.grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,5.4vh,60px) clamp(40px,4.5vw,84px)}
 @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
-article{padding-top:clamp(30px,4.4vh,44px);border-top:1px solid var(--rule-soft)}
+.sub__n{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.2em;color:var(--dim);display:block;margin-bottom:12px}
 .sub__h{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(14px,1.45vw,18px);letter-spacing:.15em;color:var(--gold-light);
-  margin:0 0 18px;line-height:1.3}
+  margin:0 0 16px;line-height:1.3}
 .sub__b{margin:0;color:var(--gold);font-size:clamp(16px,1.15vw,18px);line-height:1.66}
 
 /* ── explorer link + CTA ──────────────────── */
@@ -256,6 +256,19 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
 @media(prefers-contrast:more){
   :root{--dim:var(--gold);--rule:rgba(196,149,68,.4)}
 }
+/* OTHERS-CSS */
+.others{border-top:1px solid var(--rule-soft);margin-top:clamp(52px,8vh,96px);
+  padding:clamp(44px,6.5vh,78px) 0 0;text-align:center}
+.others h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
+  font-size:clamp(10px,1.05vw,12px);letter-spacing:.32em;color:var(--head);
+  margin:0 0 clamp(24px,3.4vh,34px)}
+.otherlist{display:flex;flex-wrap:wrap;justify-content:center;
+  gap:13px clamp(16px,2vw,30px);max-width:880px;margin:0 auto}
+.otherlist a{font-family:'Cinzel',serif;text-transform:uppercase;
+  font-size:clamp(9.5px,1vw,11.5px);letter-spacing:.2em;color:var(--dim);
+  padding-bottom:5px;border-bottom:1px solid transparent}
+.otherlist a:hover{color:var(--gold);border-bottom-color:var(--rule-soft)}
+
 </style>
 </head>
 <body>
@@ -277,70 +290,84 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
     <h2>Sub-sectors</h2>
     <div class="grid">
       <article>
+        <span class="sub__n">01</span>
         <h3 class="sub__h">Hotels &amp; Resorts</h3>
         <p class="sub__b">Transactions, management and franchise agreements, confirmed openings and refurbishment programmes are dated and name the owner and operator. Occupancy and rate data move earlier and say which assets are trading well enough to invest and which are heading for a change of hands. BACI reads both, because a refurbishment cycle is the moment nearly every supplier to a hotel gets considered at once, and identifies the owners and operators approaching one.</p>
       </article>
 
       <article>
+        <span class="sub__n">02</span>
         <h3 class="sub__h">Restaurants &amp; Food Service</h3>
         <p class="sub__b">Site acquisitions, franchise agreements, supply contracts and confirmed openings are dated and name the operator. Menu trends and delivery volumes move earlier and describe where consumer demand is going rather than who has committed to it. BACI works from expansion activity, since an operator signing sites is an operator rebuilding its supply arrangements, and identifies the groups whose growth stage makes them reachable rather than the ones already locked into national agreements.</p>
       </article>
 
       <article>
+        <span class="sub__n">03</span>
         <h3 class="sub__h">Travel &amp; Tourism</h3>
         <p class="sub__b">Route launches, visa arrangements, tourism board budgets and operator contracting rounds are dated and attributable. Search and booking patterns move earlier and show where interest is building before capacity has been committed to it. BACI reads the two together, because demand without air capacity doesn't convert and capacity without demand gets withdrawn within a season, and identifies the destinations where both are moving in the same direction at the same time.</p>
       </article>
 
       <article>
+        <span class="sub__n">04</span>
         <h3 class="sub__h">Events &amp; Venues</h3>
         <p class="sub__b">Almost uniquely, this market publishes its future. Congresses, championships, festivals and exhibitions are awarded and scheduled years in advance, so the demand is a calendar anyone can read, and the commercial question is only whether you engage while the supply chain is being assembled or after. BACI tracks bid awards, host city decisions, venue development and rotation cycles, because the contracts around a major event are placed long before the public even associates the date with the city.</p>
       </article>
 
       <article>
+        <span class="sub__n">05</span>
         <h3 class="sub__h">Vacation Rentals</h3>
         <p class="sub__b">Local licensing rules, registration requirements, platform policy changes and portfolio acquisitions are dated and enforceable. Listing growth and occupancy move earlier and say where a market is heating up. BACI watches regulation hardest, since a single city ordinance can remove most of the supply in a market within a season, and identifies where rules are tightening, where they're settling into a workable framework, and which operators are positioned to survive either.</p>
       </article>
 
       <article>
+        <span class="sub__n">06</span>
         <h3 class="sub__h">Cruise &amp; Marine</h3>
         <p class="sub__b">Deployment schedules, port agreements, newbuild orders and homeport decisions are published well ahead and name the line and the destination. Booking curves are softer and move with conditions. BACI works from deployment, because a ship assigned to a region for a season is a fixed volume of provisioning, excursions, port services and local spending arriving on a known date, and it identifies the ports and suppliers positioned to receive it.</p>
       </article>
 
       <article>
+        <span class="sub__n">07</span>
         <h3 class="sub__h">Airlines &amp; Aviation Services</h3>
         <p class="sub__b">A route decision is a hospitality event even though an airline makes it. New capacity into a city changes hotel demand, restaurant trade, tour operator viability and ground handling requirements, and it's announced months before the first flight. BACI treats route announcements, slot allocations, fleet deployment and bilateral agreements as demand signals for the whole sector, so businesses that have nothing to do with aviation can see a market forming in their own city before the flights start.</p>
       </article>
 
       <article>
+        <span class="sub__n">08</span>
         <h3 class="sub__h">Leisure &amp; Entertainment</h3>
         <p class="sub__b">Attraction development, licensing agreements, operator acquisitions and capital programmes are dated and name the parties. Visitor numbers and discretionary spending move earlier and decide whether a scheme proceeds. BACI follows capital programmes in particular, since an attraction's investment cycle is where design, technology, catering and retail suppliers are all selected together, and identifies the operators and destinations entering one rather than those simply trading.</p>
       </article>
 
       <article>
+        <span class="sub__n">09</span>
         <h3 class="sub__h">Catering</h3>
         <p class="sub__b">Contract awards, renewal windows, in-house service reviews and framework places are dated and traceable to a named client. Estate changes and headcount movements come earlier and reshape a requirement before it's re-tendered. BACI works the renewal calendar, because contract catering is won through relationships built across a term rather than through a bid document, and identifies which contracts are approaching their end and which clients are reconsidering the model entirely.</p>
       </article>
 
       <article>
+        <span class="sub__n">10</span>
         <h3 class="sub__h">Hospitality Technology</h3>
         <p class="sub__b">Property management system migrations, group-wide rollouts and integration partnerships are dated commitments naming the operator. Pilots and funding rounds are softer. BACI concentrates on the migration, since a hotel group changing its core system reopens every integration around it and creates a buying window for a dozen adjacent suppliers at once, and it identifies which groups are approaching that point and which are locked in for years.</p>
       </article>
 
       <article>
+        <span class="sub__n">11</span>
         <h3 class="sub__h">Wellness &amp; Spa Tourism</h3>
         <p class="sub__b">Facility development, operator and brand agreements, accreditation and corporate or insurer arrangements are dated and named. Demand trends and consumer interest move earlier and travel unevenly between markets. BACI connects them, because this is a category where developers frequently build capacity ahead of a market that hasn't arrived, and identifies the destinations where the infrastructure, the operator expertise and the paying demand are actually converging.</p>
       </article>
 
       <article>
+        <span class="sub__n">12</span>
         <h3 class="sub__h">Casino &amp; Gaming Hospitality</h3>
         <p class="sub__b">Supply here is capped by regulators, so businesses compete for the right to operate before they ever compete for a customer. A licensing round, a change in permitted numbers or a jurisdiction opening its market is worth more than any demand signal, and those decisions are consulted on, published and contested in public. BACI follows licensing regimes, award rounds and regulatory reviews, so operators, suppliers and investors are positioned before a competition opens rather than reacting once it has.</p>
       </article>
     </div>
   </section>
 
+  <section class="others"><h2>Other industries</h2><nav class="otherlist"><a href="industry-healthcare.html">Healthcare</a><a href="industry-energy.html">Energy</a><a href="industry-construction.html">Construction</a><a href="industry-financial-services.html">Financial Services</a><a href="industry-technology.html">Technology</a><a href="industry-real-estate.html">Real Estate</a><a href="industry-education.html">Education</a><a href="industry-retail.html">Retail</a><a href="industry-legal.html">Legal</a><a href="industry-agriculture.html">Agriculture</a><a href="industry-logistics.html">Logistics</a><a href="industry-social-media.html">Social Media</a><a href="industry-human-resources.html">Human Resources</a><a href="industry-skincare-beauty.html">Skincare &amp; Beauty</a></nav></section>
+
   <section class="close">
-    <p>Every sub-sector runs the same way across <span data-stat="countries">181</span> countries and <span data-stat="regions">9</span> regions. Choose a market and an objective, and the intelligence reshapes around it.</p>
-    <a class="explorer" href="index.html#every-industry">Open the industry explorer</a>
+    <p>Every sub-sector runs the same way across 181 countries and 9 regions. Choose a market and an objective, and the intelligence reshapes around it.</p>
+    <a class="explorer" href="index.html#industry">Open the industry explorer</a>
     <br>
     <a class="cta" href="index.html#access" id="cta"><span id="c1">C</span>ONNECT YOUR BUSINES<span id="c2">S</span><span class="line"></span><span class="dot" id="dot"></span></a>
   </section>
@@ -373,7 +400,7 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
       <div class="col">
         <h3>Intelligence<span class="lp"></span><span class="pt"></span></h3>
         <ul>
-          <li><a href="index.html#every-industry">Industry Intelligence</a></li>
+          <li><a href="index.html#industry">Industry Intelligence</a></li>
           <li><a href="index.html#conversion">Conversion Intelligence</a></li>
           <li><a href="index.html#global-reach">Global Reach</a></li>
           <li><a href="index.html#doctrine">The Doctrine</a></li>
@@ -494,6 +521,5 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
   });
 })();
 </script>
-<script src="/js/site-stats.js" defer></script>
 </body>
 </html>

@@ -137,16 +137,16 @@ h1{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(9px,1vw,11px);letter-spacing:.3em;color:var(--dim);text-transform:uppercase}
 
 /* ── sub-sectors ──────────────────────────── */
-.subs{padding:clamp(72px,11vh,132px) 0 clamp(32px,4vh,48px)}
+.subs{padding:clamp(56px,9vh,104px) 0 clamp(20px,3vh,32px)}
 .subs h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
   font-size:clamp(11px,1.15vw,13px);letter-spacing:.34em;color:var(--head);
   text-align:center;margin:0 0 clamp(44px,6.5vh,76px)}
-.grid{display:grid;grid-template-columns:1fr;gap:clamp(64px,9vh,104px) clamp(48px,5.5vw,104px)}
+.grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,5.4vh,60px) clamp(40px,4.5vw,84px)}
 @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
-article{padding-top:clamp(30px,4.4vh,44px);border-top:1px solid var(--rule-soft)}
+.sub__n{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.2em;color:var(--dim);display:block;margin-bottom:12px}
 .sub__h{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(14px,1.45vw,18px);letter-spacing:.15em;color:var(--gold-light);
-  margin:0 0 18px;line-height:1.3}
+  margin:0 0 16px;line-height:1.3}
 .sub__b{margin:0;color:var(--gold);font-size:clamp(16px,1.15vw,18px);line-height:1.66}
 
 /* ── explorer link + CTA ──────────────────── */
@@ -256,6 +256,19 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
 @media(prefers-contrast:more){
   :root{--dim:var(--gold);--rule:rgba(196,149,68,.4)}
 }
+/* OTHERS-CSS */
+.others{border-top:1px solid var(--rule-soft);margin-top:clamp(52px,8vh,96px);
+  padding:clamp(44px,6.5vh,78px) 0 0;text-align:center}
+.others h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
+  font-size:clamp(10px,1.05vw,12px);letter-spacing:.32em;color:var(--head);
+  margin:0 0 clamp(24px,3.4vh,34px)}
+.otherlist{display:flex;flex-wrap:wrap;justify-content:center;
+  gap:13px clamp(16px,2vw,30px);max-width:880px;margin:0 auto}
+.otherlist a{font-family:'Cinzel',serif;text-transform:uppercase;
+  font-size:clamp(9.5px,1vw,11.5px);letter-spacing:.2em;color:var(--dim);
+  padding-bottom:5px;border-bottom:1px solid transparent}
+.otherlist a:hover{color:var(--gold);border-bottom-color:var(--rule-soft)}
+
 </style>
 </head>
 <body>
@@ -277,70 +290,84 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
     <h2>Sub-sectors</h2>
     <div class="grid">
       <article>
+        <span class="sub__n">01</span>
         <h3 class="sub__h">K-12</h3>
         <p class="sub__b">School building programmes, curriculum and equipment procurement, framework awards and funding allocations are dated and attributable to a named authority or trust. Enrolment trends and policy consultations move earlier. BACI tracks the funding allocation in particular, because in state education the budget arrives before the buying decision and the suppliers who engage in that window shape what gets specified, and it identifies which authorities, trusts and schools are the actual purchasing entity in a given market.</p>
       </article>
 
       <article>
+        <span class="sub__n">02</span>
         <h3 class="sub__h">Higher Education</h3>
         <p class="sub__b">Capital programmes, research grant awards, procurement frameworks and international partnership agreements are dated and name the institution. Enrolment figures and rankings move earlier and describe an institution's position rather than its spending. BACI reads grant awards especially closely, since a funded research programme creates immediate demand for equipment, facilities and specialist services with the money already allocated, and it maps the frameworks a supplier has to sit on before any of it is reachable.</p>
       </article>
 
       <article>
+        <span class="sub__n">03</span>
         <h3 class="sub__h">EdTech</h3>
         <p class="sub__b">Institutional adoptions, framework places and trust or district rollouts are dated commitments with a named buyer. Usage figures and classroom pilots are softer, and this is a sector where a teacher trying something and an institution buying it are separated by a long procurement process. BACI keeps those apart, identifying where informal adoption has reached the point of a formal purchase, and which frameworks and approval routes decide whether a product can be bought at all.</p>
       </article>
 
       <article>
+        <span class="sub__n">04</span>
         <h3 class="sub__h">Vocational &amp; Skills Training</h3>
         <p class="sub__b">Funding contracts, provider approvals, apprenticeship arrangements and employer commitments are dated and tied to a named funder. Skills shortage data and labour market forecasts move earlier and say where provision will be commissioned next. BACI connects the two, because a documented shortage is what unlocks a funding stream some months later, and identifies the providers, employers and funding routes through which training in a given skill can actually be delivered and paid for.</p>
       </article>
 
       <article>
+        <span class="sub__n">05</span>
         <h3 class="sub__h">Corporate Learning</h3>
         <p class="sub__b">The buyer here isn't an educational institution at all, which changes where the signals sit. An employer commissions training because something in the business changed: a regulatory obligation, a systems migration, an acquisition bringing two workforces together, rapid hiring, a compliance failure. BACI reads the corporate world rather than the education one for those moments, since a learning budget is released by a business event and rarely by an educational argument, however good the argument is.</p>
       </article>
 
       <article>
+        <span class="sub__n">06</span>
         <h3 class="sub__h">Online &amp; Distance Learning</h3>
         <p class="sub__b">Platform contracts, accreditation of online delivery, institutional partnerships and programme launches are dated and named. Enrolment shifts and completion rates move earlier and indicate whether a model is holding. BACI tracks accreditation especially, because an online programme that isn't recognised can't recruit the students who most need it to be, and identifies the institutions, awarding bodies and partners whose recognition decides whether a course has a market.</p>
       </article>
 
       <article>
+        <span class="sub__n">07</span>
         <h3 class="sub__h">Early Childhood</h3>
         <p class="sub__b">Entitlement funding rates, provider registration, setting acquisitions and local commissioning decisions are dated and traceable. Birth rates and participation trends move slowly and say where capacity will be needed years ahead. BACI reads funding rates as the decisive commercial signal, since in this sector the rate a government sets determines whether a setting is viable at all, and it identifies where consolidation, new provision or closure is most likely to follow a change in it.</p>
       </article>
 
       <article>
+        <span class="sub__n">08</span>
         <h3 class="sub__h">Special Education</h3>
         <p class="sub__b">Demand here is a legal entitlement rather than a budget decision. A statutory assessment obliges an authority to secure provision whether or not it has the money, which makes the assessment itself the commercial signal and the funding argument a separate, later problem. BACI follows assessments, placement pressure, tribunal volumes and specialist capacity shortfalls, because those show where an authority is legally committed to buying provision it currently can't deliver from its own resources.</p>
       </article>
 
       <article>
+        <span class="sub__n">09</span>
         <h3 class="sub__h">Language Learning</h3>
         <p class="sub__b">Institutional contracts, accreditation, government language programmes and corporate agreements are dated and named. Migration flows, trade relationships and inbound investment move earlier and reliably precede demand for a specific language pair in a specific market. BACI reads those patterns alongside the contracts, since a new trade corridor or a wave of relocation creates language demand before anyone commissions provision for it, and identifies who commissions it when they do.</p>
       </article>
 
       <article>
+        <span class="sub__n">10</span>
         <h3 class="sub__h">Test Prep &amp; Credentialing</h3>
         <p class="sub__b">Awarding body recognition, syllabus changes, centre approvals and employer or regulator requirements are dated and published. Entry volumes move with them and lag. BACI watches syllabus and requirement changes closely, because a revised qualification obsoletes existing preparation material on a known date and creates a replacement market for everyone supplying into it, and it identifies the awarding bodies, centres and employers whose recognition decides whether a credential carries weight.</p>
       </article>
 
       <article>
+        <span class="sub__n">11</span>
         <h3 class="sub__h">Study Abroad</h3>
         <p class="sub__b">This is the only category where the decisive policy is made in a country you aren't operating in. A visa rule, a work rights change or a cap on international enrolment can open or close an entire market within a single announcement, and it does so on the destination government's timetable rather than anyone's commercial one. BACI tracks immigration and enrolment policy across destinations, so agents, institutions and service providers see a corridor closing or opening while there's still time to redirect.</p>
       </article>
 
       <article>
+        <span class="sub__n">12</span>
         <h3 class="sub__h">Education Publishing</h3>
         <p class="sub__b">Curriculum adoptions, framework wins, licensing agreements and syllabus changes are dated and name the adopting authority. Budget pressure and the shift to digital move earlier and change what format gets bought rather than whether. BACI works from adoption cycles, since a curriculum decision fixes what a jurisdiction buys for several years and is close to unreachable in between, and identifies when each cycle reopens and which bodies control the decision.</p>
       </article>
     </div>
   </section>
 
+  <section class="others"><h2>Other industries</h2><nav class="otherlist"><a href="industry-healthcare.html">Healthcare</a><a href="industry-energy.html">Energy</a><a href="industry-construction.html">Construction</a><a href="industry-financial-services.html">Financial Services</a><a href="industry-technology.html">Technology</a><a href="industry-real-estate.html">Real Estate</a><a href="industry-hospitality.html">Hospitality</a><a href="industry-retail.html">Retail</a><a href="industry-legal.html">Legal</a><a href="industry-agriculture.html">Agriculture</a><a href="industry-logistics.html">Logistics</a><a href="industry-social-media.html">Social Media</a><a href="industry-human-resources.html">Human Resources</a><a href="industry-skincare-beauty.html">Skincare &amp; Beauty</a></nav></section>
+
   <section class="close">
-    <p>Every sub-sector runs the same way across <span data-stat="countries">181</span> countries and <span data-stat="regions">9</span> regions. Choose a market and an objective, and the intelligence reshapes around it.</p>
-    <a class="explorer" href="index.html#every-industry">Open the industry explorer</a>
+    <p>Every sub-sector runs the same way across 181 countries and 9 regions. Choose a market and an objective, and the intelligence reshapes around it.</p>
+    <a class="explorer" href="index.html#industry">Open the industry explorer</a>
     <br>
     <a class="cta" href="index.html#access" id="cta"><span id="c1">C</span>ONNECT YOUR BUSINES<span id="c2">S</span><span class="line"></span><span class="dot" id="dot"></span></a>
   </section>
@@ -373,7 +400,7 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
       <div class="col">
         <h3>Intelligence<span class="lp"></span><span class="pt"></span></h3>
         <ul>
-          <li><a href="index.html#every-industry">Industry Intelligence</a></li>
+          <li><a href="index.html#industry">Industry Intelligence</a></li>
           <li><a href="index.html#conversion">Conversion Intelligence</a></li>
           <li><a href="index.html#global-reach">Global Reach</a></li>
           <li><a href="index.html#doctrine">The Doctrine</a></li>
@@ -494,6 +521,5 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
   });
 })();
 </script>
-<script src="/js/site-stats.js" defer></script>
 </body>
 </html>

@@ -137,16 +137,16 @@ h1{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(9px,1vw,11px);letter-spacing:.3em;color:var(--dim);text-transform:uppercase}
 
 /* ── sub-sectors ──────────────────────────── */
-.subs{padding:clamp(72px,11vh,132px) 0 clamp(32px,4vh,48px)}
+.subs{padding:clamp(56px,9vh,104px) 0 clamp(20px,3vh,32px)}
 .subs h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
   font-size:clamp(11px,1.15vw,13px);letter-spacing:.34em;color:var(--head);
   text-align:center;margin:0 0 clamp(44px,6.5vh,76px)}
-.grid{display:grid;grid-template-columns:1fr;gap:clamp(64px,9vh,104px) clamp(48px,5.5vw,104px)}
+.grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,5.4vh,60px) clamp(40px,4.5vw,84px)}
 @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
-article{padding-top:clamp(30px,4.4vh,44px);border-top:1px solid var(--rule-soft)}
+.sub__n{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.2em;color:var(--dim);display:block;margin-bottom:12px}
 .sub__h{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(14px,1.45vw,18px);letter-spacing:.15em;color:var(--gold-light);
-  margin:0 0 18px;line-height:1.3}
+  margin:0 0 16px;line-height:1.3}
 .sub__b{margin:0;color:var(--gold);font-size:clamp(16px,1.15vw,18px);line-height:1.66}
 
 /* ── explorer link + CTA ──────────────────── */
@@ -256,6 +256,19 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
 @media(prefers-contrast:more){
   :root{--dim:var(--gold);--rule:rgba(196,149,68,.4)}
 }
+/* OTHERS-CSS */
+.others{border-top:1px solid var(--rule-soft);margin-top:clamp(52px,8vh,96px);
+  padding:clamp(44px,6.5vh,78px) 0 0;text-align:center}
+.others h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
+  font-size:clamp(10px,1.05vw,12px);letter-spacing:.32em;color:var(--head);
+  margin:0 0 clamp(24px,3.4vh,34px)}
+.otherlist{display:flex;flex-wrap:wrap;justify-content:center;
+  gap:13px clamp(16px,2vw,30px);max-width:880px;margin:0 auto}
+.otherlist a{font-family:'Cinzel',serif;text-transform:uppercase;
+  font-size:clamp(9.5px,1vw,11.5px);letter-spacing:.2em;color:var(--dim);
+  padding-bottom:5px;border-bottom:1px solid transparent}
+.otherlist a:hover{color:var(--gold);border-bottom-color:var(--rule-soft)}
+
 </style>
 </head>
 <body>
@@ -277,70 +290,84 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
     <h2>Sub-sectors</h2>
     <div class="grid">
       <article>
+        <span class="sub__n">01</span>
         <h3 class="sub__h">Corporate Law</h3>
         <p class="sub__b">Transactions, financings, restructurings, incorporations and panel appointments are recorded and name the parties and their advisors. Sector activity and regulatory direction move earlier and say where corporate work will build next. BACI watches panel reviews closely, because a corporate panel decides years of instructions in a single process and is close to unreachable between reviews, and it identifies which companies are approaching one and which advisors currently hold the position.</p>
       </article>
 
       <article>
+        <span class="sub__n">02</span>
         <h3 class="sub__h">Litigation</h3>
         <p class="sub__b">Demand here isn't forecast, it's filed. A dispute becomes public record the moment proceedings begin, which makes this the one practice area where the commercial event and the public signal are the same thing and arrive together. So the advantage isn't discovery, it's reading: BACI follows filings, counsel changes, judgment patterns and the sectors producing repeat claims, because a pattern running across a dozen matters is worth far more than any single one of them.</p>
       </article>
 
       <article>
+        <span class="sub__n">03</span>
         <h3 class="sub__h">Intellectual Property</h3>
         <p class="sub__b">Filings, grants, oppositions, licensing agreements and infringement proceedings are published, dated and searchable, which makes this among the most transparent practice areas anywhere. Research investment and product launches move earlier and predict where filing volume will build. BACI reads both, since a company entering a new market or technology area needs protection before it needs enforcement, and identifies businesses at the point where their portfolio no longer matches what they're actually doing.</p>
       </article>
 
       <article>
+        <span class="sub__n">04</span>
         <h3 class="sub__h">Regulatory &amp; Compliance</h3>
         <p class="sub__b">Rule changes with implementation dates, enforcement actions and authorisation decisions are dated and name who's affected. Consultations and published supervisory priorities come earlier and say what's coming. BACI follows the sequence from consultation to enforcement, because the advisory work is commissioned in the interpretation period between them and the businesses that wait for enforcement are buying remediation rather than advice, which is a worse purchase made under pressure.</p>
       </article>
 
       <article>
+        <span class="sub__n">05</span>
         <h3 class="sub__h">LegalTech</h3>
         <p class="sub__b">The buyer here is unusual: a law firm is a partnership, so the people approving a technology purchase are the owners who absorb its cost from their own drawings that year. That makes adoption slower than the product's merits explain and makes the timing hinge on the firm's financial year, its lockup position and whether a merger or a large mandate has just changed its capacity. BACI reads those firm-level conditions rather than the software market.</p>
       </article>
 
       <article>
+        <span class="sub__n">06</span>
         <h3 class="sub__h">Immigration Law</h3>
         <p class="sub__b">Policy changes, quotas, sponsor licensing and processing rule changes are dated and published, and they create demand immediately and at volume. Labour shortages and migration patterns move earlier and say which corridors will need work. BACI tracks both, since an employer facing a shortage becomes a client the moment a route opens or closes, and identifies the sectors, employers and corridors where a rule change is about to make immigration advice unavoidable.</p>
       </article>
 
       <article>
+        <span class="sub__n">07</span>
         <h3 class="sub__h">Real Estate Law</h3>
         <p class="sub__b">Transactions, development approvals, planning decisions and lease events are recorded and name the parties. Market conditions move earlier and decide volume. BACI works from the earlier stages of a property process rather than the transaction itself, because by the time a deal is recorded the legal work is finished, and it identifies the schemes, portfolios and lease calendars where instructions are about to be placed rather than already served.</p>
       </article>
 
       <article>
+        <span class="sub__n">08</span>
         <h3 class="sub__h">Employment Law</h3>
         <p class="sub__b">Tribunal claims, announced restructurings, collective redundancy programmes and new legislation are dated and attributable. Sector distress and hiring freezes come earlier and reliably precede the work. BACI reads distress signals alongside the formal events, because an employer planning a restructuring takes advice weeks before anything is announced and after the announcement the adviser is usually already appointed, and it identifies the businesses entering that window.</p>
       </article>
 
       <article>
+        <span class="sub__n">09</span>
         <h3 class="sub__h">Tax Law</h3>
         <p class="sub__b">Legislation, treaty changes, published rulings and enforcement activity are dated and name their scope. Corporate restructuring and cross-border expansion come earlier and create the exposure before anybody tests it. BACI connects the two, since a company moving into a new jurisdiction acquires a tax position months before a rule change makes it a problem, and identifies the businesses whose structure and footprint put them in the path of a change now being legislated.</p>
       </article>
 
       <article>
+        <span class="sub__n">10</span>
         <h3 class="sub__h">Mergers &amp; Acquisitions</h3>
         <p class="sub__b">Announced deals, regulatory filings, disposal processes and adviser mandates are public and dated. Strategic reviews, sector consolidation and shareholder pressure come earlier and are where the adviser is actually chosen. BACI follows the pre-announcement signals, because an announced deal has had its lawyers for months, and it identifies the companies under the kind of strategic or shareholder pressure that precedes a process while the appointment is still genuinely open.</p>
       </article>
 
       <article>
+        <span class="sub__n">11</span>
         <h3 class="sub__h">Arbitration &amp; Dispute Resolution</h3>
         <p class="sub__b">Institutional caseloads, published awards, enforcement proceedings and the seats named in contracts are recorded, though this is a deliberately private field and much stays unpublished. Counterparty stress and sector disputes move earlier. BACI works with the visible record and the commercial conditions around it, identifying the sectors, corridors and contract types producing disputes, and the institutions and seats through which they'll be resolved, which is often decided years earlier in a clause nobody negotiated hard.</p>
       </article>
 
       <article>
+        <span class="sub__n">12</span>
         <h3 class="sub__h">Legal Process Outsourcing</h3>
         <p class="sub__b">This category sells to the legal industry rather than through it, so the signals sit inside firms and legal departments rather than in their clients' markets. Fee pressure, panel consolidation, a general counsel told to cut external spend, a firm losing a large mandate, alternative fee arrangements spreading through a practice area: those are what create the buyer. BACI reads the profession's own economics, because this market grows precisely when the traditional one is under strain.</p>
       </article>
     </div>
   </section>
 
+  <section class="others"><h2>Other industries</h2><nav class="otherlist"><a href="industry-healthcare.html">Healthcare</a><a href="industry-energy.html">Energy</a><a href="industry-construction.html">Construction</a><a href="industry-financial-services.html">Financial Services</a><a href="industry-technology.html">Technology</a><a href="industry-real-estate.html">Real Estate</a><a href="industry-education.html">Education</a><a href="industry-hospitality.html">Hospitality</a><a href="industry-retail.html">Retail</a><a href="industry-agriculture.html">Agriculture</a><a href="industry-logistics.html">Logistics</a><a href="industry-social-media.html">Social Media</a><a href="industry-human-resources.html">Human Resources</a><a href="industry-skincare-beauty.html">Skincare &amp; Beauty</a></nav></section>
+
   <section class="close">
-    <p>Every sub-sector runs the same way across <span data-stat="countries">181</span> countries and <span data-stat="regions">9</span> regions. Choose a market and an objective, and the intelligence reshapes around it.</p>
-    <a class="explorer" href="index.html#every-industry">Open the industry explorer</a>
+    <p>Every sub-sector runs the same way across 181 countries and 9 regions. Choose a market and an objective, and the intelligence reshapes around it.</p>
+    <a class="explorer" href="index.html#industry">Open the industry explorer</a>
     <br>
     <a class="cta" href="index.html#access" id="cta"><span id="c1">C</span>ONNECT YOUR BUSINES<span id="c2">S</span><span class="line"></span><span class="dot" id="dot"></span></a>
   </section>
@@ -373,7 +400,7 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
       <div class="col">
         <h3>Intelligence<span class="lp"></span><span class="pt"></span></h3>
         <ul>
-          <li><a href="index.html#every-industry">Industry Intelligence</a></li>
+          <li><a href="index.html#industry">Industry Intelligence</a></li>
           <li><a href="index.html#conversion">Conversion Intelligence</a></li>
           <li><a href="index.html#global-reach">Global Reach</a></li>
           <li><a href="index.html#doctrine">The Doctrine</a></li>
@@ -494,6 +521,5 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
   });
 })();
 </script>
-<script src="/js/site-stats.js" defer></script>
 </body>
 </html>

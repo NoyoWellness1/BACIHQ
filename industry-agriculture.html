@@ -137,16 +137,16 @@ h1{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(9px,1vw,11px);letter-spacing:.3em;color:var(--dim);text-transform:uppercase}
 
 /* ── sub-sectors ──────────────────────────── */
-.subs{padding:clamp(72px,11vh,132px) 0 clamp(32px,4vh,48px)}
+.subs{padding:clamp(56px,9vh,104px) 0 clamp(20px,3vh,32px)}
 .subs h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
   font-size:clamp(11px,1.15vw,13px);letter-spacing:.34em;color:var(--head);
   text-align:center;margin:0 0 clamp(44px,6.5vh,76px)}
-.grid{display:grid;grid-template-columns:1fr;gap:clamp(64px,9vh,104px) clamp(48px,5.5vw,104px)}
+.grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,5.4vh,60px) clamp(40px,4.5vw,84px)}
 @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
-article{padding-top:clamp(30px,4.4vh,44px);border-top:1px solid var(--rule-soft)}
+.sub__n{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.2em;color:var(--dim);display:block;margin-bottom:12px}
 .sub__h{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(14px,1.45vw,18px);letter-spacing:.15em;color:var(--gold-light);
-  margin:0 0 18px;line-height:1.3}
+  margin:0 0 16px;line-height:1.3}
 .sub__b{margin:0;color:var(--gold);font-size:clamp(16px,1.15vw,18px);line-height:1.66}
 
 /* ── explorer link + CTA ──────────────────── */
@@ -256,6 +256,19 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
 @media(prefers-contrast:more){
   :root{--dim:var(--gold);--rule:rgba(196,149,68,.4)}
 }
+/* OTHERS-CSS */
+.others{border-top:1px solid var(--rule-soft);margin-top:clamp(52px,8vh,96px);
+  padding:clamp(44px,6.5vh,78px) 0 0;text-align:center}
+.others h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
+  font-size:clamp(10px,1.05vw,12px);letter-spacing:.32em;color:var(--head);
+  margin:0 0 clamp(24px,3.4vh,34px)}
+.otherlist{display:flex;flex-wrap:wrap;justify-content:center;
+  gap:13px clamp(16px,2vw,30px);max-width:880px;margin:0 auto}
+.otherlist a{font-family:'Cinzel',serif;text-transform:uppercase;
+  font-size:clamp(9.5px,1vw,11.5px);letter-spacing:.2em;color:var(--dim);
+  padding-bottom:5px;border-bottom:1px solid transparent}
+.otherlist a:hover{color:var(--gold);border-bottom-color:var(--rule-soft)}
+
 </style>
 </head>
 <body>
@@ -277,70 +290,84 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
     <h2>Sub-sectors</h2>
     <div class="grid">
       <article>
+        <span class="sub__n">01</span>
         <h3 class="sub__h">Crop Production</h3>
         <p class="sub__b">The calendar here isn't commercial, it's biological. A planting window opens and closes on the season's terms, and everything sold into it, whether seed, inputs, finance, equipment or advice, has to arrive before it, because a grower who's missed the window is a year away from being a customer again. BACI works to that calendar by region and crop, reading planting intentions, input procurement and contract farming arrangements against the season rather than against a sales quarter.</p>
       </article>
 
       <article>
+        <span class="sub__n">02</span>
         <h3 class="sub__h">Livestock &amp; Animal Husbandry</h3>
         <p class="sub__b">Herd and flock movements, disease notifications, processing contracts and support scheme changes are recorded and traceable, often to individual holdings. Feed costs and market prices move earlier and decide whether a producer expands or destocks. BACI reads disease notifications with particular weight, since a restriction zone reshapes trade, processing and input demand across a region within days, and identifies where producers, processors and suppliers will be forced to change arrangements.</p>
       </article>
 
       <article>
+        <span class="sub__n">03</span>
         <h3 class="sub__h">AgTech</h3>
         <p class="sub__b">Distributor agreements, cooperative adoption, published trial results and regulatory clearances are dated and named. Funding rounds and on-farm pilots are softer, and agriculture is unusually resistant to technology that hasn't been proven in its own conditions. BACI distinguishes a trial from an adoption, because a grower who's seen a neighbour succeed is a prospect and one who's read a press release isn't, and identifies the cooperatives and distributors through which adoption actually spreads.</p>
       </article>
 
       <article>
+        <span class="sub__n">04</span>
         <h3 class="sub__h">Food Processing</h3>
         <p class="sub__b">Plant investment, supply contracts, certification and retailer listings are dated and name the processor. Commodity prices and consumer demand shifts move earlier and decide what capacity gets built. BACI follows plant investment closely, since a new or reconfigured line commits equipment, ingredients, packaging, logistics and compliance spending in one decision, and identifies the processors approaching that point rather than those simply running an existing operation.</p>
       </article>
 
       <article>
+        <span class="sub__n">05</span>
         <h3 class="sub__h">Agricultural Trade &amp; Export</h3>
         <p class="sub__b">Phytosanitary approvals, tariff and quota changes, trade agreements and buyer contracts are dated and jurisdiction-specific. Production forecasts and harvest conditions move earlier and say where surplus will need a market. BACI pays closest attention to market access approvals, because a product with no phytosanitary clearance has no route into a country however good its price is, and identifies where access has just opened and which buyers and corridors it opens toward.</p>
       </article>
 
       <article>
+        <span class="sub__n">06</span>
         <h3 class="sub__h">Fisheries &amp; Aquaculture</h3>
         <p class="sub__b">Quota allocations, licences, site consents and sustainability certification are dated, capped and publicly administered. Stock assessments and water conditions move earlier and determine what the allocation will be. BACI reads assessments alongside allocations, since the science precedes the quota by a season and a business that anticipates a reduction can secure supply or capacity before everyone else reacts, and it identifies where licences, sites and certification are actually obtainable.</p>
       </article>
 
       <article>
+        <span class="sub__n">07</span>
         <h3 class="sub__h">Forestry</h3>
         <p class="sub__b">Harvesting licences, land transactions, mill supply contracts and certification are dated and named. Planting rates and carbon policy move earlier and shape supply decades ahead of it. BACI connects the long signal to the near one, because a change in carbon or planting policy alters land values and harvesting economics well before any transaction reflects it, and identifies the owners, mills and processors whose position is about to change as a result.</p>
       </article>
 
       <article>
+        <span class="sub__n">08</span>
         <h3 class="sub__h">Irrigation &amp; Water Management</h3>
         <p class="sub__b">Abstraction licences, scheme funding, infrastructure tenders and allocation rules are dated and administered publicly. Rainfall patterns and aquifer data move earlier and are what eventually force the rules to change. BACI reads both, since a region tightening allocation creates immediate demand for efficiency, storage and alternative supply, and identifies where water availability is deteriorating far enough ahead that a scheme, a tender or a licence review is likely to follow.</p>
       </article>
 
       <article>
+        <span class="sub__n">09</span>
         <h3 class="sub__h">Agricultural Finance</h3>
         <p class="sub__b">Lending here is secured against something that hasn't grown yet. A crop loan is underwritten on a season's expected yield, which makes weather, disease and price a lender's credit risk rather than a farmer's alone, and it means the whole market reprices when a forecast changes. BACI follows season conditions, input costs, support payments and scheme terms together, because in this sector the credit decision and the agronomic one are genuinely the same decision.</p>
       </article>
 
       <article>
+        <span class="sub__n">10</span>
         <h3 class="sub__h">Organic &amp; Sustainable Farming</h3>
         <p class="sub__b">What defines this market is a gap. Certification takes years of farming to organic standards while still selling at conventional prices, so the businesses that matter commercially are the ones that have already completed a conversion or have just committed to starting one, and almost nobody in between is a buyer of anything. BACI tracks certification registers, conversion commitments, scheme funding and retailer sourcing policies, which together say where certified supply will actually exist and when.</p>
       </article>
 
       <article>
+        <span class="sub__n">11</span>
         <h3 class="sub__h">Seed &amp; Agrochemicals</h3>
         <p class="sub__b">Product registration, approvals, withdrawals and distribution agreements are dated and jurisdiction-specific. Resistance patterns and independent trial data move earlier and change what growers will accept. BACI treats a withdrawal as the strongest signal in this category, since removing an active substance creates an immediate replacement market on a known date across every grower who relied on it, and identifies which products, regions and crops that leaves exposed.</p>
       </article>
 
       <article>
+        <span class="sub__n">12</span>
         <h3 class="sub__h">Farm Equipment &amp; Machinery</h3>
         <p class="sub__b">Dealer agreements, fleet purchases, capital grant schemes and replacement cycles are dated and traceable. Farm incomes and commodity prices move earlier and decide whether a replacement happens this year or is deferred again. BACI reads grant schemes especially, because a capital subsidy with a closing date converts a deferred purchase into an urgent one across a whole region, and identifies where schemes are opening and which operations are due a replacement.</p>
       </article>
     </div>
   </section>
 
+  <section class="others"><h2>Other industries</h2><nav class="otherlist"><a href="industry-healthcare.html">Healthcare</a><a href="industry-energy.html">Energy</a><a href="industry-construction.html">Construction</a><a href="industry-financial-services.html">Financial Services</a><a href="industry-technology.html">Technology</a><a href="industry-real-estate.html">Real Estate</a><a href="industry-education.html">Education</a><a href="industry-hospitality.html">Hospitality</a><a href="industry-retail.html">Retail</a><a href="industry-legal.html">Legal</a><a href="industry-logistics.html">Logistics</a><a href="industry-social-media.html">Social Media</a><a href="industry-human-resources.html">Human Resources</a><a href="industry-skincare-beauty.html">Skincare &amp; Beauty</a></nav></section>
+
   <section class="close">
-    <p>Every sub-sector runs the same way across <span data-stat="countries">181</span> countries and <span data-stat="regions">9</span> regions. Choose a market and an objective, and the intelligence reshapes around it.</p>
-    <a class="explorer" href="index.html#every-industry">Open the industry explorer</a>
+    <p>Every sub-sector runs the same way across 181 countries and 9 regions. Choose a market and an objective, and the intelligence reshapes around it.</p>
+    <a class="explorer" href="index.html#industry">Open the industry explorer</a>
     <br>
     <a class="cta" href="index.html#access" id="cta"><span id="c1">C</span>ONNECT YOUR BUSINES<span id="c2">S</span><span class="line"></span><span class="dot" id="dot"></span></a>
   </section>
@@ -373,7 +400,7 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
       <div class="col">
         <h3>Intelligence<span class="lp"></span><span class="pt"></span></h3>
         <ul>
-          <li><a href="index.html#every-industry">Industry Intelligence</a></li>
+          <li><a href="index.html#industry">Industry Intelligence</a></li>
           <li><a href="index.html#conversion">Conversion Intelligence</a></li>
           <li><a href="index.html#global-reach">Global Reach</a></li>
           <li><a href="index.html#doctrine">The Doctrine</a></li>
@@ -494,6 +521,5 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
   });
 })();
 </script>
-<script src="/js/site-stats.js" defer></script>
 </body>
 </html>

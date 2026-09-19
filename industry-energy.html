@@ -137,16 +137,16 @@ h1{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(9px,1vw,11px);letter-spacing:.3em;color:var(--dim);text-transform:uppercase}
 
 /* ── sub-sectors ──────────────────────────── */
-.subs{padding:clamp(72px,11vh,132px) 0 clamp(32px,4vh,48px)}
+.subs{padding:clamp(56px,9vh,104px) 0 clamp(20px,3vh,32px)}
 .subs h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
   font-size:clamp(11px,1.15vw,13px);letter-spacing:.34em;color:var(--head);
   text-align:center;margin:0 0 clamp(44px,6.5vh,76px)}
-.grid{display:grid;grid-template-columns:1fr;gap:clamp(64px,9vh,104px) clamp(48px,5.5vw,104px)}
+.grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,5.4vh,60px) clamp(40px,4.5vw,84px)}
 @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
-article{padding-top:clamp(30px,4.4vh,44px);border-top:1px solid var(--rule-soft)}
+.sub__n{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.2em;color:var(--dim);display:block;margin-bottom:12px}
 .sub__h{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(14px,1.45vw,18px);letter-spacing:.15em;color:var(--gold-light);
-  margin:0 0 18px;line-height:1.3}
+  margin:0 0 16px;line-height:1.3}
 .sub__b{margin:0;color:var(--gold);font-size:clamp(16px,1.15vw,18px);line-height:1.66}
 
 /* ── explorer link + CTA ──────────────────── */
@@ -256,6 +256,19 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
 @media(prefers-contrast:more){
   :root{--dim:var(--gold);--rule:rgba(196,149,68,.4)}
 }
+/* OTHERS-CSS */
+.others{border-top:1px solid var(--rule-soft);margin-top:clamp(52px,8vh,96px);
+  padding:clamp(44px,6.5vh,78px) 0 0;text-align:center}
+.others h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
+  font-size:clamp(10px,1.05vw,12px);letter-spacing:.32em;color:var(--head);
+  margin:0 0 clamp(24px,3.4vh,34px)}
+.otherlist{display:flex;flex-wrap:wrap;justify-content:center;
+  gap:13px clamp(16px,2vw,30px);max-width:880px;margin:0 auto}
+.otherlist a{font-family:'Cinzel',serif;text-transform:uppercase;
+  font-size:clamp(9.5px,1vw,11.5px);letter-spacing:.2em;color:var(--dim);
+  padding-bottom:5px;border-bottom:1px solid transparent}
+.otherlist a:hover{color:var(--gold);border-bottom-color:var(--rule-soft)}
+
 </style>
 </head>
 <body>
@@ -277,70 +290,84 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
     <h2>Sub-sectors</h2>
     <div class="grid">
       <article>
+        <span class="sub__n">01</span>
         <h3 class="sub__h">Renewables</h3>
         <p class="sub__b">Auction results, power purchase agreements, grid connection awards, planning consent and financial close are dated, public and traceable to a named project. Announced pipelines aren't the same thing: a great many projects are declared and never reach financial close. BACI weights them accordingly, treating consent and close as confirmation a project is real and treating pipeline announcements as a watch list, so developers, suppliers and EPC contractors pursue the projects that are actually funded rather than the ones that have only been announced.</p>
       </article>
 
       <article>
+        <span class="sub__n">02</span>
         <h3 class="sub__h">Oil &amp; Gas</h3>
         <p class="sub__b">Licensing rounds, block awards, final investment decisions, rig contracts and decommissioning awards are dated events with named operators attached. Exploration results and capital expenditure sentiment move earlier but commit nobody. BACI separates sanctioned spend from intent, because the gap between the two widens every time the oil price moves, and connects sanctioned projects to the operators, service contracts and supply requirements behind them, so suppliers can time their approach to the point where budget exists rather than the point where a project is being talked about.</p>
       </article>
 
       <article>
+        <span class="sub__n">03</span>
         <h3 class="sub__h">Grid &amp; Storage</h3>
         <p class="sub__b">Transmission investment plans, capacity market results, connection queue positions and storage procurement rounds are published and dated. Curtailment and congestion data are softer, but they're the signals that say where storage will be needed before anyone has procured it. BACI reads both, using procurement rounds to identify what's open now and network constraint data to flag where the next round is likely to land, which matters in a market where the connection queue often decides a project's viability before its economics do.</p>
       </article>
 
       <article>
+        <span class="sub__n">04</span>
         <h3 class="sub__h">Utilities</h3>
         <p class="sub__b">Regulatory determinations, tariff decisions, published capital plans and procurement frameworks set what a utility is permitted to spend and on what, which makes them the hardest signals in the sector. Consultations and early regulatory positions come sooner and carry less certainty. BACI tracks the sequence from consultation to determination, so suppliers and service providers can position while the spending envelope is still being argued over rather than after a five-year plan has fixed it.</p>
       </article>
 
       <article>
+        <span class="sub__n">05</span>
         <h3 class="sub__h">Clean Tech</h3>
         <p class="sub__b">Funding rounds, grant awards, offtake agreements and first commercial deployments are traceable to named capital and named counterparties. Pilots, letters of intent and demonstration projects are softer, and clean tech produces a great many of them that go no further. BACI distinguishes a technology that has a paying customer from one that has a promising trial, matching businesses to investors, grant programmes and industrial partners according to which of the two a given company has actually reached.</p>
       </article>
 
       <article>
+        <span class="sub__n">06</span>
         <h3 class="sub__h">Nuclear</h3>
         <p class="sub__b">Here the useful axis is time rather than certainty. A nuclear programme runs for decades, so a signal that looks distant is usually the only point at which a supply chain position is still available: by the time construction is visible, the tiers below the main contractor are already filled. BACI follows siting decisions, regulatory approvals, financing structures and supply chain qualification from the earliest stage, because in this sector arriving when the work is obvious means arriving after it's been allocated.</p>
       </article>
 
       <article>
+        <span class="sub__n">07</span>
         <h3 class="sub__h">Hydrogen</h3>
         <p class="sub__b">Announced hydrogen capacity and government targets run far ahead of what has been built, which makes this the sector where the gap between declared and funded is widest. Subsidy allocations, final investment decisions and signed offtake agreements are the hard signals; memoranda of understanding and capacity ambitions aren't. BACI reports the distinction plainly rather than aggregating both into a pipeline figure, so businesses can size the real market and identify the projects that have cleared the point where most of the sector stalls.</p>
       </article>
 
       <article>
+        <span class="sub__n">08</span>
         <h3 class="sub__h">Carbon &amp; Emissions Trading</h3>
         <p class="sub__b">This market exists because policy created it, so the signal that matters most is regulatory rather than commercial. A compliance deadline, an allocation change or the extension of a scheme to a new sector creates demand where none existed, and does it on a published timetable. BACI follows scheme design, allocation decisions, compliance obligations and the registries behind them, so businesses can see which obligations are arriving, which credits will qualify against them and where the projects generating those credits are being developed.</p>
       </article>
 
       <article>
+        <span class="sub__n">09</span>
         <h3 class="sub__h">Energy Trading &amp; Markets</h3>
         <p class="sub__b">Almost everything here is a hard signal, published continuously: prices, volumes, spreads, interconnector flows, auction clearing. The difficulty is that the signal is abundant rather than scarce, and it decays in minutes. BACI isn't a trading system and doesn't pretend to be one. What it does is read the slower movements underneath, the shifts in flow, counterparty activity and market structure that indicate where commercial positions, supply agreements and market access are opening up over quarters rather than seconds.</p>
       </article>
 
       <article>
+        <span class="sub__n">10</span>
         <h3 class="sub__h">Distributed Generation</h3>
         <p class="sub__b">Connection approvals, procurement by large energy users and changes to feed-in or net metering policy are recorded and dated. Adoption trends and rising tariff pressure are softer, but they're what turn a site from a possible customer into an active one. BACI connects both, identifying where policy has made on-site generation viable and which commercial and industrial sites have the consumption profile and the tariff exposure to act on it, rather than treating an entire market as uniformly addressable.</p>
       </article>
 
       <article>
+        <span class="sub__n">11</span>
         <h3 class="sub__h">Energy Efficiency</h3>
         <p class="sub__b">Efficiency regulations, building standards, retrofit funding programmes and public sector tenders are dated obligations with budgets attached, and they're what turn efficiency from a good idea into a requirement. Energy price movements are softer and move the commercial case without compelling anyone. BACI tracks the obligations first, since a deadline creates a buyer where a payback calculation only creates interest, and connects them to the funding routes and procurement processes through which the work is actually commissioned.</p>
       </article>
 
       <article>
+        <span class="sub__n">12</span>
         <h3 class="sub__h">Mining &amp; Extraction Support</h3>
         <p class="sub__b">Permits, final investment decisions, offtake agreements and equipment contracts are dated and attributable to a named operation. Exploration results and resource estimates move earlier, and a resource isn't a mine. BACI keeps the two apart, using sanctioned projects to identify live requirements for equipment, services and logistics, and using earlier-stage activity to flag where those requirements will appear, so suppliers into the sector can build a position before a project reaches the stage where procurement is already under way.</p>
       </article>
     </div>
   </section>
 
+  <section class="others"><h2>Other industries</h2><nav class="otherlist"><a href="industry-healthcare.html">Healthcare</a><a href="industry-construction.html">Construction</a><a href="industry-financial-services.html">Financial Services</a><a href="industry-technology.html">Technology</a><a href="industry-real-estate.html">Real Estate</a><a href="industry-education.html">Education</a><a href="industry-hospitality.html">Hospitality</a><a href="industry-retail.html">Retail</a><a href="industry-legal.html">Legal</a><a href="industry-agriculture.html">Agriculture</a><a href="industry-logistics.html">Logistics</a><a href="industry-social-media.html">Social Media</a><a href="industry-human-resources.html">Human Resources</a><a href="industry-skincare-beauty.html">Skincare &amp; Beauty</a></nav></section>
+
   <section class="close">
-    <p>Every sub-sector runs the same way across <span data-stat="countries">181</span> countries and <span data-stat="regions">9</span> regions. Choose a market and an objective, and the intelligence reshapes around it.</p>
-    <a class="explorer" href="index.html#every-industry">Open the industry explorer</a>
+    <p>Every sub-sector runs the same way across 181 countries and 9 regions. Choose a market and an objective, and the intelligence reshapes around it.</p>
+    <a class="explorer" href="index.html#industry">Open the industry explorer</a>
     <br>
     <a class="cta" href="index.html#access" id="cta"><span id="c1">C</span>ONNECT YOUR BUSINES<span id="c2">S</span><span class="line"></span><span class="dot" id="dot"></span></a>
   </section>
@@ -373,7 +400,7 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
       <div class="col">
         <h3>Intelligence<span class="lp"></span><span class="pt"></span></h3>
         <ul>
-          <li><a href="index.html#every-industry">Industry Intelligence</a></li>
+          <li><a href="index.html#industry">Industry Intelligence</a></li>
           <li><a href="index.html#conversion">Conversion Intelligence</a></li>
           <li><a href="index.html#global-reach">Global Reach</a></li>
           <li><a href="index.html#doctrine">The Doctrine</a></li>
@@ -494,6 +521,5 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
   });
 })();
 </script>
-<script src="/js/site-stats.js" defer></script>
 </body>
 </html>

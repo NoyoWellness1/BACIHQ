@@ -137,16 +137,16 @@ h1{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(9px,1vw,11px);letter-spacing:.3em;color:var(--dim);text-transform:uppercase}
 
 /* ── sub-sectors ──────────────────────────── */
-.subs{padding:clamp(72px,11vh,132px) 0 clamp(32px,4vh,48px)}
+.subs{padding:clamp(56px,9vh,104px) 0 clamp(20px,3vh,32px)}
 .subs h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
   font-size:clamp(11px,1.15vw,13px);letter-spacing:.34em;color:var(--head);
   text-align:center;margin:0 0 clamp(44px,6.5vh,76px)}
-.grid{display:grid;grid-template-columns:1fr;gap:clamp(64px,9vh,104px) clamp(48px,5.5vw,104px)}
+.grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,5.4vh,60px) clamp(40px,4.5vw,84px)}
 @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
-article{padding-top:clamp(30px,4.4vh,44px);border-top:1px solid var(--rule-soft)}
+.sub__n{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.2em;color:var(--dim);display:block;margin-bottom:12px}
 .sub__h{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(14px,1.45vw,18px);letter-spacing:.15em;color:var(--gold-light);
-  margin:0 0 18px;line-height:1.3}
+  margin:0 0 16px;line-height:1.3}
 .sub__b{margin:0;color:var(--gold);font-size:clamp(16px,1.15vw,18px);line-height:1.66}
 
 /* ── explorer link + CTA ──────────────────── */
@@ -256,6 +256,19 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
 @media(prefers-contrast:more){
   :root{--dim:var(--gold);--rule:rgba(196,149,68,.4)}
 }
+/* OTHERS-CSS */
+.others{border-top:1px solid var(--rule-soft);margin-top:clamp(52px,8vh,96px);
+  padding:clamp(44px,6.5vh,78px) 0 0;text-align:center}
+.others h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
+  font-size:clamp(10px,1.05vw,12px);letter-spacing:.32em;color:var(--head);
+  margin:0 0 clamp(24px,3.4vh,34px)}
+.otherlist{display:flex;flex-wrap:wrap;justify-content:center;
+  gap:13px clamp(16px,2vw,30px);max-width:880px;margin:0 auto}
+.otherlist a{font-family:'Cinzel',serif;text-transform:uppercase;
+  font-size:clamp(9.5px,1vw,11.5px);letter-spacing:.2em;color:var(--dim);
+  padding-bottom:5px;border-bottom:1px solid transparent}
+.otherlist a:hover{color:var(--gold);border-bottom-color:var(--rule-soft)}
+
 </style>
 </head>
 <body>
@@ -277,70 +290,84 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
     <h2>Sub-sectors</h2>
     <div class="grid">
       <article>
+        <span class="sub__n">01</span>
         <h3 class="sub__h">Infrastructure</h3>
         <p class="sub__b">National infrastructure plans, funding approvals, procurement notices and contract awards are dated and attributable to a named authority. Political commitments and announced pipelines arrive earlier and survive the electoral cycle less reliably. BACI separates the schemes that have money allocated against them from the ones that have only been promised, and tracks the procurement stages between the two, so contractors and suppliers can register interest and build the qualifying position while a scheme is being scoped rather than after the shortlist closes.</p>
       </article>
 
       <article>
+        <span class="sub__n">02</span>
         <h3 class="sub__h">Residential</h3>
         <p class="sub__b">Planning permissions, land transactions, affordable housing programme funding and recorded starts are dated public records. Mortgage conditions and developer sentiment move first and commit nobody. BACI reads permissions and funding as evidence a scheme is proceeding, and lending conditions as the earlier indication of whether volumes will hold, because a consent that's granted in a tightening market often sits unbuilt for years. That distinction tells suppliers and subcontractors which approvals will convert into actual work and roughly when.</p>
       </article>
 
       <article>
+        <span class="sub__n">03</span>
         <h3 class="sub__h">Commercial</h3>
         <p class="sub__b">Pre-lets, development approvals, lettings and fit-out contracts are recorded, dated and attached to a named occupier or developer. Vacancy rates and occupancy patterns move earlier and say where demand is heading rather than where it's committed. BACI treats a signed pre-let as the point at which a scheme becomes real, since commercial development rarely proceeds without one, and uses occupancy data to flag which markets and building grades are absorbing demand and which are being quietly abandoned.</p>
       </article>
 
       <article>
+        <span class="sub__n">04</span>
         <h3 class="sub__h">Materials &amp; Supply</h3>
         <p class="sub__b">Demand here isn't generated in the sector, it's inherited from every other one. A materials business finds out about a project when someone orders, which is the last moment in the chain and the worst point at which to have a conversation about price or capacity. BACI reads the signals upstream instead: consents granted, contracts awarded, programmes funded, sites mobilising. That gives producers, merchants and distributors a view of the demand arriving months before an order does.</p>
       </article>
 
       <article>
+        <span class="sub__n">05</span>
         <h3 class="sub__h">Modular &amp; Prefabrication</h3>
         <p class="sub__b">Framework appointments, programme-scale orders, factory investment and product certification are dated commitments with named counterparties. Policy support and pilot schemes are softer, and this is a sector with a long record of pilots that never scaled and factories that closed before filling. BACI weighs the order book rather than the ambition, identifying the programmes with volume actually committed and the clients whose pipelines are repetitive enough to suit offsite delivery, which is the condition that decides whether the economics work at all.</p>
       </article>
 
       <article>
+        <span class="sub__n">06</span>
         <h3 class="sub__h">Heavy Civil</h3>
         <p class="sub__b">Major scheme awards, joint venture formations, funding tranches and enabling works contracts are dated and name the parties. Route consultations and feasibility studies sit years upstream. BACI follows the whole sequence, because in heavy civil the joint ventures and supply chain positions are settled long before the main award is announced, and a business that waits for the award is bidding into a team that's already formed. Both stages are surfaced, with the earlier one marked as what it is.</p>
       </article>
 
       <article>
+        <span class="sub__n">07</span>
         <h3 class="sub__h">Green &amp; Sustainable Building</h3>
         <p class="sub__b">Building regulations, certification requirements written into tenders and retrofit funding programmes are obligations with dates and budgets. Corporate sustainability targets and voluntary commitments are softer, and a target without a procurement route behind it buys nothing. BACI tracks the regulation first, since a standard coming into force creates a market on a known date, and connects it to the schemes, funding routes and specification changes through which compliant products and services actually get bought.</p>
       </article>
 
       <article>
+        <span class="sub__n">08</span>
         <h3 class="sub__h">MEP Services</h3>
         <p class="sub__b">Mechanical and electrical packages are awarded late in a programme but specified early, and that gap is where the commercial position is won. Specification issue, design stage progress and main contractor appointment are all traceable; the package award itself is the last confirmation rather than the first opportunity. BACI follows the earlier stages so specialist contractors and equipment suppliers can influence a specification while it's still open, instead of pricing against one that was written around somebody else's product.</p>
       </article>
 
       <article>
+        <span class="sub__n">09</span>
         <h3 class="sub__h">Construction Technology</h3>
         <p class="sub__b">The buyer in this category isn't the asset owner, it's the contractor, and that changes which signals matter. Funding rounds and product launches say who's building what, but the commercial signal is on the other side: a contractor winning a large programme, standardising a delivery method, or being contractually required to work in a particular digital environment. BACI reads the construction market itself for those moments, because a contract award is also a technology buying decision, taken shortly after.</p>
       </article>
 
       <article>
+        <span class="sub__n">10</span>
         <h3 class="sub__h">Project Management &amp; Consulting</h3>
         <p class="sub__b">Framework appointments, advisory mandates and scheme mobilisation are recorded and dated, and they say which consultancies are positioned on what. Early feasibility work and political announcements come first and name nobody. BACI tracks the point at which a scheme moves from being discussed to being resourced, since that's when advisors are appointed, and identifies the frameworks a business would need to sit on to be considered at all, which is often a longer process than the bid itself.</p>
       </article>
 
       <article>
+        <span class="sub__n">11</span>
         <h3 class="sub__h">Equipment &amp; Machinery</h3>
         <p class="sub__b">Site mobilisation, plant tenders, fleet procurement and hire contract awards are dated and tied to a named project or operator. Utilisation rates and order backlogs are softer indicators of whether the market is tightening. BACI connects both, using mobilisation dates to identify where equipment will be needed and when, and utilisation trends to say whether that demand is likely to be met from existing fleets or will require purchase, which is the difference between a hire enquiry and a sale.</p>
       </article>
 
       <article>
+        <span class="sub__n">12</span>
         <h3 class="sub__h">Facilities Management</h3>
         <p class="sub__b">Almost nothing here is new demand. The market is a set of existing contracts coming up for renewal, so the signal that matters is an expiry date rather than an opportunity announcement, and the ones worth pursuing are visible years ahead. BACI tracks contract terms, renewal windows, in-house service reviews and estate changes, and works backwards from the expiry, because an FM tender that reaches the market without the bidder having built a relationship is usually already decided.</p>
       </article>
     </div>
   </section>
 
+  <section class="others"><h2>Other industries</h2><nav class="otherlist"><a href="industry-healthcare.html">Healthcare</a><a href="industry-energy.html">Energy</a><a href="industry-financial-services.html">Financial Services</a><a href="industry-technology.html">Technology</a><a href="industry-real-estate.html">Real Estate</a><a href="industry-education.html">Education</a><a href="industry-hospitality.html">Hospitality</a><a href="industry-retail.html">Retail</a><a href="industry-legal.html">Legal</a><a href="industry-agriculture.html">Agriculture</a><a href="industry-logistics.html">Logistics</a><a href="industry-social-media.html">Social Media</a><a href="industry-human-resources.html">Human Resources</a><a href="industry-skincare-beauty.html">Skincare &amp; Beauty</a></nav></section>
+
   <section class="close">
-    <p>Every sub-sector runs the same way across <span data-stat="countries">181</span> countries and <span data-stat="regions">9</span> regions. Choose a market and an objective, and the intelligence reshapes around it.</p>
-    <a class="explorer" href="index.html#every-industry">Open the industry explorer</a>
+    <p>Every sub-sector runs the same way across 181 countries and 9 regions. Choose a market and an objective, and the intelligence reshapes around it.</p>
+    <a class="explorer" href="index.html#industry">Open the industry explorer</a>
     <br>
     <a class="cta" href="index.html#access" id="cta"><span id="c1">C</span>ONNECT YOUR BUSINES<span id="c2">S</span><span class="line"></span><span class="dot" id="dot"></span></a>
   </section>
@@ -373,7 +400,7 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
       <div class="col">
         <h3>Intelligence<span class="lp"></span><span class="pt"></span></h3>
         <ul>
-          <li><a href="index.html#every-industry">Industry Intelligence</a></li>
+          <li><a href="index.html#industry">Industry Intelligence</a></li>
           <li><a href="index.html#conversion">Conversion Intelligence</a></li>
           <li><a href="index.html#global-reach">Global Reach</a></li>
           <li><a href="index.html#doctrine">The Doctrine</a></li>
@@ -494,6 +521,5 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
   });
 })();
 </script>
-<script src="/js/site-stats.js" defer></script>
 </body>
 </html>

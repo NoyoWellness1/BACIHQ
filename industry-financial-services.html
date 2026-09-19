@@ -137,16 +137,16 @@ h1{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(9px,1vw,11px);letter-spacing:.3em;color:var(--dim);text-transform:uppercase}
 
 /* ── sub-sectors ──────────────────────────── */
-.subs{padding:clamp(72px,11vh,132px) 0 clamp(32px,4vh,48px)}
+.subs{padding:clamp(56px,9vh,104px) 0 clamp(20px,3vh,32px)}
 .subs h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
   font-size:clamp(11px,1.15vw,13px);letter-spacing:.34em;color:var(--head);
   text-align:center;margin:0 0 clamp(44px,6.5vh,76px)}
-.grid{display:grid;grid-template-columns:1fr;gap:clamp(64px,9vh,104px) clamp(48px,5.5vw,104px)}
+.grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,5.4vh,60px) clamp(40px,4.5vw,84px)}
 @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
-article{padding-top:clamp(30px,4.4vh,44px);border-top:1px solid var(--rule-soft)}
+.sub__n{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.2em;color:var(--dim);display:block;margin-bottom:12px}
 .sub__h{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(14px,1.45vw,18px);letter-spacing:.15em;color:var(--gold-light);
-  margin:0 0 18px;line-height:1.3}
+  margin:0 0 16px;line-height:1.3}
 .sub__b{margin:0;color:var(--gold);font-size:clamp(16px,1.15vw,18px);line-height:1.66}
 
 /* ── explorer link + CTA ──────────────────── */
@@ -256,6 +256,19 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
 @media(prefers-contrast:more){
   :root{--dim:var(--gold);--rule:rgba(196,149,68,.4)}
 }
+/* OTHERS-CSS */
+.others{border-top:1px solid var(--rule-soft);margin-top:clamp(52px,8vh,96px);
+  padding:clamp(44px,6.5vh,78px) 0 0;text-align:center}
+.others h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
+  font-size:clamp(10px,1.05vw,12px);letter-spacing:.32em;color:var(--head);
+  margin:0 0 clamp(24px,3.4vh,34px)}
+.otherlist{display:flex;flex-wrap:wrap;justify-content:center;
+  gap:13px clamp(16px,2vw,30px);max-width:880px;margin:0 auto}
+.otherlist a{font-family:'Cinzel',serif;text-transform:uppercase;
+  font-size:clamp(9.5px,1vw,11.5px);letter-spacing:.2em;color:var(--dim);
+  padding-bottom:5px;border-bottom:1px solid transparent}
+.otherlist a:hover{color:var(--gold);border-bottom-color:var(--rule-soft)}
+
 </style>
 </head>
 <body>
@@ -277,70 +290,84 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
     <h2>Sub-sectors</h2>
     <div class="grid">
       <article>
+        <span class="sub__n">01</span>
         <h3 class="sub__h">Banking</h3>
         <p class="sub__b">Licence awards, acquisitions, capital raises, core system procurement and network restructuring are dated events with named institutions attached. Strategy statements and analyst commentary come earlier and bind nobody. BACI separates what a bank has committed to from what it has said, because the gap between the two is where most vendor time is wasted, and connects committed programmes to the procurement routes, technology partners and service requirements they generate, so suppliers approach a bank when there's budget rather than when there's an intention.</p>
       </article>
 
       <article>
+        <span class="sub__n">02</span>
         <h3 class="sub__h">Insurance</h3>
         <p class="sub__b">Product filings, regulatory approvals, reinsurance renewals, scheme tenders and carrier market entry are recorded and dated. Loss trends and the pricing cycle move earlier and say where capacity is about to tighten or loosen. BACI reads both, using filings and approvals to identify which products are actually coming to market and cycle data to indicate where underwriting appetite is moving, which is what decides whether a broker, MGA or service provider finds a receptive carrier or a closed door.</p>
       </article>
 
       <article>
+        <span class="sub__n">03</span>
         <h3 class="sub__h">Asset &amp; Wealth Management</h3>
         <p class="sub__b">Mandate awards, fund launches, platform selections and consultant ratings are recorded and name the winner. Fund flows and allocation shifts move earlier and say where money is heading before anybody appoints anyone. BACI tracks both, since a consultant rating often decides a mandate long before it's tendered, and identifies the allocators, platforms and gatekeepers whose decisions actually determine access, rather than treating every institution with assets as equally reachable.</p>
       </article>
 
       <article>
+        <span class="sub__n">04</span>
         <h3 class="sub__h">Payments &amp; Fintech</h3>
         <p class="sub__b">Payment licences, scheme memberships, processor switches and signed partnerships are dated facts with counterparties attached. Funding rounds and reported volume growth are softer, and in this sector they're frequently mistaken for commercial traction. BACI keeps the two apart, because a company that's raised heavily and a company that's won a distribution partner are different prospects entirely, and surfaces the licence, scheme and partner movements that say where payment flows are genuinely being redirected.</p>
       </article>
 
       <article>
+        <span class="sub__n">05</span>
         <h3 class="sub__h">Capital Markets</h3>
         <p class="sub__b">Issuance, listings, bookrunner appointments and index inclusions are published and dated, and they name every party involved. Pipeline talk and market conditions move first and commit nobody, though they decide whether a window opens at all. BACI follows the sequence from mandate to pricing, because advisors, service providers and technology suppliers are selected early in it, and identifies which issuers and sponsors are active rather than which were active in a market that's since closed.</p>
       </article>
 
       <article>
+        <span class="sub__n">06</span>
         <h3 class="sub__h">Lending &amp; Credit</h3>
         <p class="sub__b">Facility agreements, syndications, securitisations and portfolio sales are recorded, dated and attributable to named lenders and borrowers. Credit conditions and arrears trends move earlier and say where appetite is tightening. BACI connects both, using completed transactions to identify who's actively lending into what, and deteriorating conditions to flag where portfolios may come to market, which is how servicers, advisors and buyers of credit find a position before a sale process becomes competitive.</p>
       </article>
 
       <article>
+        <span class="sub__n">07</span>
         <h3 class="sub__h">RegTech &amp; Compliance</h3>
         <p class="sub__b">This is the one category where the buying timetable is published years in advance. A regulation with an implementation date creates demand on a schedule everybody can read, and the whole commercial question is whether a business engages while institutions are still deciding how to comply or after they've bought. BACI follows rules from consultation through to enforcement date, and names the institutions in scope, so the conversation happens during the interpretation window rather than after procurement has closed.</p>
       </article>
 
       <article>
+        <span class="sub__n">08</span>
         <h3 class="sub__h">Trade Finance</h3>
         <p class="sub__b">Facility awards, export credit agency cover, correspondent banking arrangements and sanctions changes are dated and jurisdiction-specific. Trade flow and commodity movement data are softer, but they show where corridors are thickening before the financing follows. BACI reads both, since a bank withdrawing from a corridor and a bank entering one are equally consequential to anybody trading through it, and identifies the institutions, guarantees and corridors through which a given trade can actually be financed.</p>
       </article>
 
       <article>
+        <span class="sub__n">09</span>
         <h3 class="sub__h">Pensions &amp; Retirement</h3>
         <p class="sub__b">Scheme tenders, buy-ins and buy-outs, trustee appointments and statutory funding requirements are dated and attach to a named scheme. Funding levels and member demographics move slowly and tell you which schemes are approaching a decision. BACI tracks both, because a scheme reaching full funding becomes a live transaction long before it runs a process, and identifies the trustees, advisors and providers who'll be involved, which in this market is a small and knowable group.</p>
       </article>
 
       <article>
+        <span class="sub__n">10</span>
         <h3 class="sub__h">Islamic Finance</h3>
         <p class="sub__b">Here the market is defined by a qualifying condition rather than by demand. A product exists commercially only where a Shariah governance framework recognises it, so the signals that matter are structural: sukuk issuance, board certification, regulatory frameworks being established or amended in a given jurisdiction. BACI maps where the framework exists, where it's being built and which institutions are certified to operate within it, because in this sector a market opens when the structure does.</p>
       </article>
 
       <article>
+        <span class="sub__n">11</span>
         <h3 class="sub__h">Microfinance</h3>
         <p class="sub__b">The capital behind this sector doesn't behave like commercial capital. Development finance institutions, guarantee facilities, blended funds and donor programmes set the terms, and they publish their commitments, mandates and country strategies in ways commercial lenders never do. BACI follows that published record, matching institutions to the funders whose current country and sector mandates actually fit them, rather than treating a development bank as a single counterparty with one appetite across every market it operates in.</p>
       </article>
 
       <article>
+        <span class="sub__n">12</span>
         <h3 class="sub__h">Digital Banking</h3>
         <p class="sub__b">Banking licence awards, core platform migrations, market launches and distribution partnerships are dated and public. Reported user growth and app rankings are softer, and they measure acquisition rather than revenue, which in this sector are famously different things. BACI works from the licence and infrastructure decisions, since those commit years of spending and name the vendors involved, and uses growth data only to indicate which propositions are gaining the scale that makes the next procurement round larger.</p>
       </article>
     </div>
   </section>
 
+  <section class="others"><h2>Other industries</h2><nav class="otherlist"><a href="industry-healthcare.html">Healthcare</a><a href="industry-energy.html">Energy</a><a href="industry-construction.html">Construction</a><a href="industry-technology.html">Technology</a><a href="industry-real-estate.html">Real Estate</a><a href="industry-education.html">Education</a><a href="industry-hospitality.html">Hospitality</a><a href="industry-retail.html">Retail</a><a href="industry-legal.html">Legal</a><a href="industry-agriculture.html">Agriculture</a><a href="industry-logistics.html">Logistics</a><a href="industry-social-media.html">Social Media</a><a href="industry-human-resources.html">Human Resources</a><a href="industry-skincare-beauty.html">Skincare &amp; Beauty</a></nav></section>
+
   <section class="close">
-    <p>Every sub-sector runs the same way across <span data-stat="countries">181</span> countries and <span data-stat="regions">9</span> regions. Choose a market and an objective, and the intelligence reshapes around it.</p>
-    <a class="explorer" href="index.html#every-industry">Open the industry explorer</a>
+    <p>Every sub-sector runs the same way across 181 countries and 9 regions. Choose a market and an objective, and the intelligence reshapes around it.</p>
+    <a class="explorer" href="index.html#industry">Open the industry explorer</a>
     <br>
     <a class="cta" href="index.html#access" id="cta"><span id="c1">C</span>ONNECT YOUR BUSINES<span id="c2">S</span><span class="line"></span><span class="dot" id="dot"></span></a>
   </section>
@@ -373,7 +400,7 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
       <div class="col">
         <h3>Intelligence<span class="lp"></span><span class="pt"></span></h3>
         <ul>
-          <li><a href="index.html#every-industry">Industry Intelligence</a></li>
+          <li><a href="index.html#industry">Industry Intelligence</a></li>
           <li><a href="index.html#conversion">Conversion Intelligence</a></li>
           <li><a href="index.html#global-reach">Global Reach</a></li>
           <li><a href="index.html#doctrine">The Doctrine</a></li>
@@ -494,6 +521,5 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
   });
 })();
 </script>
-<script src="/js/site-stats.js" defer></script>
 </body>
 </html>

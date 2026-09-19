@@ -137,16 +137,16 @@ h1{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(9px,1vw,11px);letter-spacing:.3em;color:var(--dim);text-transform:uppercase}
 
 /* ── sub-sectors ──────────────────────────── */
-.subs{padding:clamp(72px,11vh,132px) 0 clamp(32px,4vh,48px)}
+.subs{padding:clamp(56px,9vh,104px) 0 clamp(20px,3vh,32px)}
 .subs h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
   font-size:clamp(11px,1.15vw,13px);letter-spacing:.34em;color:var(--head);
   text-align:center;margin:0 0 clamp(44px,6.5vh,76px)}
-.grid{display:grid;grid-template-columns:1fr;gap:clamp(64px,9vh,104px) clamp(48px,5.5vw,104px)}
+.grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,5.4vh,60px) clamp(40px,4.5vw,84px)}
 @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
-article{padding-top:clamp(30px,4.4vh,44px);border-top:1px solid var(--rule-soft)}
+.sub__n{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.2em;color:var(--dim);display:block;margin-bottom:12px}
 .sub__h{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(14px,1.45vw,18px);letter-spacing:.15em;color:var(--gold-light);
-  margin:0 0 18px;line-height:1.3}
+  margin:0 0 16px;line-height:1.3}
 .sub__b{margin:0;color:var(--gold);font-size:clamp(16px,1.15vw,18px);line-height:1.66}
 
 /* ── explorer link + CTA ──────────────────── */
@@ -256,6 +256,19 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
 @media(prefers-contrast:more){
   :root{--dim:var(--gold);--rule:rgba(196,149,68,.4)}
 }
+/* OTHERS-CSS */
+.others{border-top:1px solid var(--rule-soft);margin-top:clamp(52px,8vh,96px);
+  padding:clamp(44px,6.5vh,78px) 0 0;text-align:center}
+.others h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
+  font-size:clamp(10px,1.05vw,12px);letter-spacing:.32em;color:var(--head);
+  margin:0 0 clamp(24px,3.4vh,34px)}
+.otherlist{display:flex;flex-wrap:wrap;justify-content:center;
+  gap:13px clamp(16px,2vw,30px);max-width:880px;margin:0 auto}
+.otherlist a{font-family:'Cinzel',serif;text-transform:uppercase;
+  font-size:clamp(9.5px,1vw,11.5px);letter-spacing:.2em;color:var(--dim);
+  padding-bottom:5px;border-bottom:1px solid transparent}
+.otherlist a:hover{color:var(--gold);border-bottom-color:var(--rule-soft)}
+
 </style>
 </head>
 <body>
@@ -277,70 +290,84 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
     <h2>Sub-sectors</h2>
     <div class="grid">
       <article>
+        <span class="sub__n">01</span>
         <h3 class="sub__h">Residential Development</h3>
         <p class="sub__b">Planning consents, land acquisitions, development finance and recorded starts are dated public records naming the developer. Sales rates and pricing move earlier and decide whether a consented scheme actually proceeds. BACI reads both, because consent is permission rather than commitment and a great many approved schemes sit dormant through a soft market, and it identifies the developers whose funding and sales position mean they'll build, which is what separates a real supply opportunity from a paper one.</p>
       </article>
 
       <article>
+        <span class="sub__n">02</span>
         <h3 class="sub__h">Commercial Property</h3>
         <p class="sub__b">Transactions, lettings, refinancings and planning decisions are recorded, dated and attributable to named parties. Yields, vacancy and rental growth move earlier and describe conditions rather than commitments. BACI connects the two, since a refinancing coming due in a repriced market forces a decision that nothing in the transaction record has yet shown, and identifies the owners, lenders and occupiers whose positions are about to require action rather than those merely holding assets.</p>
       </article>
 
       <article>
+        <span class="sub__n">03</span>
         <h3 class="sub__h">Industrial &amp; Logistics Real Estate</h3>
         <p class="sub__b">Pre-lets, occupier requirements, land assembly and consents for large units are dated and name the occupier or developer. E-commerce volumes and supply chain reconfiguration move earlier and say where demand will surface. BACI pays close attention to occupier requirement notices, because in this sector demand is often published as a specification before a site is found, and matches those requirements to the land, buildings and development partners capable of meeting them.</p>
       </article>
 
       <article>
+        <span class="sub__n">04</span>
         <h3 class="sub__h">Property Management</h3>
         <p class="sub__b">Mandate awards, portfolio transfers and service contract tenders are dated and name the incoming manager. Ownership changes and portfolio growth come first, and they're the reliable predictor, since a building that changes hands is a management contract that's about to be reviewed. BACI tracks transactions as the leading indicator of management opportunity and tender cycles as the confirmation, so managers approach an owner while the appointment is still open rather than after the handover.</p>
       </article>
 
       <article>
+        <span class="sub__n">05</span>
         <h3 class="sub__h">REITs &amp; Investment</h3>
         <p class="sub__b">The constraint here isn't finding capital, it's fitting its mandate. A listed or institutional vehicle publishes what it's permitted to buy: sector, geography, lot size, risk profile, leverage limits, and those terms decide everything before a single asset is discussed. BACI reads the published mandates alongside acquisition activity, fundraising and disposals, so an approach is made to the vehicles whose current mandate actually admits the opportunity rather than to whoever happens to be visibly active.</p>
       </article>
 
       <article>
+        <span class="sub__n">06</span>
         <h3 class="sub__h">PropTech</h3>
         <p class="sub__b">Platform selections by owners and managers, enterprise agreements and portfolio-wide rollouts are dated commitments. Funding rounds and pilot programmes are softer, and this sector runs a great many pilots that never convert into a portfolio contract. BACI separates a pilot from an adoption, because one is a reference and the other is revenue, and identifies the owners and managers whose portfolio size and technology position make a full rollout realistic.</p>
       </article>
 
       <article>
+        <span class="sub__n">07</span>
         <h3 class="sub__h">Hospitality Real Estate</h3>
         <p class="sub__b">Hotel transactions, management and franchise agreements, brand conversions and development approvals are recorded and name the operator. Occupancy, rate and arrivals data move earlier and say where trading is recovering or deteriorating. BACI reads trading data as the leading signal of a transaction or a conversion, since underperformance is what usually precedes both, and identifies the owners, operators and brands whose position makes an agreement or a sale likely within a realistic horizon.</p>
       </article>
 
       <article>
+        <span class="sub__n">08</span>
         <h3 class="sub__h">Mixed-Use Development</h3>
         <p class="sub__b">Masterplan approvals, phasing consents, development agreements and anchor commitments are dated and name the parties. Consultation stages and early masterplanning sit years upstream. BACI follows the phasing in particular, because a mixed-use scheme is really several projects on one site with different timings, funders and contractors, and a business treating it as a single opportunity will approach at the wrong moment for most of the phases it could have worked on.</p>
       </article>
 
       <article>
+        <span class="sub__n">09</span>
         <h3 class="sub__h">Land &amp; Zoning</h3>
         <p class="sub__b">This is the one category where the asset is a permission rather than a building. Value is created the moment a designation changes, a plan is adopted or a consent is granted, and it's created for whoever holds the land at that instant. BACI follows plan-making, designation changes, call-for-sites processes and consent decisions, because the interval between a policy direction becoming visible and a permission being granted is the only period in which land can still be assembled at pre-consent prices.</p>
       </article>
 
       <article>
+        <span class="sub__n">10</span>
         <h3 class="sub__h">Facilities &amp; Asset Management</h3>
         <p class="sub__b">Contract awards, renewal windows and approved capital plans are dated and attributable to a named estate. Occupancy changes and estate reviews come earlier and indicate where a portfolio is about to be reconsidered. BACI works backwards from renewal dates, since this is largely a re-tendering market and relationships are built long before a tender issues, and connects estate reviews to the capital and service requirements they tend to produce once a decision is taken.</p>
       </article>
 
       <article>
+        <span class="sub__n">11</span>
         <h3 class="sub__h">Retail Property</h3>
         <p class="sub__b">Lettings, lease events, repurposing consents and transactions are recorded and named. Footfall and retailer trading health move earlier, and in this sector they move decisively, since a struggling anchor tenant reshapes a scheme's prospects well before any lease event registers it. BACI tracks occupier health alongside the lease calendar, so owners, investors and advisors can see which assets face a vacancy they'll need to solve and which are candidates for a change of use.</p>
       </article>
 
       <article>
+        <span class="sub__n">12</span>
         <h3 class="sub__h">Affordable Housing</h3>
         <p class="sub__b">Demand here is created by policy rather than by the market. Government programmes, grant allocations, registered provider funding rounds and planning obligations decide what gets built, on published timetables and against published criteria. BACI follows those allocations and obligations, matching developers, contractors and suppliers to the programmes whose eligibility rules they actually satisfy, because in this sector qualifying for a funding route matters more than commercial competitiveness and it's a slower thing to acquire.</p>
       </article>
     </div>
   </section>
 
+  <section class="others"><h2>Other industries</h2><nav class="otherlist"><a href="industry-healthcare.html">Healthcare</a><a href="industry-energy.html">Energy</a><a href="industry-construction.html">Construction</a><a href="industry-financial-services.html">Financial Services</a><a href="industry-technology.html">Technology</a><a href="industry-education.html">Education</a><a href="industry-hospitality.html">Hospitality</a><a href="industry-retail.html">Retail</a><a href="industry-legal.html">Legal</a><a href="industry-agriculture.html">Agriculture</a><a href="industry-logistics.html">Logistics</a><a href="industry-social-media.html">Social Media</a><a href="industry-human-resources.html">Human Resources</a><a href="industry-skincare-beauty.html">Skincare &amp; Beauty</a></nav></section>
+
   <section class="close">
-    <p>Every sub-sector runs the same way across <span data-stat="countries">181</span> countries and <span data-stat="regions">9</span> regions. Choose a market and an objective, and the intelligence reshapes around it.</p>
-    <a class="explorer" href="index.html#every-industry">Open the industry explorer</a>
+    <p>Every sub-sector runs the same way across 181 countries and 9 regions. Choose a market and an objective, and the intelligence reshapes around it.</p>
+    <a class="explorer" href="index.html#industry">Open the industry explorer</a>
     <br>
     <a class="cta" href="index.html#access" id="cta"><span id="c1">C</span>ONNECT YOUR BUSINES<span id="c2">S</span><span class="line"></span><span class="dot" id="dot"></span></a>
   </section>
@@ -373,7 +400,7 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
       <div class="col">
         <h3>Intelligence<span class="lp"></span><span class="pt"></span></h3>
         <ul>
-          <li><a href="index.html#every-industry">Industry Intelligence</a></li>
+          <li><a href="index.html#industry">Industry Intelligence</a></li>
           <li><a href="index.html#conversion">Conversion Intelligence</a></li>
           <li><a href="index.html#global-reach">Global Reach</a></li>
           <li><a href="index.html#doctrine">The Doctrine</a></li>
@@ -494,6 +521,5 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
   });
 })();
 </script>
-<script src="/js/site-stats.js" defer></script>
 </body>
 </html>

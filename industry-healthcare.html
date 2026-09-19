@@ -137,16 +137,16 @@ h1{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(9px,1vw,11px);letter-spacing:.3em;color:var(--dim);text-transform:uppercase}
 
 /* ── sub-sectors ──────────────────────────── */
-.subs{padding:clamp(72px,11vh,132px) 0 clamp(32px,4vh,48px)}
+.subs{padding:clamp(56px,9vh,104px) 0 clamp(20px,3vh,32px)}
 .subs h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
   font-size:clamp(11px,1.15vw,13px);letter-spacing:.34em;color:var(--head);
   text-align:center;margin:0 0 clamp(44px,6.5vh,76px)}
-.grid{display:grid;grid-template-columns:1fr;gap:clamp(64px,9vh,104px) clamp(48px,5.5vw,104px)}
+.grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,5.4vh,60px) clamp(40px,4.5vw,84px)}
 @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
-article{padding-top:clamp(30px,4.4vh,44px);border-top:1px solid var(--rule-soft)}
+.sub__n{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.2em;color:var(--dim);display:block;margin-bottom:12px}
 .sub__h{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(14px,1.45vw,18px);letter-spacing:.15em;color:var(--gold-light);
-  margin:0 0 18px;line-height:1.3}
+  margin:0 0 16px;line-height:1.3}
 .sub__b{margin:0;color:var(--gold);font-size:clamp(16px,1.15vw,18px);line-height:1.66}
 
 /* ── explorer link + CTA ──────────────────── */
@@ -256,6 +256,19 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
 @media(prefers-contrast:more){
   :root{--dim:var(--gold);--rule:rgba(196,149,68,.4)}
 }
+/* OTHERS-CSS */
+.others{border-top:1px solid var(--rule-soft);margin-top:clamp(52px,8vh,96px);
+  padding:clamp(44px,6.5vh,78px) 0 0;text-align:center}
+.others h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
+  font-size:clamp(10px,1.05vw,12px);letter-spacing:.32em;color:var(--head);
+  margin:0 0 clamp(24px,3.4vh,34px)}
+.otherlist{display:flex;flex-wrap:wrap;justify-content:center;
+  gap:13px clamp(16px,2vw,30px);max-width:880px;margin:0 auto}
+.otherlist a{font-family:'Cinzel',serif;text-transform:uppercase;
+  font-size:clamp(9.5px,1vw,11.5px);letter-spacing:.2em;color:var(--dim);
+  padding-bottom:5px;border-bottom:1px solid transparent}
+.otherlist a:hover{color:var(--gold);border-bottom-color:var(--rule-soft)}
+
 </style>
 </head>
 <body>
@@ -277,70 +290,84 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
     <h2>Sub-sectors</h2>
     <div class="grid">
       <article>
+        <span class="sub__n">01</span>
         <h3 class="sub__h">Hospitals &amp; Clinics</h3>
-        <p class="sub__b">Capital projects, facility expansion, group consolidation and service outsourcing show which institutions are growing and where budgets are being committed. Capital projects and consolidation carry named timelines and named acquirers; outsourcing intent only indicates direction. BACI treats them differently: hard signals go straight to a prospect list, soft signals go onto a watch list until they firm up. Either way, businesses see which institutions are worth prioritising, and can position while the requirement is still being defined, not after it has been awarded.</p>
+        <p class="sub__b">Capital projects, facility expansion, group consolidation, service outsourcing and purchasing activity show which institutions are growing and where budgets are being committed. The strongest of these, capital projects and consolidation, carry named timelines and named acquirers; the weaker ones, like outsourcing intent, indicate direction without yet naming a buyer. BACI tracks both, but treats them differently: hard signals go straight to prospect lists, soft signals go into a watch list until they firm up. Either way, businesses see which institutions are worth prioritising and can position their proposition while the requirement is still being defined, not after it has been awarded.</p>
       </article>
 
       <article>
+        <span class="sub__n">02</span>
         <h3 class="sub__h">Medical Devices</h3>
-        <p class="sub__b">Device approvals, reimbursement decisions, distribution agreements and competitor entries show where a device could enter a market. Approvals and reimbursement are hard, dated events; competitor entry is softer, a sign a market is heating up. BACI separates the two, confirming a market is open on hard events and flagging where it's about to be on soft ones. It surfaces distributors, buyers and market-entry partners already active there, so effort concentrates on markets where access and demand are genuinely aligning, not markets that only look active.</p>
+        <p class="sub__b">Device approvals, product launches, distribution agreements, reimbursement decisions, competitor entries and purchasing activity show where a device could plausibly enter a market. Approval and reimbursement decisions are hard, dated events; competitor entry and distribution activity are softer indicators of where a market is heating up. BACI separates the two, using hard events to confirm a market is open and soft signals to flag where it's about to be. From there it surfaces distributors, healthcare buyers and market-entry partners already active in that space, so commercial effort concentrates on markets where access and demand are genuinely aligning, not just markets that look active on paper.</p>
       </article>
 
       <article>
+        <span class="sub__n">03</span>
         <h3 class="sub__h">Pharmaceuticals</h3>
         <p class="sub__b">Patent expiries, generic entry, licensing and manufacturing agreements, regulatory filings and national supply tenders are hard, dated events. Changes in therapeutic demand are softer and slower-moving. BACI uses the hard events to identify exactly when a commercial window opens (a patent expiry date is a fact, not an inference) and uses demand shifts to indicate where that window is worth acting on. This produces licensing opportunities, potential partners and procurement routes with real timing behind them, so businesses can move before competitive entry closes the gap rather than discovering the gap after it has closed.</p>
       </article>
 
       <article>
+        <span class="sub__n">04</span>
         <h3 class="sub__h">Digital Health</h3>
         <p class="sub__b">Funding rounds, provider partnerships, health IT procurement, interoperability mandates and reimbursement pathways show which propositions are being bought and which are being funded, two different things worth keeping separate. A funding round shows investor conviction; a procurement contract shows an actual buyer has committed budget. BACI tracks both and is explicit about which is which, so digital health businesses can tell the difference between a well-funded competitor and a live customer opportunity, and pursue prospective health-system customers, technology partners and investors accordingly.</p>
       </article>
 
       <article>
+        <span class="sub__n">05</span>
         <h3 class="sub__h">Diagnostics</h3>
         <p class="sub__b">Screening programmes, point-of-care adoption, disease surveillance and testing volumes show where diagnostic demand is moving. Programme launches and surveillance mandates are hard commitments; adoption and volume trends are indicators of momentum. BACI connects both to buyers, procurement opportunities and distribution channels, so diagnostic businesses can see not just where testing demand exists today but where a programme is expanding and therefore open to new suppliers.</p>
       </article>
 
       <article>
+        <span class="sub__n">06</span>
         <h3 class="sub__h">Procurement &amp; Supply</h3>
         <p class="sub__b">Tenders, framework agreements, group purchasing arrangements, supplier qualification requirements and contract renewals are the clearest signal type BACI tracks: dated, public, and unambiguous about what qualifying requires. BACI surfaces which contracts are open, what the qualification bar is, and where a business's current position falls short of it, so bid development starts with an honest fit assessment rather than a generic opportunity list. This is the category where "signal" and "decision" are closest together, because a tender is already a decision in motion.</p>
       </article>
 
       <article>
+        <span class="sub__n">07</span>
         <h3 class="sub__h">Home &amp; Long-Term Care</h3>
         <p class="sub__b">Care commissioning and local authority contracts are hard signals: dated, budgeted, and traceable to a named commissioner. Operator acquisitions, staffing pressure and demographic demand are softer, slower indicators of where the sector is heading rather than where money is committed right now. BACI keeps the two apart: commissioning and contract data drive the active-opportunity list, while demand and staffing trends flag where the next wave of commissioning is likely to originate, giving suppliers and service providers a view of both what's open now and what's coming.</p>
       </article>
 
       <article>
+        <span class="sub__n">08</span>
         <h3 class="sub__h">Health Insurance &amp; Payers</h3>
         <p class="sub__b">Coverage decisions and scheme tenders are hard events that determine funded status directly. Payer partnerships and changes in funded benefits are softer and often precede a formal coverage decision by months. BACI tracks the sequence, not just the endpoint, so businesses can identify relevant payers and reimbursement routes early enough to influence a coverage decision rather than only responding once it's published.</p>
       </article>
 
       <article>
+        <span class="sub__n">09</span>
         <h3 class="sub__h">Biotechnology &amp; Life Sciences</h3>
         <p class="sub__b">Investor activity, grant programmes and licensing deals are traceable to named capital with named terms. Research partnerships and clinical milestones indicate scientific progress but not yet a funding commitment. BACI distinguishes capital-in-motion from progress that might attract capital, matching businesses to investors, funders and licensing prospects based on which stage a programme has actually reached, not assuming that clinical progress automatically implies an open funding route.</p>
       </article>
 
       <article>
+        <span class="sub__n">10</span>
         <h3 class="sub__h">Laboratories &amp; Testing</h3>
         <p class="sub__b">Contract awards and accreditation requirements are hard, dated signals with a named purchasing body. Equipment procurement and testing demand trends are softer indicators of where lab capacity is being built out. BACI uses the former to identify live opportunities and qualification requirements, and the latter to flag where the next contract cycle is likely to originate, helping laboratories, equipment providers and testing businesses time their pursuit rather than approach every signal as equally urgent.</p>
       </article>
 
       <article>
+        <span class="sub__n">11</span>
         <h3 class="sub__h">Mental &amp; Behavioural Health</h3>
         <p class="sub__b">Service commissioning and insurer coverage decisions are dated, budgeted events. Employer provision trends and workforce shortages are directional indicators of where demand is building but not yet formally funded. BACI separates commissioned, fundable demand from emerging, not-yet-funded need, so providers can tell which opportunities are ready to pursue now and which require a different kind of positioning: building relationships ahead of a commissioning decision rather than competing for one that's already open.</p>
       </article>
 
       <article>
+        <span class="sub__n">12</span>
         <h3 class="sub__h">Rehabilitation &amp; Therapy</h3>
         <p class="sub__b">Service contracts and insurer coverage terms are hard signals with a named payer and named terms. Clinic network development and equipment procurement trends indicate where capacity is expanding but don't guarantee a funded contract yet. BACI keeps these distinct, directing providers and suppliers toward commissioning opportunities and payer routes backed by actual purchasing activity, and flagging expansion markets as developing rather than confirmed.</p>
       </article>
     </div>
   </section>
 
+  <section class="others"><h2>Other industries</h2><nav class="otherlist"><a href="industry-energy.html">Energy</a><a href="industry-construction.html">Construction</a><a href="industry-financial-services.html">Financial Services</a><a href="industry-technology.html">Technology</a><a href="industry-real-estate.html">Real Estate</a><a href="industry-education.html">Education</a><a href="industry-hospitality.html">Hospitality</a><a href="industry-retail.html">Retail</a><a href="industry-legal.html">Legal</a><a href="industry-agriculture.html">Agriculture</a><a href="industry-logistics.html">Logistics</a><a href="industry-social-media.html">Social Media</a><a href="industry-human-resources.html">Human Resources</a><a href="industry-skincare-beauty.html">Skincare &amp; Beauty</a></nav></section>
+
   <section class="close">
-    <p>Every sub-sector runs the same way across <span data-stat="countries">181</span> countries and <span data-stat="regions">9</span> regions. Choose a market and an objective, and the intelligence reshapes around it.</p>
-    <a class="explorer" href="index.html#every-industry">Open the industry explorer</a>
+    <p>Every sub-sector runs the same way across 181 countries and 9 regions. Choose a market and an objective, and the intelligence reshapes around it.</p>
+    <a class="explorer" href="index.html#industry">Open the industry explorer</a>
     <br>
     <a class="cta" href="index.html#access" id="cta"><span id="c1">C</span>ONNECT YOUR BUSINES<span id="c2">S</span><span class="line"></span><span class="dot" id="dot"></span></a>
   </section>
@@ -373,7 +400,7 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
       <div class="col">
         <h3>Intelligence<span class="lp"></span><span class="pt"></span></h3>
         <ul>
-          <li><a href="index.html#every-industry">Industry Intelligence</a></li>
+          <li><a href="index.html#industry">Industry Intelligence</a></li>
           <li><a href="index.html#conversion">Conversion Intelligence</a></li>
           <li><a href="index.html#global-reach">Global Reach</a></li>
           <li><a href="index.html#doctrine">The Doctrine</a></li>
@@ -494,6 +521,5 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
   });
 })();
 </script>
-<script src="/js/site-stats.js" defer></script>
 </body>
 </html>

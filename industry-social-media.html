@@ -137,16 +137,16 @@ h1{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(9px,1vw,11px);letter-spacing:.3em;color:var(--dim);text-transform:uppercase}
 
 /* ── sub-sectors ──────────────────────────── */
-.subs{padding:clamp(72px,11vh,132px) 0 clamp(32px,4vh,48px)}
+.subs{padding:clamp(56px,9vh,104px) 0 clamp(20px,3vh,32px)}
 .subs h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
   font-size:clamp(11px,1.15vw,13px);letter-spacing:.34em;color:var(--head);
   text-align:center;margin:0 0 clamp(44px,6.5vh,76px)}
-.grid{display:grid;grid-template-columns:1fr;gap:clamp(64px,9vh,104px) clamp(48px,5.5vw,104px)}
+.grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,5.4vh,60px) clamp(40px,4.5vw,84px)}
 @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
-article{padding-top:clamp(30px,4.4vh,44px);border-top:1px solid var(--rule-soft)}
+.sub__n{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.2em;color:var(--dim);display:block;margin-bottom:12px}
 .sub__h{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(14px,1.45vw,18px);letter-spacing:.15em;color:var(--gold-light);
-  margin:0 0 18px;line-height:1.3}
+  margin:0 0 16px;line-height:1.3}
 .sub__b{margin:0;color:var(--gold);font-size:clamp(16px,1.15vw,18px);line-height:1.66}
 
 /* ── explorer link + CTA ──────────────────── */
@@ -256,6 +256,19 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
 @media(prefers-contrast:more){
   :root{--dim:var(--gold);--rule:rgba(196,149,68,.4)}
 }
+/* OTHERS-CSS */
+.others{border-top:1px solid var(--rule-soft);margin-top:clamp(52px,8vh,96px);
+  padding:clamp(44px,6.5vh,78px) 0 0;text-align:center}
+.others h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
+  font-size:clamp(10px,1.05vw,12px);letter-spacing:.32em;color:var(--head);
+  margin:0 0 clamp(24px,3.4vh,34px)}
+.otherlist{display:flex;flex-wrap:wrap;justify-content:center;
+  gap:13px clamp(16px,2vw,30px);max-width:880px;margin:0 auto}
+.otherlist a{font-family:'Cinzel',serif;text-transform:uppercase;
+  font-size:clamp(9.5px,1vw,11.5px);letter-spacing:.2em;color:var(--dim);
+  padding-bottom:5px;border-bottom:1px solid transparent}
+.otherlist a:hover{color:var(--gold);border-bottom-color:var(--rule-soft)}
+
 </style>
 </head>
 <body>
@@ -277,70 +290,84 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
     <h2>Sub-sectors</h2>
     <div class="grid">
       <article>
+        <span class="sub__n">01</span>
         <h3 class="sub__h">Content Creation &amp; Publishing</h3>
         <p class="sub__b">Content performance, platform format changes, audience response and campaign results show what an audience reads and what it scrolls past. Published figures and announced format changes are measurable; a shift in what an audience responds to is visible in behaviour before it reaches the numbers. BACI works from both, building content strategy, calendars, post concepts, captions, campaign content and calls to action, adapting each to its platform, then scheduling and publishing where the customer's operating mode and connected platforms permit execution.</p>
       </article>
 
       <article>
+        <span class="sub__n">02</span>
         <h3 class="sub__h">Influencer Marketing</h3>
         <p class="sub__b">A creator's published engagement figures, audience composition and campaign history are measurable and comparable. Whether an audience genuinely trusts that creator, and whether a partnership will read as credible, is not visible in those numbers. BACI assesses both, matching creators to a business by audience fit and demonstrated performance rather than follower count, and flagging the smaller accounts whose engagement is accelerating faster than their reach, which is usually where partnerships are still affordable.</p>
       </article>
 
       <article>
+        <span class="sub__n">03</span>
         <h3 class="sub__h">Paid Social Advertising</h3>
         <p class="sub__b">Competitor activity in the platform ad libraries, auction conditions, published cost benchmarks and policy changes are all observable before a campaign is committed. Creative fatigue and the angles an audience is tiring of are read from performance decay rather than declared anywhere. BACI uses the first to plan and price a campaign and the second to decide when creative needs replacing, then writes the advertising copy, develops the messaging and creative direction, and launches and optimises where the operating mode and connected platforms permit.</p>
       </article>
 
       <article>
+        <span class="sub__n">04</span>
         <h3 class="sub__h">Community Management</h3>
         <p class="sub__b">Conversation volume, response times, recurring questions and resolution rates are countable, and they say how well a community is being served. The mood underneath them is not. A community that is quieter than usual, or asking the same question in a sharper tone, is signalling something before any metric moves. BACI watches both, supporting engagement and responses day to day while flagging the shifts in sentiment and the emerging issues that a volume chart will not show for another week.</p>
       </article>
 
       <article>
+        <span class="sub__n">05</span>
         <h3 class="sub__h">Social Commerce</h3>
         <p class="sub__b">Conversion data, product tagging performance, checkout completion and platform commerce rollouts show what is actually selling through social channels. Which content format tends to precede a purchase, and how long the gap between attention and buying runs, is inferred from behaviour rather than reported. BACI connects the two, identifying where social attention is converting into commercial activity and which products, audiences and campaign formats are carrying that conversion rather than merely attracting the attention.</p>
       </article>
 
       <article>
+        <span class="sub__n">06</span>
         <h3 class="sub__h">Platform Analytics</h3>
         <p class="sub__b">This is the category where the signal is least ambiguous. Reach, engagement, audience behaviour, content performance and conversion data are reported directly by the platforms, dated and attributable, with none of the inference the rest of social media demands. The difficulty is not detecting the signal but reading it honestly: engagement that flatters without converting, reach inflated by a format the algorithm is temporarily favouring. BACI interprets the data against what the business is actually trying to achieve, rather than reporting whichever number rose.</p>
       </article>
 
       <article>
+        <span class="sub__n">07</span>
         <h3 class="sub__h">Video &amp; Short-Form Content</h3>
         <p class="sub__b">Completion rates, watch time, retention curves and the performance of specific formats are measured precisely on video platforms, more precisely than anywhere else in social. What those numbers cannot say is which concept will carry. BACI develops the concepts, scripts, captions and content direction from what the format data shows is holding attention in a given market and audience, and treats the first seconds of retention as the signal that matters, since that is where most short-form video is lost.</p>
       </article>
 
       <article>
+        <span class="sub__n">08</span>
         <h3 class="sub__h">Live Streaming</h3>
         <p class="sub__b">Concurrent viewership, session length and the times an audience actually shows up are recorded, and they vary enough by market and platform that assumptions travel badly. Whether a live format suits a particular business is a judgement rather than a measurement. BACI supports the strategy, programming, promotion and messaging around live content, and uses the timing data to say when a stream is likely to find its audience in a given market rather than when it is convenient to run.</p>
       </article>
 
       <article>
+        <span class="sub__n">09</span>
         <h3 class="sub__h">Social Listening &amp; Sentiment</h3>
         <p class="sub__b">Mention volume, named topics and the spread of a conversation across platforms are countable. What those mentions mean is not, and sentiment scoring is where most social tooling overreaches, reducing an ambiguous conversation to a number. BACI monitors the conversations, topics, mentions and behavioural shifts, and distinguishes a rise in volume from a change in how a business is regarded, since the two frequently move in opposite directions and only one of them warrants a response.</p>
       </article>
 
       <article>
+        <span class="sub__n">10</span>
         <h3 class="sub__h">Crisis &amp; Reputation Management</h3>
         <p class="sub__b">Here the axis is speed rather than certainty. A reputational problem is soft while it can still be managed and hard once it is unambiguous, by which point the response is damage limitation. BACI watches for the early shape of one: velocity rising faster than volume, sentiment turning in a specific audience segment, a single account being amplified beyond its usual reach. Those are surfaced while a business still has the option of choosing its response rather than issuing one.</p>
       </article>
 
       <article>
+        <span class="sub__n">11</span>
         <h3 class="sub__h">Brand Account Management</h3>
         <p class="sub__b">Posting cadence, publishing consistency, campaign coordination and account performance are all trackable across every channel a business runs. What is harder to see from inside one account is drift: a voice that has slowly stopped sounding like the brand, or channels that have diverged from one another. BACI supports the ongoing running of the presence, calendars, cadence, publishing and performance monitoring, while watching the accounts against each other so inconsistency is caught before an audience notices it.</p>
       </article>
 
       <article>
+        <span class="sub__n">12</span>
         <h3 class="sub__h">Emerging Platforms &amp; Trends</h3>
         <p class="sub__b">This category has almost no hard signals, which is precisely its value. By the time a platform or format is unambiguously established, the advantage of arriving early has gone. BACI tracks new platforms, formats, behaviours and accelerating topics and is explicit about confidence rather than presenting an early signal as a settled one, so a business can decide how much to commit to something unproven. Most will not last. The ones that do reward whoever moved before it was obvious.</p>
       </article>
     </div>
   </section>
 
+  <section class="others"><h2>Other industries</h2><nav class="otherlist"><a href="industry-healthcare.html">Healthcare</a><a href="industry-energy.html">Energy</a><a href="industry-construction.html">Construction</a><a href="industry-financial-services.html">Financial Services</a><a href="industry-technology.html">Technology</a><a href="industry-real-estate.html">Real Estate</a><a href="industry-education.html">Education</a><a href="industry-hospitality.html">Hospitality</a><a href="industry-retail.html">Retail</a><a href="industry-legal.html">Legal</a><a href="industry-agriculture.html">Agriculture</a><a href="industry-logistics.html">Logistics</a><a href="industry-human-resources.html">Human Resources</a><a href="industry-skincare-beauty.html">Skincare &amp; Beauty</a></nav></section>
+
   <section class="close">
-    <p>Every sub-sector runs the same way across <span data-stat="countries">181</span> countries and <span data-stat="regions">9</span> regions. Choose a market and an objective, and the intelligence reshapes around it.</p>
-    <a class="explorer" href="index.html#every-industry">Open the industry explorer</a>
+    <p>Every sub-sector runs the same way across 181 countries and 9 regions. Choose a market and an objective, and the intelligence reshapes around it.</p>
+    <a class="explorer" href="index.html#industry">Open the industry explorer</a>
     <br>
     <a class="cta" href="index.html#access" id="cta"><span id="c1">C</span>ONNECT YOUR BUSINES<span id="c2">S</span><span class="line"></span><span class="dot" id="dot"></span></a>
   </section>
@@ -373,7 +400,7 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
       <div class="col">
         <h3>Intelligence<span class="lp"></span><span class="pt"></span></h3>
         <ul>
-          <li><a href="index.html#every-industry">Industry Intelligence</a></li>
+          <li><a href="index.html#industry">Industry Intelligence</a></li>
           <li><a href="index.html#conversion">Conversion Intelligence</a></li>
           <li><a href="index.html#global-reach">Global Reach</a></li>
           <li><a href="index.html#doctrine">The Doctrine</a></li>
@@ -494,6 +521,5 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
   });
 })();
 </script>
-<script src="/js/site-stats.js" defer></script>
 </body>
 </html>
