@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Real Estate Intelligence · BACI</title>
@@ -23,7 +24,7 @@
 <meta name="twitter:description" content="Real estate intelligence follows the decisions that commit property and capital, from planning and land assembly to funding, letting, transaction and lease event.">
 <meta name="twitter:image" content="https://bacihq.com/baci-share.webp">
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -94,69 +95,548 @@
   ]
 }
 </script>
-
 <style>
-:root{
-  --bg:#000;
-  --gold:#C39544;
-  --gold-light:#CFA24E;
-  --dim:#8A6E3C;
-  --champagne:#E8C87A;
-  --head:#C99F5E;
-  --rule:rgba(196,149,68,.22);
-  --rule-soft:rgba(196,149,68,.12);
-  --measure:660px;
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{
-  margin:0;background:var(--bg);color:var(--gold);
-  font-family:'Cormorant Garamond',Georgia,serif;
-  font-size:clamp(17px,1.25vw,20px);line-height:1.62;
-  -webkit-font-smoothing:antialiased;
-}
-a{color:inherit;text-decoration:none}
-.shell{max-width:1320px;margin:0 auto;padding:0 clamp(18px,5vw,56px)}
 
-/* ── masthead ─────────────────────────────── */
-.masthead{padding:38px 0 0;text-align:left}
-.masthead .mark{display:inline-block;width:124px;height:34px;
-  border:1px dashed var(--rule);display:flex;align-items:center;justify-content:center;
-  font-family:'Cinzel',serif;font-size:9px;letter-spacing:.18em;color:var(--dim)}
+:root{--gold:#C39544;--gold-light:#CFA24E;--dim:#8A6E3C;--champagne:#E8C87A;--closing:#DCC17E;--head:#C99F5E;--metal:#C99F5E;--bg:#000;--rule:rgba(196,149,68,.22);--rule-soft:rgba(196,149,68,.12);--measure:660px}
+*{margin:0;padding:0;box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--gold);font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
+a{color:inherit;text-decoration:none}:focus-visible{outline:2px solid var(--champagne);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
+.masthead{padding:38px 0 0;text-align:left}.masthead img{width:124px;height:auto;opacity:.92}
+.page-head{text-align:center;padding:76px 0 0}.page-head h1{font-family:'Cinzel',serif;font-weight:500;color:var(--metal);font-size:clamp(2.4rem,7vw,4.5rem);letter-spacing:.22em;text-indent:.22em;line-height:1.08}
+.rule{position:relative;height:1px;margin:26px auto 0;max-width:420px;background:linear-gradient(90deg,transparent,var(--dim) 18%,var(--dim) 82%,transparent)}
+.rule::after{content:"";position:absolute;top:50%;left:50%;width:7px;height:7px;margin:-3.5px 0 0 -3.5px;border-radius:50%;background:var(--champagne);box-shadow:0 0 10px 3px rgba(232,200,122,.55)}
+.rule.short{max-width:210px}
+.lead{text-align:center;max-width:760px;margin:0 auto;padding:38px 0 0}.lead p{font-size:clamp(1.06rem,2.1vw,1.32rem);line-height:1.72;margin-bottom:1.15em}.lead p:last-child{margin-bottom:0}
+footer{position:relative;z-index:1;margin-top:120px;padding:50px 28px;border-top:1px solid rgba(195,149,68,.28);text-align:center;color:var(--gold)}
+.thoughts{position:relative;z-index:1;border-top:1px solid rgba(195,149,68,.28);text-align:center;padding:78px 28px 92px}.thoughts .listening{font-weight:500;color:var(--gold-light);font-size:clamp(2rem,5.4vw,3.1rem);margin-bottom:38px}.thoughts button{font-family:'Cinzel',serif;color:var(--gold-light);background:rgba(195,149,68,.025);border:1px solid rgba(195,149,68,.6);border-radius:999px;padding:18px 44px}
 
-/* ── hero ─────────────────────────────────── */
-.hero{padding:clamp(64px,11vh,132px) 0 clamp(40px,7vh,78px);text-align:center}
+/* BACKGROUND TREATMENT ONLY */
+.baci-ambient{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 75% 85% at -18% 48%,rgba(195,149,68,.055),rgba(195,149,68,.024) 35%,transparent 74%),radial-gradient(ellipse 62% 72% at 116% 35%,rgba(195,149,68,.045),rgba(195,149,68,.019) 38%,transparent 74%)}
+body::before,body::after{content:"";position:fixed;pointer-events:none;z-index:0}
+body::before{width:72vw;height:72vw;left:-34vw;top:14vh;border-radius:50%;border:1px solid rgba(195,149,68,.10);box-shadow:0 0 145px rgba(195,149,68,.040),inset 0 0 165px rgba(195,149,68,.028);transform:rotate(-9deg)}
+body::after{width:56vw;height:1px;right:-8vw;top:46vh;background:linear-gradient(90deg,transparent,rgba(232,200,122,.052),transparent);box-shadow:0 0 58px 2px rgba(195,149,68,.026);transform:rotate(-17deg)}
+.baci-orbit{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}.baci-orbit::before{content:"";position:absolute;width:980px;height:420px;right:-530px;top:19vh;border:1px solid rgba(195,149,68,.082);border-radius:50%;transform:rotate(24deg);box-shadow:0 0 115px rgba(195,149,68,.026)}.baci-orbit::after{content:none}
+
+input,textarea,button{
+  -webkit-appearance:none;
+  appearance:none;
+}
+input,textarea{
+  background-color:transparent;
+  -webkit-text-fill-color:var(--gold);
+  caret-color:var(--champagne);
+  color-scheme:dark;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus{
+  -webkit-text-fill-color:var(--gold) !important;
+  -webkit-box-shadow:0 0 0 1000px #000000 inset !important;
+  box-shadow:0 0 0 1000px #000000 inset !important;
+  transition:background-color 9999s ease-out 0s;
+}
+
+/* ---------- footer ---------- */
+footer{margin-top:clamp(56px,7vw,110px);padding-top:6px}
+.footer-wrap{max-width:1440px;margin:0 auto;padding:0 28px}
+.cols{
+  display:grid;
+  grid-template-columns:1.7fr 1.12fr 1.18fr 1fr .88fr;
+  gap:0;
+  padding:52px 0 0;
+  align-items:start;
+}
+.col{padding:0 22px;border-left:1px solid rgba(195,149,68,.42)}
+.col:first-child{border-left:none;padding-left:0}
+.col h3{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  color:var(--head);
+  font-size:clamp(.82rem,1.5vw,1.06rem);
+  letter-spacing:.13em;
+  text-indent:.13em;
+  text-align:center;
+  margin-bottom:0;
+}
+.col .rule{margin:12px auto 30px;max-width:100%}
+.col ul{list-style:none}
+.col li{margin-bottom:17px;line-height:1.3}
+.col a{
+  font-size:.98rem;
+  color:var(--gold);
+  transition:color .25s;
+  display:inline-block;
+}
+.col a:hover{color:var(--champagne)}
+
+.os-split{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.os-split ul:first-child{padding-right:16px}
+.os-split ul:last-child{padding-left:20px;border-left:1px solid rgba(195,149,68,.26)}
+
+.policies{
+  margin-top:44px;
+  padding:20px 0;
+  border-top:1px solid rgba(195,149,68,.42);
+  border-bottom:1px solid rgba(195,149,68,.42);
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:0 8px;
+}
+.policies a{font-size:.98rem;color:var(--gold);padding:0 4px;white-space:nowrap}
+.policies span{color:var(--dim);font-size:.62rem;padding:0 4px}
+
+.pay{padding:6px 0 8px}
+.pay img{display:block;width:100%;height:auto}
+
+.base{
+  padding:32px 0 48px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+}
+/* The monogram artwork carries its own ring, so the element supplies
+   no border of its own — two concentric circles is not the mark. */
+.mono{
+  width:64px;height:64px;
+  display:grid;place-items:center;
+}
+.mono img{width:100%;height:100%;display:block;object-fit:contain}
+.copy{font-size:1rem;color:var(--gold);padding:0 20px;border-left:1px solid rgba(195,149,68,.34)}
+.socials{display:flex;gap:10px;padding:0 4px}
+.soc{display:block;width:46px;height:46px;transition:opacity .25s,transform .25s}
+.soc img{display:block;width:100%;height:100%}
+.soc:hover{opacity:.78;transform:translateY(-1px)}
+.a11y{
+  display:flex;align-items:center;gap:12px;
+  padding-left:20px;border-left:1px solid rgba(195,149,68,.34);
+  background:none;border-top:none;border-right:none;border-bottom:none;
+  cursor:pointer;
+}
+.a11y .glyph{width:58px;height:58px;display:block}
+.a11y .glyph img{display:block;width:100%;height:100%}
+.a11y .lab{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;
+  color:var(--gold);
+  text-align:left;
+  line-height:1.25;
+  max-width:104px;
+}
+
+/* ---------- responsive ---------- */
+/* The footer keeps its five-column shape at every width.
+   Below the width it needs, the whole footer scrolls sideways
+   as one piece rather than stacking. */
+.footer-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.footer-wrap{min-width:1180px}
+
+@media(max-width:1240px){
+  .col{padding:0 16px}
+  .col a{font-size:.94rem}
+  .col li{margin-bottom:15px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .cta::after{animation:none}
+  *{transition:none !important}
+}
+
+/* ---------- share your thoughts (universal, below the footer) ---------- */
+.thoughts{
+  border-top:1px solid rgba(195,149,68,.28);
+  text-align:center;
+  padding:78px 28px 92px;
+}
+.thoughts .listening{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  color:var(--champagne);
+  font-size:clamp(2rem,5.4vw,3.1rem);
+  line-height:1.1;
+  margin-bottom:38px;
+}
+.thoughts .ask{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  color:var(--gold);
+  font-size:clamp(1.1rem,2.5vw,1.42rem);
+  line-height:1.5;
+  max-width:560px;
+  margin:0 auto 34px;
+}
+.thoughts textarea{
+  display:block;
+  width:100%;
+  max-width:820px;
+  margin:0 auto;
+  min-height:200px;
+  background:rgba(195,149,68,.022);
+  border:1px solid rgba(195,149,68,.58);
+  border-radius:22px;
+  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:1.14rem;
+  line-height:1.6;
+  padding:26px 28px;
+  resize:vertical;
+  transition:border-color .3s;
+}
+.thoughts textarea::placeholder{color:var(--dim)}
+.thoughts textarea:focus{outline:none;border-color:var(--champagne)}
+
+.thoughts input[type="email"]{
+  display:block;
+  width:100%;
+  max-width:820px;
+  margin:18px auto 0;
+  background:rgba(195,149,68,.022);
+  border:1px solid rgba(195,149,68,.42);
+  border-radius:999px;
+  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:1.08rem;
+  padding:17px 28px;
+  transition:border-color .3s;
+}
+.thoughts input[type="email"]::placeholder{color:var(--dim)}
+.thoughts input[type="email"]:focus{outline:none;border-color:var(--champagne)}
+
+.thoughts .open-btn{
+  font-family:'Cinzel',serif;font-weight:500;
+  font-size:clamp(.76rem,1.7vw,.92rem);
+  letter-spacing:.19em;text-indent:.19em;
+  color:var(--gold-light);
+  background:rgba(195,149,68,.030);
+  border:1px solid rgba(195,149,68,.6);
+  border-radius:999px;
+  padding:18px 44px;
+  cursor:pointer;
+  transition:border-color .3s,color .3s;
+}
+.thoughts .open-btn:hover{border-color:var(--champagne);color:var(--champagne)}
+.thoughts .panel{display:none;padding-top:34px}
+.thoughts .panel.open{display:block}
+.thoughts .open-btn.hidden{display:none}
+.thoughts .send{padding-top:34px}
+.thoughts .send button{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  font-size:clamp(.76rem,1.7vw,.92rem);
+  letter-spacing:.19em;
+  text-indent:.19em;
+  color:var(--gold-light);
+  background:rgba(195,149,68,.030);
+  border:1px solid rgba(195,149,68,.6);
+  border-radius:999px;
+  padding:18px 44px;
+  cursor:pointer;
+  transition:border-color .3s,color .3s;
+}
+.thoughts .send button:hover{border-color:var(--champagne);color:var(--champagne)}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* footer/thoughts scoping over the page's global .rule */
+footer .rule,.col .rule{width:100%;max-width:100%;margin:12px auto 30px;
+  background:linear-gradient(90deg,transparent,var(--dim) 18%,var(--dim) 82%,transparent);}
+footer .rule::after,.col .rule::after{width:7px;height:7px;margin:-3.5px 0 0 -3.5px;
+  background:var(--champagne);box-shadow:0 0 10px 3px rgba(232,200,122,.55);}
+.thoughts{max-width:none;}
+
+/* BACKGROUND TREATMENT ONLY */
+.baci-ambient{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 75% 85% at -18% 48%,rgba(195,149,68,.055),rgba(195,149,68,.024) 35%,transparent 74%),radial-gradient(ellipse 62% 72% at 116% 35%,rgba(195,149,68,.045),rgba(195,149,68,.019) 38%,transparent 74%)}
+body::before,body::after{content:"";position:fixed;pointer-events:none;z-index:0}
+body::before{width:72vw;height:72vw;left:-34vw;top:14vh;border-radius:50%;border:1px solid rgba(195,149,68,.10);box-shadow:0 0 145px rgba(195,149,68,.040),inset 0 0 165px rgba(195,149,68,.028);transform:rotate(-9deg)}
+body::after{width:56vw;height:1px;right:-8vw;top:46vh;background:linear-gradient(90deg,transparent,rgba(232,200,122,.052),transparent);box-shadow:0 0 58px 2px rgba(195,149,68,.026);transform:rotate(-17deg)}
+.baci-orbit{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}.baci-orbit::before{content:"";position:absolute;width:980px;height:420px;right:-530px;top:19vh;border:1px solid rgba(195,149,68,.082);border-radius:50%;transform:rotate(24deg);box-shadow:0 0 115px rgba(195,149,68,.026)}.baci-orbit::after{content:none}
+input,textarea,button{
+  -webkit-appearance:none;
+  appearance:none;
+}
+input,textarea{
+  background-color:transparent;
+  -webkit-text-fill-color:var(--gold);
+  caret-color:var(--champagne);
+  color-scheme:dark;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus{
+  -webkit-text-fill-color:var(--gold) !important;
+  -webkit-box-shadow:0 0 0 1000px #000000 inset !important;
+  box-shadow:0 0 0 1000px #000000 inset !important;
+  transition:background-color 9999s ease-out 0s;
+}
+
+/* content sits above the ambient layers */
+main,header,footer,section,.wrap,.section,.hero,.thoughts{position:relative;z-index:1}
+.baci-ambient,.baci-orbit{z-index:0}
+
+/* ═══ ACCESSIBILITY ═══
+   Two things only: a light mode, and text size. Both work by
+   swapping variables on the root, so nothing is restyled twice. */
+
+html{font-size:calc(100% * var(--text-scale,1))}
+
+html[data-view="light"]{
+  --bg:#F7F4EE;
+  --gold:#4A3616;
+  --gold-light:#3A2A10;
+  --dim:#6B573A;
+  --champagne:#7A5A18;
+  --closing:#4A3616;
+  --head:#3A2A10;
+  --metal:#3A2A10;
+}
+html[data-view="light"] body{background:var(--bg);color:var(--gold)}
+html[data-view="light"] .baci-ambient,
+html[data-view="light"] .baci-orbit,
+html[data-view="light"] body::before,
+html[data-view="light"] body::after{display:none}
+html[data-view="light"] img[src$="baci-wordmark.webp"],
+html[data-view="light"] img[src$="hero-shell.webp"],
+html[data-view="light"] img[src$="doctrine.webp"],
+html[data-view="light"] img[src$="dashboard.webp"],
+html[data-view="light"] .pay img,
+html[data-view="light"] .soc img,
+html[data-view="light"] .a11y .glyph img{
+  filter:invert(1) hue-rotate(180deg) saturate(.55) brightness(.85);
+}
+html[data-view="light"] .mono,
+html[data-view="light"] .cnode__circle,
+html[data-view="light"] .cring__centre{background:var(--bg)}
+
+/* the panel */
+.a11y-panel{
+  position:fixed;right:20px;bottom:20px;z-index:60;
+  width:min(300px,calc(100vw - 40px));
+  background:#000;
+  border:1px solid rgba(195,149,68,.5);
+  border-radius:16px;
+  padding:22px 22px 20px;
+  display:none;
+}
+html[data-view="light"] .a11y-panel{background:#FFFDF8;border-color:rgba(74,54,22,.35)}
+.a11y-panel.open{display:block}
+.a11y-panel h4{
+  font-family:'Cinzel',Georgia,serif;font-weight:500;font-size:.66rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin:0 0 18px;
+}
+.a11y-row{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}
+.a11y-row:last-of-type{margin-bottom:0}
+.a11y-row span{font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;color:var(--gold)}
+.a11y-opt{
+  font-family:'Cinzel',Georgia,serif;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--dim);background:none;border:1px solid rgba(195,149,68,.4);border-radius:999px;
+  padding:9px 15px;cursor:pointer;transition:color .3s,border-color .3s;
+}
+.a11y-opt[aria-pressed="true"]{color:var(--gold-light);border-color:rgba(207,162,78,.75)}
+.a11y-steps{display:flex;gap:8px}
+.a11y-step{
+  width:38px;height:38px;border-radius:50%;cursor:pointer;
+  background:none;border:1px solid rgba(195,149,68,.4);color:var(--gold-light);
+  font-family:'Cinzel',Georgia,serif;font-size:.9rem;line-height:1;
+  transition:border-color .3s,color .3s;
+}
+.a11y-step:hover{border-color:rgba(232,200,122,.7)}
+.a11y-close{
+  margin-top:20px;width:100%;background:none;border:0;cursor:pointer;
+  font-family:'Cinzel',Georgia,serif;font-size:.6rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--dim);padding:8px 0 0;
+}
+
+/* ═══ GLOW PASS ═══
+   Gold on black goes flat without a little light behind it. This adds
+   depth without brightening the palette: nothing changes colour, the
+   type just stops sitting dead on the background. Light mode gets none
+   of it, where glow would only look like a printing fault. */
+
+html:not([data-view="light"]) .page-head h1,
+html:not([data-view="light"]) .hero h1,
+html:not([data-view="light"]) .heading,
+html:not([data-view="light"]) .access__title,
+html:not([data-view="light"]) .drown__head,
+html:not([data-view="light"]) .reality__title,
+html:not([data-view="light"]) .doctrine__title,
+html:not([data-view="light"]) .bos__title,
+html:not([data-view="light"]) .title-stack .t1{
+  text-shadow:0 0 18px rgba(201,159,94,.17), 0 0 40px rgba(195,149,68,.07);
+}
+
+html:not([data-view="light"]) .band h2,
+html:not([data-view="light"]) .section-head h2,
+html:not([data-view="light"]) .enquiry h2,
+html:not([data-view="light"]) .doc h2,
+html:not([data-view="light"]) .mode__name,
+html:not([data-view="light"]) .control h2{
+  text-shadow:0 0 14px rgba(201,159,94,.16);
+}
+
+/* the closing lines carry a touch more, since they are the last thing read */
+html:not([data-view="light"]) .bos__closer,
+html:not([data-view="light"]) .thoughts .listening,
+html:not([data-view="light"]) .distinction p,
+html:not([data-view="light"]) .control .closing,
+html:not([data-view="light"]) .engine-close,
+html:not([data-view="light"]) .access__ready{
+  text-shadow:0 0 20px rgba(207,162,78,.22);
+}
+
+/* the light points get a cleaner falloff rather than a bigger blur */
+html:not([data-view="light"]) .rule::after,
+html:not([data-view="light"]) .acard__rule::after,
+html:not([data-view="light"]) .bcard__rule::after,
+html:not([data-view="light"]) .col .rule::after{
+  box-shadow:0 0 6px 1px rgba(232,200,122,.55),
+             0 0 16px 4px rgba(232,200,122,.20);
+}
+
+/* the hairlines lift off the black a fraction */
+html:not([data-view="light"]) .rule,
+html:not([data-view="light"]) .cta__conduit,
+html:not([data-view="light"]) .cta-line{
+  box-shadow:0 0 12px rgba(195,149,68,.07);
+}
+
+/* cards: resting glow, stronger on touch */
+html:not([data-view="light"]) .acard,
+html:not([data-view="light"]) .bcard,
+html:not([data-view="light"]) .hcard,
+html:not([data-view="light"]) .tier,
+html:not([data-view="light"]) .dev-mode{
+  box-shadow:inset 0 0 40px rgba(195,149,68,.022);
+  transition:border-color .4s ease,transform .4s ease,box-shadow .4s ease;
+}
+html:not([data-view="light"]) .acard:hover,
+html:not([data-view="light"]) .bcard:hover,
+html:not([data-view="light"]) .dev-mode:hover,
+html:not([data-view="light"]) .dev-mode.is-on{
+  box-shadow:inset 0 0 44px rgba(195,149,68,.05),
+             0 0 26px rgba(195,149,68,.07);
+}
+
+/* the wordmark and the monogram sit in a faint pool of light */
+html:not([data-view="light"]) .masthead img,
+html:not([data-view="light"]) .mono{
+  filter:drop-shadow(0 0 18px rgba(195,149,68,.14));
+}
+
+/* buttons answer to touch */
+html:not([data-view="light"]) .cta:hover .cta__text,
+html:not([data-view="light"]) .thoughts .open-btn:hover,
+html:not([data-view="light"]) .thoughts .send button:hover,
+html:not([data-view="light"]) .role .apply:hover,
+html:not([data-view="light"]) .obra6-btn:hover{
+  text-shadow:0 0 14px rgba(232,200,122,.16);
+}
+
+/* the ring's active node reads as lit rather than merely larger */
+html:not([data-view="light"]) .cnode.is-active .cnode__circle,
+html:not([data-view="light"]) .cnode.is-focus .cnode__circle{
+  box-shadow:0 0 22px 3px rgba(195,149,68,.20),
+             inset 0 0 18px rgba(195,149,68,.05);
+}
+
+@media(prefers-reduced-motion:reduce){
+  html:not([data-view="light"]) .acard,
+  html:not([data-view="light"]) .bcard,
+  html:not([data-view="light"]) .dev-mode{transition:none}
+}
+
+
+/* ── top nav (the homepage bar, same markup and geometry) ─ */
+.topnav{position:relative;z-index:3}
+.topnav__stage{position:relative;width:min(1536px,100vw);aspect-ratio:1536/125;margin:0 auto}
+.topnav__img{display:block;width:100%;height:100%;object-fit:contain;position:relative;z-index:0}
+.topnav__layer{position:absolute;top:0;left:0;width:400%;height:400%;
+  transform:scale(.25);transform-origin:0 0;container-type:inline-size}
+.hx{position:absolute;margin:0;z-index:2}
+.hot{position:absolute;background:none;border:0;padding:0;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;display:block;text-decoration:none;z-index:3}
+.hot:focus-visible{outline:1px solid rgba(232,200,122,.7);outline-offset:2px}
+.hnav{font-family:'Cinzel',Georgia,serif;font-size:1.04cqw;letter-spacing:.07em;
+  color:var(--gold);text-transform:uppercase;text-align:center;white-space:nowrap;
+  display:flex;align-items:center;justify-content:center;width:100%;height:100%;
+  transition:color .4s ease}
+.hot:hover .hnav,.hot:focus-visible .hnav{color:var(--champagne)}
+.hsub{font-family:'Cinzel',Georgia,serif;font-size:.78cqw;letter-spacing:.1em;
+  color:var(--gold);text-transform:uppercase;line-height:1.35}
+.hsearchlabel{justify-content:flex-start;padding-left:4.5cqw}
+.hmk-img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transform:scale(1.7)}
+
+/* ── industry page ─────────────────────────── */
+.hero{padding:clamp(34px,5.4vh,64px) 0 clamp(10px,2vh,22px);text-align:center}
 .eyebrow{font-family:'Cinzel',serif;text-transform:uppercase;
   font-size:clamp(10px,1.1vw,12px);letter-spacing:.34em;color:var(--head);margin:0 0 clamp(22px,3.4vh,34px)}
-h1{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
+.hero h1{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(34px,6.4vw,74px);letter-spacing:.12em;line-height:1.08;
   color:var(--gold-light);margin:0 0 clamp(30px,4.6vh,48px)}
 .lede{max-width:var(--measure);margin:0 auto;font-size:clamp(18px,1.45vw,22px);line-height:1.68;color:var(--gold)}
-
 .scope{margin:clamp(40px,6vh,68px) auto 0;font-family:'Cinzel',serif;
   font-size:clamp(9px,1vw,11px);letter-spacing:.3em;color:var(--dim);text-transform:uppercase}
 
-/* ── sub-sectors ──────────────────────────── */
-.subs{padding:clamp(56px,9vh,104px) 0 clamp(20px,3vh,32px)}
-.subs h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
-  font-size:clamp(11px,1.15vw,13px);letter-spacing:.34em;color:var(--head);
-  text-align:center;margin:0 0 clamp(44px,6.5vh,76px)}
-.grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,5.4vh,60px) clamp(40px,4.5vw,84px)}
+.intro-drop{position:relative;z-index:1;max-height:0;opacity:0;overflow:hidden;
+  transition:max-height .6s cubic-bezier(.4,0,.2,1),opacity .45s ease}
+.intro-drop.open{max-height:2200px;opacity:1}
+.intro-drop .close{padding-bottom:0}
+@media(prefers-reduced-motion:reduce){
+  .intro-drop{transition:none}
+}
+
+.subs{padding:clamp(56px,8vh,96px) 0 clamp(32px,4vh,48px)}
+.grid{display:grid;grid-template-columns:1fr;gap:clamp(56px,8vh,92px) clamp(48px,5.5vw,104px)}
 @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
-.sub__n{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.2em;color:var(--dim);display:block;margin-bottom:12px}
 .sub__h{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   font-size:clamp(14px,1.45vw,18px);letter-spacing:.15em;color:var(--gold-light);
-  margin:0 0 16px;line-height:1.3}
+  margin:0 0 18px;line-height:1.3}
 .sub__b{margin:0;color:var(--gold);font-size:clamp(16px,1.15vw,18px);line-height:1.66}
 
-/* ── explorer link + CTA ──────────────────── */
-.close{padding:clamp(60px,9vh,108px) 0 clamp(70px,10vh,120px);text-align:center}
-.close p{max-width:var(--measure);margin:0 auto clamp(40px,5.6vh,58px)}
-.explorer{display:inline-block;font-family:'Cinzel',serif;text-transform:uppercase;
-  font-size:clamp(10px,1.05vw,12px);letter-spacing:.28em;color:var(--dim);
-  border-bottom:1px solid var(--rule-soft);padding-bottom:9px;margin-bottom:clamp(46px,6.4vh,70px)}
-.explorer:hover{color:var(--gold)}
+/* ── industry carousel ─────────────────────── */
+.carousel{position:relative;z-index:1;padding:clamp(20px,3.4vh,38px) 0 clamp(12px,2vh,22px);
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);
+  mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
+.carousel__track{list-style:none;margin:0;padding:0 clamp(16px,4vw,64px);
+  display:flex;gap:clamp(7px,1.05vw,16px);
+  overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;
+  -webkit-overflow-scrolling:touch}
+.carousel__track::-webkit-scrollbar{display:none}
+.carousel__track li{flex:0 0 clamp(53px,5.05vw,68px)}
+.carousel__track a{position:relative;display:grid;place-items:center;aspect-ratio:1;
+  background:url("data:image/webp;base64,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") center/contain no-repeat;
+  transition:transform .45s ease,filter .45s ease}
+.carousel__track a::after{content:"";position:absolute;inset:0;border-radius:50%;pointer-events:none;
+  box-shadow:inset 0 -1px 2px -.3px rgba(240,206,132,.72),
+             0 6px 16px -8px rgba(232,200,122,.34);
+  transition:box-shadow .45s ease}
+.carousel__track a:hover,.carousel__track a:focus-visible{transform:translateY(-4px);filter:brightness(1.14)}
+.carousel__track a:hover::after{box-shadow:inset 0 -1.4px 3px -.3px rgba(245,215,150,.9),
+             0 8px 20px -8px rgba(232,200,122,.5)}
+.carousel__track .is-here a::after{box-shadow:inset 0 -1.4px 3px -.3px rgba(245,215,150,.95),
+             0 0 0 1px rgba(232,200,122,.30),0 8px 20px -8px rgba(232,200,122,.5)}
+.orb__label{max-width:88%;text-align:center;
+  font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;
+  font-size:clamp(8px,.79vw,10px);line-height:1.18;
+  background:linear-gradient(180deg,#F3DDA6 0%,#E2BE79 42%,#BE8E3E 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 5px rgba(232,200,122,.28))}
+@media(prefers-contrast:more){
+  .orb__label{background:none;color:var(--champagne);filter:none}
+}
 
+.close{padding:clamp(34px,5vh,60px) 0 clamp(20px,3vh,36px);text-align:center}
 .cta{position:relative;display:inline-block;font-family:'Cinzel',serif;
   text-transform:uppercase;font-size:clamp(12px,1.35vw,16px);letter-spacing:.24em;
   color:var(--gold-light);padding-bottom:16px}
@@ -170,246 +650,189 @@ h1{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
   92%{transform:translateX(calc(var(--travel,200px) * .92)) scale(1)}
   100%{transform:translateX(var(--travel,200px)) scale(.92)}
 }
-
-/* ── footer ───────────────────────────────── */
-footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
-.cols{display:grid;grid-template-columns:1fr;align-items:start;
-  gap:clamp(40px,5vh,52px) clamp(28px,3vw,52px)}
-@media(min-width:760px){.cols{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1080px){.cols{grid-template-columns:2fr 1fr 1fr 1fr 1fr}}
-.col{position:relative}
-@media(min-width:1080px){
-  .col + .col{padding-left:clamp(20px,2.2vw,38px)}
-  .col + .col::before{content:"";position:absolute;left:0;top:4px;bottom:6px;width:1px;background:var(--rule-soft)}
-}
-.col h3{font-family:'Cinzel',serif;font-weight:500;text-transform:uppercase;
-  font-size:clamp(10px,1vw,12px);letter-spacing:.26em;color:var(--head);
-  margin:0 0 22px;padding-bottom:11px;position:relative}
-.col h3 .lp{position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--rule-soft)}
-.col h3 .pt{position:absolute;bottom:-1px;left:0;width:3px;height:3px;border-radius:50%;
-  background:var(--champagne);box-shadow:0 0 7px 2px rgba(232,200,122,.4);
-  animation:fTravel 6s cubic-bezier(.42,0,.58,1) infinite}
-@keyframes fTravel{0%{transform:translateX(0) scale(.92)}8%{transform:translateX(8%) scale(1)}92%{transform:translateX(92%) scale(1)}100%{transform:translateX(calc(100% - 3px)) scale(.92)}}
-.col ul{list-style:none;margin:0;padding:0}
-.col li{margin:0 0 11px;font-size:clamp(15px,1.05vw,17px);color:var(--gold);line-height:1.45}
-.col li a:hover{color:var(--champagne)}
-.os{display:grid;grid-template-columns:1fr;gap:0 clamp(18px,2vw,34px)}
-@media(min-width:520px){.os{grid-template-columns:1fr 1fr}}
-.os .second{position:relative}
-@media(min-width:520px){
-  .os .second{padding-left:clamp(14px,1.6vw,26px)}
-  .os .second::before{content:"";position:absolute;left:0;top:2px;bottom:6px;width:1px;background:rgba(196,149,68,.07)}
-}
-
-.policies{margin-top:clamp(50px,7vh,76px);padding-top:clamp(26px,3.4vh,36px);border-top:1px solid var(--rule-soft);
-  display:flex;flex-wrap:wrap;gap:10px clamp(14px,1.8vw,26px);justify-content:center}
-.policies a{font-family:'Cinzel',serif;text-transform:uppercase;font-size:clamp(8.5px,.88vw,10px);
-  letter-spacing:.2em;color:var(--dim)}
-.policies a:hover{color:var(--gold)}
-
-.pay{margin-top:clamp(26px,3.4vh,36px);padding-top:clamp(22px,3vh,30px);border-top:1px solid var(--rule-soft);
-  display:flex;flex-wrap:wrap;gap:9px clamp(12px,1.5vw,22px);justify-content:center}
-.pay span{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.16em;color:var(--dim);
-  text-transform:uppercase;border:1px dashed var(--rule-soft);padding:5px 9px}
-
-.base{margin-top:clamp(30px,4vh,42px);padding:clamp(22px,3vh,30px) 0 clamp(34px,4.6vh,48px);
-  border-top:1px solid var(--rule-soft);
-  display:flex;flex-wrap:wrap;align-items:center;gap:18px clamp(16px,2.4vw,34px);justify-content:space-between}
-.base .id{display:flex;align-items:center;gap:14px}
-.base .mono{width:26px;height:26px;border:1px dashed var(--rule);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:11px;color:var(--dim)}
-.base .cp{font-size:15px;color:var(--dim)}
-.socials{display:flex;flex-wrap:wrap;gap:8px clamp(9px,1.1vw,15px)}
-.socials span{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:.14em;color:var(--dim);
-  text-transform:uppercase;border:1px dashed var(--rule-soft);padding:4px 7px}
-.a11y{display:flex;align-items:center;gap:10px;font-family:'Cinzel',serif;
-  font-size:clamp(8.5px,.9vw,10px);letter-spacing:.18em;color:var(--dim);text-transform:uppercase;
-  background:none;border:0;cursor:pointer;font-family:'Cinzel',serif}
-.a11y:hover{color:var(--gold)}
-.a11y svg{width:26px;height:26px;flex:0 0 26px}
-
-/* ── share your thoughts ──────────────────── */
-.listen{border-top:1px solid var(--rule-soft);padding:clamp(64px,9vh,110px) 0 clamp(72px,10vh,120px);text-align:center}
-.listen h2{font-family:'Cinzel',serif;font-weight:400;
-  font-size:clamp(28px,4.4vw,52px);letter-spacing:.06em;color:var(--champagne);
-  margin:0 0 clamp(32px,4.4vh,46px)}
-.pill{display:inline-block;font-family:'Cinzel',serif;text-transform:uppercase;
-  font-size:clamp(10px,1.05vw,12px);letter-spacing:.24em;color:var(--gold-light);
-  border:1px solid var(--rule);border-radius:999px;padding:15px clamp(24px,3vw,42px);
-  background:none;cursor:pointer}
-.pill:hover{border-color:var(--gold);color:var(--champagne)}
-.box{display:none;max-width:var(--measure);margin:0 auto;text-align:left}
-.box.open{display:block}
-.box textarea,.box input{width:100%;background:#000;color:var(--gold);
-  border:1px solid var(--rule);border-radius:18px;
-  font-family:'Cormorant Garamond',Georgia,serif;font-size:17px;
-  padding:18px 20px;margin-bottom:16px;resize:vertical}
-.box textarea{min-height:170px}
-.box textarea::placeholder,.box input::placeholder{color:var(--dim)}
-.box textarea:focus,.box input:focus{outline:none;border-color:var(--gold)}
-.note{font-size:15px;color:var(--dim);margin:2px 0 22px;line-height:1.5}
-.box .pill{display:block;width:100%;margin-top:4px}
-
-@media(prefers-reduced-motion:reduce){
-  .cta .dot,.col h3 .pt{animation:none;transform:translateX(0)}
-}
-@media(prefers-contrast:more){
-  :root{--dim:var(--gold);--rule:rgba(196,149,68,.4)}
-}
-/* OTHERS-CSS */
-.others{border-top:1px solid var(--rule-soft);margin-top:clamp(52px,8vh,96px);
-  padding:clamp(44px,6.5vh,78px) 0 0;text-align:center}
-.others h2{font-family:'Cinzel',serif;font-weight:400;text-transform:uppercase;
-  font-size:clamp(10px,1.05vw,12px);letter-spacing:.32em;color:var(--head);
-  margin:0 0 clamp(24px,3.4vh,34px)}
-.otherlist{display:flex;flex-wrap:wrap;justify-content:center;
-  gap:13px clamp(16px,2vw,30px);max-width:880px;margin:0 auto}
-.otherlist a{font-family:'Cinzel',serif;text-transform:uppercase;
-  font-size:clamp(9.5px,1vw,11.5px);letter-spacing:.2em;color:var(--dim);
-  padding-bottom:5px;border-bottom:1px solid transparent}
-.otherlist a:hover{color:var(--gold);border-bottom-color:var(--rule-soft)}
-
+@media(prefers-reduced-motion:reduce){.cta .dot{animation:none;transform:translateX(0)}}
 </style>
 </head>
 <body>
+<div class="baci-ambient" aria-hidden="true"></div><div class="baci-orbit" aria-hidden="true"></div>
+<header class="topnav">
+  <div class="topnav__stage">
+    <img class="topnav__img" src="data:image/webp;base64,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" alt="" aria-hidden="true" width="1536" height="125">
+    <div class="topnav__layer">
 
-<div class="shell">
+      <a class="hot" href="index.html" aria-label="BACI home" style="left:1.43%;top:18.37%;width:12.17%;height:52.80%">
+        <img class="hmk-img" src="https://bacihq.com/baci-wordmark.webp" alt="BACI">
+      </a>
+      <div class="hx hsub" style="left:13.9%;top:32.92%;width:14.6%" aria-hidden="true">Business Acquisition<br>&amp; Conversion Intelligence</div>
 
-  <header class="masthead">
-    <a href="index.html" aria-label="BACI home"><span class="mark">WORDMARK</span></a>
-  </header>
+      <a class="hot" href="index.html#global-reach" style="left:33.21%;top:36.02%;width:5.86%;height:16.79%"><span class="hnav">Discover</span></a>
+      <a class="hot" href="modes.html" style="left:43.43%;top:36.02%;width:5.86%;height:16.79%"><span class="hnav">Modes</span></a>
+      <a class="hot" href="index.html#industry" style="left:53.65%;top:36.02%;width:5.79%;height:16.79%"><span class="hnav">Solutions</span></a>
+      <a class="hot" href="index.html#drowning" style="left:63.81%;top:36.02%;width:5.79%;height:16.79%"><span class="hnav">Insights</span></a>
+      <a class="hot" href="index.html#access" style="left:73.90%;top:36.02%;width:5.86%;height:16.79%"><span class="hnav">Access</span></a>
+      <a class="hot" href="index.html#industry" aria-label="Search industries" style="left:80.47%;top:22.39%;width:18.68%;height:46.42%">
+        <span class="hnav hsearchlabel">Search industries</span>
+      </a>
+
+    </div>
+  </div>
+</header>
+
+<section class="carousel" aria-label="Industries">
+  <ul class="carousel__track" id="orbTrack">
+      <li><a href="industry-healthcare.html"><span class="orb__label">Healthcare</span></a></li>
+      <li><a href="industry-energy.html"><span class="orb__label">Energy</span></a></li>
+      <li><a href="industry-construction.html"><span class="orb__label">Construction</span></a></li>
+      <li><a href="industry-financial-services.html"><span class="orb__label">Financial Services</span></a></li>
+      <li><a href="industry-technology.html"><span class="orb__label">Technology</span></a></li>
+      <li class="is-here"><a href="industry-real-estate.html" aria-current="page"><span class="orb__label">Real Estate</span></a></li>
+      <li><a href="industry-education.html"><span class="orb__label">Education</span></a></li>
+      <li><a href="industry-hospitality.html"><span class="orb__label">Hospitality</span></a></li>
+      <li><a href="industry-retail.html"><span class="orb__label">Retail</span></a></li>
+      <li><a href="industry-legal.html"><span class="orb__label">Legal</span></a></li>
+      <li><a href="industry-agriculture.html"><span class="orb__label">Agriculture</span></a></li>
+      <li><a href="industry-logistics.html"><span class="orb__label">Logistics</span></a></li>
+      <li><a href="industry-social-media.html"><span class="orb__label">Social Media</span></a></li>
+      <li><a href="industry-human-resources.html"><span class="orb__label">Human Resources</span></a></li>
+      <li><a href="industry-skincare-beauty.html"><span class="orb__label">Skincare &amp; Beauty</span></a></li>
+  </ul>
+</section>
+
+<div class="intro-drop" id="introDrop" aria-hidden="true">
+  <div class="wrap">
+    <p class="lede">Real estate intelligence follows the decisions that commit property and capital, from planning and land assembly to funding, letting, transaction and lease event. BACI separates what has been consented and financed from what has only been proposed, connecting both to the owners, developers, occupiers, lenders and advisers behind them, so businesses can see which schemes will actually proceed and which assets are approaching a decision.</p>
+    <p class="scope"><span data-stat="countries">181</span> Countries · <span data-stat="regions">9</span> Regions · 12 Sub-sectors</p>
+    <div class="close">
+      <a class="cta" href="index.html#access"><span class="c1">C</span>ONNECT YOUR BUSINES<span class="c2">S</span><span class="line"></span><span class="dot"></span></a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
 
   <section class="hero">
     <p class="eyebrow">Industry Intelligence</p>
     <h1>Real Estate</h1>
     <p class="lede">Real estate intelligence follows the decisions that commit property and capital, from planning and land assembly to funding, letting, transaction and lease event. BACI separates what has been consented and financed from what has only been proposed, connecting both to the owners, developers, occupiers, lenders and advisers behind them, so businesses can see which schemes will actually proceed and which assets are approaching a decision.</p>
-    <p class="scope">181 Countries · 9 Regions · 12 Sub-sectors</p>
+    <p class="scope"><span data-stat="countries">181</span> Countries · <span data-stat="regions">9</span> Regions · 12 Sub-sectors</p>
+  </section>
+
+  <section class="close">
+    <a class="cta" href="index.html#access"><span class="c1">C</span>ONNECT YOUR BUSINES<span class="c2">S</span><span class="line"></span><span class="dot"></span></a>
   </section>
 
   <section class="subs">
-    <h2>Sub-sectors</h2>
     <div class="grid">
       <article>
-        <span class="sub__n">01</span>
         <h3 class="sub__h">Residential Development</h3>
         <p class="sub__b">Planning consents, land acquisitions, development finance and recorded starts are dated public records naming the developer. Sales rates and pricing move earlier and decide whether a consented scheme actually proceeds. BACI reads both, because consent is permission rather than commitment and a great many approved schemes sit dormant through a soft market, and it identifies the developers whose funding and sales position mean they'll build, which is what separates a real supply opportunity from a paper one.</p>
       </article>
 
       <article>
-        <span class="sub__n">02</span>
         <h3 class="sub__h">Commercial Property</h3>
         <p class="sub__b">Transactions, lettings, refinancings and planning decisions are recorded, dated and attributable to named parties. Yields, vacancy and rental growth move earlier and describe conditions rather than commitments. BACI connects the two, since a refinancing coming due in a repriced market forces a decision that nothing in the transaction record has yet shown, and identifies the owners, lenders and occupiers whose positions are about to require action rather than those merely holding assets.</p>
       </article>
 
       <article>
-        <span class="sub__n">03</span>
         <h3 class="sub__h">Industrial &amp; Logistics Real Estate</h3>
         <p class="sub__b">Pre-lets, occupier requirements, land assembly and consents for large units are dated and name the occupier or developer. E-commerce volumes and supply chain reconfiguration move earlier and say where demand will surface. BACI pays close attention to occupier requirement notices, because in this sector demand is often published as a specification before a site is found, and matches those requirements to the land, buildings and development partners capable of meeting them.</p>
       </article>
 
       <article>
-        <span class="sub__n">04</span>
         <h3 class="sub__h">Property Management</h3>
         <p class="sub__b">Mandate awards, portfolio transfers and service contract tenders are dated and name the incoming manager. Ownership changes and portfolio growth come first, and they're the reliable predictor, since a building that changes hands is a management contract that's about to be reviewed. BACI tracks transactions as the leading indicator of management opportunity and tender cycles as the confirmation, so managers approach an owner while the appointment is still open rather than after the handover.</p>
       </article>
 
       <article>
-        <span class="sub__n">05</span>
         <h3 class="sub__h">REITs &amp; Investment</h3>
         <p class="sub__b">The constraint here isn't finding capital, it's fitting its mandate. A listed or institutional vehicle publishes what it's permitted to buy: sector, geography, lot size, risk profile, leverage limits, and those terms decide everything before a single asset is discussed. BACI reads the published mandates alongside acquisition activity, fundraising and disposals, so an approach is made to the vehicles whose current mandate actually admits the opportunity rather than to whoever happens to be visibly active.</p>
       </article>
 
       <article>
-        <span class="sub__n">06</span>
         <h3 class="sub__h">PropTech</h3>
         <p class="sub__b">Platform selections by owners and managers, enterprise agreements and portfolio-wide rollouts are dated commitments. Funding rounds and pilot programmes are softer, and this sector runs a great many pilots that never convert into a portfolio contract. BACI separates a pilot from an adoption, because one is a reference and the other is revenue, and identifies the owners and managers whose portfolio size and technology position make a full rollout realistic.</p>
       </article>
 
       <article>
-        <span class="sub__n">07</span>
         <h3 class="sub__h">Hospitality Real Estate</h3>
         <p class="sub__b">Hotel transactions, management and franchise agreements, brand conversions and development approvals are recorded and name the operator. Occupancy, rate and arrivals data move earlier and say where trading is recovering or deteriorating. BACI reads trading data as the leading signal of a transaction or a conversion, since underperformance is what usually precedes both, and identifies the owners, operators and brands whose position makes an agreement or a sale likely within a realistic horizon.</p>
       </article>
 
       <article>
-        <span class="sub__n">08</span>
         <h3 class="sub__h">Mixed-Use Development</h3>
         <p class="sub__b">Masterplan approvals, phasing consents, development agreements and anchor commitments are dated and name the parties. Consultation stages and early masterplanning sit years upstream. BACI follows the phasing in particular, because a mixed-use scheme is really several projects on one site with different timings, funders and contractors, and a business treating it as a single opportunity will approach at the wrong moment for most of the phases it could have worked on.</p>
       </article>
 
       <article>
-        <span class="sub__n">09</span>
         <h3 class="sub__h">Land &amp; Zoning</h3>
         <p class="sub__b">This is the one category where the asset is a permission rather than a building. Value is created the moment a designation changes, a plan is adopted or a consent is granted, and it's created for whoever holds the land at that instant. BACI follows plan-making, designation changes, call-for-sites processes and consent decisions, because the interval between a policy direction becoming visible and a permission being granted is the only period in which land can still be assembled at pre-consent prices.</p>
       </article>
 
       <article>
-        <span class="sub__n">10</span>
         <h3 class="sub__h">Facilities &amp; Asset Management</h3>
         <p class="sub__b">Contract awards, renewal windows and approved capital plans are dated and attributable to a named estate. Occupancy changes and estate reviews come earlier and indicate where a portfolio is about to be reconsidered. BACI works backwards from renewal dates, since this is largely a re-tendering market and relationships are built long before a tender issues, and connects estate reviews to the capital and service requirements they tend to produce once a decision is taken.</p>
       </article>
 
       <article>
-        <span class="sub__n">11</span>
         <h3 class="sub__h">Retail Property</h3>
         <p class="sub__b">Lettings, lease events, repurposing consents and transactions are recorded and named. Footfall and retailer trading health move earlier, and in this sector they move decisively, since a struggling anchor tenant reshapes a scheme's prospects well before any lease event registers it. BACI tracks occupier health alongside the lease calendar, so owners, investors and advisors can see which assets face a vacancy they'll need to solve and which are candidates for a change of use.</p>
       </article>
 
       <article>
-        <span class="sub__n">12</span>
         <h3 class="sub__h">Affordable Housing</h3>
         <p class="sub__b">Demand here is created by policy rather than by the market. Government programmes, grant allocations, registered provider funding rounds and planning obligations decide what gets built, on published timetables and against published criteria. BACI follows those allocations and obligations, matching developers, contractors and suppliers to the programmes whose eligibility rules they actually satisfy, because in this sector qualifying for a funding route matters more than commercial competitiveness and it's a slower thing to acquire.</p>
       </article>
     </div>
   </section>
 
-  <section class="others"><h2>Other industries</h2><nav class="otherlist"><a href="industry-healthcare.html">Healthcare</a><a href="industry-energy.html">Energy</a><a href="industry-construction.html">Construction</a><a href="industry-financial-services.html">Financial Services</a><a href="industry-technology.html">Technology</a><a href="industry-education.html">Education</a><a href="industry-hospitality.html">Hospitality</a><a href="industry-retail.html">Retail</a><a href="industry-legal.html">Legal</a><a href="industry-agriculture.html">Agriculture</a><a href="industry-logistics.html">Logistics</a><a href="industry-social-media.html">Social Media</a><a href="industry-human-resources.html">Human Resources</a><a href="industry-skincare-beauty.html">Skincare &amp; Beauty</a></nav></section>
-
   <section class="close">
-    <p>Every sub-sector runs the same way across 181 countries and 9 regions. Choose a market and an objective, and the intelligence reshapes around it.</p>
-    <a class="explorer" href="index.html#industry">Open the industry explorer</a>
-    <br>
-    <a class="cta" href="index.html#access" id="cta"><span id="c1">C</span>ONNECT YOUR BUSINES<span id="c2">S</span><span class="line"></span><span class="dot" id="dot"></span></a>
+    <a class="cta" href="index.html#access"><span class="c1">C</span>ONNECT YOUR BUSINES<span class="c2">S</span><span class="line"></span><span class="dot"></span></a>
   </section>
+</div>
 
-  <footer>
+<footer>
+   <div class="footer-scroll">
+   <div class="footer-wrap">
     <div class="cols">
 
       <div class="col">
-        <h3>Business OS<span class="lp"></span><span class="pt"></span></h3>
-        <div class="os">
+        <h3>BUSINESS OS</h3>
+        <div class="rule"></div>
+        <div class="os-split">
           <ul>
-            <li><a href="#">Business Planning</a></li>
-            <li><a href="#">Financial Planning</a></li>
-            <li><a href="#">Marketing Planning</a></li>
-            <li><a href="#">Procurement</a></li>
-            <li><a href="#">Grants</a></li>
-            <li><a href="#">Funding &amp; Capital Strategy</a></li>
+            <li><a href="business-planning.html">Business Planning</a></li>
+            <li><a href="financial-planning.html">Financial Planning</a></li>
+            <li><a href="marketing-planning.html">Marketing Planning</a></li>
+            <li><a href="procurement.html">Procurement</a></li>
+            <li><a href="grants.html">Grants</a></li>
+            <li><a href="funding-capital-strategy.html">Funding &amp; Capital Strategy</a></li>
           </ul>
-          <ul class="second">
-            <li><a href="#">Investors</a></li>
-            <li><a href="#">Market Entry</a></li>
-            <li><a href="#">Growth Strategy</a></li>
-            <li><a href="#">Forecasting</a></li>
-            <li><a href="#">Executive Intelligence</a></li>
-            <li><a href="#">Go-to-Market</a></li>
+          <ul>
+            <li><a href="investors.html">Investors</a></li>
+            <li><a href="market-entry.html">Market Entry</a></li>
+            <li><a href="growth-strategy.html">Growth Strategy</a></li>
+            <li><a href="forecasting.html">Forecasting</a></li>
+            <li><a href="executive-intelligence.html">Executive Intelligence</a></li>
+            <li><a href="go-to-market.html">Go-to-Market</a></li>
           </ul>
         </div>
       </div>
 
       <div class="col">
-        <h3>Intelligence<span class="lp"></span><span class="pt"></span></h3>
+        <h3>INTELLIGENCE</h3>
+        <div class="rule"></div>
         <ul>
           <li><a href="index.html#industry">Industry Intelligence</a></li>
-          <li><a href="index.html#conversion">Conversion Intelligence</a></li>
+          <li><a href="index.html#conversion-intelligence">Conversion Intelligence</a></li>
           <li><a href="index.html#global-reach">Global Reach</a></li>
           <li><a href="index.html#doctrine">The Doctrine</a></li>
-          <li><a href="index.html#modes">Operating Modes</a></li>
+          <li><a href="modes.html">Operating Modes</a></li>
         </ul>
       </div>
 
       <div class="col">
-        <h3>Access<span class="lp"></span><span class="pt"></span></h3>
+        <h3>ACCESS</h3>
+        <div class="rule"></div>
         <ul>
           <li><a href="access-business.html">Business</a></li>
           <li><a href="access-independent-professional.html">Independent Professionals</a></li>
@@ -423,7 +846,8 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
       </div>
 
       <div class="col">
-        <h3>Licensing<span class="lp"></span><span class="pt"></span></h3>
+        <h3>LICENSING</h3>
+        <div class="rule"></div>
         <ul>
           <li><a href="licensing.html#platform">Platform Licence</a></li>
           <li><a href="licensing.html#territorial">Territorial Rights</a></li>
@@ -434,7 +858,8 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
       </div>
 
       <div class="col">
-        <h3>Company<span class="lp"></span><span class="pt"></span></h3>
+        <h3>COMPANY</h3>
+        <div class="rule"></div>
         <ul>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -446,80 +871,258 @@ footer{border-top:1px solid var(--rule-soft);padding:clamp(56px,8vh,92px) 0 0}
 
     </div>
 
-    <nav class="policies">
-      <a href="terms.html">Terms</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="refund-policy.html">Refund Policy</a>
-      <a href="billing.html">Billing</a>
-      <a href="cancellation.html">Cancellation</a>
-      <a href="acceptable-use.html">Acceptable Use</a>
-      <a href="data-processing.html">Data Processing</a>
-      <a href="security.html">Security</a>
-      <a href="responsible-ai.html">Responsible AI</a>
+    <nav class="policies" aria-label="Policies">
+      <a href="terms.html">Terms</a><span>&bull;</span>
+      <a href="privacy.html">Privacy</a><span>&bull;</span>
+      <a href="refund-policy.html">Refund Policy</a><span>&bull;</span>
+      <a href="billing.html">Billing</a><span>&bull;</span>
+      <a href="cancellation.html">Cancellation</a><span>&bull;</span>
+      <a href="acceptable-use.html">Acceptable Use</a><span>&bull;</span>
+      <a href="data-processing.html">Data Processing</a><span>&bull;</span>
+      <a href="security.html">Security</a><span>&bull;</span>
+      <a href="responsible-ai.html">Responsible AI</a><span>&bull;</span>
       <a href="cookies.html">Cookies</a>
     </nav>
 
     <div class="pay">
-      <span>Stripe</span><span>PayPal</span><span>Flutterwave</span><span>Visa</span><span>Mastercard</span>
-      <span>Amex</span><span>Apple Pay</span><span>G Pay</span><span>Alipay</span><span>Crypto</span>
+      <img src="https://bacihq.com/assets/payment-methods.webp" alt="Payment methods accepted: Stripe, PayPal, Flutterwave, Visa, Mastercard, American Express, Apple Pay, G Pay, Alipay and cryptocurrency.">
     </div>
 
     <div class="base">
-      <div class="id">
-        <span class="mono">B</span>
-        <span class="cp">© 2026 BACI</span>
-      </div>
+      <div class="mono" aria-label="BACI"><img src="https://bacihq.com/favicon-baci-monogram.webp" alt="" width="64" height="64"></div>
+      <div class="copy">&copy; 2026 BACI</div>
       <div class="socials">
-        <span>TikTok</span><span>Reddit</span><span>Facebook</span><span>Instagram</span><span>LinkedIn</span>
-        <span>X</span><span>WhatsApp</span><span>Snapchat</span><span>YouTube</span>
+        <a class="soc" href="#" aria-label="TikTok"><img src="https://bacihq.com/assets/social-tiktok.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Reddit"><img src="https://bacihq.com/assets/social-reddit.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Facebook"><img src="https://bacihq.com/assets/social-facebook.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Instagram"><img src="https://bacihq.com/assets/social-instagram.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="LinkedIn"><img src="https://bacihq.com/assets/social-linkedin.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="X"><img src="https://bacihq.com/assets/social-x.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="WhatsApp"><img src="https://bacihq.com/assets/social-whatsapp.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="Snapchat"><img src="https://bacihq.com/assets/social-snapchat.webp" alt=""></a>
+        <a class="soc" href="#" aria-label="YouTube"><img src="https://bacihq.com/assets/social-youtube.webp" alt=""></a>
       </div>
-      <button class="a11y" type="button" aria-label="Enhance your experience: accessibility options">
-        <svg viewBox="0 0 48 48" aria-hidden="true">
-          <path d="M6 18 L16 18 L26 9 L26 39 L16 30 L6 30 Z" fill="#C39544"/>
-          <path d="M31 17c4 0 7 3 7 7s-3 7-7 7" fill="none" stroke="#C39544" stroke-width="3.4" stroke-linecap="round"/>
-          <path d="M31 8c9 0 16 7 16 16s-7 16-16 16" fill="none" stroke="#C39544" stroke-width="3.4" stroke-linecap="round"/>
-        </svg>
-        Enhance your experience
+      <button class="a11y" id="a11y" aria-pressed="false">
+        <span class="glyph" aria-hidden="true"><img src="https://bacihq.com/assets/icon-accessibility.webp" alt=""></span>
+        <span class="lab">Enhance your experience</span>
       </button>
     </div>
+   </div>
+   </div>
   </footer>
+<section class="thoughts">
+  <p class="listening">We're listening.</p>
 
-</div>
+  <button type="button" class="open-btn" id="thoughts-open" aria-expanded="false" aria-controls="thoughts-panel">SHARE YOUR THOUGHTS</button>
 
-<section class="listen">
-  <div class="shell">
-    <h2>We're listening.</h2>
-    <button class="pill" id="opener" type="button">Share your thoughts</button>
-    <div class="box" id="box">
-      <textarea placeholder="Share your thoughts…" aria-label="Share your thoughts"></textarea>
-      <input type="email" placeholder="Email, if you would like a reply" aria-label="Email, if you would like a reply">
-      <p class="note">If you leave an email we'll use it only to reply to you. Nothing else. See the Privacy policy.</p>
-      <button class="pill" type="button">Share your thoughts</button>
+  <div class="panel" id="thoughts-panel">
+    <label class="sr-only" for="thoughts-text">Share your thoughts</label>
+    <textarea id="thoughts-text" placeholder="Share your thoughts&hellip;"></textarea>
+    <label class="sr-only" for="thoughts-email">Email, if you would like a reply</label>
+    <input type="email" id="thoughts-email" autocomplete="email" placeholder="Email, if you would like a reply">
+    <div class="send">
+      <button type="button" id="thoughts-send">SHARE YOUR THOUGHTS</button>
     </div>
   </div>
 </section>
+<div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="Display settings" aria-modal="false">
+  <h4>Display</h4>
+  <div class="a11y-row">
+    <span>Background</span>
+    <button type="button" class="a11y-opt" id="a11yView" aria-pressed="false">Dark</button>
+  </div>
+  <div class="a11y-row">
+    <span>Text size</span>
+    <div class="a11y-steps">
+      <button type="button" class="a11y-step" id="a11ySmaller" aria-label="Smaller text">&minus;</button>
+      <button type="button" class="a11y-step" id="a11yLarger" aria-label="Larger text">+</button>
+    </div>
+  </div>
+  <button type="button" class="a11y-close" id="a11yClose">Close</button>
+</div>
 
 <script>
 (function(){
-  var c1=document.getElementById('c1'),c2=document.getElementById('c2'),
-      dot=document.getElementById('dot'),cta=document.getElementById('cta');
   function measure(){
-    if(!c1||!c2||!dot)return;
-    var a=c1.getBoundingClientRect(),b=c2.getBoundingClientRect();
-    cta.style.setProperty('--travel',(b.right-a.left-dot.offsetWidth)+'px');
+    document.querySelectorAll('.cta').forEach(function(cta){
+      var c1=cta.querySelector('.c1'),c2=cta.querySelector('.c2'),dot=cta.querySelector('.dot');
+      if(!c1||!c2||!dot)return;
+      var a=c1.getBoundingClientRect(),b=c2.getBoundingClientRect();
+      cta.style.setProperty('--travel',(b.right-a.left-dot.offsetWidth)+'px');
+    });
   }
   if(document.fonts&&document.fonts.ready){document.fonts.ready.then(measure);}
   window.addEventListener('load',measure);
   window.addEventListener('resize',measure);
   measure();
 
-  var opener=document.getElementById('opener'),box=document.getElementById('box');
-  opener.addEventListener('click',function(){
-    box.classList.add('open');
-    opener.style.display='none';
-    box.querySelector('textarea').focus();
-  });
+  /* the carousel drifts right to left, and gets out of the way when touched */
+  var track=document.getElementById('orbTrack');
+  if(track){
+    var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    var half=0, paused=reduce, resume=0;
+
+    for(var i=0,src=[].slice.call(track.children);i<src.length;i++){
+      var c=src[i].cloneNode(true);
+      c.setAttribute('aria-hidden','true');
+      var a=c.querySelector('a'); if(a){a.setAttribute('tabindex','-1');a.removeAttribute('aria-current');}
+      track.appendChild(c);
+    }
+    function measure(){ half=track.scrollWidth/2; }
+    window.addEventListener('resize',measure);
+    measure();
+
+    /* start on this page's own orb so it reads as the one you are on */
+    var here=track.querySelector('.is-here');
+    if(here) track.scrollLeft=Math.max(0,here.offsetLeft-track.clientWidth/2+here.offsetWidth/2);
+
+    function hold(ms){ paused=true; resume=Date.now()+ms; }
+    ['pointerdown','touchstart','wheel','mouseenter'].forEach(function(e){
+      track.addEventListener(e,function(){hold(3200);},{passive:true});
+    });
+    track.addEventListener('focusin',function(){hold(6000);});
+
+    var last=0;
+    function drift(ts){
+      if(!last) last=ts;
+      var dt=Math.min(64,ts-last); last=ts;
+      if(paused && !reduce && Date.now()>resume) paused=false;
+      if(!paused && half>0){
+        track.scrollLeft+=dt*0.036;
+        if(track.scrollLeft>=half) track.scrollLeft-=half;
+      }
+      requestAnimationFrame(drift);
+    }
+    requestAnimationFrame(drift);
+  }
+
+  var o=document.getElementById('thoughts-open'),p=document.getElementById('thoughts-panel');
+  if(o&&p){
+    o.addEventListener('click',function(){
+      var open=p.classList.toggle('open');
+      o.setAttribute('aria-expanded',String(open));
+      if(open){var t=p.querySelector('textarea'); if(t) t.focus();}
+    });
+  }
+
+  /* tapping this page's own orb drops the intro + CTA down; tapping it again,
+     another orb, or anywhere else on the page retracts it */
+  var introDrop=document.getElementById('introDrop');
+  function setIntroOpen(open){
+    if(!introDrop)return;
+    introDrop.classList.toggle('open',open);
+    introDrop.setAttribute('aria-hidden',open?'false':'true');
+    document.querySelectorAll('.carousel__track .is-here > a').forEach(function(a){
+      a.setAttribute('aria-expanded',open?'true':'false');
+    });
+  }
+  if(track && introDrop){
+    track.querySelectorAll('.is-here > a').forEach(function(a){
+      a.setAttribute('aria-expanded','false');
+      a.setAttribute('aria-controls','introDrop');
+    });
+    track.addEventListener('click',function(e){
+      var a=e.target.closest('a'); if(!a) return;
+      var li=a.closest('li');
+      if(li && li.classList.contains('is-here')){
+        e.preventDefault();
+        setIntroOpen(!introDrop.classList.contains('open'));
+      }
+    });
+    document.addEventListener('click',function(e){
+      if(!introDrop.classList.contains('open'))return;
+      var withinPanel=introDrop.contains(e.target);
+      var withinHereOrb=e.target.closest('.carousel__track .is-here');
+      if(!withinPanel && !withinHereOrb) setIntroOpen(false);
+    });
+  }
 })();
 </script>
+
+<script>
+(function(){
+  var root = document.documentElement;
+
+  /* restore whatever was chosen last time, before anything paints */
+  try{
+    var v = localStorage.getItem('baci-view');
+    var t = localStorage.getItem('baci-text');
+    if(v === 'light') root.setAttribute('data-view','light');
+    if(t) root.style.setProperty('--text-scale', t);
+  }catch(e){}
+
+  var toggle = document.getElementById('a11y');
+  var panel  = document.getElementById('a11yPanel');
+  if(!toggle || !panel) return;
+
+  var viewBtn = document.getElementById('a11yView');
+  var smaller = document.getElementById('a11ySmaller');
+  var larger  = document.getElementById('a11yLarger');
+  var closeB  = document.getElementById('a11yClose');
+
+  var STEPS = [1, 1.12, 1.25, 1.4];
+
+  function currentStep(){
+    var s = parseFloat(getComputedStyle(root).getPropertyValue('--text-scale')) || 1;
+    var i = 0, best = 9;
+    STEPS.forEach(function(v, n){
+      var d = Math.abs(v - s);
+      if(d < best){ best = d; i = n; }
+    });
+    return i;
+  }
+
+  function setScale(i){
+    i = Math.max(0, Math.min(STEPS.length - 1, i));
+    root.style.setProperty('--text-scale', STEPS[i]);
+    try{ localStorage.setItem('baci-text', STEPS[i]); }catch(e){}
+  }
+
+  function syncView(){
+    var light = root.getAttribute('data-view') === 'light';
+    viewBtn.textContent = light ? 'Light' : 'Dark';
+    viewBtn.setAttribute('aria-pressed', String(light));
+  }
+
+  function open(){
+    panel.classList.add('open');
+    toggle.setAttribute('aria-expanded','true');
+    syncView();
+    viewBtn.focus();
+  }
+  function close(){
+    panel.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+  }
+
+  toggle.setAttribute('aria-expanded','false');
+  toggle.addEventListener('click', function(e){
+    e.preventDefault();
+    panel.classList.contains('open') ? close() : open();
+  });
+
+  viewBtn.addEventListener('click', function(){
+    var light = root.getAttribute('data-view') === 'light';
+    if(light){ root.removeAttribute('data-view'); }
+    else { root.setAttribute('data-view','light'); }
+    try{ localStorage.setItem('baci-view', light ? 'dark' : 'light'); }catch(e){}
+    syncView();
+  });
+
+  smaller.addEventListener('click', function(){ setScale(currentStep() - 1); });
+  larger .addEventListener('click', function(){ setScale(currentStep() + 1); });
+  closeB .addEventListener('click', close);
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && panel.classList.contains('open')) { close(); toggle.focus(); }
+  });
+  document.addEventListener('click', function(e){
+    if(!panel.contains(e.target) && !toggle.contains(e.target)) close();
+  });
+
+  syncView();
+})();
+</script>
+<script src="https://bacihq.com/js/site-stats.js" defer></script>
 </body>
 </html>
